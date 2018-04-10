@@ -1,0 +1,57 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Table mode="MultiSelect" id="limitsStandart" visible="false" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+		noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<Toolbar class="white">
+				<Label id="limitsStandartCount" text="Items"/>
+				<Label id="limitsStandartSelected" visible="false" text="Selected"/>
+				<ToolbarSpacer/>
+				<SearchField placeholder="{i18n>search}" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<Button text="{i18n>create}" press="tableCreate" type="Accept"/>
+				<Button id="limitsStandartEdit" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
+				<!--<Button id="limitsStandartCopy" text="{i18n>copy}" press="tCopy" type="Emphasized" enabled="false"/>-->
+				<Button id="limitsStandartDelete" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Label class="black" text="{i18n>legalEntity}"/>
+			</Column>
+			<Column>
+				<Label class="black" text="{i18n>rating}"/>
+			</Column>
+			<Column>
+				<Label class="black" text="{i18n>businessPartnersRole}"/>
+			</Column>
+			<Column>
+				<Label class="black" text="{i18n>tonnage}"/>
+			</Column>
+			<Column>
+				<Label class="black" text="{i18n>uom}"/>
+			</Column>
+			<Column>
+				<Label class="black" text="{i18n>paymentTerms}"/>
+			</Column>
+			<Column>
+				<Label class="black" text="{i18n>dateFrom}"/>
+			</Column>
+			<Column>
+				<Label class="black" text="{i18n>dateFrom}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Label text="{LegalEntity}"/>
+					<Label text="{Rating}"/>
+					<Label text="{BusinessRole}"/>
+					<Label text="{Tonnage}"/>
+					<Label text="{Uom}"/>
+					<Label text="{PaymentTerms}"/>
+					<Label text="{DateFrom}"/>
+					<Label text="{DateTo}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

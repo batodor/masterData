@@ -1,0 +1,57 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Table mode="MultiSelect" id="salesProgram" visible="false" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+		noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<Toolbar class="white">
+				<Label id="salesProgramCount" text="Items"/>
+				<Label id="salesProgramSelected" visible="false" text="Selected"/>
+				<ToolbarSpacer/>
+				<SearchField placeholder="{i18n>search}" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<Button text="{i18n>create}" press="tableCreate" type="Accept"/>
+				<Button id="salesProgramEdit" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
+				<!--<Button id="salesProgramCopy" text="{i18n>copy}" press="tCopy" type="Emphasized" enabled="false"/>-->
+				<Button id="salesProgramDelete" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Label class="black" text="{i18n>salesProgram}"/>
+			</Column>
+			<Column>
+				<Label class="black" text="{i18n>description}"/>
+			</Column>
+			<Column>
+				<Label class="black" text="{i18n>materialGroup}"/>
+			</Column>
+			<Column>
+				<Label class="black" text="{i18n>incoterms}"/>
+			</Column>
+			<Column>
+				<Label class="black" text="{i18n>cvNar}"/>
+			</Column>
+			<Column>
+				<Label class="black" text="{i18n>uom}"/>
+			</Column>
+			<Column>
+				<Label class="black" text="{i18n>narGarGad}"/>
+			</Column>
+			<Column>
+				<Label class="black" text="{i18n>active}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Label text="{SalesProgram}"/>
+					<Label text="{Description}"/>
+					<Label text="{MaterialGroup}"/>
+					<Label text="{Incoterms}"/>
+					<Label text="{CVNAR}"/>
+					<Label text="{Uom}"/>
+					<Label text="{NarGarGad}"/>
+					<Label text="{Active}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

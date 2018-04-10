@@ -1,0 +1,57 @@
+[{
+	"Id": "addListsTab",
+	"CustomKey": "addLists",
+	"Title": "Additional Lists"
+}, {
+	"Title": "Additional Time Lists",
+	"Id": "addTimeListsTab",
+	"CustomKey": "addTimeLists"
+}, {
+	"Title": "Limits for Standart Rating",
+	"Id": "limitsStandartTab",
+	"CustomKey": "limitsStandart"
+}, {
+	"Title": "Limits for Express Rating",
+	"CustomKey": "limitsExpress",
+	"Id": "limitsExpressTab"
+}, {
+	"Title": "Sales Program",
+	"CustomKey": "salesProgram",
+	"Id": "salesProgramTab"
+}, {
+	"Title": "FCA Price for Domestic Market",
+	"CustomKey": "fcaDomestic",
+	"Id": "fcaDomesticTab"
+}, {
+	"Title": "FCA Price for Product",
+	"CustomKey": "fcaProduct",
+	"Id": "fcaProductTab"
+}, {
+	"Title": "FCA Price for Resource",
+	"CustomKey": "fcaResource",
+	"Id": "fcaResourceTab"
+}, {
+	"Title": "Product Recipe",
+	"CustomKey": "productRecipe",
+	"Id": "productRecipeTab"
+}, {
+	"Title": "Strategy",
+	"CustomKey": "strategy",
+	"Id": "strategyTab"
+}, {
+	"Title": "Growth Factor",
+	"CustomKey": "growthFactor",
+	"Id": "growthFactorTab"
+}, {
+	"Title": "Sales Scheme",
+	"CustomKey": "salesScheme",
+	"Id": "salesSchemeTab"
+}, {
+	"Title": "Risk Type",
+	"CustomKey": "riskType",
+	"Id": "riskTypeTab"
+}, {
+	"Title": "Sales Direction",
+	"CustomKey": "salesDirection",
+	"Id": "salesDirectionTab"
+}]

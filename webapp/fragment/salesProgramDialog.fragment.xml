@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>salesProgram}" class="sapUiContentPadding">
+		<content></content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="salesProgram" type="Back" press="dialogClose"/>
+			<Button text="{i18n>create}" custom:id="salesProgram" visible="false" type="Accept" press="dialogCreate"/>
+			<Button text="{i18n>edit}" custom:id="salesProgram" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

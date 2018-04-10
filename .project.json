@@ -1,0 +1,25 @@
+{
+  "deploy": {
+    "destination": "ERE",
+    "name": "ZTS_MASTERDATA"
+  },
+  "hcpdeploy": {
+    "account": "p1942467308trial",
+    "name": "masterdata",
+    "lastVersionWeTriedToDeploy": "1.0.0"
+  },
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/ZTS_MD_BP_SRV",
+    "metadataFilePath": "localService/metadata.xml",
+    "mockRequestsFilePath": "localService/mockserver.js",
+    "loadJSONFiles": true,
+    "loadCustomRequests": false
+  },
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "",
+    "defaultLanguage": "",
+    "defaultI18NPropertyFile": "",
+    "resourceModelName": ""
+  }
+}

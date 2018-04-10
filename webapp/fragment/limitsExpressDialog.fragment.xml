@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>limitsExpressRating}" class="sapUiContentPadding">
+		<content>
+			<Text text="{i18n>legalEntity}" width="250px"/>
+			<Input id="iLimitsExpressLegalEntity" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>contryRating}" width="250px"/>
+			<Select id="sLimitsExpressCountryRating" items="{ path: '/DictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">
+				<core:Item key="{Rating}" text="{Rating}"/>
+			</Select>
+			<ToolbarSpacer/>
+			<Text text="{i18n>financeCommercialRating}" width="250px"/>
+			<Select id="sLimitsExpressFinanceCommercialRating" items="{ path: '/DictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">
+				<core:Item key="{Rating}" text="{Rating}"/>
+			</Select>
+			<ToolbarSpacer/>
+			<Text text="{i18n>businessPartnersRole}" width="250px"/>
+			<Select id="sLimitsExpressBusinessPartnersRole" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>paymentTerms}" width="250px"/>
+			<Input id="iLimitsExpressPaymentTerms" width="150px"/>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="limitsExpress" type="Back" press="dialogClose"/>
+			<Button text="{i18n>create}" custom:id="limitsExpress" visible="false" type="Accept" press="dialogCreate"/>
+			<Button text="{i18n>edit}" custom:id="limitsExpress" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
