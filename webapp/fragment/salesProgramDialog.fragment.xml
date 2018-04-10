@@ -1,10 +1,34 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>salesProgram}" class="sapUiContentPadding">
-		<content></content>
+		<content>
+			<Text text="{i18n>salesProgram}" width="250px"/>
+			<Input id="iDialogSPSalesProgram" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>description}" width="250px"/>
+			<Input id="iDialogSPDescription" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>materialGroup}" width="250px"/>
+			<Input id="iDialogSPMaterialGroup" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>incoterms}" width="250px"/>
+			<Input id="iDialogSPIncoterms" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>cvNar}" width="250px"/>
+			<Input id="iDialogSPCvNar" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>uom}" width="250px"/>
+			<Input id="iDialogSPUom" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>narGarGad}" width="250px"/>
+			<Input id="iDialogSPNarGarGad" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>actual}" width="250px"/>
+			<CheckBox id="cbDialogSPActual" width="150px"/>
+		</content>
 		<buttons>
-			<Button text="{i18n>cancel}" custom:id="salesProgram" type="Back" press="dialogClose"/>
-			<Button text="{i18n>create}" custom:id="salesProgram" visible="false" type="Accept" press="dialogCreate"/>
+			<Button text="{i18n>cancel}" custom:id="salesProgram" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="salesProgram" visible="false" type="Accept" press="dialogAdd"/>
 			<Button text="{i18n>edit}" custom:id="salesProgram" visible="false" type="Accept" press="dialogEdit"/>
 		</buttons>
 	</Dialog>

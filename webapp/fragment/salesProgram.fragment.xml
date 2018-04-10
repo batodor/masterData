@@ -47,7 +47,7 @@
 					<Text text="{CVNAR}"/>
 					<Text text="{Uom}"/>
 					<Text text="{NarGarGad}"/>
-					<CheckBox selected="{Actual}"/>
+					<CheckBox selected="{Actual}" enabled="false" />
 				</cells>
 			</ColumnListItem>
 		</items>

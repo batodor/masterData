@@ -29,7 +29,7 @@ sap.ui.define([
 			this.setModel(oViewModel, "detailView");
 
 			// Define list of tables ids
-			this.tableArr = ["limitsStandart", "limitsExpress", "salesProgram"];
+			this.tableArr = ["limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic"];
 
 			// Define Dialog fragments inside view as depended of this view
 			this.limitsExpressDialog = sap.ui.xmlfragment("fragment.limitsExpressDialog", this);
@@ -82,20 +82,15 @@ sap.ui.define([
 		 * @param {object} oEvent an event containing the total number of items in the list
 		 * @private
 		 */
-		onListUpdateFinished: function(oEvent) {
-			var sTitle,
-				iTotalItems = oEvent.getParameter("total"),
-				oViewModel = this.getModel("detailView");
-
-			// only update the counter if the length is final
-			if (this.byId("lineItemsList").getBinding("items").isLengthFinal()) {
-				if (iTotalItems) {
-					sTitle = this.getResourceBundle().getText("detailLineItemTableHeadingCount", [iTotalItems]);
-				} else {
-					//Display 'Line Items' instead of 'Line items (0)'
-					sTitle = this.getResourceBundle().getText("detailLineItemTableHeading");
+		onListUpdateFinished: function() {
+			for(var i in this.tableArr){
+				if(this.byId(this.tableArr[i]).getVisible()){
+					var tableId = this.tableArr[i];
+					var table = this.byId(tableId);
+					var count = table.getItems().length;
+					var tableCount = this.byId(tableId + "Count");
+					tableCount.setText(this.getResourceBundle().getText("tableItems", [count]));
 				}
-				oViewModel.setProperty("/lineItemListTitle", sTitle);
 			}
 		},
 
@@ -184,17 +179,17 @@ sap.ui.define([
 		},
 
 		// Close/create/edit dialog functions
-		dialogClose: function(oEvent) {
+		dialogCancel        : function(oEvent) {
 			var tableId = oEvent.getSource().data("id");
 			this[tableId + "Dialog"].close();
 		},
-		dialogCreate: function(oEvent) {
+		dialogAdd: function(oEvent) {
 			var tableId = oEvent.getSource().data("id");
-			console.log(tableId);
+			this[tableId + "Dialog"].close();
 		},
 		dialogEdit: function(oEvent) {
 			var tableId = oEvent.getSource().data("id");
-			console.log(tableId);
+			this[tableId + "Dialog"].close();
 		}
 	});
 

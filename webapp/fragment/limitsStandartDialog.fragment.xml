@@ -3,34 +3,28 @@
 	<Dialog title="{i18n>limitsStandartRating}" class="sapUiContentPadding">
 		<content>
 			<Text text="{i18n>legalEntity}" width="250px"/>
-			<Input id="iLimitsStandartLegalEntity" width="150px"/>
+			<Input id="iDialogLSLegalEntity" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>rating}" width="250px"/>
-			<Select id="sLimitsStandartRating" items="{ path: '/DictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">
+			<Select id="sDialogLSRating" items="{ path: '/DictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">
 				<core:Item key="{Rating}" text="{Rating}"/>
 			</Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>businessPartnersRole}" width="250px"/>
-			<Select id="sLimitsStandartBusinessPartnersRole" width="150px"/>
+			<Select id="sDialogLSBusinessPartnersRole" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>tonnage}" width="250px"/>
-			<Input id="iLimitsStandartTonnage" width="150px"/>
+			<Input id="iDialogLSTonnage" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>uom}" width="250px"/>
-			<Select id="sLimitsStandartUom" width="150px"/>
+			<Select id="sDialogLSUom" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>paymentTerms}" width="250px"/>
-			<Input id="iLimitsStandartPaymentTerms" width="150px"/>
-			<ToolbarSpacer/>
-			<Text text="{i18n>dateFrom}" width="250px"/>
-			<DatePicker id="dpLimitsStandartDateFrom" width="155px"/>
-			<ToolbarSpacer/>
-			<Text text="{i18n>dateTo}" width="250px"/>
-			<DatePicker id="dpLimitsStandartDateTo" width="155px"/>
+			<Input id="iDialogLSPaymentTerms" width="150px"/>
 		</content>
 		<buttons>
-			<Button text="{i18n>cancel}" custom:id="limitsStandart" type="Back" press="dialogClose"/>
-			<Button text="{i18n>create}" custom:id="limitsStandart" visible="false" type="Accept" press="dialogCreate"/>
+			<Button text="{i18n>cancel}" custom:id="limitsStandart" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="limitsStandart" visible="false" type="Accept" press="dialogAdd"/>
 			<Button text="{i18n>edit}" custom:id="limitsStandart" visible="false" type="Accept" press="dialogEdit"/>
 		</buttons>
 	</Dialog>

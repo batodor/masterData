@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>fcaDomestic}" class="sapUiContentPadding">
+		<content>
+			<Text text="{i18n>salesRegion}" width="250px"/>
+			<Input id="iDialogFCADSalesRegion" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>productionUnit}" width="250px"/>
+			<Input id="iDialogFCADProductionUnit" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>material}" width="250px"/>
+			<Input id="iDialogFCADMaterial" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>distributionInBulk}" width="250px"/>
+			<Input id="iDialogFCADDistributionInBulk" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>dateFrom}" width="250px"/>
+			<DatePicker id="dpDialogFCADDateFrom" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>dateTo}" width="250px"/>
+			<DatePicker id="dpDialogFCADDateTo" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>fcaPriceRub}" width="250px"/>
+			<Input id="iDialogFCADPriceRub" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>fcaPriceUsd}" width="250px"/>
+			<CheckBox id="cbDialogFCADPriceUsd" width="150px"/>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="salesProgram" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="salesProgram" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="salesProgram" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
