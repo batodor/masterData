@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-	<Table mode="SingleSelectLeft" id="limitsStandart" visible="false" items="{ path: '/LimitsStandartSet' }" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
-		noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+	<Table mode="SingleSelectLeft" id="limitsStandart" visible="false" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
 				<Label id="limitsStandartCount" text="Items"/>
@@ -12,24 +12,12 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column>
-				<Label class="black" text="{i18n>legalEntity}"/>
-			</Column>
-			<Column>
-				<Label class="black" text="{i18n>rating}"/>
-			</Column>
-			<Column>
-				<Label class="black" text="{i18n>businessPartnersRole}"/>
-			</Column>
-			<Column>
-				<Label class="black" text="{i18n>tonnage}"/>
-			</Column>
-			<Column>
-				<Label class="black" text="{i18n>uom}"/>
-			</Column>
-			<Column>
-				<Label class="black" text="{i18n>paymentTerms}"/>
-			</Column>
+			<Column><Text class="black" text="{i18n>legalEntity}"/></Column>
+			<Column><Text class="black" text="{i18n>rating}"/></Column>
+			<Column><Text class="black" text="{i18n>businessPartnersRole}"/></Column>
+			<Column><Text class="black" text="{i18n>tonnage}"/></Column>
+			<Column><Text class="black" text="{i18n>uom}"/></Column>
+			<Column><Text class="black" text="{i18n>paymentTerms}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>

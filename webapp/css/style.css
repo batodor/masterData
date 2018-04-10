@@ -4,7 +4,8 @@
     line-height: 1.2rem;
 }
 
-.black.sapMLabel {
+.black.sapMLabel,
+.black.sapMText{
     color: #000 !important;
 }
 

@@ -65,12 +65,41 @@
 				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
 					sap:sortable="false"/>
 			</EntityType>
+			<EntityType Name="FCAProduct" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="SalesRegion" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ProductCode" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="DateFrom" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="DateTo" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="MinFcaPrice" Type="Edm.Decimal" Precision="11" Scale="2" sap:unicode="false" sap:unit="Currency" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Currency" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="FCAResource" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="SalesProgram" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ProductionUnit" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Material" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="DateFrom" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="DateTo" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="MinFcaPrice" Type="Edm.Decimal" Precision="11" Scale="2" sap:unicode="false" sap:unit="Currency" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Currency" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/>
+			</EntityType>
 			<EntityContainer Name="ZTS_MD_BP_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
 				<EntitySet Name="MasterDataListSet" EntityType="ZTS_MD_BP_SRV.MasterDataList" sap:searchable="true" sap:content-version="1"/>
-				<EntitySet Name="LimitsStandartSet" EntityType="ZTS_MD_BP_SRV.LimitsStandart" sap:searchable="true" sap:content-version="1"/>
-				<EntitySet Name="LimitsExpressSet" EntityType="ZTS_MD_BP_SRV.LimitsExpress" sap:searchable="true" sap:content-version="1"/>
-				<EntitySet Name="SalesProgramSet" EntityType="ZTS_MD_BP_SRV.SalesProgram" sap:searchable="true" sap:content-version="1"/>
-				<EntitySet Name="FCADomesticSet" EntityType="ZTS_MD_BP_SRV.FCADomestic" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="limitsStandartSet" EntityType="ZTS_MD_BP_SRV.LimitsStandart" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="limitsExpressSet" EntityType="ZTS_MD_BP_SRV.LimitsExpress" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="salesProgramSet" EntityType="ZTS_MD_BP_SRV.SalesProgram" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="fcaDomesticSet" EntityType="ZTS_MD_BP_SRV.FCADomestic" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="fcaProductSet" EntityType="ZTS_MD_BP_SRV.FCAProduct" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="fcaResourceSet" EntityType="ZTS_MD_BP_SRV.FCAResource" sap:searchable="true" sap:content-version="1"/>
 			</EntityContainer>
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://ere.corp.suek.ru:8000/sap/opu/odata/sap/ZTS_MD_BP_SRV/$metadata"/>
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://ere.corp.suek.ru:8000/sap/opu/odata/sap/ZTS_MD_BP_SRV/$metadata"/>

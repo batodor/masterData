@@ -7,6 +7,8 @@
 			<core:Fragment fragmentName="fragment.limitsExpress" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.salesProgram" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.fcaDomestic" type="XML"></core:Fragment>
+			<core:Fragment fragmentName="fragment.fcaProduct" type="XML"></core:Fragment>
+			<core:Fragment fragmentName="fragment.fcaResource" type="XML"></core:Fragment>
 		</semantic:content>
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>

@@ -29,15 +29,21 @@ sap.ui.define([
 			this.setModel(oViewModel, "detailView");
 
 			// Define list of tables ids
-			this.tableArr = ["limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic"];
+			this.tableArr = ["limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource"];
 
 			// Define Dialog fragments inside view as depended of this view
 			this.limitsExpressDialog = sap.ui.xmlfragment("fragment.limitsExpressDialog", this);
 			this.limitsStandartDialog = sap.ui.xmlfragment("fragment.limitsStandartDialog", this);
 			this.salesProgramDialog = sap.ui.xmlfragment("fragment.salesProgramDialog", this);
+			this.fcaDomesticDialog = sap.ui.xmlfragment("fragment.fcaDomesticDialog", this);
+			this.fcaProductDialog = sap.ui.xmlfragment("fragment.fcaProductDialog", this);
+			this.fcaResourceDialog = sap.ui.xmlfragment("fragment.fcaResourceDialog", this);
 			this.getView().addDependent(this.limitsExpressDialog);
 			this.getView().addDependent(this.limitsStandartDialog);
 			this.getView().addDependent(this.salesProgramDialog);
+			this.getView().addDependent(this.fcaDomesticDialog);
+			this.getView().addDependent(this.fcaProductDialog);
+			this.getView().addDependent(this.fcaResourceDialog);
 		},
 
 		/* =========================================================== */
@@ -115,6 +121,12 @@ sap.ui.define([
 					var tableCount = this.byId(tableId + "Count");
 					tableCount.setText(this.getResourceBundle().getText("tableItems", [count]));
 					table.setVisible(true);
+					if(table.getItems().length === 0){
+						table.bindItems({
+							path: "/" + tableId + 'Set',
+							template: table['mBindingInfos'].items.template
+						});
+					}
 				} else {
 					this.byId(this.tableArr[i]).setVisible(false);
 				}

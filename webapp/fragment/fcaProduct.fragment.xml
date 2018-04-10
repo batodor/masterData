@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Table mode="SingleSelectLeft" id="fcaProduct" visible="false" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<Toolbar class="white">
+				<Label id="fcaProductCount" text="Items"/>
+				<ToolbarSpacer/>
+				<SearchField placeholder="{i18n>search}" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<Button text="{i18n>add}" press="tableAdd" type="Accept"/>
+				<Button id="fcaProductEdit" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
+				<Button id="fcaProductDelete" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column><Text class="black" text="{i18n>salesProgram}"/></Column>
+			<Column><Text class="black" text="{i18n>productCode}"/></Column>
+			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
+			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
+			<Column><Text class="black" text="{i18n>minFcaPrice}"/></Column>
+			<Column><Text class="black" text="{i18n>currency}"/></Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{SalesRegion}"/>
+					<Text text="{ProductCode}"/>
+					<Text text="{DateFrom}"/>
+					<Text text="{DateTo}"/>
+					<Text text="{MinFcaPrice}"/>
+					<Text text="{Currency}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

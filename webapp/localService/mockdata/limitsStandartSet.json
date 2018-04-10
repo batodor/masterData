@@ -7,7 +7,7 @@
 	"PaymentTerms": "PaymentTerms 1",
 	"Id": "Id 1",
 	"__metadata": {
-		"uri": "LimitsStandartSet('Id%201')",
+		"uri": "limitsStandartSet('Id%201')",
 		"type": "ZTS_MD_BP_SRV.LimitsStandart"
 	}
 }, {
@@ -19,7 +19,7 @@
 	"PaymentTerms": "PaymentTerms 2",
 	"Id": "Id 2",
 	"__metadata": {
-		"uri": "LimitsStandartSet('Id%202')",
+		"uri": "limitsStandartSet('Id%202')",
 		"type": "ZTS_MD_BP_SRV.LimitsStandart"
 	}
 }, {
@@ -31,7 +31,7 @@
 	"PaymentTerms": "PaymentTerms 3",
 	"Id": "Id 3",
 	"__metadata": {
-		"uri": "LimitsStandartSet('Id%203')",
+		"uri": "limitsStandartSet('Id%203')",
 		"type": "ZTS_MD_BP_SRV.LimitsStandart"
 	}
 }, {
@@ -43,7 +43,7 @@
 	"PaymentTerms": "PaymentTerms 4",
 	"Id": "Id 4",
 	"__metadata": {
-		"uri": "LimitsStandartSet('Id%204')",
+		"uri": "limitsStandartSet('Id%204')",
 		"type": "ZTS_MD_BP_SRV.LimitsStandart"
 	}
 }, {
@@ -55,7 +55,7 @@
 	"PaymentTerms": "PaymentTerms 5",
 	"Id": "Id 5",
 	"__metadata": {
-		"uri": "LimitsStandartSet('Id%205')",
+		"uri": "limitsStandartSet('Id%205')",
 		"type": "ZTS_MD_BP_SRV.LimitsStandart"
 	}
 }, {
@@ -67,7 +67,7 @@
 	"PaymentTerms": "PaymentTerms 6",
 	"Id": "Id 6",
 	"__metadata": {
-		"uri": "LimitsStandartSet('Id%206')",
+		"uri": "limitsStandartSet('Id%206')",
 		"type": "ZTS_MD_BP_SRV.LimitsStandart"
 	}
 }, {
@@ -79,7 +79,7 @@
 	"PaymentTerms": "PaymentTerms 7",
 	"Id": "Id 7",
 	"__metadata": {
-		"uri": "LimitsStandartSet('Id%207')",
+		"uri": "limitsStandartSet('Id%207')",
 		"type": "ZTS_MD_BP_SRV.LimitsStandart"
 	}
 }, {
@@ -91,7 +91,7 @@
 	"PaymentTerms": "PaymentTerms 8",
 	"Id": "Id 8",
 	"__metadata": {
-		"uri": "LimitsStandartSet('Id%208')",
+		"uri": "limitsStandartSet('Id%208')",
 		"type": "ZTS_MD_BP_SRV.LimitsStandart"
 	}
 }, {
@@ -103,7 +103,7 @@
 	"PaymentTerms": "PaymentTerms 9",
 	"Id": "Id 9",
 	"__metadata": {
-		"uri": "LimitsStandartSet('Id%209')",
+		"uri": "limitsStandartSet('Id%209')",
 		"type": "ZTS_MD_BP_SRV.LimitsStandart"
 	}
 }, {
@@ -115,7 +115,7 @@
 	"PaymentTerms": "PaymentTerms 10",
 	"Id": "Id 10",
 	"__metadata": {
-		"uri": "LimitsStandartSet('Id%2010')",
+		"uri": "limitsStandartSet('Id%2010')",
 		"type": "ZTS_MD_BP_SRV.LimitsStandart"
 	}
 }]

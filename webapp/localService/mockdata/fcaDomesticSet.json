@@ -1,0 +1,281 @@
+[{
+	"SalesRegion": "SalesRegion 1",
+	"ProductionUnit": "ProductionUnit 1",
+	"Material": "Material 1",
+	"DistributionInBulk": "DistributionInBulk 1",
+	"DateFrom": "/Date(1188733656000)/",
+	"DateTo": "/Date(1108727256000)/",
+	"FcaPriceRub": 8343.84,
+	"FcaPriceUsd": 7383.06,
+	"Id": "Id 1",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%201')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 2",
+	"ProductionUnit": "ProductionUnit 2",
+	"Material": "Material 2",
+	"DistributionInBulk": "DistributionInBulk 2",
+	"DateFrom": "/Date(1086436056000)/",
+	"DateTo": "/Date(1533037656000)/",
+	"FcaPriceRub": 7053.95,
+	"FcaPriceUsd": 7068.61,
+	"Id": "Id 2",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%202')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 3",
+	"ProductionUnit": "ProductionUnit 3",
+	"Material": "Material 3",
+	"DistributionInBulk": "DistributionInBulk 3",
+	"DateFrom": "/Date(1294832856000)/",
+	"DateTo": "/Date(1552736856000)/",
+	"FcaPriceRub": 7368.68,
+	"FcaPriceUsd": 8042.87,
+	"Id": "Id 3",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%203')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 4",
+	"ProductionUnit": "ProductionUnit 4",
+	"Material": "Material 4",
+	"DistributionInBulk": "DistributionInBulk 4",
+	"DateFrom": "/Date(1377776856000)/",
+	"DateTo": "/Date(1124279256000)/",
+	"FcaPriceRub": 7346.72,
+	"FcaPriceUsd": 1035.18,
+	"Id": "Id 4",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%204')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 5",
+	"ProductionUnit": "ProductionUnit 5",
+	"Material": "Material 5",
+	"DistributionInBulk": "DistributionInBulk 5",
+	"DateFrom": "/Date(990359256000)/",
+	"DateTo": "/Date(1054727256000)/",
+	"FcaPriceRub": 9574.02,
+	"FcaPriceUsd": 554.86,
+	"Id": "Id 5",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%205')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 6",
+	"ProductionUnit": "ProductionUnit 6",
+	"Material": "Material 6",
+	"DistributionInBulk": "DistributionInBulk 6",
+	"DateFrom": "/Date(1386157656000)/",
+	"DateTo": "/Date(1217936856000)/",
+	"FcaPriceRub": 2254.34,
+	"FcaPriceUsd": 4337.25,
+	"Id": "Id 6",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%206')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 7",
+	"ProductionUnit": "ProductionUnit 7",
+	"Material": "Material 7",
+	"DistributionInBulk": "DistributionInBulk 7",
+	"DateFrom": "/Date(1080992856000)/",
+	"DateTo": "/Date(1542368856000)/",
+	"FcaPriceRub": 9135.65,
+	"FcaPriceUsd": 5518.5,
+	"Id": "Id 7",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%207')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 8",
+	"ProductionUnit": "ProductionUnit 8",
+	"Material": "Material 8",
+	"DistributionInBulk": "DistributionInBulk 8",
+	"DateFrom": "/Date(1015156056000)/",
+	"DateTo": "/Date(1344340056000)/",
+	"FcaPriceRub": 3859.47,
+	"FcaPriceUsd": 5653.74,
+	"Id": "Id 8",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%208')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 9",
+	"ProductionUnit": "ProductionUnit 9",
+	"Material": "Material 9",
+	"DistributionInBulk": "DistributionInBulk 9",
+	"DateFrom": "/Date(965303256000)/",
+	"DateTo": "/Date(1446810456000)/",
+	"FcaPriceRub": 5599.9,
+	"FcaPriceUsd": 1421.94,
+	"Id": "Id 9",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%209')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 10",
+	"ProductionUnit": "ProductionUnit 10",
+	"Material": "Material 10",
+	"DistributionInBulk": "DistributionInBulk 10",
+	"DateFrom": "/Date(1333194456000)/",
+	"DateTo": "/Date(1576324056000)/",
+	"FcaPriceRub": 8935.06,
+	"FcaPriceUsd": 4225.32,
+	"Id": "Id 10",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%2010')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 11",
+	"ProductionUnit": "ProductionUnit 11",
+	"Material": "Material 11",
+	"DistributionInBulk": "DistributionInBulk 11",
+	"DateFrom": "/Date(1053431257000)/",
+	"DateTo": "/Date(1124711257000)/",
+	"FcaPriceRub": 2671.16,
+	"FcaPriceUsd": 1479.77,
+	"Id": "Id 11",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%2011')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 12",
+	"ProductionUnit": "ProductionUnit 12",
+	"Material": "Material 12",
+	"DistributionInBulk": "DistributionInBulk 12",
+	"DateFrom": "/Date(1470138457000)/",
+	"DateTo": "/Date(1231501657000)/",
+	"FcaPriceRub": 3708.82,
+	"FcaPriceUsd": 5067.89,
+	"Id": "Id 12",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%2012')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 13",
+	"ProductionUnit": "ProductionUnit 13",
+	"Material": "Material 13",
+	"DistributionInBulk": "DistributionInBulk 13",
+	"DateFrom": "/Date(1234266457000)/",
+	"DateTo": "/Date(960724057000)/",
+	"FcaPriceRub": 1921.81,
+	"FcaPriceUsd": 3036.92,
+	"Id": "Id 13",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%2013')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 14",
+	"ProductionUnit": "ProductionUnit 14",
+	"Material": "Material 14",
+	"DistributionInBulk": "DistributionInBulk 14",
+	"DateFrom": "/Date(1033818457000)/",
+	"DateTo": "/Date(1387453657000)/",
+	"FcaPriceRub": 8306.69,
+	"FcaPriceUsd": 4293.87,
+	"Id": "Id 14",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%2014')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 15",
+	"ProductionUnit": "ProductionUnit 15",
+	"Material": "Material 15",
+	"DistributionInBulk": "DistributionInBulk 15",
+	"DateFrom": "/Date(1306151257000)/",
+	"DateTo": "/Date(1254138457000)/",
+	"FcaPriceRub": 1800.63,
+	"FcaPriceUsd": 6850.73,
+	"Id": "Id 15",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%2015')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 16",
+	"ProductionUnit": "ProductionUnit 16",
+	"Material": "Material 16",
+	"DistributionInBulk": "DistributionInBulk 16",
+	"DateFrom": "/Date(1497700057000)/",
+	"DateTo": "/Date(1065095257000)/",
+	"FcaPriceRub": 2995.7,
+	"FcaPriceUsd": 4507.65,
+	"Id": "Id 16",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%2016')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 17",
+	"ProductionUnit": "ProductionUnit 17",
+	"Material": "Material 17",
+	"DistributionInBulk": "DistributionInBulk 17",
+	"DateFrom": "/Date(1397389657000)/",
+	"DateTo": "/Date(1013255257000)/",
+	"FcaPriceRub": 9164.73,
+	"FcaPriceUsd": 1158.26,
+	"Id": "Id 17",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%2017')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 18",
+	"ProductionUnit": "ProductionUnit 18",
+	"Material": "Material 18",
+	"DistributionInBulk": "DistributionInBulk 18",
+	"DateFrom": "/Date(1142077657000)/",
+	"DateTo": "/Date(1148298457000)/",
+	"FcaPriceRub": 8851.29,
+	"FcaPriceUsd": 4201.93,
+	"Id": "Id 18",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%2018')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 19",
+	"ProductionUnit": "ProductionUnit 19",
+	"Material": "Material 19",
+	"DistributionInBulk": "DistributionInBulk 19",
+	"DateFrom": "/Date(1545220057000)/",
+	"DateTo": "/Date(1270381657000)/",
+	"FcaPriceRub": 8654.1,
+	"FcaPriceUsd": 5726.34,
+	"Id": "Id 19",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%2019')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}, {
+	"SalesRegion": "SalesRegion 20",
+	"ProductionUnit": "ProductionUnit 20",
+	"Material": "Material 20",
+	"DistributionInBulk": "DistributionInBulk 20",
+	"DateFrom": "/Date(1084621657000)/",
+	"DateTo": "/Date(1156247257000)/",
+	"FcaPriceRub": 8524.96,
+	"FcaPriceUsd": 8408.27,
+	"Id": "Id 20",
+	"__metadata": {
+		"uri": "fcaDomesticSet('Id%2020')",
+		"type": "ZTS_MD_BP_SRV.FCADomestic"
+	}
+}]
