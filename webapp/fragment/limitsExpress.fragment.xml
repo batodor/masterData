@@ -1,15 +1,13 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-	<Table mode="MultiSelect" id="limitsExpress" visible="false" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+	<Table mode="SingleSelectLeft" id="limitsExpress" visible="false" items="{ path: '/LimitsExpressSet' }" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
 		noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
 				<Label id="limitsExpressCount" text="Items"/>
-				<Label id="limitsExpressSelected" visible="false" text="Selected"/>
 				<ToolbarSpacer/>
 				<SearchField placeholder="{i18n>search}" showSearchButton="true" search="triggerSearch" width="auto"/>
-				<Button text="{i18n>create}" press="tableCreate" type="Accept"/>
+				<Button text="{i18n>add}" press="tableAdd" type="Accept"/>
 				<Button id="limitsExpressEdit" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
-				<!--<Button id="limitsExpressCopy" text="{i18n>copy}" press="tCopy" type="Emphasized" enabled="false"/>-->
 				<Button id="limitsExpressDelete" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
 			</Toolbar>
 		</headerToolbar>
@@ -33,11 +31,11 @@
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Label text="{LegalEntity}"/>
-					<Label text="{CountryRating}"/>
-					<Label text="{FinanceCommercialRating}"/>
-					<Label text="{BusinessRole}"/>
-					<Label text="{PaymentTerms}"/>
+					<Text text="{LegalEntity}"/>
+					<Text text="{CountryRating}"/>
+					<Text text="{FinanceCommercialRating}"/>
+					<Text text="{BusinessPartnersRole}"/>
+					<Text text="{PaymentTerms}"/>
 				</cells>
 			</ColumnListItem>
 		</items>

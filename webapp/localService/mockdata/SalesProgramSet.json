@@ -1,0 +1,141 @@
+[{
+	"SalesProgram": "SalesProgram 1",
+	"Description": "Description 1",
+	"MaterialGroup": "MaterialGroup 1",
+	"Incoterms": "Incoterms 1",
+	"CVNAR": "CVNAR 1",
+	"Uom": "Uom 1",
+	"NarGarGad": "NarGarGad 1",
+	"Actual": true,
+	"Id": "Id 1",
+	"__metadata": {
+		"uri": "SalesProgramSet('Id%201')",
+		"type": "ZTS_MD_BP_SRV.SalesProgram"
+	}
+}, {
+	"SalesProgram": "SalesProgram 2",
+	"Description": "Description 2",
+	"MaterialGroup": "MaterialGroup 2",
+	"Incoterms": "Incoterms 2",
+	"CVNAR": "CVNAR 2",
+	"Uom": "Uom 2",
+	"NarGarGad": "NarGarGad 2",
+	"Actual": true,
+	"Id": "Id 2",
+	"__metadata": {
+		"uri": "SalesProgramSet('Id%202')",
+		"type": "ZTS_MD_BP_SRV.SalesProgram"
+	}
+}, {
+	"SalesProgram": "SalesProgram 3",
+	"Description": "Description 3",
+	"MaterialGroup": "MaterialGroup 3",
+	"Incoterms": "Incoterms 3",
+	"CVNAR": "CVNAR 3",
+	"Uom": "Uom 3",
+	"NarGarGad": "NarGarGad 3",
+	"Actual": true,
+	"Id": "Id 3",
+	"__metadata": {
+		"uri": "SalesProgramSet('Id%203')",
+		"type": "ZTS_MD_BP_SRV.SalesProgram"
+	}
+}, {
+	"SalesProgram": "SalesProgram 4",
+	"Description": "Description 4",
+	"MaterialGroup": "MaterialGroup 4",
+	"Incoterms": "Incoterms 4",
+	"CVNAR": "CVNAR 4",
+	"Uom": "Uom 4",
+	"NarGarGad": "NarGarGad 4",
+	"Actual": true,
+	"Id": "Id 4",
+	"__metadata": {
+		"uri": "SalesProgramSet('Id%204')",
+		"type": "ZTS_MD_BP_SRV.SalesProgram"
+	}
+}, {
+	"SalesProgram": "SalesProgram 5",
+	"Description": "Description 5",
+	"MaterialGroup": "MaterialGroup 5",
+	"Incoterms": "Incoterms 5",
+	"CVNAR": "CVNAR 5",
+	"Uom": "Uom 5",
+	"NarGarGad": "NarGarGad 5",
+	"Actual": true,
+	"Id": "Id 5",
+	"__metadata": {
+		"uri": "SalesProgramSet('Id%205')",
+		"type": "ZTS_MD_BP_SRV.SalesProgram"
+	}
+}, {
+	"SalesProgram": "SalesProgram 6",
+	"Description": "Description 6",
+	"MaterialGroup": "MaterialGroup 6",
+	"Incoterms": "Incoterms 6",
+	"CVNAR": "CVNAR 6",
+	"Uom": "Uom 6",
+	"NarGarGad": "NarGarGad 6",
+	"Actual": false,
+	"Id": "Id 6",
+	"__metadata": {
+		"uri": "SalesProgramSet('Id%206')",
+		"type": "ZTS_MD_BP_SRV.SalesProgram"
+	}
+}, {
+	"SalesProgram": "SalesProgram 7",
+	"Description": "Description 7",
+	"MaterialGroup": "MaterialGroup 7",
+	"Incoterms": "Incoterms 7",
+	"CVNAR": "CVNAR 7",
+	"Uom": "Uom 7",
+	"NarGarGad": "NarGarGad 7",
+	"Actual": false,
+	"Id": "Id 7",
+	"__metadata": {
+		"uri": "SalesProgramSet('Id%207')",
+		"type": "ZTS_MD_BP_SRV.SalesProgram"
+	}
+}, {
+	"SalesProgram": "SalesProgram 8",
+	"Description": "Description 8",
+	"MaterialGroup": "MaterialGroup 8",
+	"Incoterms": "Incoterms 8",
+	"CVNAR": "CVNAR 8",
+	"Uom": "Uom 8",
+	"NarGarGad": "NarGarGad 8",
+	"Actual": true,
+	"Id": "Id 8",
+	"__metadata": {
+		"uri": "SalesProgramSet('Id%208')",
+		"type": "ZTS_MD_BP_SRV.SalesProgram"
+	}
+}, {
+	"SalesProgram": "SalesProgram 9",
+	"Description": "Description 9",
+	"MaterialGroup": "MaterialGroup 9",
+	"Incoterms": "Incoterms 9",
+	"CVNAR": "CVNAR 9",
+	"Uom": "Uom 9",
+	"NarGarGad": "NarGarGad 9",
+	"Actual": false,
+	"Id": "Id 9",
+	"__metadata": {
+		"uri": "SalesProgramSet('Id%209')",
+		"type": "ZTS_MD_BP_SRV.SalesProgram"
+	}
+}, {
+	"SalesProgram": "SalesProgram 10",
+	"Description": "Description 10",
+	"MaterialGroup": "MaterialGroup 10",
+	"Incoterms": "Incoterms 10",
+	"CVNAR": "CVNAR 10",
+	"Uom": "Uom 10",
+	"NarGarGad": "NarGarGad 10",
+	"Actual": true,
+	"Id": "Id 10",
+	"__metadata": {
+		"uri": "SalesProgramSet('Id%2010')",
+		"type": "ZTS_MD_BP_SRV.SalesProgram"
+	}
+}]

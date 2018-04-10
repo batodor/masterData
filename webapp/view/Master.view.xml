@@ -14,7 +14,7 @@
 				mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" growing="true" growingScrollToLoad="true"
 				selectionChange="onSelectionChange">
 				<items>
-					<ObjectListItem custom:id="{CustomKey}" custom:title="{Title}" type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"
+					<ObjectListItem custom:id="{Id}" custom:title="{Title}" type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"
 						press="onSelectionChange" title="{Title}"/>
 				</items>
 			</List>

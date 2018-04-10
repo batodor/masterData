@@ -1,15 +1,13 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-	<Table mode="MultiSelect" id="limitsStandart" visible="false" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+	<Table mode="SingleSelectLeft" id="limitsStandart" visible="false" items="{ path: '/LimitsStandartSet' }" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
 		noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
 				<Label id="limitsStandartCount" text="Items"/>
-				<Label id="limitsStandartSelected" visible="false" text="Selected"/>
 				<ToolbarSpacer/>
 				<SearchField placeholder="{i18n>search}" showSearchButton="true" search="triggerSearch" width="auto"/>
-				<Button text="{i18n>create}" press="tableCreate" type="Accept"/>
+				<Button text="{i18n>add}" press="tableAdd" type="Accept"/>
 				<Button id="limitsStandartEdit" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
-				<!--<Button id="limitsStandartCopy" text="{i18n>copy}" press="tCopy" type="Emphasized" enabled="false"/>-->
 				<Button id="limitsStandartDelete" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
 			</Toolbar>
 		</headerToolbar>
@@ -32,24 +30,16 @@
 			<Column>
 				<Label class="black" text="{i18n>paymentTerms}"/>
 			</Column>
-			<Column>
-				<Label class="black" text="{i18n>dateFrom}"/>
-			</Column>
-			<Column>
-				<Label class="black" text="{i18n>dateFrom}"/>
-			</Column>
 		</columns>
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Label text="{LegalEntity}"/>
-					<Label text="{Rating}"/>
-					<Label text="{BusinessRole}"/>
-					<Label text="{Tonnage}"/>
-					<Label text="{Uom}"/>
-					<Label text="{PaymentTerms}"/>
-					<Label text="{DateFrom}"/>
-					<Label text="{DateTo}"/>
+					<Text text="{LegalEntity}"/>
+					<Text text="{Rating}"/>
+					<Text text="{BusinessPartnersRole}"/>
+					<Text text="{Tonnage}"/>
+					<Text text="{Uom}"/>
+					<Text text="{PaymentTerms}"/>
 				</cells>
 			</ColumnListItem>
 		</items>

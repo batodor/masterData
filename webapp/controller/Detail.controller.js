@@ -131,16 +131,12 @@ sap.ui.define([
 			var table = oEvent.getSource();
 			var selectedCount = table.getSelectedItems().length;
 			var tableId = table.getId().split("--")[table.getId().split("--").length - 1];
-			var selected = this.byId(tableId + "Selected");
 			if (selectedCount > 0) {
-				selected.setVisible(true);
 				this.byId(tableId + "Delete").setEnabled(true);
 				this.byId(tableId + "Edit").setEnabled(true);
-				selected.setText(this.getResourceBundle().getText("tableSelected", [selectedCount]));
 			} else {
 				this.byId(tableId + "Delete").setEnabled(false);
 				this.byId(tableId + "Edit").setEnabled(false);
-				selected.setVisible(false);
 			}
 		},
 
@@ -151,7 +147,7 @@ sap.ui.define([
 		},
 
 		// Table buttons function for create/edit/copy/delete of items
-		tableCreate: function(oEvent) {
+		tableAdd: function(oEvent) {
 			var dialog = this.dialogOpen(oEvent);
 			dialog.getButtons()[1].setVisible(true);
 			dialog.getButtons()[2].setVisible(false);

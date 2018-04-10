@@ -1,0 +1,121 @@
+[{
+	"LegalEntity": "LegalEntity 1",
+	"Rating": "Rating 1",
+	"BusinessPartnersRole": "BusinessPartnersRole 1",
+	"Tonnage": "Tonnage 1",
+	"Uom": "Uom 1",
+	"PaymentTerms": "PaymentTerms 1",
+	"Id": "Id 1",
+	"__metadata": {
+		"uri": "LimitsStandartSet('Id%201')",
+		"type": "ZTS_MD_BP_SRV.LimitsStandart"
+	}
+}, {
+	"LegalEntity": "LegalEntity 2",
+	"Rating": "Rating 2",
+	"BusinessPartnersRole": "BusinessPartnersRole 2",
+	"Tonnage": "Tonnage 2",
+	"Uom": "Uom 2",
+	"PaymentTerms": "PaymentTerms 2",
+	"Id": "Id 2",
+	"__metadata": {
+		"uri": "LimitsStandartSet('Id%202')",
+		"type": "ZTS_MD_BP_SRV.LimitsStandart"
+	}
+}, {
+	"LegalEntity": "LegalEntity 3",
+	"Rating": "Rating 3",
+	"BusinessPartnersRole": "BusinessPartnersRole 3",
+	"Tonnage": "Tonnage 3",
+	"Uom": "Uom 3",
+	"PaymentTerms": "PaymentTerms 3",
+	"Id": "Id 3",
+	"__metadata": {
+		"uri": "LimitsStandartSet('Id%203')",
+		"type": "ZTS_MD_BP_SRV.LimitsStandart"
+	}
+}, {
+	"LegalEntity": "LegalEntity 4",
+	"Rating": "Rating 4",
+	"BusinessPartnersRole": "BusinessPartnersRole 4",
+	"Tonnage": "Tonnage 4",
+	"Uom": "Uom 4",
+	"PaymentTerms": "PaymentTerms 4",
+	"Id": "Id 4",
+	"__metadata": {
+		"uri": "LimitsStandartSet('Id%204')",
+		"type": "ZTS_MD_BP_SRV.LimitsStandart"
+	}
+}, {
+	"LegalEntity": "LegalEntity 5",
+	"Rating": "Rating 5",
+	"BusinessPartnersRole": "BusinessPartnersRole 5",
+	"Tonnage": "Tonnage 5",
+	"Uom": "Uom 5",
+	"PaymentTerms": "PaymentTerms 5",
+	"Id": "Id 5",
+	"__metadata": {
+		"uri": "LimitsStandartSet('Id%205')",
+		"type": "ZTS_MD_BP_SRV.LimitsStandart"
+	}
+}, {
+	"LegalEntity": "LegalEntity 6",
+	"Rating": "Rating 6",
+	"BusinessPartnersRole": "BusinessPartnersRole 6",
+	"Tonnage": "Tonnage 6",
+	"Uom": "Uom 6",
+	"PaymentTerms": "PaymentTerms 6",
+	"Id": "Id 6",
+	"__metadata": {
+		"uri": "LimitsStandartSet('Id%206')",
+		"type": "ZTS_MD_BP_SRV.LimitsStandart"
+	}
+}, {
+	"LegalEntity": "LegalEntity 7",
+	"Rating": "Rating 7",
+	"BusinessPartnersRole": "BusinessPartnersRole 7",
+	"Tonnage": "Tonnage 7",
+	"Uom": "Uom 7",
+	"PaymentTerms": "PaymentTerms 7",
+	"Id": "Id 7",
+	"__metadata": {
+		"uri": "LimitsStandartSet('Id%207')",
+		"type": "ZTS_MD_BP_SRV.LimitsStandart"
+	}
+}, {
+	"LegalEntity": "LegalEntity 8",
+	"Rating": "Rating 8",
+	"BusinessPartnersRole": "BusinessPartnersRole 8",
+	"Tonnage": "Tonnage 8",
+	"Uom": "Uom 8",
+	"PaymentTerms": "PaymentTerms 8",
+	"Id": "Id 8",
+	"__metadata": {
+		"uri": "LimitsStandartSet('Id%208')",
+		"type": "ZTS_MD_BP_SRV.LimitsStandart"
+	}
+}, {
+	"LegalEntity": "LegalEntity 9",
+	"Rating": "Rating 9",
+	"BusinessPartnersRole": "BusinessPartnersRole 9",
+	"Tonnage": "Tonnage 9",
+	"Uom": "Uom 9",
+	"PaymentTerms": "PaymentTerms 9",
+	"Id": "Id 9",
+	"__metadata": {
+		"uri": "LimitsStandartSet('Id%209')",
+		"type": "ZTS_MD_BP_SRV.LimitsStandart"
+	}
+}, {
+	"LegalEntity": "LegalEntity 10",
+	"Rating": "Rating 10",
+	"BusinessPartnersRole": "BusinessPartnersRole 10",
+	"Tonnage": "Tonnage 10",
+	"Uom": "Uom 10",
+	"PaymentTerms": "PaymentTerms 10",
+	"Id": "Id 10",
+	"__metadata": {
+		"uri": "LimitsStandartSet('Id%2010')",
+		"type": "ZTS_MD_BP_SRV.LimitsStandart"
+	}
+}]

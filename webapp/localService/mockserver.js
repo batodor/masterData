@@ -5,7 +5,7 @@ sap.ui.define([
 
 		var oMockServer,
 			_sAppModulePath = "masterdata/MasterData/",
-			_sJsonFilesModulePath = _sAppModulePath + "localService/";
+			_sJsonFilesModulePath = _sAppModulePath + "localService/mockdata/";
 
 		return {
 			/**

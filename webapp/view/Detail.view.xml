@@ -3,8 +3,8 @@
 	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}"
 		busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
 		<semantic:content>
-			<core:Fragment fragmentName="fragment.limitsExpress" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.limitsStandart" type="XML"></core:Fragment>
+			<core:Fragment fragmentName="fragment.limitsExpress" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.salesProgram" type="XML"></core:Fragment>
 		</semantic:content>
 		<semantic:sendEmailAction>

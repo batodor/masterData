@@ -7,17 +7,57 @@
 					<PropertyRef Name="Id"/>
 				</Key>
 				<Property Name="Title" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
-				<Property Name="CustomKey" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
 					sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="LimitsStandart" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="LegalEntity" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Rating" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="BusinessPartnersRole" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Tonnage" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Uom" Type="Edm.String" MaxLength="7" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="PaymentTerms" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="LimitsExpress" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="LegalEntity" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="CountryRating" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="FinanceCommercialRating" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="BusinessPartnersRole" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="PaymentTerms" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="SalesProgram" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="SalesProgram" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Description" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="MaterialGroup" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Incoterms" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="CVNAR" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Uom" Type="Edm.String" MaxLength="7" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="NarGarGad" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Actual" Type="Edm.Boolean" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
 				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
 					sap:sortable="false"/>
 			</EntityType>
 			<EntityContainer Name="ZTS_MD_BP_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
 				<EntitySet Name="MasterDataListSet" EntityType="ZTS_MD_BP_SRV.MasterDataList" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="LimitsStandartSet" EntityType="ZTS_MD_BP_SRV.LimitsStandart" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="LimitsExpressSet" EntityType="ZTS_MD_BP_SRV.LimitsExpress" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="SalesProgramSet" EntityType="ZTS_MD_BP_SRV.SalesProgram" sap:searchable="true" sap:content-version="1"/>
 			</EntityContainer>
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://ere.corp.suek.ru:8000/sap/opu/odata/sap/ZTS_MD_BP_SRV/$metadata"/>
-			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
-				href="http://ere.corp.suek.ru:8000/sap/opu/odata/sap/ZTS_MD_BP_SRV/$metadata"/>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://ere.corp.suek.ru:8000/sap/opu/odata/sap/ZTS_MD_BP_SRV/$metadata"/>
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>

@@ -8,6 +8,11 @@
     color: #000 !important;
 }
 
+.sapMListTbl .sapMText,
+.sapMListTbl .sapMLabel {
+    color: #777;
+}
+
 .sapUiSizeCompact .sapMSF,
 .sapUiSizeCompact .sapMDP,
 .sapUiSizeCompact .sapMCb {
