@@ -169,6 +169,27 @@
 				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
 					sap:sortable="false"/>
 			</EntityType>
+			<EntityType Name="Uom" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="UomCode" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="UomName" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="UomQP" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="Country" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="CountryCode" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="CountryName" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Blacklisted" Type="Edm.Boolean" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="CountryRating" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/>
+			</EntityType>
 			<EntityContainer Name="ZTS_MD_BP_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
 				<EntitySet Name="masterDataListSet" EntityType="ZTS_MD_BP_SRV.MasterDataList" sap:searchable="true" sap:content-version="1"/>
 				<EntitySet Name="limitsStandartSet" EntityType="ZTS_MD_BP_SRV.LimitsStandart" sap:searchable="true" sap:content-version="1"/>
@@ -185,6 +206,8 @@
 				<EntitySet Name="salesDirectionSet" EntityType="ZTS_MD_BP_SRV.SalesDirection" sap:searchable="true" sap:content-version="1"/>
 				<EntitySet Name="incotermsSet" EntityType="ZTS_MD_BP_SRV.Incoterms" sap:searchable="true" sap:content-version="1"/>
 				<EntitySet Name="currencySet" EntityType="ZTS_MD_BP_SRV.Currency" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="uomSet" EntityType="ZTS_MD_BP_SRV.Uom" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="countrySet" EntityType="ZTS_MD_BP_SRV.Country" sap:searchable="true" sap:content-version="1"/>
 			</EntityContainer>
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://ere.corp.suek.ru:8000/sap/opu/odata/sap/ZTS_MD_BP_SRV/$metadata"/>
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://ere.corp.suek.ru:8000/sap/opu/odata/sap/ZTS_MD_BP_SRV/$metadata"/>

@@ -42,7 +42,7 @@
 	"Id": "currency"
 }, {
 	"Title": "Units of Material",
-	"Id": "units"
+	"Id": "uom"
 }, {
 	"Title": "Country",
 	"Id": "country"

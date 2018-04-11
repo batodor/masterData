@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>country}" class="sapUiContentPadding">
+		<content>
+			<Text text="{i18n>countryCode}" width="150px"/>
+			<Input id="iDialogCountryCode" width="250px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>countryName}" width="150px"/>
+			<Input id="iDialogCountryName" width="250px" />
+			<ToolbarSpacer/>
+			<Text text="{i18n>blacklisted}" width="150px"/>
+			<CheckBox id="iDialogCountryBlacklisted" width="250px" />
+			<ToolbarSpacer/>
+			<Text text="{i18n>countryRating}" width="150px"/>
+			<Input id="iDialogCountryRating" width="250px" />
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="country" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="country" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="country" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
