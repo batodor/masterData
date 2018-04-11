@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>strategy}" class="sapUiContentPadding">
+		<content>
+			<Text text="{i18n>strategyCode}" width="250px"/>
+			<Input id="iDialogSStrategyCode" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>description}" width="250px"/>
+			<Input id="iDialogSDescription" width="150px" />
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="strategy" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="strategy" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="strategy" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

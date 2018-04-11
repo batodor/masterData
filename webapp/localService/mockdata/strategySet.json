@@ -1,0 +1,81 @@
+[{
+	"StrategyCode": "StrategyCode 1",
+	"Description": "Description 1",
+	"Id": "Id 1",
+	"__metadata": {
+		"uri": "strategySet('Id%201')",
+		"type": "ZTS_MD_BP_SRV.Strategy"
+	}
+}, {
+	"StrategyCode": "StrategyCode 2",
+	"Description": "Description 2",
+	"Id": "Id 2",
+	"__metadata": {
+		"uri": "strategySet('Id%202')",
+		"type": "ZTS_MD_BP_SRV.Strategy"
+	}
+}, {
+	"StrategyCode": "StrategyCode 3",
+	"Description": "Description 3",
+	"Id": "Id 3",
+	"__metadata": {
+		"uri": "strategySet('Id%203')",
+		"type": "ZTS_MD_BP_SRV.Strategy"
+	}
+}, {
+	"StrategyCode": "StrategyCode 4",
+	"Description": "Description 4",
+	"Id": "Id 4",
+	"__metadata": {
+		"uri": "strategySet('Id%204')",
+		"type": "ZTS_MD_BP_SRV.Strategy"
+	}
+}, {
+	"StrategyCode": "StrategyCode 5",
+	"Description": "Description 5",
+	"Id": "Id 5",
+	"__metadata": {
+		"uri": "strategySet('Id%205')",
+		"type": "ZTS_MD_BP_SRV.Strategy"
+	}
+}, {
+	"StrategyCode": "StrategyCode 6",
+	"Description": "Description 6",
+	"Id": "Id 6",
+	"__metadata": {
+		"uri": "strategySet('Id%206')",
+		"type": "ZTS_MD_BP_SRV.Strategy"
+	}
+}, {
+	"StrategyCode": "StrategyCode 7",
+	"Description": "Description 7",
+	"Id": "Id 7",
+	"__metadata": {
+		"uri": "strategySet('Id%207')",
+		"type": "ZTS_MD_BP_SRV.Strategy"
+	}
+}, {
+	"StrategyCode": "StrategyCode 8",
+	"Description": "Description 8",
+	"Id": "Id 8",
+	"__metadata": {
+		"uri": "strategySet('Id%208')",
+		"type": "ZTS_MD_BP_SRV.Strategy"
+	}
+}, {
+	"StrategyCode": "StrategyCode 9",
+	"Description": "Description 9",
+	"Id": "Id 9",
+	"__metadata": {
+		"uri": "strategySet('Id%209')",
+		"type": "ZTS_MD_BP_SRV.Strategy"
+	}
+}, {
+	"StrategyCode": "StrategyCode 10",
+	"Description": "Description 10",
+	"Id": "Id 10",
+	"__metadata": {
+		"uri": "strategySet('Id%2010')",
+		"type": "ZTS_MD_BP_SRV.Strategy"
+	}
+}]
