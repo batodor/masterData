@@ -30,7 +30,7 @@ sap.ui.define([
 
 			// Define list of tables ids
 			this.tableArr = ["limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource", 
-				"productRecipe", "strategy", "growthFactor", "salesScheme", "riskType"];
+				"productRecipe", "strategy", "growthFactor", "salesScheme", "riskType", "salesDirection", "incoterms", "currency"];
 
 			// Define Dialog fragments inside view as depended of this view
 			this.limitsExpressDialog = sap.ui.xmlfragment("fragment.limitsExpressDialog", this);
@@ -44,6 +44,9 @@ sap.ui.define([
 			this.growthFactorDialog = sap.ui.xmlfragment("fragment.growthFactorDialog", this);
 			this.salesSchemeDialog = sap.ui.xmlfragment("fragment.salesSchemeDialog", this);
 			this.riskTypeDialog = sap.ui.xmlfragment("fragment.riskTypeDialog", this);
+			this.salesDirectionDialog = sap.ui.xmlfragment("fragment.salesDirectionDialog", this);
+			this.incotermsDialog = sap.ui.xmlfragment("fragment.incotermsDialog", this);
+			this.currencyDialog = sap.ui.xmlfragment("fragment.currencyDialog", this);
 			this.getView().addDependent(this.limitsExpressDialog);
 			this.getView().addDependent(this.limitsStandartDialog);
 			this.getView().addDependent(this.salesProgramDialog);
@@ -54,6 +57,9 @@ sap.ui.define([
 			this.getView().addDependent(this.growthFactorDialog);
 			this.getView().addDependent(this.salesSchemeDialog);
 			this.getView().addDependent(this.riskTypeDialog);
+			this.getView().addDependent(this.salesDirectionDialog);
+			this.getView().addDependent(this.incotermsDialog);
+			this.getView().addDependent(this.currencyDialog);
 		},
 
 		/* =========================================================== */

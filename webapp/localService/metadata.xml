@@ -142,8 +142,35 @@
 				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
 					sap:sortable="false"/>
 			</EntityType>
+			<EntityType Name="SalesDirection" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="SalesDirection" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Description" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="Incoterms" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="Incoterms" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Description" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="Currency" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="CurrencyCode" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+				<Property Name="CurrencyName" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/>
+			</EntityType>
 			<EntityContainer Name="ZTS_MD_BP_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
-				<EntitySet Name="MasterDataListSet" EntityType="ZTS_MD_BP_SRV.MasterDataList" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="masterDataListSet" EntityType="ZTS_MD_BP_SRV.MasterDataList" sap:searchable="true" sap:content-version="1"/>
 				<EntitySet Name="limitsStandartSet" EntityType="ZTS_MD_BP_SRV.LimitsStandart" sap:searchable="true" sap:content-version="1"/>
 				<EntitySet Name="limitsExpressSet" EntityType="ZTS_MD_BP_SRV.LimitsExpress" sap:searchable="true" sap:content-version="1"/>
 				<EntitySet Name="salesProgramSet" EntityType="ZTS_MD_BP_SRV.SalesProgram" sap:searchable="true" sap:content-version="1"/>
@@ -155,6 +182,9 @@
 				<EntitySet Name="growthFactorSet" EntityType="ZTS_MD_BP_SRV.GrowthFactor" sap:searchable="true" sap:content-version="1"/>
 				<EntitySet Name="salesSchemeSet" EntityType="ZTS_MD_BP_SRV.SalesScheme" sap:searchable="true" sap:content-version="1"/>
 				<EntitySet Name="riskTypeSet" EntityType="ZTS_MD_BP_SRV.RiskType" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="salesDirectionSet" EntityType="ZTS_MD_BP_SRV.SalesDirection" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="incotermsSet" EntityType="ZTS_MD_BP_SRV.Incoterms" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="currencySet" EntityType="ZTS_MD_BP_SRV.Currency" sap:searchable="true" sap:content-version="1"/>
 			</EntityContainer>
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://ere.corp.suek.ru:8000/sap/opu/odata/sap/ZTS_MD_BP_SRV/$metadata"/>
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://ere.corp.suek.ru:8000/sap/opu/odata/sap/ZTS_MD_BP_SRV/$metadata"/>
