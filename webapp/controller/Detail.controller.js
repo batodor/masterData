@@ -91,11 +91,9 @@ sap.ui.define([
 		onListUpdateFinished: function() {
 			for(var i in this.tableArr){
 				if(this.byId(this.tableArr[i]).getVisible()){
-					var tableId = this.tableArr[i];
-					var table = this.byId(tableId);
-					var count = table.getItems().length;
-					var tableCount = this.byId(tableId + "Count");
-					tableCount.setText(this.getResourceBundle().getText("tableItems", [count]));
+					var table = this.byId(this.tableArr[i]);
+					var tableCount = this.byId(this.tableArr[i] + "Count");
+					this.getCount(table, tableCount);
 				}
 			}
 		},
@@ -117,9 +115,8 @@ sap.ui.define([
 			for (var i = 0; i < this.tableArr.length; i++) {
 				if (this.tableArr[i] === tableId) {
 					var table = this.byId(tableId);
-					var count = table.getItems().length;
 					var tableCount = this.byId(tableId + "Count");
-					tableCount.setText(this.getResourceBundle().getText("tableItems", [count]));
+					this.getCount(table, tableCount);
 					table.setVisible(true);
 					if(table.getItems().length === 0){
 						table.bindItems({
@@ -191,7 +188,7 @@ sap.ui.define([
 		},
 
 		// Close/create/edit dialog functions
-		dialogCancel        : function(oEvent) {
+		dialogCancel: function(oEvent) {
 			var tableId = oEvent.getSource().data("id");
 			this[tableId + "Dialog"].close();
 		},
@@ -202,6 +199,16 @@ sap.ui.define([
 		dialogEdit: function(oEvent) {
 			var tableId = oEvent.getSource().data("id");
 			this[tableId + "Dialog"].close();
+		},
+		
+		// Getting count of table arguments: oTable = object table, oText = object text
+		getCount: function(oTable, oText){
+			var url = oTable.getModel().sServiceUrl + oTable.getBindingInfo("items").path;
+			var that = this;
+			$.get(url + "/$count", function(count){ 
+					oText.setText(that.getResourceBundle().getText("tableItems", [count]));
+				}
+			);
 		}
 	});
 
