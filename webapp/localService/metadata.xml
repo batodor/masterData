@@ -113,6 +113,35 @@
 				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
 					sap:sortable="false"/>
 			</EntityType>
+			<EntityType Name="GrowthFactor" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="CostType" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="DateFrom" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="DateTo" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="GrowthFactor" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="SalesScheme" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="SalesScheme" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Description" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="RiskType" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="RiskType" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Description" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/>
+			</EntityType>
 			<EntityContainer Name="ZTS_MD_BP_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
 				<EntitySet Name="MasterDataListSet" EntityType="ZTS_MD_BP_SRV.MasterDataList" sap:searchable="true" sap:content-version="1"/>
 				<EntitySet Name="limitsStandartSet" EntityType="ZTS_MD_BP_SRV.LimitsStandart" sap:searchable="true" sap:content-version="1"/>
@@ -123,6 +152,9 @@
 				<EntitySet Name="fcaResourceSet" EntityType="ZTS_MD_BP_SRV.FCAResource" sap:searchable="true" sap:content-version="1"/>
 				<EntitySet Name="productRecipeSet" EntityType="ZTS_MD_BP_SRV.ProductRecipe" sap:searchable="true" sap:content-version="1"/>
 				<EntitySet Name="strategySet" EntityType="ZTS_MD_BP_SRV.Strategy" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="growthFactorSet" EntityType="ZTS_MD_BP_SRV.GrowthFactor" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="salesSchemeSet" EntityType="ZTS_MD_BP_SRV.SalesScheme" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="riskTypeSet" EntityType="ZTS_MD_BP_SRV.RiskType" sap:searchable="true" sap:content-version="1"/>
 			</EntityContainer>
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://ere.corp.suek.ru:8000/sap/opu/odata/sap/ZTS_MD_BP_SRV/$metadata"/>
 			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://ere.corp.suek.ru:8000/sap/opu/odata/sap/ZTS_MD_BP_SRV/$metadata"/>

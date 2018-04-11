@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>riskType}" class="sapUiContentPadding">
+		<content>
+			<Text text="{i18n>salesScheme}" width="150px"/>
+			<Input id="iDialogRTRiskType" width="250px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>description}" width="150px"/>
+			<TextArea id="taDialogRTDescription" width="250px" />
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="riskType" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="riskType" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="riskType" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

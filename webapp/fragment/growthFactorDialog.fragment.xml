@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>growthFactor}" class="sapUiContentPadding">
+		<content>
+			<Text text="{i18n>costType}" width="250px"/>
+			<Input id="iDialogGFCostType" width="150px" />
+			<ToolbarSpacer/>
+			<Text text="{i18n>dateFrom}" width="250px"/>
+			<DatePicker id="dpDialogGFDateFrom" width="155px" />
+			<ToolbarSpacer/>
+			<Text text="{i18n>dateTo}" width="250px"/>
+			<DatePicker id="dpDialogGFDateTo" width="155px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>growthFactor}" width="250px"/>
+			<Input id="iDialogGFGrowthFactor" width="150px"/>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="growthFactor" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="growthFactor" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="growthFactor" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

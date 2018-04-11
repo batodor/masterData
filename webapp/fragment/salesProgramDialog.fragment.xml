@@ -2,29 +2,29 @@
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>salesProgram}" class="sapUiContentPadding">
 		<content>
-			<Text text="{i18n>salesProgram}" width="250px"/>
-			<Input id="iDialogSPSalesProgram" width="150px"/>
+			<Text text="{i18n>salesProgram}" width="150px"/>
+			<Input id="iDialogSPSalesProgram" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>description}" width="250px"/>
-			<Input id="iDialogSPDescription" width="150px"/>
+			<Text text="{i18n>description}" width="150px"/>
+			<TextArea id="taDialogSPDescription" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>materialGroup}" width="250px"/>
-			<Input id="iDialogSPMaterialGroup" width="150px"/>
+			<Text text="{i18n>materialGroup}" width="150px"/>
+			<Input id="iDialogSPMaterialGroup" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>incoterms}" width="250px"/>
-			<Input id="iDialogSPIncoterms" width="150px"/>
+			<Text text="{i18n>incoterms}" width="150px"/>
+			<Input id="iDialogSPIncoterms" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>cvNar}" width="250px"/>
-			<Input id="iDialogSPCvNar" width="150px"/>
+			<Text text="{i18n>cvNar}" width="150px"/>
+			<Input id="iDialogSPCvNar" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>uom}" width="250px"/>
-			<Input id="iDialogSPUom" width="150px"/>
+			<Text text="{i18n>uom}" width="150px"/>
+			<Input id="iDialogSPUom" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>narGarGad}" width="250px"/>
-			<Input id="iDialogSPNarGarGad" width="150px"/>
+			<Text text="{i18n>narGarGad}" width="150px"/>
+			<Input id="iDialogSPNarGarGad" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>actual}" width="250px"/>
-			<CheckBox id="cbDialogSPActual" width="150px"/>
+			<Text text="{i18n>actual}" width="150px"/>
+			<CheckBox id="cbDialogSPActual" width="250px"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="salesProgram" type="Back" press="dialogCancel"/>

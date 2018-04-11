@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>salesScheme}" class="sapUiContentPadding">
+		<content>
+			<Text text="{i18n>salesScheme}" width="150px"/>
+			<Input id="iDialogSCSalesScheme" width="250px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>description}" width="150px"/>
+			<TextArea id="taDialogSCDescription" width="250px" />
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="salesScheme" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="salesScheme" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="salesScheme" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

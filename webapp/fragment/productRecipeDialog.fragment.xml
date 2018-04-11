@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>ProductRecipe}" class="sapUiContentPadding">
+	<Dialog title="{i18n>productRecipe}" class="sapUiContentPadding">
 		<content>
 			<Text text="{i18n>productCode}" width="250px"/>
 			<Input id="iDialogPRProductCode" width="150px"/>
