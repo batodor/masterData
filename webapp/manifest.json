@@ -99,7 +99,7 @@
 					]
 				},
 				{
-					"pattern": "MasterDataList/id/:objectId:/title/:objectTitle:",
+					"pattern": "MasterDataList/{objectId}",
 					"name": "object",
 					"target": [
 						"master",

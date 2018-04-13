@@ -137,8 +137,7 @@ sap.ui.define([
 		 */
 		_onMasterMatched: function() {
 			this.getRouter().navTo("object", {
-				objectId: "limitsStandart",
-				objectTitle: "Limits for Standart Rating"
+				objectId: "limitsStandart"
 			}, true);
 		},
 
@@ -155,9 +154,10 @@ sap.ui.define([
 		 */
 		_showDetail: function(oItem) {
 			var bReplace = !Device.system.phone;
+			var eventBus = sap.ui.getCore().getEventBus();
+			eventBus.publish("MainDetailChannel", "onNavigateEvent", { title : oItem.data("title") });
 			this.getRouter().navTo("object", {
-				objectId: oItem.data("id"),
-				objectTitle: oItem.data("title")
+				objectId: oItem.data("id")
 			}, bReplace);
 		},
 

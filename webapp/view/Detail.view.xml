@@ -1,6 +1,6 @@
 <mvc:View controllerName="masterdata.MasterData.controller.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic"
 	xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:core="sap.ui.core">
-	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}"
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{Title}"
 		busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
 		<semantic:content>
 			<core:Fragment fragmentName="fragment.limitsStandart" type="XML"></core:Fragment>
@@ -19,6 +19,7 @@
 			<core:Fragment fragmentName="fragment.currency" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.uom" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.country" type="XML"></core:Fragment>
+			<core:Fragment fragmentName="fragment.rwStation" type="XML"></core:Fragment>
 		</semantic:content>
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>

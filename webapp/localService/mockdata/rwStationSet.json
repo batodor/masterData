@@ -1,0 +1,181 @@
+[{
+	"CountryName": "CountryName 1",
+	"StationCode": "StationCode 1",
+	"StationName": "StationName 1",
+	"Id": "Id 1",
+	"__metadata": {
+		"uri": "rwStationSet('Id%201')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 2",
+	"StationCode": "StationCode 2",
+	"StationName": "StationName 2",
+	"Id": "Id 2",
+	"__metadata": {
+		"uri": "rwStationSet('Id%202')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 3",
+	"StationCode": "StationCode 3",
+	"StationName": "StationName 3",
+	"Id": "Id 3",
+	"__metadata": {
+		"uri": "rwStationSet('Id%203')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 4",
+	"StationCode": "StationCode 4",
+	"StationName": "StationName 4",
+	"Id": "Id 4",
+	"__metadata": {
+		"uri": "rwStationSet('Id%204')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 5",
+	"StationCode": "StationCode 5",
+	"StationName": "StationName 5",
+	"Id": "Id 5",
+	"__metadata": {
+		"uri": "rwStationSet('Id%205')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 6",
+	"StationCode": "StationCode 6",
+	"StationName": "StationName 6",
+	"Id": "Id 6",
+	"__metadata": {
+		"uri": "rwStationSet('Id%206')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 7",
+	"StationCode": "StationCode 7",
+	"StationName": "StationName 7",
+	"Id": "Id 7",
+	"__metadata": {
+		"uri": "rwStationSet('Id%207')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 8",
+	"StationCode": "StationCode 8",
+	"StationName": "StationName 8",
+	"Id": "Id 8",
+	"__metadata": {
+		"uri": "rwStationSet('Id%208')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 9",
+	"StationCode": "StationCode 9",
+	"StationName": "StationName 9",
+	"Id": "Id 9",
+	"__metadata": {
+		"uri": "rwStationSet('Id%209')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 10",
+	"StationCode": "StationCode 10",
+	"StationName": "StationName 10",
+	"Id": "Id 10",
+	"__metadata": {
+		"uri": "rwStationSet('Id%2010')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 11",
+	"StationCode": "StationCode 11",
+	"StationName": "StationName 11",
+	"Id": "Id 11",
+	"__metadata": {
+		"uri": "rwStationSet('Id%2011')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 12",
+	"StationCode": "StationCode 12",
+	"StationName": "StationName 12",
+	"Id": "Id 12",
+	"__metadata": {
+		"uri": "rwStationSet('Id%2012')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 13",
+	"StationCode": "StationCode 13",
+	"StationName": "StationName 13",
+	"Id": "Id 13",
+	"__metadata": {
+		"uri": "rwStationSet('Id%2013')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 14",
+	"StationCode": "StationCode 14",
+	"StationName": "StationName 14",
+	"Id": "Id 14",
+	"__metadata": {
+		"uri": "rwStationSet('Id%2014')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 15",
+	"StationCode": "StationCode 15",
+	"StationName": "StationName 15",
+	"Id": "Id 15",
+	"__metadata": {
+		"uri": "rwStationSet('Id%2015')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 16",
+	"StationCode": "StationCode 16",
+	"StationName": "StationName 16",
+	"Id": "Id 16",
+	"__metadata": {
+		"uri": "rwStationSet('Id%2016')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 17",
+	"StationCode": "StationCode 17",
+	"StationName": "StationName 17",
+	"Id": "Id 17",
+	"__metadata": {
+		"uri": "rwStationSet('Id%2017')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 18",
+	"StationCode": "StationCode 18",
+	"StationName": "StationName 18",
+	"Id": "Id 18",
+	"__metadata": {
+		"uri": "rwStationSet('Id%2018')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 19",
+	"StationCode": "StationCode 19",
+	"StationName": "StationName 19",
+	"Id": "Id 19",
+	"__metadata": {
+		"uri": "rwStationSet('Id%2019')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}, {
+	"CountryName": "CountryName 20",
+	"StationCode": "StationCode 20",
+	"StationName": "StationName 20",
+	"Id": "Id 20",
+	"__metadata": {
+		"uri": "rwStationSet('Id%2020')",
+		"type": "ZTS_MD_BP_SRV.RwStation"
+	}
+}]

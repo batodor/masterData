@@ -30,7 +30,7 @@ sap.ui.define([
 
 			// Define list of tables ids
 			this.tableArr = ["limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource", "productRecipe", "strategy", 
-				"growthFactor", "salesScheme", "riskType", "salesDirection", "incoterms", "currency", "uom", "country"];
+				"growthFactor", "salesScheme", "riskType", "salesDirection", "incoterms", "currency", "uom", "country", "rwStation"];
 
 			// Define Dialog fragments inside view as depended of this view
 			this.limitsExpressDialog = sap.ui.xmlfragment("fragment.limitsExpressDialog", this);
@@ -49,6 +49,7 @@ sap.ui.define([
 			this.currencyDialog = sap.ui.xmlfragment("fragment.currencyDialog", this);
 			this.uomDialog = sap.ui.xmlfragment("fragment.uomDialog", this);
 			this.countryDialog = sap.ui.xmlfragment("fragment.countryDialog", this);
+			this.rwStationDialog = sap.ui.xmlfragment("fragment.rwStationDialog", this);
 			this.getView().addDependent(this.limitsExpressDialog);
 			this.getView().addDependent(this.limitsStandartDialog);
 			this.getView().addDependent(this.salesProgramDialog);
@@ -64,6 +65,15 @@ sap.ui.define([
 			this.getView().addDependent(this.currencyDialog);
 			this.getView().addDependent(this.uomDialog);
 			this.getView().addDependent(this.countryDialog);
+			this.getView().addDependent(this.rwStationDialog);
+			
+			var eventBus = sap.ui.getCore().getEventBus();
+		    eventBus.subscribe("MainDetailChannel", "onNavigateEvent", this.onDataReceived, this);
+		},
+		
+		// Passed data from Master view
+		onDataReceived : function(channel, event, data) {
+			this.byId("page").setTitle(data.title);
 		},
 
 		/* =========================================================== */
@@ -130,8 +140,14 @@ sap.ui.define([
 		 */
 		_onObjectMatched: function(oEvent) {
 			var tableId = oEvent.getParameter("arguments").objectId;
-			var tableTitle = oEvent.getParameter("arguments").objectTitle;
-			this.byId("page").setTitle(tableTitle);
+			if(this.byId("page").getTitle() === ""){
+				var that = this;
+				$.get(this.getModel().sServiceUrl + "/masterDataListSet('" + tableId + "')", function(data){ 
+				        that.byId("page").setTitle(data.d.Title);
+				    }
+				);
+			}
+			
 			for (var i = 0; i < this.tableArr.length; i++) {
 				if (this.tableArr[i] === tableId) {
 					var table = this.byId(tableId);
