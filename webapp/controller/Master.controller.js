@@ -35,14 +35,17 @@ sap.ui.define([
 			});
 			
 			// Send title of table after model loaded for the first time
+			// Set selected item after first load
 			var that = this;
 			oModel.attachRequestCompleted(function(){
-				var tableId = that.byId("list").data("selected");
+				var oList = that.byId("list");
+				var tableId = oList.data("selected");
 				var data = oModel.getData();
 				for(var i in data){
 					if(data[i].Id === tableId){
 						var eventBus = sap.ui.getCore().getEventBus();
 						eventBus.publish("MainDetailChannel", "onNavigateEvent", { title : data[i].Title });
+						oList.getItems()[i].setSelected(true);
 					}
 				}
 				oModel.detachRequestCompleted(this);
