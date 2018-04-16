@@ -24,8 +24,7 @@ sap.ui.define([
 		 * @public
 		 */
 		onInit: function() {
-			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData('/webapp/localService/mockdata/masterDataListSet.json');
+			var oModel = new JSONModel(jQuery.sap.getModulePath("masterdata.MasterData.localService.mockdata", "/masterDataListSet.json"));
 			
 			this._oList = this.byId("list");
 			this._oList.setModel(oModel, "master");
