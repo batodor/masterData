@@ -187,6 +187,9 @@ sap.ui.define([
 		},
 		tableEdit: function(oEvent) {
 			var dialog = this.dialogOpen(oEvent);
+			var url = oEvent.getSource().getParent().getParent().getSelectedItem().getBindingContextPath();
+			var id = oEvent.getSource().data("id");
+			sap.ui.getCore().byId(id + "Dialog").bindElement(url);
 			dialog.getButtons()[1].setVisible(false);
 			dialog.getButtons()[2].setVisible(true);
 		},

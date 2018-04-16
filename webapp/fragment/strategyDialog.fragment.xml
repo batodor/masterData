@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>strategy}" class="sapUiContentPadding">
+	<Dialog title="{i18n>strategy}" id="strategyDialog" class="sapUiContentPadding">
 		<content>
 			<Text text="{i18n>strategyCode}" width="150px"/>
 			<Input id="iDialogSStrategyCode" width="250px"/>
