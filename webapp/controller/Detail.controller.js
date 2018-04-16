@@ -181,24 +181,28 @@ sap.ui.define([
 
 		// Table buttons function for create/edit/copy/delete of items
 		tableAdd: function(oEvent) {
+			var id = oEvent.getSource().data("id");
+			sap.ui.getCore().byId(id + "Dialog").unbindElement();
 			var dialog = this.dialogOpen(oEvent);
 			dialog.getButtons()[1].setVisible(true);
 			dialog.getButtons()[2].setVisible(false);
 		},
 		tableEdit: function(oEvent) {
-			var dialog = this.dialogOpen(oEvent);
 			var url = oEvent.getSource().getParent().getParent().getSelectedItem().getBindingContextPath();
 			var id = oEvent.getSource().data("id");
 			sap.ui.getCore().byId(id + "Dialog").bindElement(url);
+			var dialog = this.dialogOpen(oEvent);
 			dialog.getButtons()[1].setVisible(false);
 			dialog.getButtons()[2].setVisible(true);
 		},
 		tableDelete: function(oEvent) {
+			var url = oEvent.getSource().getParent().getParent().getSelectedItem().getBindingContextPath();
+			var oModel = oEvent.getSource().getModel();
 			MessageBox.confirm("Are you sure you want to delete?", {
 				actions: ["Delete", sap.m.MessageBox.Action.CLOSE],
 				onClose: function(sAction) {
 					if (sAction === "Delete") {
-						MessageToast.show("Deleted!");
+						oModel.remove(url);              
 					} else {
 						MessageToast.show("Delete canceled!");
 					}
@@ -209,8 +213,8 @@ sap.ui.define([
 		// Function for openning the dialog for create/edit/copy functions
 		// Also returns dialog object
 		dialogOpen: function(oEvent) {
-			var table = oEvent.getSource().getParent().getParent();
-			var tableId = table.getId().split("--")[table.getId().split("--").length - 1];
+			var oTable = oEvent.getSource().getParent().getParent();
+			var tableId = oTable.getId().split("--")[oTable.getId().split("--").length - 1];
 			for (var i = 0; i < this.tableArr.length; i++) {
 				if (this.tableArr[i] === tableId) {
 					this[tableId + "Dialog"].open();
@@ -225,7 +229,18 @@ sap.ui.define([
 			this[tableId + "Dialog"].close();
 		},
 		dialogAdd: function(oEvent) {
-			var tableId = oEvent.getSource().data("id");
+			var button = oEvent.getSource();
+			var tableId = button.data("id");
+			var dialog = button.getParent();
+			var oModel = dialog.getModel();
+			var oData = {};
+			var inputs = dialog.getAggregation("content");
+			for(var i in inputs){
+				if(inputs[i].getBindingInfo("value")){
+					oData[inputs[i].getBindingInfo("value").binding.sPath] = inputs[i].getValue();
+				}
+			}
+			oModel.create("/" + tableId + "Set", oData);
 			this[tableId + "Dialog"].close();
 		},
 		dialogEdit: function(oEvent) {
