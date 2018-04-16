@@ -123,7 +123,7 @@ sap.ui.define([
 				if(this.byId(this.tableArr[i]).getVisible()){
 					var table = this.byId(this.tableArr[i]);
 					var tableCount = this.byId(this.tableArr[i] + "Count");
-					this.getCount(table, tableCount);
+					this.getCount(table, tableCount, this.tableArr[i]);
 				}
 			}
 		},
@@ -140,19 +140,12 @@ sap.ui.define([
 		 */
 		_onObjectMatched: function(oEvent) {
 			var tableId = oEvent.getParameter("arguments").objectId;
-			if(this.byId("page").getTitle() === ""){
-				var that = this;
-				$.get(this.getModel().sServiceUrl + "/masterDataListSet('" + tableId + "')", function(data){ 
-				        that.byId("page").setTitle(data.d.Title);
-				    }
-				);
-			}
 			
 			for (var i = 0; i < this.tableArr.length; i++) {
 				if (this.tableArr[i] === tableId) {
 					var table = this.byId(tableId);
 					var tableCount = this.byId(tableId + "Count");
-					this.getCount(table, tableCount);
+					this.getCount(table, tableCount, this.tableArr[i]);
 					table.setVisible(true);
 					if(table.getItems().length === 0){
 						table.bindItems({
@@ -238,13 +231,15 @@ sap.ui.define([
 		},
 		
 		// Getting count of table arguments: oTable = object table, oText = object text
-		getCount: function(oTable, oText){
-			var url = oTable.getModel().sServiceUrl + oTable.getBindingInfo("items").path;
-			var that = this;
-			$.get(url + "/$count", function(count){ 
-					oText.setText(that.getResourceBundle().getText("tableItems", [count]));
-				}
-			);
+		getCount: function(oTable, oText, tableId){
+			if(oTable.mBindingInfos.items.path === ""){
+				var url = oTable.getModel().sServiceUrl + '/' + tableId + 'Set';
+				var that = this;
+				$.get(url + "/$count", function(count){ 
+						oText.setText(that.getResourceBundle().getText("tableItems", [count]));
+					}
+				);
+			}
 		}
 	});
 

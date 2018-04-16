@@ -6,9 +6,7 @@
 			<Input id="iDialogLSLegalEntity" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>rating}" width="250px"/>
-			<Select id="sDialogLSRating" items="{ path: '/DictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">
-				<core:Item key="{Rating}" text="{Rating}"/>
-			</Select>
+			<Select id="sDialogLSRating" width="150px"></Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>businessPartnersRole}" width="250px"/>
 			<Select id="sDialogLSBusinessPartnersRole" width="150px"/>

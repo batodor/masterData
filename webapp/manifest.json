@@ -11,7 +11,7 @@
 		},
 		"dataSources": {
 			"mainService": {
-				"uri": "/sap/opu/odata/sap/ZTS_MD_BP_SRV/",
+				"uri": "/sap/opu/odata/sap/ZTS_MD_SRV/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",

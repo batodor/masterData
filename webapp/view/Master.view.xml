@@ -10,12 +10,12 @@
 			</Bar>
 		</semantic:subHeader>
 		<semantic:content>
-			<List id="list" items="{path: '/masterDataListSet'}" busyIndicatorDelay="{masterView>/delay}" noDataText="{masterView>/noDataText}"
+			<List id="list" items="{}" busyIndicatorDelay="{masterView>/delay}" noDataText="{masterView>/noDataText}"
 				mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" growing="true" growingScrollToLoad="true"
 				selectionChange="onSelectionChange">
 				<items>
-					<ObjectListItem custom:id="{Id}" custom:title="{Title}" type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"
-						press="onSelectionChange" title="{Title}"/>
+					<ObjectListItem custom:id="{master>Id}" custom:title="{master>Title}" type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"
+						press="onSelectionChange" title="{master>Title}"/>
 				</items>
 			</List>
 		</semantic:content>

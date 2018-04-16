@@ -2,10 +2,9 @@ sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
 	"masterdata/MasterData/model/models",
-	"masterdata/MasterData/controller/ListSelector",
 	"masterdata/MasterData/controller/ErrorHandler",
 	"masterdata/MasterData/localService/mockserver"
-], function(UIComponent, Device, models, ListSelector, ErrorHandler, MockServer) {
+], function(UIComponent, Device, models, ErrorHandler, MockServer) {
 	"use strict";
 
 	return UIComponent.extend("masterdata.MasterData.Component", {
@@ -21,12 +20,8 @@ sap.ui.define([
 		 * @override
 		 */
 		init: function() {
-			MockServer.init();
+			//MockServer.init();
 			
-			//var oModel = new sap.ui.model.odata.v2.ODataModel({serviceUrl: "/sap/opu/odata/sap/ZTS_MD_BP_SRV/"});
-			//this.setModel(oModel);
-			
-			this.oListSelector = new ListSelector();
 			this._oErrorHandler = new ErrorHandler(this);
 
 			// set the device model
@@ -48,7 +43,6 @@ sap.ui.define([
 		 * @override
 		 */
 		destroy: function() {
-			this.oListSelector.destroy();
 			this._oErrorHandler.destroy();
 			// call the base component's destroy function
 			UIComponent.prototype.destroy.apply(this, arguments);

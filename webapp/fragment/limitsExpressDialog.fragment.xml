@@ -6,14 +6,10 @@
 			<Input id="iDialogLELegalEntity" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>contryRating}" width="250px"/>
-			<Select id="sDialogLECountryRating" items="{ path: '/DictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">
-				<core:Item key="{Rating}" text="{Rating}"/>
-			</Select>
+			<Select id="sDialogLECountryRating" width="150px"></Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>financeCommercialRating}" width="250px"/>
-			<Select id="sDialogLEFinanceCommercialRating" items="{ path: '/DictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">
-				<core:Item key="{Rating}" text="{Rating}"/>
-			</Select>
+			<Select id="sDialogLEFinanceCommercialRating" width="150px"></Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>businessPartnersRole}" width="250px"/>
 			<Select id="sDialogLEBusinessPartnersRole" width="150px"/>

@@ -24,12 +24,28 @@ sap.ui.define([
 		 * @public
 		 */
 		onInit: function() {
+			var oModel = new sap.ui.model.json.JSONModel();
+			oModel.loadData('/webapp/localService/mockdata/masterDataListSet.json');
+			
 			this._oList = this.byId("list");
-
-			this.getView().addEventDelegate({
-				onBeforeFirstShow: function() {
-					this.getOwnerComponent().oListSelector.setBoundMasterList(this._oList);
-				}.bind(this)
+			this._oList.setModel(oModel, "master");
+			this._oList.bindItems({
+				path: 'master>/',
+				template: this._oList['mBindingInfos'].items.template
+			});
+			
+			// Send title of table after model loaded for the first time
+			var that = this;
+			oModel.attachRequestCompleted(function(){
+				var tableId = that.byId("list").data("selected");
+				var data = oModel.getData();
+				for(var i in data){
+					if(data[i].Id === tableId){
+						var eventBus = sap.ui.getCore().getEventBus();
+						eventBus.publish("MainDetailChannel", "onNavigateEvent", { title : data[i].Title });
+					}
+				}
+				oModel.detachRequestCompleted(this);
 			});
 
 			this.getRouter().getRoute("master").attachPatternMatched(this._onMasterMatched, this);
@@ -137,10 +153,11 @@ sap.ui.define([
 		 */
 		_onMasterMatched: function() {
 			this.getRouter().navTo("object", {
-				objectId: "limitsStandart"
+				objectId: "salesScheme"
 			}, true);
 		},
 
+		// Append custom data of table id for getting title of table after model loaded for first time
 		_onObjectMatched: function(oEvent) {
 			var tableId = oEvent.getParameter("arguments").objectId;
 			this._oList.data("selected", tableId);
@@ -154,11 +171,12 @@ sap.ui.define([
 		 */
 		_showDetail: function(oItem) {
 			var bReplace = !Device.system.phone;
-			var eventBus = sap.ui.getCore().getEventBus();
-			eventBus.publish("MainDetailChannel", "onNavigateEvent", { title : oItem.data("title") });
 			this.getRouter().navTo("object", {
 				objectId: oItem.data("id")
 			}, bReplace);
+			
+			var eventBus = sap.ui.getCore().getEventBus();
+			eventBus.publish("MainDetailChannel", "onNavigateEvent", { title : oItem.data("title") });
 		},
 
 		/**
