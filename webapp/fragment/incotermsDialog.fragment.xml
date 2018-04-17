@@ -1,12 +1,11 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
-	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>incoterms}" class="sapUiContentPadding">
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>incoterms}" class="sapUiContentPadding" id="incotermsDialog">
 		<content>
 			<Text text="{i18n>incoterms}" width="150px"/>
-			<Input id="iDialogIIncoterms" width="250px"/>
+			<Input custom:key="thisInputIsKey" value="{Incoterms}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>description}" width="150px"/>
-			<TextArea id="taDialogIDescription" width="250px" />
+			<TextArea value="{Description}" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="incoterms" type="Back" press="dialogCancel"/>

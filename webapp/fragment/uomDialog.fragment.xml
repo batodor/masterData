@@ -1,15 +1,14 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
-	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>uom}" class="sapUiContentPadding">
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>uom}" class="sapUiContentPadding" id="uomDialog">
 		<content>
 			<Text text="{i18n>uomCode}" width="150px"/>
-			<Input id="iDialogUomCode" width="250px"/>
+			<Input value="{UomCode}" custom:key="thisInputIsKey" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>uomName}" width="150px"/>
-			<Input id="iDialogUomName" width="250px" />
+			<Input value="{UomName}" width="250px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>uomQP}" width="150px"/>
-			<Input id="iDialogUomQP" width="250px" />
+			<Input value="{UomQP}" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="uom" type="Back" press="dialogCancel"/>

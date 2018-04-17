@@ -3,7 +3,7 @@
 	<Dialog title="{i18n>salesDirection}" class="sapUiContentPadding" id="salesDirectionDialog">
 		<content>
 			<Text text="{i18n>salesDirection}" width="150px"/>
-			<Input value="{SalesDirection}" width="250px"/>
+			<Input custom:key="thisInputIsKey" value="{SalesDirection}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>description}" width="150px"/>
 			<TextArea value="{Description}" width="250px" />

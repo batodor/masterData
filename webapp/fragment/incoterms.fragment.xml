@@ -1,4 +1,4 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Table mode="SingleSelectLeft" id="incoterms" visible="false" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
 		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
@@ -6,9 +6,9 @@
 				<Label id="incotermsCount" text="Items"/>
 				<ToolbarSpacer/>
 				<SearchField placeholder="{i18n>search}" showSearchButton="true" search="triggerSearch" width="auto"/>
-				<Button text="{i18n>add}" press="tableAdd" type="Accept"/>
-				<Button id="incotermsEdit" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
-				<Button id="incotermsDelete" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
+				<!--<Button text="{i18n>add}" custom:id="incoterms" press="tableAdd" type="Accept"/>-->
+				<!--<Button id="incotermsEdit" custom:id="incoterms" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>-->
+				<!--<Button id="incotermsDelete" custom:id="incoterms" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>-->
 			</Toolbar>
 		</headerToolbar>
 		<columns>

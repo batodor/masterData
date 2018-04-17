@@ -1,12 +1,12 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>currency}" class="sapUiContentPadding">
+	<Dialog title="{i18n>currency}" class="sapUiContentPadding" id="currencyDialog">
 		<content>
 			<Text text="{i18n>currencyCode}" width="150px"/>
-			<Input id="iDialogCurrencyCode" width="250px"/>
+			<Input custom:key="thisInputIsKey" value="{CurrencyCode}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>currencyName}" width="150px"/>
-			<Input id="iDialogCurrencyName" width="250px" />
+			<Input value="{CurrencyName}" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="currency" type="Back" press="dialogCancel"/>

@@ -1,30 +1,29 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
-	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>salesProgram}" class="sapUiContentPadding">
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>salesProgram}" class="sapUiContentPadding" id="salesProgramDialog">
 		<content>
 			<Text text="{i18n>salesProgram}" width="150px"/>
-			<Input id="iDialogSPSalesProgram" width="250px"/>
+			<Input value="{SalesProgram}" custom:key="thisInputIsKey" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>description}" width="150px"/>
-			<TextArea id="taDialogSPDescription" width="250px"/>
+			<TextArea value="{Description}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>materialGroup}" width="150px"/>
-			<Input id="iDialogSPMaterialGroup" width="250px"/>
+			<Input value="{MaterialGroup}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>incoterms}" width="150px"/>
-			<Input id="iDialogSPIncoterms" width="250px"/>
+			<Input value="{Incoterms}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>cvNar}" width="150px"/>
-			<Input id="iDialogSPCvNar" width="250px"/>
+			<Input value="{CvNar}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>uom}" width="150px"/>
-			<Input id="iDialogSPUom" width="250px"/>
+			<Input value="{Uom}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>narGarGad}" width="150px"/>
-			<Input id="iDialogSPNarGarGad" width="250px"/>
+			<Input value="{NarGarGad}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>actual}" width="150px"/>
-			<CheckBox id="cbDialogSPActual" width="250px"/>
+			<CheckBox selected="{Actual}" width="250px"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="salesProgram" type="Back" press="dialogCancel"/>

@@ -183,17 +183,19 @@ sap.ui.define([
 		tableAdd: function(oEvent) {
 			var id = oEvent.getSource().data("id");
 			sap.ui.getCore().byId(id + "Dialog").unbindElement();
-			var dialog = this.dialogOpen(oEvent);
-			dialog.getButtons()[1].setVisible(true);
-			dialog.getButtons()[2].setVisible(false);
+			var oDialog = this.dialogOpen(oEvent);
+			this.setEnabled(oDialog, true);
+			oDialog.getButtons()[1].setVisible(true);
+			oDialog.getButtons()[2].setVisible(false);
 		},
 		tableEdit: function(oEvent) {
 			var url = oEvent.getSource().getParent().getParent().getSelectedItem().getBindingContextPath();
 			var id = oEvent.getSource().data("id");
 			sap.ui.getCore().byId(id + "Dialog").bindElement(url);
-			var dialog = this.dialogOpen(oEvent);
-			dialog.getButtons()[1].setVisible(false);
-			dialog.getButtons()[2].setVisible(true);
+			var oDialog = this.dialogOpen(oEvent);
+			this.setEnabled(oDialog, false);
+			oDialog.getButtons()[1].setVisible(false);
+			oDialog.getButtons()[2].setVisible(true);
 		},
 		tableDelete: function(oEvent) {
 			var url = oEvent.getSource().getParent().getParent().getSelectedItem().getBindingContextPath();
@@ -233,30 +235,61 @@ sap.ui.define([
 			var tableId = button.data("id");
 			var dialog = button.getParent();
 			var oModel = dialog.getModel();
-			var oData = {};
-			var inputs = dialog.getAggregation("content");
-			for(var i in inputs){
-				if(inputs[i].getBindingInfo("value")){
-					oData[inputs[i].getBindingInfo("value").binding.sPath] = inputs[i].getValue();
-				}
-			}
+			var oData = this.getOdata(dialog);
 			oModel.create("/" + tableId + "Set", oData);
 			this[tableId + "Dialog"].close();
 		},
 		dialogEdit: function(oEvent) {
 			var tableId = oEvent.getSource().data("id");
+			var dialog = sap.ui.getCore().byId(tableId + "Dialog");
+			var url = dialog.getBindingContext().getPath();
+			var oModel = dialog.getModel();
+			var oData = this.getOdata(dialog);
+			oModel.update(url, oData);
 			this[tableId + "Dialog"].close();
 		},
 		
-		// Getting count of table arguments: oTable = object table, oText = object text
+		// Getting count of table arguments: oTable = object table, oText = object text, tableId = string table id
 		getCount: function(oTable, oText, tableId){
 			if(oTable.mBindingInfos.items.path === ""){
 				var url = oTable.getModel().sServiceUrl + '/' + tableId + 'Set';
 				var that = this;
-				$.get(url + "/$count", function(count){ 
-						oText.setText(that.getResourceBundle().getText("tableItems", [count]));
+				$.ajax({
+				    url: url + "/$count",
+				    type: 'GET',
+				    success: function(count){ 
+				        oText.setText(that.getResourceBundle().getText("tableItems", [count]));
+				    },
+				    error: function() {
+				        oText.setText(that.getResourceBundle().getText("tableItems", [0]));
+				    }
+				});
+			}
+		},
+		
+		// Set odata from any dialog, return object Data
+		getOdata: function(oDialog){
+			var oData = {};
+			var inputs = oDialog.getAggregation("content");
+			for(var i in inputs){
+				if(inputs[i].getBindingInfo("value")){
+					oData[inputs[i].getBindingInfo("value").binding.sPath] = inputs[i].getValue();
+				}
+			}
+			return oData;
+		},
+		
+		// Set key inputs as disabled for editting, oDialog = object dialog, flag = boolean flag for enabled/disabled
+		setEnabled: function(oDialog, flag){
+			var inputs = oDialog.getAggregation("content");
+			for(var i in inputs){
+				if(inputs[i].data("key")){
+					if(flag){
+						inputs[i].setEnabled(true);
+					}else{
+						inputs[i].setEnabled(false);
 					}
-				);
+				}
 			}
 		}
 	});

@@ -1,16 +1,14 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
-	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>rwStation}" class="sapUiContentPadding">
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>rwStation}" class="sapUiContentPadding" id="stationCodeDialog">
 		<content>
-			
-			<Text text="{i18n>countryName}" width="150px"/>
-			<Input id="iDialogRWStationCountryName" width="250px" />
-			<ToolbarSpacer/>
 			<Text text="{i18n>stationCode}" width="150px"/>
-			<Input id="iDialogRWStationCode" width="250px"/>
+			<Input value="{StationCode}" custom:key="thisInputIsKey" width="250px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>countryName}" width="150px"/>
+			<Input value="{CountryName}" width="250px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>stationName}" width="150px"/>
-			<Input id="iDialogRWStationName" width="250px" />
+			<Input value="{StationName}" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="rwStation" type="Back" press="dialogCancel"/>

@@ -1,21 +1,20 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
-	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>limitsExpressRating}" class="sapUiContentPadding">
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>limitsExpressRating}" class="sapUiContentPadding" id="limitsExpressDialog">
 		<content>
 			<Text text="{i18n>legalEntity}" width="250px"/>
-			<Input id="iDialogLELegalEntity" width="150px"/>
+			<Input custom:key="thisInputIsKey" value="{LegalEntity}" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>contryRating}" width="250px"/>
-			<Select id="sDialogLECountryRating" width="150px"></Select>
+			<Select selected="{ContryRating}" width="150px"></Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>financeCommercialRating}" width="250px"/>
-			<Select id="sDialogLEFinanceCommercialRating" width="150px"></Select>
+			<Select selected="{FinanceCommercialRating}" width="150px"></Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>businessPartnersRole}" width="250px"/>
-			<Select id="sDialogLEBusinessPartnersRole" width="150px"/>
+			<Select selected="{BusinessPartnersRole}" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>paymentTerms}" width="250px"/>
-			<Input id="iDialogLEPaymentTerms" width="150px"/>
+			<Input value="{PaymentTerms}" width="150px"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="limitsExpress" type="Back" press="dialogCancel"/>

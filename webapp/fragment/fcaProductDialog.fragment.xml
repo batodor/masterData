@@ -1,24 +1,23 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
-	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>fcaProduct}" class="sapUiContentPadding">
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>fcaProduct}" class="sapUiContentPadding" id="fcaProductDialog">
 		<content>
 			<Text text="{i18n>salesProgram}" width="250px"/>
-			<Input id="iDialogFCAPsalesProgram" width="150px"/>
+			<Input value="{SalesProgram}" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>productCode}" width="250px"/>
-			<Input id="iDialogFCAPProductCode" width="150px"/>
+			<Input value="{ProductCode}" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>dateFrom}" width="250px"/>
-			<DatePicker id="dpDialogFCAPDateFrom" width="150px"/>
+			<DatePicker value="{DateFrom}" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>dateTo}" width="250px"/>
-			<DatePicker id="dpDialogFCAPDateTo" width="150px"/>
+			<DatePicker value="{DateTo}" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>minFcaPrice}" width="250px"/>
-			<Input id="iDialogFCAPMinFcaPrice" width="150px"/>
+			<Input value="{MinFcaPrice}" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>currency}" width="250px"/>
-			<CheckBox id="cbDialogFCAPCurrency" width="150px"/>
+			<Selected selected="{Currency}" width="150px"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="fcaProduct" type="Back" press="dialogCancel"/>

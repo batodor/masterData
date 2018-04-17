@@ -1,18 +1,17 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
-	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>growthFactor}" class="sapUiContentPadding">
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>growthFactor}" class="sapUiContentPadding" id="growthFactorDialog">
 		<content>
 			<Text text="{i18n>costType}" width="250px"/>
-			<Input id="iDialogGFCostType" width="150px" />
+			<Input value="{CostType}" width="150px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>dateFrom}" width="250px"/>
-			<DatePicker id="dpDialogGFDateFrom" width="155px" />
+			<DatePicker value="{DateFrom}" width="155px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>dateTo}" width="250px"/>
-			<DatePicker id="dpDialogGFDateTo" width="155px"/>
+			<DatePicker value="{DateTo}" width="155px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>growthFactor}" width="250px"/>
-			<Input id="iDialogGFGrowthFactor" width="150px"/>
+			<Input value="{GrowthFactor}" width="150px"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="growthFactor" type="Back" press="dialogCancel"/>
