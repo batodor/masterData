@@ -12,7 +12,7 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>riskType}"/></Column>
+			<Column><Text class="black" text="{i18n>riskTypeCode}"/></Column>
 			<Column><Text class="black" text="{i18n>description}"/></Column>
 		</columns>
 		<items>

@@ -12,7 +12,7 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>salesScheme}"/></Column>
+			<Column><Text class="black" text="{i18n>salesSchemeCode}"/></Column>
 			<Column><Text class="black" text="{i18n>description}"/></Column>
 		</columns>
 		<items>

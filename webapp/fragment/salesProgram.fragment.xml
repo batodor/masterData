@@ -12,7 +12,7 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>salesProgram}"/></Column>
+			<Column><Text class="black" text="{i18n>salesProgramCode}"/></Column>
 			<Column><Text class="black" text="{i18n>description}"/></Column>
 			<Column><Text class="black" text="{i18n>materialGroup}"/></Column>
 			<Column><Text class="black" text="{i18n>incoterms}"/></Column>

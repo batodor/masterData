@@ -12,7 +12,7 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>incoterms}"/></Column>
+			<Column><Text class="black" text="{i18n>incotermsCode}"/></Column>
 			<Column><Text class="black" text="{i18n>description}"/></Column>
 		</columns>
 		<items>
