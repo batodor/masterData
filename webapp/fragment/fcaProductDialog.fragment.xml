@@ -17,7 +17,7 @@
 			<Input value="{MinFcaPrice}" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>currency}" width="250px"/>
-			<Selected selected="{Currency}" width="150px"/>
+			<Select selected="{Currency}" width="150px"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="fcaProduct" type="Back" press="dialogCancel"/>
