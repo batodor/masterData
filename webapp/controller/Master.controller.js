@@ -44,7 +44,7 @@ sap.ui.define([
 					if(data[i].Id === tableId){
 						var eventBus = sap.ui.getCore().getEventBus();
 						eventBus.publish("MainDetailChannel", "onNavigateEvent", { title : data[i].Title });
-						oList.getItems()[i].setSelected(true);
+						oList.getItems()[i].setSelected(true).getDomRef().focus();
 					}
 				}
 				oModel.detachRequestCompleted(this);

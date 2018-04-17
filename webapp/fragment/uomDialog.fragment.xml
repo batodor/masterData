@@ -2,13 +2,13 @@
 	<Dialog title="{i18n>uom}" class="sapUiContentPadding" id="uomDialog">
 		<content>
 			<Text text="{i18n>uomCode}" width="150px"/>
-			<Input value="{UomCode}" custom:key="thisInputIsKey" width="250px"/>
+			<Input value="{UOMCode}" custom:key="thisInputIsKey" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>uomName}" width="150px"/>
-			<Input value="{UomName}" width="250px" />
+			<Input value="{UOMName}" width="250px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>uomQP}" width="150px"/>
-			<Input value="{UomQP}" width="250px" />
+			<Input value="{UOMQP}" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="uom" type="Back" press="dialogCancel"/>

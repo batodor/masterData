@@ -19,9 +19,9 @@
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{UomCode}"/>
-					<Text text="{UomName}"/>
-					<Text text="{UomQP}"/>
+					<Text text="{UOMCode}"/>
+					<Text text="{UOMName}"/>
+					<Text text="{UOMQP}"/>
 				</cells>
 			</ColumnListItem>
 		</items>
