@@ -131,7 +131,7 @@ sap.ui.define([
 		onTableSelect: function(oEvent) {
 			var table = oEvent.getSource();
 			var selectedCount = table.getSelectedItems().length;
-			var tableId = table.getId().split("--")[table.getId().split("--").length - 1];
+			var tableId = table.data("id");
 			if (selectedCount > 0) {
 				this.byId(tableId + "Delete").setEnabled(true);
 				this.byId(tableId + "Edit").setEnabled(true);
@@ -183,8 +183,7 @@ sap.ui.define([
 		// Function for openning the dialog for create/edit/copy functions
 		// Also returns dialog object
 		dialogOpen: function(oEvent) {
-			var oTable = oEvent.getSource().getParent().getParent();
-			var tableId = oTable.getId().split("--")[oTable.getId().split("--").length - 1];
+			var tableId = oEvent.getSource().data("id");
 			for (var i = 0; i < this.tableArr.length; i++) {
 				if (this.tableArr[i] === tableId) {
 					this[tableId + "Dialog"].open();
@@ -217,7 +216,7 @@ sap.ui.define([
 			this[tableId + "Dialog"].close();
 		},
 		
-		// Getting count of table arguments: oTable = object table, oText = object text, tableId = string table id
+		// Getting count of table, oTable = object table, oText = object text, tableId = string table id
 		getCount: function(oTable, oText, tableId){
 			if(oTable.mBindingInfos.items.path === ""){
 				var url = oTable.getModel().sServiceUrl + '/' + tableId + 'Set';
@@ -235,7 +234,7 @@ sap.ui.define([
 			}
 		},
 		
-		// Set odata from any dialog, return object Data
+		// Set odata from any dialog, oDialog = object dialog / return object Data
 		getOdata: function(oDialog){
 			var oData = {};
 			var inputs = oDialog.getAggregation("content");
@@ -247,7 +246,7 @@ sap.ui.define([
 			return oData;
 		},
 		
-		// Set key inputs as disabled for editting, oDialog = object dialog, flag = boolean flag for enabled/disabled
+		// Set key inputs as disabled/enabled for editting, oDialog = object dialog, flag = boolean flag for enabled/disabled
 		setEnabled: function(oDialog, flag){
 			var inputs = oDialog.getAggregation("content");
 			for(var i in inputs){

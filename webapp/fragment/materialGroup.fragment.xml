@@ -1,14 +1,14 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Table mode="SingleSelectLeft" id="materialGroup" visible="false" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+	<Table mode="SingleSelectLeft" id="materialGroup" visible="false" custom:id="materialGroup" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
 		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
 				<Label id="materialGroupCount" text="Items"/>
 				<ToolbarSpacer/>
 				<SearchField placeholder="{i18n>search}" showSearchButton="true" search="triggerSearch" width="auto"/>
-				<Button text="{i18n>add}" custom:id="port" press="tableAdd" type="Accept"/>
-				<Button id="materialGroupEdit" custom:id="port" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
-				<Button id="materialGroupDelete" custom:id="port" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
+				<Button text="{i18n>add}" custom:id="materialGroup" press="tableAdd" type="Accept"/>
+				<Button id="materialGroupEdit" custom:id="materialGroup" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
+				<Button id="materialGroupDelete" custom:id="materialGroup" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>
