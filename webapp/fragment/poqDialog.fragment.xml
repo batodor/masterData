@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>poq}" class="sapUiContentPadding" id="qopDialog">
+		<content>
+			<Text text="{i18n>uom}" width="250px"/>
+			<Input value="{UOM}" custom:key="thisInputIsKey" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>qpCode}" width="250px"/>
+			<Input value="{QPCode}" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>qpName}" width="250px"/>
+			<Input value="{QPName}" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>setOfBaseForMeasuringQPName}" width="250px"/>
+			<Input value="{SetOfBaseForMeasuringQPName}" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>minValue}" width="250px"/>
+			<Input value="{MinValue}" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>maxValue}" width="250px"/>
+			<Input value="{MaxValue}" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>normalPrecision}" width="250px"/>
+			<Input value="{NormalPrecision}" width="150px"/>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="poq" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="poq" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="poq" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

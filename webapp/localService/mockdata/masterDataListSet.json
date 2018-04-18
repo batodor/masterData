@@ -70,4 +70,7 @@
 }, {
 	"Title": "Material Group",
 	"Id": "materialGroup"
+}, {
+	"Title": "Parameters of Quality",
+	"Id": "poq"
 }]
