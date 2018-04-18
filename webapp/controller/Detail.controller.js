@@ -122,7 +122,12 @@ sap.ui.define([
 						});
 					}
 				} else {
-					this.byId(this.tableArr[i]).setVisible(false);
+					// Just in case if any of the fragment (table) has syntax error
+					try {
+						this.byId(this.tableArr[i]).setVisible(false);
+					} catch (err) {
+						console.log("Error in table with ID: " + this.tableArr[i]);
+					}
 				}
 			}
 		},
@@ -263,8 +268,14 @@ sap.ui.define([
 		// Add all dialog xml fragments to this view as dependent, tableArr: array of string ids of tables
 		addDialogs: function(tableArr){
 			for(var i in tableArr){
-				this[tableArr[i] + "Dialog"] = sap.ui.xmlfragment("fragment." + tableArr[i] + "Dialog", this);
-				this.getView().addDependent(this[tableArr[i] + "Dialog"]);
+				// Just in case if any of the dialog fragment has syntax error
+				try {
+					this[tableArr[i] + "Dialog"] = sap.ui.xmlfragment("fragment." + tableArr[i] + "Dialog", this);
+					this.getView().addDependent(this[tableArr[i] + "Dialog"]);
+				} catch (err) {
+					console.log("Error in dialog with ID: " + this.tableArr[i] + "Dialog");
+				}
+				
 			}
 		}
 	});
