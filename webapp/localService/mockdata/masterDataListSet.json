@@ -67,4 +67,7 @@
 }, {
 	"Title": "Port Costs",
 	"Id": "portCosts"
+}, {
+	"Title": "Material Group",
+	"Id": "materialGroup"
 }]

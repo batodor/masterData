@@ -30,42 +30,10 @@ sap.ui.define([
 
 			// Define list of tables ids
 			this.tableArr = ["limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource", "productRecipe", "strategy", 
-				"growthFactor", "salesScheme", "riskType", "salesDirection", "incoterms", "currency", "uom", "country", "rwStation"];
+				"growthFactor", "salesScheme", "riskType", "salesDirection", "incoterms", "currency", "uom", "country", "rwStation", "port", "vesselType", "materialGroup"];
 
-			// Define Dialog fragments inside view as depended of this view
-			this.limitsExpressDialog = sap.ui.xmlfragment("fragment.limitsExpressDialog", this);
-			this.limitsStandartDialog = sap.ui.xmlfragment("fragment.limitsStandartDialog", this);
-			this.salesProgramDialog = sap.ui.xmlfragment("fragment.salesProgramDialog", this);
-			this.fcaDomesticDialog = sap.ui.xmlfragment("fragment.fcaDomesticDialog", this);
-			this.fcaProductDialog = sap.ui.xmlfragment("fragment.fcaProductDialog", this);
-			this.fcaResourceDialog = sap.ui.xmlfragment("fragment.fcaResourceDialog", this);
-			this.productRecipeDialog = sap.ui.xmlfragment("fragment.productRecipeDialog", this);
-			this.strategyDialog = sap.ui.xmlfragment("fragment.strategyDialog", this);
-			this.growthFactorDialog = sap.ui.xmlfragment("fragment.growthFactorDialog", this);
-			this.salesSchemeDialog = sap.ui.xmlfragment("fragment.salesSchemeDialog", this);
-			this.riskTypeDialog = sap.ui.xmlfragment("fragment.riskTypeDialog", this);
-			this.salesDirectionDialog = sap.ui.xmlfragment("fragment.salesDirectionDialog", this);
-			this.incotermsDialog = sap.ui.xmlfragment("fragment.incotermsDialog", this);
-			this.currencyDialog = sap.ui.xmlfragment("fragment.currencyDialog", this);
-			this.uomDialog = sap.ui.xmlfragment("fragment.uomDialog", this);
-			this.countryDialog = sap.ui.xmlfragment("fragment.countryDialog", this);
-			this.rwStationDialog = sap.ui.xmlfragment("fragment.rwStationDialog", this);
-			this.getView().addDependent(this.limitsExpressDialog);
-			this.getView().addDependent(this.limitsStandartDialog);
-			this.getView().addDependent(this.salesProgramDialog);
-			this.getView().addDependent(this.fcaDomesticDialog);
-			this.getView().addDependent(this.fcaProductDialog);
-			this.getView().addDependent(this.fcaResourceDialog);
-			this.getView().addDependent(this.productRecipeDialog);
-			this.getView().addDependent(this.growthFactorDialog);
-			this.getView().addDependent(this.salesSchemeDialog);
-			this.getView().addDependent(this.riskTypeDialog);
-			this.getView().addDependent(this.salesDirectionDialog);
-			this.getView().addDependent(this.incotermsDialog);
-			this.getView().addDependent(this.currencyDialog);
-			this.getView().addDependent(this.uomDialog);
-			this.getView().addDependent(this.countryDialog);
-			this.getView().addDependent(this.rwStationDialog);
+			// Define all Dialog fragments inside view as depended of this view passing the tableArr of ids
+			this.addDialogs(this.tableArr);
 			
 			var eventBus = sap.ui.getCore().getEventBus();
 		    eventBus.subscribe("MainDetailChannel", "onNavigateEvent", this.onDataReceived, this);
@@ -290,6 +258,14 @@ sap.ui.define([
 						inputs[i].setEnabled(false);
 					}
 				}
+			}
+		},
+		
+		// Add all dialog xml fragments to this view as dependent, tableArr: array of string ids of tables
+		addDialogs: function(tableArr){
+			for(var i in tableArr){
+				this[tableArr[i] + "Dialog"] = sap.ui.xmlfragment("fragment." + tableArr[i] + "Dialog", this);
+				this.getView().addDependent(this[tableArr[i] + "Dialog"]);
 			}
 		}
 	});

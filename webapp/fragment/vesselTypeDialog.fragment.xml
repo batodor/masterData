@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>vesselType}" class="sapUiContentPadding" id="vesselTypeDialog">
+		<content>
+			<Text text="{i18n>vesselTypeCode}" width="150px"/>
+			<Input value="{VesselTypeCode}" custom:key="thisInputIsKey" width="250px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>vesselTypeName}" width="150px"/>
+			<Input value="{VesselTypeName}" width="250px" />
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="vesselType" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="vesselType" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="vesselType" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

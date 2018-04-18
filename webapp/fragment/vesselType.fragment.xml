@@ -1,0 +1,27 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Table mode="SingleSelectLeft" id="vesselType" visible="false" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<Toolbar class="white">
+				<Label id="vesselTypeCount" text="Items"/>
+				<ToolbarSpacer/>
+				<SearchField placeholder="{i18n>search}" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<Button text="{i18n>add}" custom:id="vesselType" press="tableAdd" type="Accept"/>
+				<Button id="vesselTypeEdit" custom:id="vesselType" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
+				<Button id="vesselTypeDelete" custom:id="vesselType" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column><Text class="black" text="{i18n>vesselTypeCode}"/></Column>
+			<Column><Text class="black" text="{i18n>vesselTypeName}"/></Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{VesselTypeCode}"/>
+					<Text text="{VesselTypeName}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>
