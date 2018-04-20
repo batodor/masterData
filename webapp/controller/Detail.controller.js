@@ -138,11 +138,18 @@ sap.ui.define([
 			var selectedCount = table.getSelectedItems().length;
 			var tableId = table.data("id");
 			if (selectedCount > 0) {
-				this.byId(tableId + "Delete").setEnabled(true);
-				this.byId(tableId + "Edit").setEnabled(true);
+				this.setInputEnabled([tableId + "Delete", tableId + "Edit"], true);
 			} else {
-				this.byId(tableId + "Delete").setEnabled(false);
-				this.byId(tableId + "Edit").setEnabled(false);
+				this.setInputEnabled([tableId + "Delete", tableId + "Edit"], false);
+			}
+		},
+		
+		// Enable/Disables inputs depending flag arg
+		setInputEnabled: function(idArr, flag){
+			for(var i in idArr){
+				if(this.byId(idArr[i])){
+					this.byId(idArr[i]).setEnabled(flag);
+				}
 			}
 		},
 
