@@ -11,7 +11,9 @@
 			<CheckBox selected="{Sanction}" width="250px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>countryRating}" width="150px"/>
-			<Select selected="{Rating}" width="250px" />
+			<Select selectedKey="{Rating}" forceSelection="false" items="{ path: '/dictionaryRatingSet', sorter: { path: 'Rating' } }" width="250px">
+				<core:Item key="{Rating}" text="{Rating}"/>
+			</Select>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="country" type="Back" press="dialogCancel"/>
