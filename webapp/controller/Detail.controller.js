@@ -224,6 +224,7 @@ sap.ui.define([
 			var url = dialog.getBindingContext().getPath();
 			var oModel = dialog.getModel();
 			var oData = this.getOdata(dialog);
+			dialog.unbindElement();
 			oModel.update(url, oData);
 			this[tableId + "Dialog"].close();
 		},
