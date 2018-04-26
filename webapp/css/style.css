@@ -9,6 +9,16 @@
     color: #000 !important;
 }
 
+table[id*="country"] .sapMCbMarkChecked {
+    border-color: red !important;
+}
+table[id*="country"] .sapMCbBg.sapMCbMarkChecked:before {
+    color: red !important;
+}
+span[data-rating="C"] {
+    color: red !important;
+}
+
 .sapMListTbl .sapMText,
 .sapMListTbl .sapMLabel {
     color: #777;

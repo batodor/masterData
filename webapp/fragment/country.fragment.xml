@@ -23,7 +23,11 @@
 					<Text text="{Code}"/>
 					<Text text="{Name}"/>
 					<CheckBox selected="{Sanction}" enabled="false"/>
-					<Text text="{Rating}"/>
+					<Text text="{Rating}">
+						<customData>
+							<core:CustomData key="rating" value="{Rating}" writeToDom="true"/>
+						</customData>
+					</Text>
 				</cells>
 			</ColumnListItem>
 		</items>
