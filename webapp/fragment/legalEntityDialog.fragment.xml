@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>legalEntity}" class="sapUiContentPadding" id="legalEntityDialog">
+		<content>
+			<Text text="{i18n>legalEntityCode}" width="150px"/>
+			<Input value="{LegalEntityCode}" custom:key="thisInputIsKey" width="250px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>legalEntityName}" width="150px"/>
+			<Input value="{LegalEntityName}" width="250px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>branchCode}" width="150px"/>
+			<Input value="{BranchCode}" width="250px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>branchName}" width="150px"/>
+			<Input value="{BranchName}" width="250px" />
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="legalEntity" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="legalEntity" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="legalEntity" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

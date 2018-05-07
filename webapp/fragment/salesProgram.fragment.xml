@@ -14,24 +14,22 @@
 		<columns>
 			<Column><Text class="black" text="{i18n>salesProgramCode}"/></Column>
 			<Column><Text class="black" text="{i18n>description}"/></Column>
-			<Column><Text class="black" text="{i18n>materialGroup}"/></Column>
 			<Column><Text class="black" text="{i18n>incoterms}"/></Column>
-			<Column><Text class="black" text="{i18n>cvNar}"/></Column>
+			<Column><Text class="black" text="{i18n>cv}"/></Column>
 			<Column><Text class="black" text="{i18n>uom}"/></Column>
 			<Column><Text class="black" text="{i18n>narGarGad}"/></Column>
-			<Column width="40px"><Text class="black" text="{i18n>actual}"/></Column>
+			<Column width="40px"><Text class="black" text="{i18n>active}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
 				<cells>
 					<Text text="{SalesProgram}"/>
 					<Text text="{Description}"/>
-					<Text text="{MaterialGroup}"/>
 					<Text text="{Incoterms}"/>
-					<Text text="{CVNAR}"/>
+					<Text text="{CV}"/>
 					<Text text="{Uom}"/>
 					<Text text="{NarGarGad}"/>
-					<CheckBox selected="{Actual}" enabled="false" />
+					<CheckBox selected="{Active}" enabled="false" />
 				</cells>
 			</ColumnListItem>
 		</items>

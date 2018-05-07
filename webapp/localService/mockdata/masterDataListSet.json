@@ -73,4 +73,10 @@
 }, {
 	"Title": "Parameters of Quality",
 	"Id": "poq"
+}, {
+	"Title": "Legal Entity",
+	"Id": "legalEntity"
+}, {
+	"Title": "Branch",
+	"Id": "branch"
 }]

@@ -7,14 +7,11 @@
 			<Text text="{i18n>description}" width="150px"/>
 			<TextArea value="{Description}" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>materialGroup}" width="150px"/>
-			<Input value="{MaterialGroup}" width="250px"/>
-			<ToolbarSpacer/>
 			<Text text="{i18n>incoterms}" width="150px"/>
 			<Input value="{Incoterms}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>cvNar}" width="150px"/>
-			<Input value="{CvNar}" width="250px"/>
+			<Input value="{CV}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>uom}" width="150px"/>
 			<Input value="{Uom}" width="250px"/>
@@ -22,8 +19,8 @@
 			<Text text="{i18n>narGarGad}" width="150px"/>
 			<Input value="{NarGarGad}" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>actual}" width="150px"/>
-			<CheckBox selected="{Actual}" width="250px"/>
+			<Text text="{i18n>active}" width="150px"/>
+			<CheckBox selected="{Active}" width="250px"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="salesProgram" type="Back" press="dialogCancel"/>

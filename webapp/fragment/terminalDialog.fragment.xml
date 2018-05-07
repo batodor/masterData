@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>materialGroup}" class="sapUiContentPadding" id="terminalDialog">
+		<content>
+			<Text text="{i18n>portName}" width="150px"/>
+			<Input value="{PortName}" width="250px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>terminalCode}" width="150px"/>
+			<Input value="{MaterialGroupCode}" custom:key="thisInputIsKey" width="250px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>terminalName}" width="150px"/>
+			<Input value="{MaterialGroupName}" width="250px" />
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="terminal" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="terminal" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="terminal" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
