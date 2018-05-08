@@ -2,19 +2,16 @@
 	<Dialog title="{i18n>port}" class="sapUiContentPadding" id="portDialog">
 		<content>
 			<Text text="{i18n>countryName}" width="150px"/>
-			<Input value="{CountryName}" width="250px" />
+			<Input value="{Country}" width="250px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>portCode}" width="150px"/>
-			<Input value="{PortCode}" custom:key="thisInputIsKey" width="250px"/>
+			<Input value="{Code}" custom:key="thisInputIsKey" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>portName}" width="150px"/>
-			<Input value="{PortName}" width="250px" />
+			<Input value="{Name}" width="250px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>stationName}" width="150px"/>
-			<Input value="{StationName}" width="250px" />
-			<ToolbarSpacer/>
-			<Text text="{i18n>active}" width="150px"/>
-			<CheckBox selected="{Active}" width="250px" />
+			<Input value="{Station}" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="port" type="Back" press="dialogCancel"/>

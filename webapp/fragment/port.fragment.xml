@@ -8,7 +8,7 @@
 				<SearchField placeholder="{i18n>search}" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<Button text="{i18n>add}" custom:id="port" press="tableAdd" type="Accept"/>
 				<Button id="portEdit" custom:id="port" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
-				<Button id="portDelete" custom:id="port" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
+				<!--<Button id="portDelete" custom:id="port" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>-->
 			</Toolbar>
 		</headerToolbar>
 		<columns>
@@ -21,11 +21,10 @@
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{CountryName}"/>
-					<Text text="{PortCode}"/>
-					<Text text="{PortName}"/>
-					<Text text="{StationName}"/>
-					<CheckBox selected="{Active}" enabled="false"/>
+					<Text text="{Country}"/>
+					<Text text="{Code}"/>
+					<Text text="{Name}"/>
+					<Text text="{Station}"/>
 				</cells>
 			</ColumnListItem>
 		</items>
