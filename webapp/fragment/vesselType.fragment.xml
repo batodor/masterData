@@ -14,12 +14,16 @@
 		<columns>
 			<Column><Text class="black" text="{i18n>vesselTypeCode}"/></Column>
 			<Column><Text class="black" text="{i18n>vesselTypeName}"/></Column>
+			<Column><Text class="black" text="{i18n>maxVesselSize}"/></Column>
+			<Column><Text class="black" text="{i18n>minVesselSize}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
 				<cells>
 					<Text text="{VesselTypeCode}"/>
 					<Text text="{VesselTypeName}"/>
+					<Text text="{MaximumVesselSize}"/>
+					<Text text="{MinimumVesselSize}"/>
 				</cells>
 			</ColumnListItem>
 		</items>
