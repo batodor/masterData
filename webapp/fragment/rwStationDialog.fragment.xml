@@ -1,14 +1,14 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>rwStation}" class="sapUiContentPadding" id="stationCodeDialog">
+	<Dialog title="{i18n>rwStation}" class="sapUiContentPadding" id="rwStationDialog">
 		<content>
 			<Text text="{i18n>stationCode}" width="150px"/>
-			<Input value="{StationCode}" custom:key="thisInputIsKey" width="250px"/>
+			<Input value="{Code}" custom:key="thisInputIsKey" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>countryName}" width="150px"/>
-			<Input value="{CountryName}" width="250px" />
+			<Input value="{Country}" width="250px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>stationName}" width="150px"/>
-			<Input value="{StationName}" width="250px" />
+			<Input value="{Name}" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="rwStation" type="Back" press="dialogCancel"/>
