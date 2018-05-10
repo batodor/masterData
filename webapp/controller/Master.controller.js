@@ -36,7 +36,7 @@ sap.ui.define([
 			// Send title of table after model loaded for the first time
 			// Set selected item after first load
 			var that = this;
-			oModel.attachRequestCompleted(function(){
+			oModel.attachEventOnce("requestCompleted", function(){
 				var oList = that.byId("list");
 				var tableId = oList.data("selected");
 				var data = oModel.getData();
@@ -44,10 +44,16 @@ sap.ui.define([
 					if(data[i].Id === tableId){
 						var eventBus = sap.ui.getCore().getEventBus();
 						eventBus.publish("MainDetailChannel", "onNavigateEvent", { title : data[i].Title });
+						
+						if (i >= oList.getItems().length) {
+							var oGrowingTrigger = that.byId('list-trigger');
+							oList.setGrowingThreshold(parseInt(i));
+							oGrowingTrigger.firePress();
+			        	}
+						
 						oList.getItems()[i].setSelected(true).getDomRef().focus();
 					}
 				}
-				oModel.detachRequestCompleted(this);
 			});
 
 			this.getRouter().getRoute("master").attachPatternMatched(this._onMasterMatched, this);
