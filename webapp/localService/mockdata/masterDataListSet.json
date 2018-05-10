@@ -82,4 +82,10 @@
 }, {
 	"Title": "Sales Market",
 	"Id": "salesMarket"
+}, {
+	"Title": "Base for Measuring Qualitative Characteristics",
+	"Id": "bmqc"
+}, {
+	"Title": "Set of Base for Measuring Qualitative Characteristics",
+	"Id": "sbmqc"
 }]
