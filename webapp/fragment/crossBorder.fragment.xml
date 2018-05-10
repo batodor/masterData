@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Table mode="SingleSelectLeft" id="crossBorder" visible="false" custom:id="crossBorder" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<Toolbar class="white">
+				<Label id="crossBorderCount" text="Items"/>
+				<ToolbarSpacer/>
+				<SearchField placeholder="{i18n>search}" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<Button text="{i18n>add}" custom:id="crossBorder" press="tableAdd" type="Accept"/>
+				<Button id="crossBorderEdit" custom:id="crossBorder" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
+				<!--<Button id="crossBorderDelete" custom:id="crossBorder" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>-->
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column><Text class="black" text="{i18n>crossBorderCode}"/></Column>
+			<Column><Text class="black" text="{i18n>crossBorderName}"/></Column>
+			<Column><Text class="black" text="{i18n>loadingStation}"/></Column>
+			<Column><Text class="black" text="{i18n>deliveryStation}"/></Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{Code}"/>
+					<Text text="{Name}"/>
+					<Text text="{LoadingStation}"/>
+					<Text text="{DeliveryStation}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>crossBorder}" class="sapUiContentPadding" id="crossBorderDialog">
+		<content>
+			<Text text="{i18n>crossBorderCode}" width="200px"/>
+			<Input value="{Code}" custom:key="thisInputIsKey" width="200px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>crossBorderName}" width="200px"/>
+			<Input value="{Name}" width="200px" />
+			<ToolbarSpacer/>
+			<Text text="{i18n>loadingStation}" width="200px"/>
+			<Input value="{LoadingStation}"  width="200px" />
+			<ToolbarSpacer/>
+			<Text text="{i18n>deliveryStation}" width="200px"/>
+			<Input value="{DeliveryStation}"  width="200px" />
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="crossBorder" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="crossBorder" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="crossBorder" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

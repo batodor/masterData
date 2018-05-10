@@ -30,6 +30,8 @@
 			<core:Fragment fragmentName="fragment.salesMarket" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.bmqc" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.sbmqc" type="XML"></core:Fragment>
+			<core:Fragment fragmentName="fragment.crossBorder" type="XML"></core:Fragment>
+			<core:Fragment fragmentName="fragment.productionUnit" type="XML"></core:Fragment>
 		</semantic:content>
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>

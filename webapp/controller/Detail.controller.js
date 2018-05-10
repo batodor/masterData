@@ -31,7 +31,7 @@ sap.ui.define([
 			// Define list of tables ids
 			this.tableArr = [ "limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource", "productRecipe", "strategy", 
 				"growthFactor", "salesScheme", "riskType", "salesDirection", "incoterms", "currency", "uom", "country", "rwStation", "port", "vesselType", "materialGroup", "poq", 
-				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc" ];
+				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc", "crossBorder", "productionUnit"];
 
 			// Define all Dialog fragments inside view as depended of this view passing the tableArr of ids
 			this.addDialogs(this.tableArr);
