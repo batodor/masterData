@@ -1,0 +1,27 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Table mode="SingleSelectLeft" id="salesMarket" visible="false" custom:id="salesMarket" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<Toolbar class="white">
+				<Label id="salesMarketCount" text="Items"/>
+				<ToolbarSpacer/>
+				<SearchField placeholder="{i18n>search}" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<Button text="{i18n>add}" custom:id="salesMarket" press="tableAdd" type="Accept"/>
+				<Button id="salesMarketEdit" custom:id="salesMarket" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
+				<!--<Button id="vesselTypeDelete" custom:id="salesMarket" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>-->
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column><Text class="black" text="{i18n>salesMarketCode}"/></Column>
+			<Column><Text class="black" text="{i18n>salesMarketName}"/></Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{Code}"/>
+					<Text text="{Name}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>
