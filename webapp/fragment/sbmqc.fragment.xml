@@ -21,7 +21,7 @@
 				<cells>
 					<Text text="{Code}"/>
 					<Text text="{Name}"/>
-					<Text text="{BMQPName}"/>
+					<Text text="{NameBase}"/>
 				</cells>
 			</ColumnListItem>
 		</items>

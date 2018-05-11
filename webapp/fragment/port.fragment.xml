@@ -16,7 +16,6 @@
 			<Column><Text class="black" text="{i18n>portCode}"/></Column>
 			<Column><Text class="black" text="{i18n>portName}"/></Column>
 			<Column><Text class="black" text="{i18n>stationName}"/></Column>
-			<Column><Text class="black" text="{i18n>active}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>

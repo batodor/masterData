@@ -21,7 +21,7 @@
 				<cells>
 					<Text text="{Code}"/>
 					<Text text="{Name}"/>
-					<Text text="{internalExternal}"/>
+					<Text text="{Type}"/>
 				</cells>
 			</ColumnListItem>
 		</items>
