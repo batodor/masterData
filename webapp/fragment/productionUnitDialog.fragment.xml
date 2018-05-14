@@ -8,7 +8,9 @@
 			<Input value="{Name}" width="250px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>internalExternal}" width="250px"/>
-			<Input value="{Type}" width="250px" />
+			<Select forceSelection="false" selectedKey="{Type}" items="{ path: '/dictionaryUnitTypeSet', sorter: { path: 'Name' } }" width="250px">
+				<core:Item key="{Code}" text="{Name}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>partner}" width="250px"/>
 			<Input value="{Partner}" width="250px" />

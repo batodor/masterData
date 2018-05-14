@@ -255,6 +255,10 @@ sap.ui.define([
 			for(var i in inputs){
 				if(inputs[i].getBindingInfo("value")){
 					oData[inputs[i].getBindingInfo("value").binding.sPath] = inputs[i].getValue();
+				}else if(inputs[i].getBindingInfo("dateValue")){
+					oData[inputs[i].getBindingInfo("dateValue").binding.sPath] = inputs[i].getDateValue();
+				}else if(inputs[i].getBindingInfo("selectedKey")){
+					oData[inputs[i].getBindingInfo("selectedKey").binding.sPath] = inputs[i].getSelectedKey();
 				}
 			}
 			return oData;
