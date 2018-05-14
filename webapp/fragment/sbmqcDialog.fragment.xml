@@ -8,8 +8,10 @@
 			<Input value="{Name}" width="200px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>bmqcName}" width="300px"/>
-			<Input value="{NameBase}" width="200px" />
-			<Input value="{CodeBase}" visible="false" custom:key="thisInputIsKey" width="200px" />
+			<Select forceSelection="false" selectedKey="{CodeBase}" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="200px">
+				<core:Item key="{Code}" text="{Name}"/>
+			</Select>
+			<Input value="{NameBase}" visible="false" custom:key="" width="200px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="sbmqc" type="Back" press="dialogCancel"/>
