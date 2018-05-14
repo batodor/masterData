@@ -9,6 +9,9 @@
 			<ToolbarSpacer/>
 			<Text text="{i18n>internalExternal}" width="250px"/>
 			<Input value="{Type}" width="250px" />
+			<ToolbarSpacer/>
+			<Text text="{i18n>partner}" width="250px"/>
+			<Input value="{Partner}" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productionUnit" type="Back" press="dialogCancel"/>
