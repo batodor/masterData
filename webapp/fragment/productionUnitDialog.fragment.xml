@@ -8,7 +8,7 @@
 			<Input value="{Name}" width="250px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>internalExternal}" width="250px"/>
-			<Input value="{Type}" custom:key="thisInputIsKey" width="250px" />
+			<Input value="{Type}" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productionUnit" type="Back" press="dialogCancel"/>
