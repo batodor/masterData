@@ -310,7 +310,7 @@ sap.ui.define([
 					(oInput.mProperties.hasOwnProperty("selectedKey") && !oInput.getSelectedKey()) ||
 					(oInput.mBindingInfos.hasOwnProperty("value") && !oInput.getValue()) ||
 					(oInput.hasOwnProperty("_oMaxDate") && !oInput.getDateValue())){
-						check = check + " " + oInput.data("key") + ", ";
+						check = check + " " + this.getModel('i18n').getResourceBundle().getText(oInput.data("key")) + ", ";
 					}
 				}
 			}
