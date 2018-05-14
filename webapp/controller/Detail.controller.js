@@ -216,8 +216,15 @@ sap.ui.define([
 			var dialog = button.getParent();
 			var oModel = dialog.getModel();
 			var oData = this.getOdata(dialog);
-			oModel.create("/" + tableId + "Set", oData);
-			this[tableId + "Dialog"].close();
+			var bCheckAlert = this.checkKeys(dialog);
+			if(bCheckAlert === "Please, enter"){
+				oModel.create("/" + tableId + "Set", oData);
+				this[tableId + "Dialog"].close();
+			}else{
+				MessageBox.alert(bCheckAlert.slice(0, -2), {
+					actions: [sap.m.MessageBox.Action.CLOSE]
+				});
+			}
 		},
 		dialogEdit: function(oEvent) {
 			var tableId = oEvent.getSource().data("id");
@@ -290,6 +297,24 @@ sap.ui.define([
 				}
 				
 			}
+		},
+		
+		// Checks the key values to lock them on update
+		checkKeys: function(oDialog){
+			var check = this.getModel('i18n').getResourceBundle().getText("plsEnter");
+			var inputs = oDialog.getAggregation("content");
+			for(var i in inputs){
+				var oInput = inputs[i];
+				if(oInput.data("key")){
+					if((oInput.mProperties.hasOwnProperty("value") && !oInput.getValue()) || 
+					(oInput.mProperties.hasOwnProperty("selectedKey") && !oInput.getSelectedKey()) ||
+					(oInput.mBindingInfos.hasOwnProperty("value") && !oInput.getValue()) ||
+					(oInput.hasOwnProperty("_oMaxDate") && !oInput.getDateValue())){
+						check = check + " " + oInput.data("key") + ", ";
+					}
+				}
+			}
+			return check;
 		}
 	});
 

@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>legalEntity}" class="sapUiContentPadding" id="legalEntityDialog">
 		<content>
 			<Text text="{i18n>legalEntityCode}" width="150px"/>
-			<Input value="{LegalEntityCode}" custom:key="thisInputIsKey" width="250px"/>
+			<Input value="{LegalEntityCode}" custom:key="legalEntityCode" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>legalEntityName}" width="150px"/>
 			<Input value="{LegalEntityName}" width="250px"/>

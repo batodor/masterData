@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>rwStation}" class="sapUiContentPadding" id="rwStationDialog">
 		<content>
 			<Text text="{i18n>stationCode}" width="150px"/>
-			<Input value="{Code}" custom:key="thisInputIsKey" width="250px"/>
+			<Input value="{Code}" custom:key="stationCode" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>countryName}" width="150px"/>
 			<Input value="{Country}" width="250px" />

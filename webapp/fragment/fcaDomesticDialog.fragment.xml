@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>fcaDomestic}" class="sapUiContentPadding" id="fcaDomesticDialog">
 		<content>
 			<Text text="{i18n>salesRegion}" width="250px"/>
-			<Input value="{SalesRegion}" width="150px"/>
+			<Input value="{SalesRegion}" custom:key="salesRegion" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>productionUnit}" width="250px"/>
 			<Input value="{ProductionUnit}" width="150px"/>

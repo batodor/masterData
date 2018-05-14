@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>fcaResource}" class="sapUiContentPadding" id="fcaResourceDialog">
 		<content>
 			<Text text="{i18n>salesProgram}" width="250px"/>
-			<Input value="{SalesProgram}" custom:key="thisInputIsKey" width="150px"/>
+			<Input value="{SalesProgram}" custom:key="salesProgram" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>productionUnit}" width="250px"/>
 			<Input value="{ProductionUnit}" width="150px"/>

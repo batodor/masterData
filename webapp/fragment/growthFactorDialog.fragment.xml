@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>growthFactor}" class="sapUiContentPadding" id="growthFactorDialog">
 		<content>
 			<Text text="{i18n>costType}" width="250px"/>
-			<Input value="{CostType}" width="150px" />
+			<Input value="{CostType}" custom:key="costType" width="150px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>dateFrom}" width="250px"/>
 			<DatePicker value="{DateFrom}" width="155px" />

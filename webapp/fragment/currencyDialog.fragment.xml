@@ -3,7 +3,7 @@
 	<Dialog title="{i18n>currency}" class="sapUiContentPadding" id="currencyDialog">
 		<content>
 			<Text text="{i18n>currencyCode}" width="150px"/>
-			<Input custom:key="thisInputIsKey" value="{CurrencyCode}" width="250px"/>
+			<Input custom:key="currencyCode" value="{CurrencyCode}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>currencyName}" width="150px"/>
 			<Input value="{CurrencyName}" width="250px" />

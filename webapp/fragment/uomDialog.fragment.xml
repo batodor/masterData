@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>uom}" class="sapUiContentPadding" id="uomDialog">
 		<content>
 			<Text text="{i18n>uomCode}" width="150px"/>
-			<Input value="{UOMCode}" custom:key="thisInputIsKey" width="250px"/>
+			<Input value="{UOMCode}" custom:key="uomCode" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>uomName}" width="150px"/>
 			<Input value="{UOMName}" width="250px" />

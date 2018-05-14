@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>crossBorder}" class="sapUiContentPadding" id="crossBorderDialog">
 		<content>
 			<Text text="{i18n>crossBorderCode}" width="200px"/>
-			<Input value="{Code}" custom:key="thisInputIsKey" width="200px"/>
+			<Input value="{Code}" custom:key="crossBorderCode" width="200px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>crossBorderName}" width="200px"/>
 			<Input value="{Name}" width="200px" />

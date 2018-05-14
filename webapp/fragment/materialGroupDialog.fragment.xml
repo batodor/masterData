@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>materialGroup}" class="sapUiContentPadding" id="materialGroupDialog">
 		<content>
 			<Text text="{i18n>materialGroupCode}" width="150px"/>
-			<Input value="{MaterialGroupCode}" custom:key="thisInputIsKey" width="250px"/>
+			<Input value="{MaterialGroupCode}" custom:key="materialGroupCode" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>materialGroupName}" width="150px"/>
 			<Input value="{MaterialGroupName}" width="250px" />

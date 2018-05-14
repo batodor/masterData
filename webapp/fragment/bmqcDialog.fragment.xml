@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>bmqc}" class="sapUiContentPadding" id="bmqcDialog">
 		<content>
 			<Text text="{i18n>bmqcCode}" width="300px"/>
-			<Input value="{Code}" custom:key="thisInputIsKey" width="200px"/>
+			<Input value="{Code}" custom:key="bmqcCode" width="200px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>bmqcName}" width="300px"/>
 			<Input value="{Name}" width="200px" />

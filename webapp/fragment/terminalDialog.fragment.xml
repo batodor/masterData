@@ -5,7 +5,7 @@
 			<Input value="{PortName}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>terminalCode}" width="150px"/>
-			<Input value="{MaterialGroupCode}" custom:key="thisInputIsKey" width="250px"/>
+			<Input value="{MaterialGroupCode}" custom:key="terminalCode" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>terminalName}" width="150px"/>
 			<Input value="{MaterialGroupName}" width="250px" />

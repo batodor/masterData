@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>vesselType}" class="sapUiContentPadding" id="vesselTypeDialog">
 		<content>
 			<Text text="{i18n>vesselTypeCode}" width="150px"/>
-			<Input value="{Code}" custom:key="thisInputIsKey" width="250px"/>
+			<Input value="{Code}" custom:key="vesselTypeCode" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>vesselTypeName}" width="150px"/>
 			<Input value="{Name}" width="250px" />

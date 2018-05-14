@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>limitsExpressRating}" class="sapUiContentPadding" id="limitsExpressDialog">
 		<content>
 			<Text text="{i18n>legalEntity}" width="250px"/>
-			<Input custom:key="thisInputIsKey" value="{LegalEntity}" width="150px"/>
+			<Input custom:key="legalEntity" value="{LegalEntity}" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>contryRating}" width="250px"/>
 			<Select selected="{ContryRating}" width="150px"></Select>

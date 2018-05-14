@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>salesScheme}" class="sapUiContentPadding" id="salesSchemeDialog">
 		<content>
 			<Text text="{i18n>salesScheme}" width="150px"/>
-			<Input custom:key="thisInputIsKey" value="{SalesScheme}" width="250px"/>
+			<Input custom:key="salesScheme" value="{SalesScheme}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>description}" width="150px"/>
 			<TextArea value="{Description}" width="250px" />

@@ -8,7 +8,7 @@
 			<Input value="{Name}" width="200px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>bmqcName}" width="300px"/>
-			<Select forceSelection="false" selectedKey="{CodeBase}" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="200px">
+			<Select forceSelection="false" selectedKey="{CodeBase}" custom:key="thisInputIsKey" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="200px">
 				<core:Item key="{Code}" text="{Name}"/>
 			</Select>
 			<Input value="{NameBase}" visible="false" custom:key="" width="200px" />

@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>productionUnit}" class="sapUiContentPadding" id="productionUnitDialog">
 		<content>
 			<Text text="{i18n>productionUnitCode}" width="250px"/>
-			<Input value="{Code}" custom:key="thisInputIsKey" width="250px"/>
+			<Input value="{Code}" custom:key="productionUnitCode" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>productionUnitName}" width="250px"/>
 			<Input value="{Name}" width="250px" />

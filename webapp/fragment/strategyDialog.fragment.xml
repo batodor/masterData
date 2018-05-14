@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>strategy}" class="sapUiContentPadding" id="strategyDialog">
 		<content>
 			<Text text="{i18n>strategyCode}" width="150px"/>
-			<Input value="{StrategyCode}" custom:key="thisInputIsKey" width="250px"/>
+			<Input value="{StrategyCode}" custom:key="strategyCode" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>description}" width="150px"/>
 			<TextArea value="{Description}" width="250px" />

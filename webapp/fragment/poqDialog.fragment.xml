@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>poq}" class="sapUiContentPadding" id="qopDialog">
 		<content>
 			<Text text="{i18n>uom}" width="250px"/>
-			<Input value="{UOM}" custom:key="thisInputIsKey" width="150px"/>
+			<Input value="{UOM}" custom:key="uom" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>qpCode}" width="250px"/>
 			<Input value="{QPCode}" width="150px"/>

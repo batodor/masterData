@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>incoterms}" class="sapUiContentPadding" id="incotermsDialog">
 		<content>
 			<Text text="{i18n>incoterms}" width="150px"/>
-			<Input custom:key="thisInputIsKey" value="{Incoterms}" width="250px"/>
+			<Input custom:key="incoterms" value="{Incoterms}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>description}" width="150px"/>
 			<TextArea value="{Description}" width="250px" />

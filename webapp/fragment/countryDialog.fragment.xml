@@ -2,10 +2,10 @@
 	<Dialog title="{i18n>country}" class="sapUiContentPadding" id="countryDialog">
 		<content>
 			<Text text="{i18n>countryCode}" width="150px"/>
-			<Input custom:key="thisInputIsKey" value="{Code}" width="250px"/>
+			<Input custom:key="countryCode" value="{Code}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>countryName}" width="150px"/>
-			<Input custom:key="thisInputIsKey" value="{Name}" width="250px" />
+			<Input custom:key="countryName" value="{Name}" width="250px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>blacklisted}" width="150px"/>
 			<CheckBox selected="{Sanction}" width="250px" />

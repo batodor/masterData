@@ -5,7 +5,7 @@
 			<Input value="{LegalEntityName}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>branchCode}" width="150px"/>
-			<Input value="{BranchCode}" width="250px"/>
+			<Input value="{BranchCode}" custom:key="branchCode" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>branchName}" width="150px"/>
 			<Input value="{BranchName}" width="250px" />

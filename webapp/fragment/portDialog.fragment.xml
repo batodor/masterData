@@ -5,7 +5,7 @@
 			<Input value="{Country}" width="250px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>portCode}" width="150px"/>
-			<Input value="{Code}" custom:key="thisInputIsKey" width="250px"/>
+			<Input value="{Code}" custom:key="portCode" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>portName}" width="150px"/>
 			<Input value="{Name}" width="250px" />
