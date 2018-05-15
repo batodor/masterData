@@ -13,7 +13,9 @@
 			</Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>partner}" width="250px"/>
-			<Input value="{Partner}" width="250px" />
+			<Select forceSelection="false" selectedKey="{Partner}" items="{ path: '/dictionaryBPIntSet', sorter: { path: 'Name' } }" width="250px">
+				<core:Item key="{Partner}" text="{Name}"/>
+			</Select>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productionUnit" type="Back" press="dialogCancel"/>
