@@ -4,6 +4,10 @@
     line-height: 1.2rem;
 }
 
+.sapMSF{
+	display: inline-block;
+}
+
 .black.sapMLabel,
 .black.sapMText{
     color: #000 !important;

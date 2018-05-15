@@ -331,6 +331,25 @@ sap.ui.define([
 				}
 			}
 			return check;
+		},
+		
+		onSuggest: function (oEvent) {
+			var value = oEvent.getParameter("suggestValue");
+			var filters = [];
+			if (value) {
+				filters = [
+					new sap.ui.model.Filter([
+						new Filter("Partner", FilterOperator.Contains, value),
+						new Filter("Name", FilterOperator.Contains, value)
+					], false)
+				];
+			}
+
+			var searchField = oEvent.getSource();
+			searchField.getBinding("suggestionItems").filter(filters);
+			searchField.getBinding("suggestionItems").attachEventOnce('dataReceived', function() {
+		        searchField.suggest();
+		    }); 
 		}
 	});
 

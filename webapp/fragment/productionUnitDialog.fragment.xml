@@ -13,9 +13,24 @@
 			</Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>partner}" width="250px"/>
-			<Select forceSelection="false" selectedKey="{Partner}" items="{ path: '/dictionaryBPIntSet', sorter: { path: 'Name' } }" width="250px">
-				<core:Item key="{Partner}" text="{Name}"/>
-			</Select>
+			<!--<Select forceSelection="false" selectedKey="{Partner}" items="{ path: '/dictionaryBPIntSet', sorter: { path: 'Name' } }" width="250px">-->
+			<!--	<core:Item key="{Partner}" text="{Partner} - {Name}"/>-->
+			<!--</Select>-->
+			<SearchField
+				width="256px"
+				placeholder="{i18n>search} {i18n>partner}"
+				enableSuggestions="true"
+				suggest="onSuggest"
+				value="{Partner}"
+				suggestionItems="{
+					path: '/dictionaryBPIntSet',
+					sorter: { path: 'Name' }
+				}"
+				>
+				<suggestionItems>
+					<SuggestionItem text="{Partner}" description="{Name}" key="{Partner}"/>
+				</suggestionItems>
+			</SearchField>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productionUnit" type="Back" press="dialogCancel"/>
