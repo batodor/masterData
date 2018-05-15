@@ -4,8 +4,10 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"masterdata/MasterData/model/formatter",
 	'sap/m/MessageBox',
-	'sap/m/MessageToast'
-], function(BaseController, JSONModel, formatter, MessageBox, MessageToast) {
+	'sap/m/MessageToast',
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"
+], function(BaseController, JSONModel, formatter, MessageBox, MessageToast, Filter, FilterOperator) {
 	"use strict";
 
 	return BaseController.extend("masterdata.MasterData.controller.Detail", {
@@ -156,8 +158,22 @@ sap.ui.define([
 
 		// Search function for all tables
 		triggerSearch: function(oEvent) {
-			var query = oEvent.getParameter("query");
-			var table = oEvent.getSource().getParent().getParent();
+			var query = oEvent.getParameter("query"),
+				id = oEvent.getSource().data('id'),
+				key = oEvent.getSource().data('key'),
+				oTable = this.byId(id),
+				oViewModel = oTable.getModel(),
+				filters = [];
+			
+			if(query){
+				var keyFilter = new Filter(key, FilterOperator.Contains, query);
+				filters.push(keyFilter);
+			}
+			
+			oTable.getBinding("items").filter(filters, "Application");
+			if (filters.length !== 0) {
+				oViewModel.setProperty("/tableNoDataText", this.getResourceBundle().getText("worklistNoDataWithSearchText"));
+			}
 		},
 
 		// Table buttons function for create/edit/copy/delete of items
