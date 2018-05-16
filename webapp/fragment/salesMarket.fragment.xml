@@ -5,7 +5,7 @@
 			<Toolbar class="white">
 				<Label id="salesMarketCount" text="Items"/>
 				<ToolbarSpacer/>
-				<SearchField placeholder="{i18n>search}" custom:id="salesMarket" custom:key="Name" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<SearchField placeholder="{i18n>salesMarketName}" custom:id="salesMarket" custom:key="Name" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<Button text="{i18n>add}" custom:id="salesMarket" press="tableAdd" type="Accept"/>
 				<Button id="salesMarketEdit" custom:id="salesMarket" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
 				<Button id="salesMarketDelete" custom:id="salesMarket" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
