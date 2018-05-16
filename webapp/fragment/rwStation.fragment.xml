@@ -3,25 +3,24 @@
 		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-				<Label id="rwStationCount" text="Items"/>
+				<SearchField placeholder="{i18n>stationName}" custom:id="rwStation" custom:key="Name" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<ToolbarSpacer/>
-				<SearchField placeholder="{i18n>search}" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<Button text="{i18n>add}" custom:id="rwStation" press="tableAdd" type="Accept"/>
 				<Button id="rwStationEdit" custom:id="rwStation" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
-				<!--<Button id="rwStationDelete" custom:id="rwStation" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>-->
+				<Button id="rwStationDelete" custom:id="rwStation" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>countryName}"/></Column>
 			<Column><Text class="black" text="{i18n>stationCode}"/></Column>
 			<Column><Text class="black" text="{i18n>stationName}"/></Column>
+			<Column><Text class="black" text="{i18n>countryName}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{Country}"/>
 					<Text text="{Code}"/>
 					<Text text="{Name}"/>
+					<Text text="{Country}"/>
 				</cells>
 			</ColumnListItem>
 		</items>

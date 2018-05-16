@@ -3,9 +3,7 @@
 		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-				<Label id="limitsExpressCount" text="Items"/>
 				<ToolbarSpacer/>
-				<SearchField placeholder="{i18n>search}" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<Button text="{i18n>add}" custom:id="limitsExpress" press="tableAdd" type="Accept"/>
 				<Button id="limitsExpressEdit" custom:id="limitsExpress" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
 				<Button id="limitsExpressDelete" custom:id="limitsExpress" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>

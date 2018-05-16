@@ -3,9 +3,8 @@
 		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-				<Label id="fcaResourceCount" text="Items"/>
+				<SearchField placeholder="{i18n>salesProgram}" custom:id="fcaResource" custom:key="SalesProgram" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<ToolbarSpacer/>
-				<SearchField placeholder="{i18n>search}" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<Button text="{i18n>add}" custom:id="fcaResource" press="tableAdd" type="Accept"/>
 				<Button id="fcaResourceEdit" custom:id="fcaResource" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
 				<Button id="fcaResourceDelete" custom:id="fcaResource" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>

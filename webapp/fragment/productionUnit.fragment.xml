@@ -3,9 +3,8 @@
 		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-				<Label id="productionUnitCount" text="Items"/>
-				<ToolbarSpacer/>
 				<SearchField placeholder="{i18n>productionUnitName}" custom:id="productionUnit" custom:key="Name" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<ToolbarSpacer/>
 				<Button text="{i18n>add}" custom:id="productionUnit" press="tableAdd" type="Accept"/>
 				<Button id="productionUnitEdit" custom:id="productionUnit" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
 				<Button id="productionUnitDelete" custom:id="productionUnit" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
