@@ -14,10 +14,10 @@
 			<Input value="{CV}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>uom}" width="150px"/>
-			<Input value="{Uom}" width="250px"/>
+			<Input value="{UoM}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>narGarGad}" width="150px"/>
-			<Input value="{NarGarGad}" width="250px"/>
+			<Input value="{NGG}" width="250px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>active}" width="150px"/>
 			<CheckBox selected="{Active}" width="250px"/>

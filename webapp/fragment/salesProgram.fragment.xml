@@ -26,8 +26,8 @@
 					<Text text="{Description}"/>
 					<Text text="{Incoterms}"/>
 					<Text text="{CV}"/>
-					<Text text="{Uom}"/>
-					<Text text="{NarGarGad}"/>
+					<Text text="{UoM}"/>
+					<Text text="{NGG}"/>
 					<CheckBox selected="{Active}" enabled="false" />
 				</cells>
 			</ColumnListItem>
