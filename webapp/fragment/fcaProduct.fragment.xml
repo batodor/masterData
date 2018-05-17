@@ -5,9 +5,6 @@
 			<Toolbar class="white">
 				<SearchField placeholder="{i18n>salesProgram}" custom:id="fcaProduct" custom:key="SalesRegion" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<ToolbarSpacer/>
-				<Button text="{i18n>add}" custom:id="fcaProduct" press="tableAdd" type="Accept"/>
-				<Button id="fcaProductEdit" custom:id="fcaProduct" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
-				<Button id="fcaProductDelete" custom:id="fcaProduct" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>

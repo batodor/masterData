@@ -16,8 +16,10 @@
 			<Input value="{CV}" width="300px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>uom}" width="150px"/>
-			<Select forceSelection="false" selectedKey="{UoM}" items="{ path: '/uomSet', sorter: { path: 'UOMCode' } }" width="300px">
-				<core:Item key="{UOMCode}" text="{UOMCode} - {UOMName}"/>
+			<Select forceSelection="false" selectedKey="{= ${CV} === '0' ? '' : 'KCK' }" 
+		        width="300px">
+				<core:Item key="" text=""/>
+				<core:Item key="KCK" text="KCK - Kcal/kg"/>
 			</Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>narGarGad}" width="150px"/>

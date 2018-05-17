@@ -33,7 +33,7 @@ sap.ui.define([
 			// Define list of tables ids
 			this.tableArr = [ "limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource", "productRecipe", "strategy", 
 				"growthFactor", "salesScheme", "riskType", "salesDirection", "incoterms", "currency", "uom", "country", "rwStation", "port", "vesselType", "materialGroup", "poq", 
-				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc", "crossBorder", "productionUnit"];
+				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc", "crossBorder", "productionUnit", "addressType"];
 
 			// Define all Dialog fragments inside view as depended of this view passing the tableArr of ids
 			this.addDialogs(this.tableArr);
@@ -105,7 +105,7 @@ sap.ui.define([
 		 */
 		_onObjectMatched: function(oEvent) {
 			var tableId = oEvent.getParameter("arguments").objectId;
-			
+			this.id = tableId;
 			for (var i = 0; i < this.tableArr.length; i++) {
 				if (this.tableArr[i] === tableId) {
 					var table = this.byId(tableId);
@@ -125,6 +125,12 @@ sap.ui.define([
 					}
 				}
 			}
+			if(this.id==="country"){
+				this.byId("tableDelete").setVisible(false);
+				this.byId("tableAdd").setVisible(false);
+			}else{
+				this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], true);
+			}
 		},
 
 		// Event on selection of table items
@@ -133,9 +139,9 @@ sap.ui.define([
 			var selectedCount = table.getSelectedItems().length;
 			var tableId = table.data("id");
 			if (selectedCount > 0) {
-				this.setInputEnabled([tableId + "Delete", tableId + "Edit"], true);
+				this.setInputEnabled(["tableDelete", "tableEdit"], true);
 			} else {
-				this.setInputEnabled([tableId + "Delete", tableId + "Edit"], false);
+				this.setInputEnabled(["tableDelete", "tableEdit"], false);
 			}
 		},
 		
@@ -144,6 +150,15 @@ sap.ui.define([
 			for(var i in idArr){
 				if(this.byId(idArr[i])){
 					this.byId(idArr[i]).setEnabled(flag);
+				}
+			}
+		},
+		
+		// Enable/Disables inputs depending flag arg
+		setInputVisible: function(idArr, flag){
+			for(var i in idArr){
+				if(this.byId(idArr[i])){
+					this.byId(idArr[i]).setVisible(flag);
 				}
 			}
 		},
@@ -169,26 +184,24 @@ sap.ui.define([
 		},
 
 		// Table buttons function for create/edit/copy/delete of items
-		tableAdd: function(oEvent) {
-			var id = oEvent.getSource().data("id");
-			sap.ui.getCore().byId(id + "Dialog").unbindElement();
-			var oDialog = this.dialogOpen(oEvent);
+		tableAdd: function() {
+			sap.ui.getCore().byId(this.id + "Dialog").unbindElement();
+			var oDialog = this.dialogOpen();
 			this.setEnabled(oDialog, true);
 			oDialog.getButtons()[1].setVisible(true);
 			oDialog.getButtons()[2].setVisible(false);
 		},
-		tableEdit: function(oEvent) {
-			var url = oEvent.getSource().getParent().getParent().getSelectedItem().getBindingContextPath();
-			var id = oEvent.getSource().data("id");
-			sap.ui.getCore().byId(id + "Dialog").bindElement(url);
-			var oDialog = this.dialogOpen(oEvent);
+		tableEdit: function() {
+			var url = this.byId(this.id).getSelectedItem().getBindingContextPath();
+			sap.ui.getCore().byId(this.id + "Dialog").bindElement(url);
+			var oDialog = this.dialogOpen();
 			this.setEnabled(oDialog, false);
 			oDialog.getButtons()[1].setVisible(false);
 			oDialog.getButtons()[2].setVisible(true);
 		},
-		tableDelete: function(oEvent) {
-			var url = oEvent.getSource().getParent().getParent().getSelectedItem().getBindingContextPath();
-			var oModel = oEvent.getSource().getModel();
+		tableDelete: function() {
+			var url = this.byId(this.id).getSelectedItem().getBindingContextPath();
+			var oModel = this.byId(this.id).getModel();
 			MessageBox.confirm("Are you sure you want to delete?", {
 				actions: ["Delete", sap.m.MessageBox.Action.CLOSE],
 				onClose: function(sAction) {
@@ -203,14 +216,9 @@ sap.ui.define([
 
 		// Function for openning the dialog for create/edit/copy functions
 		// Also returns dialog object
-		dialogOpen: function(oEvent) {
-			var tableId = oEvent.getSource().data("id");
-			for (var i = 0; i < this.tableArr.length; i++) {
-				if (this.tableArr[i] === tableId) {
-					this[tableId + "Dialog"].open();
-					return this[tableId + "Dialog"];
-				}
-			}
+		dialogOpen: function() {
+			this[this.id + "Dialog"].open();
+			return this[this.id + "Dialog"];
 		},
 
 		// Close/create/edit dialog functions

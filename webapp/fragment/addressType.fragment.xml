@@ -1,21 +1,21 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="riskType" visible="false" custom:id="riskType" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="addressType" visible="false" custom:id="addressType" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
 		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-				<SearchField placeholder="{i18n>description}" custom:id="riskType" custom:key="Description" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<SearchField placeholder="{i18n>addressType}" custom:id="addressType" custom:key="Name" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<ToolbarSpacer/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>riskTypeCode}"/></Column>
-			<Column><Text class="black" text="{i18n>description}"/></Column>
+			<Column><Text class="black" text="{i18n>addressTypeCode}"/></Column>
+			<Column><Text class="black" text="{i18n>addressTypeName}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{RiskType}"/>
-					<Text text="{Description}"/>
+					<Text text="{Code}"/>
+					<Text text="{Name}"/>
 				</cells>
 			</ColumnListItem>
 		</items>

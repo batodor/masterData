@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>addressType}" class="sapUiContentPadding" id="addressTypeDialog">
+		<content>
+			<Text text="{i18n>addressTypeCode}" width="150px"/>
+			<Input value="{Code}" custom:key="addressTypeCode" width="250px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>addressTypeName}" width="150px"/>
+			<Input value="{Name}" width="250px" />
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="addressType" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="addressType" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="addressType" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

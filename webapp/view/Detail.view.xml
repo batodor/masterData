@@ -32,15 +32,16 @@
 			<core:Fragment fragmentName="fragment.sbmqc" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.crossBorder" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.productionUnit" type="XML"></core:Fragment>
+			<core:Fragment fragmentName="fragment.addressType" type="XML"></core:Fragment>
 		</semantic:content>
-		<semantic:sendEmailAction>
-			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
-		</semantic:sendEmailAction>
-		<semantic:shareInJamAction>
-			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>
-		</semantic:shareInJamAction>
-		<semantic:saveAsTileAction>
-			<footerbar:AddBookmarkButton id="shareTile" title="{detailView>/saveAsTileTitle}"/>
-		</semantic:saveAsTileAction>
+		<semantic:addAction>
+			<semantic:AddAction id="tableAdd" press="tableAdd"/>
+		</semantic:addAction>
+		<semantic:editAction>
+			<semantic:EditAction enabled="false" id="tableEdit" press="tableEdit"/>
+		</semantic:editAction>
+		<semantic:deleteAction>
+			<semantic:DeleteAction enabled="false" id="tableDelete" press="tableDelete"/>
+		</semantic:deleteAction>
 	</semantic:DetailPage>
 </mvc:View>

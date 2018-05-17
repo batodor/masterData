@@ -94,4 +94,7 @@
 }, {
 	"Title": "Production Unit",
 	"Id": "productionUnit"
+}, {
+	"Title": "Address Type",
+	"Id": "addressType"
 }]

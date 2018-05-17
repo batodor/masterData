@@ -12,7 +12,7 @@
 		<semantic:content>
 			<List id="list" items="{}" busyIndicatorDelay="{masterView>/delay}" noDataText="{masterView>/noDataText}"
 				mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" growing="true" growingScrollToLoad="true"
-				selectionChange="onSelectionChange">
+				selectionChange="onSelectionChange" updateFinished="onUpdateFinished">
 				<items>
 					<ObjectListItem custom:id="{master>Id}" custom:title="{master>Title}" type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"
 						press="onSelectionChange" title="{master>Title}"/>

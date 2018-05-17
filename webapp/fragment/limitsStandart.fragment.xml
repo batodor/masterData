@@ -4,9 +4,6 @@
 		<headerToolbar>
 			<Toolbar class="white">
 				<ToolbarSpacer/>
-				<Button text="{i18n>add}" custom:id="limitsStandart" press="tableAdd" type="Accept"/>
-				<Button id="limitsStandartEdit" custom:id="limitsStandart" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
-				<Button id="limitsStandartDelete" custom:id="limitsStandart" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>

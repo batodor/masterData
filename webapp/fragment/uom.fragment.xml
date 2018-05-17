@@ -5,9 +5,6 @@
 			<Toolbar class="white">
 				<SearchField placeholder="{i18n>uomName}" custom:id="uom" custom:key="UOMName" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<ToolbarSpacer/>
-				<Button text="{i18n>add}" custom:id="uom" press="tableAdd" type="Accept"/>
-				<Button id="uomEdit" custom:id="uom" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
-				<Button id="uomDelete" custom:id="uom" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>

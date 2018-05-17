@@ -25,13 +25,20 @@ sap.ui.define([
 		 */
 		onInit: function() {
 			var oModel = new JSONModel(jQuery.sap.getModulePath("masterdata.MasterData.localService.mockdata", "/masterDataListSet.json"));
-			
+			var oViewModel = this._createViewModel();
 			this._oList = this.byId("list");
 			this._oList.setModel(oModel, "master");
 			this._oList.bindItems({
 				path: 'master>/',
 				template: this._oList['mBindingInfos'].items.template
 			});
+			
+			// keeps the filter and search state
+			this._oListFilterState = {
+				aFilter : [],
+				aSearch : []
+			};
+			this.setModel(oViewModel, "masterView");
 			
 			// Send title of table after model loaded for the first time
 			// Set selected item after first load
@@ -63,7 +70,15 @@ sap.ui.define([
 		/* =========================================================== */
 		/* event handlers                                              */
 		/* =========================================================== */
-
+		
+		onUpdateFinished : function (oEvent) {
+			// update the master list object counter after new data is loaded
+			this._updateListItemCount(oEvent.getParameter("total"));
+			// hide pull to refresh if necessary
+			this.byId("pullToRefresh").hide();
+			this.getCount();
+		},
+			
 		/**
 		 * Event handler for the master search field. Applies current
 		 * filter value and triggers a new search. If the search field's
@@ -83,12 +98,12 @@ sap.ui.define([
 			}
 
 			var sQuery = oEvent.getParameter("query");
-			var filter = [];
 			if (sQuery) {
-				filter.push(new Filter("Name", FilterOperator.Contains, sQuery));
+				this._oListFilterState.aSearch = [new Filter("Title", FilterOperator.Contains, sQuery)];
+			} else {
+				this._oListFilterState.aSearch = [];
 			}
-			this.byId("list").getItems().filter(filter);
-			//this._applyFilterSearch();
+			this._applyFilterSearch();
 
 		},
 
@@ -151,6 +166,23 @@ sap.ui.define([
 					}
 				});
 			}
+		},
+		
+		/* =========================================================== */
+		/* begin: internal methods                                     */
+		/* =========================================================== */
+
+
+		_createViewModel : function() {
+			return new JSONModel({
+				isFilterBarVisible: false,
+				filterBarLabel: "",
+				delay: 0,
+				title: this.getResourceBundle().getText("masterTitleCount", [0]),
+				noDataText: this.getResourceBundle().getText("masterListNoDataText"),
+				sortBy: "Title",
+				groupBy: "None"
+			});
 		},
 
 		/**

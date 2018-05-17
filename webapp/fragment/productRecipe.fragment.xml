@@ -5,9 +5,6 @@
 			<Toolbar class="white">
 				<SearchField placeholder="{i18n>productCode}" custom:id="productRecipe" custom:key="ProductCode" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<ToolbarSpacer/>
-				<Button text="{i18n>add}" custom:id="productRecipe" press="tableAdd" type="Accept"/>
-				<Button id="productRecipeEdit" custom:id="productRecipe" text="{i18n>edit}" press="tableEdit" enabled="false" type="Emphasized"/>
-				<Button id="productRecipeDelete" custom:id="productRecipe" text="{i18n>delete}" press="tableDelete" type="Reject" enabled="false"/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>
