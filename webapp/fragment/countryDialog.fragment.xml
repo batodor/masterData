@@ -7,7 +7,7 @@
 			<Text text="{i18n>countryName}" width="150px"/>
 			<Input custom:key="countryName" value="{Name}" width="250px" />
 			<ToolbarSpacer/>
-			<Text text="{i18n>blacklisted}" width="150px"/>
+			<Text text="{i18n>sanction}" width="150px"/>
 			<CheckBox selected="{Sanction}" width="250px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>countryRating}" width="150px"/>

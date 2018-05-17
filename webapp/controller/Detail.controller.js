@@ -131,6 +131,7 @@ sap.ui.define([
 			}else{
 				this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], true);
 			}
+			this.setInputEnabled(["tableEdit", "tableDelete"], false);
 		},
 
 		// Event on selection of table items
