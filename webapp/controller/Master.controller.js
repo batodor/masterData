@@ -28,9 +28,11 @@ sap.ui.define([
 			var oViewModel = this._createViewModel();
 			this._oList = this.byId("list");
 			this._oList.setModel(oModel, "master");
+			var oSorter = new sap.ui.model.Sorter('Title');
 			this._oList.bindItems({
 				path: 'master>/',
-				template: this._oList['mBindingInfos'].items.template
+				template: this._oList['mBindingInfos'].items.template,
+				sorter : oSorter
 			});
 			
 			// keeps the filter and search state
@@ -52,13 +54,16 @@ sap.ui.define([
 						var eventBus = sap.ui.getCore().getEventBus();
 						eventBus.publish("MainDetailChannel", "onNavigateEvent", { title : data[i].Title });
 						
-						if (i >= oList.getItems().length) {
-							var oGrowingTrigger = that.byId('list-trigger');
-							oList.setGrowingThreshold(parseInt(i));
-							oGrowingTrigger.firePress();
-			        	}
-						
-						oList.getItems()[i].setSelected(true).getDomRef().focus();
+						var oGrowingTrigger = that.byId('list-trigger');
+						oList.setGrowingThreshold(parseInt(i));
+						oGrowingTrigger.firePress();
+							
+						var list = oList.getItems();
+						for(var j in list){
+							if(list[j].getTitle() === data[i].Title){
+								list[j].setSelected(true).getDomRef().focus();
+							}
+						}
 					}
 				}
 			});
@@ -75,8 +80,8 @@ sap.ui.define([
 			// update the master list object counter after new data is loaded
 			this._updateListItemCount(oEvent.getParameter("total"));
 			// hide pull to refresh if necessary
-			this.byId("pullToRefresh").hide();
-			this.getCount();
+			//this.byId("pullToRefresh").hide();
+			//this.getCount();
 		},
 			
 		/**
