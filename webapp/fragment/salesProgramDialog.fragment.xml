@@ -8,13 +8,17 @@
 			<TextArea value="{Description}" width="300px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>incoterms}" width="150px"/>
-			<Input value="{Incoterms}" width="300px"/>
+			<Select forceSelection="false" selectedKey="{Incoterms}" items="{ path: '/incotermsSet', sorter: { path: 'Description' } }" width="300px">
+				<core:Item key="{Incoterms}" text="{Description}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>cvNar}" width="150px"/>
 			<Input value="{CV}" width="300px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>uom}" width="150px"/>
-			<Input value="{UoM}" width="300px"/>
+			<Select forceSelection="false" selectedKey="{UoM}" items="{ path: '/uomSet', sorter: { path: 'UOMCode' } }" width="300px">
+				<core:Item key="{UOMCode}" text="{UOMCode} - {UOMName}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>narGarGad}" width="150px"/>
 			<Input value="{NGG}" width="300px"/>
