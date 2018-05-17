@@ -2,25 +2,25 @@
 	<Dialog title="{i18n>salesProgram}" class="sapUiContentPadding" id="salesProgramDialog">
 		<content>
 			<Text text="{i18n>salesProgram}" width="150px"/>
-			<Input value="{SalesProgram}" custom:key="salesProgram" width="250px"/>
+			<Input value="{SalesProgram}" custom:key="salesProgram" width="300px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>description}" width="150px"/>
-			<TextArea value="{Description}" width="250px"/>
+			<TextArea value="{Description}" width="300px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>incoterms}" width="150px"/>
-			<Input value="{Incoterms}" width="250px"/>
+			<Input value="{Incoterms}" width="300px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>cvNar}" width="150px"/>
-			<Input value="{CV}" width="250px"/>
+			<Input value="{CV}" width="300px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>uom}" width="150px"/>
-			<Input value="{UoM}" width="250px"/>
+			<Input value="{UoM}" width="300px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>narGarGad}" width="150px"/>
-			<Input value="{NGG}" width="250px"/>
+			<Input value="{NGG}" width="300px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>active}" width="150px"/>
-			<CheckBox selected="{Active}" width="250px"/>
+			<CheckBox selected="{Active}" width="300px"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="salesProgram" type="Back" press="dialogCancel"/>

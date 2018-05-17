@@ -88,6 +88,12 @@ span[data-rating="C"] {
 	background: rgba(255,255,255,.2);
 }
 
+.sapUiTheme-utistheme1 .sapMTextAreaInner{
+	min-height: 47px;
+	padding: 0.1875rem 0.5rem;
+	line-height: 1.4;
+}
+
 @media(min-width: 80rem){
 	.sapUiTheme-utistheme1 .sapUShellApplicationContainer{
 		width: 80rem !important;

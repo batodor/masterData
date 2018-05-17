@@ -11,12 +11,12 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>salesProgramCode}"/></Column>
+			<Column width="100px"><Text class="black" text="{i18n>salesProgramCode}"/></Column>
 			<Column><Text class="black" text="{i18n>description}"/></Column>
-			<Column><Text class="black" text="{i18n>incoterms}"/></Column>
-			<Column><Text class="black" text="{i18n>cv}"/></Column>
-			<Column><Text class="black" text="{i18n>uom}"/></Column>
-			<Column><Text class="black" text="{i18n>narGarGad}"/></Column>
+			<Column width="70px"><Text class="black" text="{i18n>incoterms}"/></Column>
+			<Column width="70px"><Text class="black" text="{i18n>cv}"/></Column>
+			<Column width="70px"><Text class="black" text="{i18n>uom}"/></Column>
+			<Column width="70px"><Text class="black" text="{i18n>narGarGad}"/></Column>
 			<Column width="40px"><Text class="black" text="{i18n>active}"/></Column>
 		</columns>
 		<items>
