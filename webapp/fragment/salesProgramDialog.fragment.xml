@@ -9,7 +9,7 @@
 			<ToolbarSpacer/>
 			<Text text="{i18n>incoterms}" width="150px"/>
 			<Select forceSelection="false" selectedKey="{Incoterms}" items="{ path: '/incotermsSet', sorter: { path: 'Description' } }" width="300px">
-				<core:Item key="{Incoterms}" text="{Description}"/>
+				<core:Item key="{Incoterms}" text="{Incoterms} - {Description}"/>
 			</Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>cvNar}" width="150px"/>

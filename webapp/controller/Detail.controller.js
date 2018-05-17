@@ -256,6 +256,8 @@ sap.ui.define([
 					oData[inputs[i].getBindingInfo("dateValue").binding.sPath] = inputs[i].getDateValue();
 				}else if(inputs[i].getBindingInfo("selectedKey")){
 					oData[inputs[i].getBindingInfo("selectedKey").binding.sPath] = inputs[i].getSelectedKey();
+				}else if(inputs[i].getBindingInfo("selected")){
+					oData[inputs[i].getBindingInfo("selected").binding.sPath] = inputs[i].getSelected();
 				}
 			}
 			return oData;
