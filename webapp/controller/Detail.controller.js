@@ -125,8 +125,10 @@ sap.ui.define([
 					}
 				}
 			}
-			if(this.id === "country" || this.id === "currency"){
+			if(this.id === "country"){
 				this.setInputVisible(["tableAdd", "tableDelete"], false);
+			}else if(this.id === "currency"){
+				this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], false);
 			}else{
 				this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], true);
 			}
