@@ -35,17 +35,50 @@
 	"Title": "Sales Direction",
 	"Id": "salesDirection"
 }, {
+	"Title": "Incoterms",
+	"Id": "incoterms"
+}, {
+	"Title": "Currency",
+	"Id": "currency"
+}, {
+	"Title": "Units of Measure",
+	"Id": "uom"
+}, {
 	"Title": "Country",
 	"Id": "country"
+}, {
+	"Title": "R/W Station",
+	"Id": "rwStation"
+}, {
+	"Title": "Port",
+	"Id": "port"
+}, {
+	"Title": "Terminal",
+	"Id": "terminal"
+}, {
+	"Title": "Vessel Type",
+	"Id": "vesselType"
 }, {
 	"Title": "Type of Product",
 	"Id": "typeOfProduct"
 }, {
+	"Title": "Product",
+	"Id": "product"
+}, {
 	"Title": "Port Costs",
 	"Id": "portCosts"
 }, {
+	"Title": "Material Group",
+	"Id": "materialGroup"
+}, {
 	"Title": "Parameters of Quality",
 	"Id": "poq"
+}, {
+	"Title": "Legal Entity",
+	"Id": "legalEntity"
+}, {
+	"Title": "Branch",
+	"Id": "branch"
 }, {
 	"Title": "Sales Market",
 	"Id": "salesMarket"
@@ -56,6 +89,12 @@
 	"Title": "Set of Base for Measuring Qualitative Characteristics",
 	"Id": "sbmqc"
 }, {
+	"Title": "Cross Border",
+	"Id": "crossBorder"
+}, {
 	"Title": "Production Unit",
 	"Id": "productionUnit"
+}, {
+	"Title": "Address Type",
+	"Id": "addressType"
 }]
