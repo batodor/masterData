@@ -1,19 +1,19 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>qualityParameters}" class="sapUiContentPadding" id="qualityParametersDialog">
 		<content>
-			<Text text="{i18n>qpKey}" width="300px"/>
+			<Text text="{i18n>qpKey}" width="200px"/>
 			<Input value="{QPKey}" custom:key="qpKey" width="200px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>qpCode}" width="300px"/>
+			<Text text="{i18n>qpCode}" width="200px"/>
 			<Input value="{QPCode}" width="200px" />
 			<ToolbarSpacer/>
-			<Text text="{i18n>qpName}" width="300px"/>
+			<Text text="{i18n>qpName}" width="200px"/>
 			<Input value="{QPName}" width="200px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>setOfBaseQP}" width="300px"/>
+			<Text text="{i18n>setOfBasesQP}" width="200px"/>
 			<Input value="{SetBasesQP}" width="200px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>finenessQP}" width="300px"/>
+			<Text text="{i18n>finenessQP}" width="200px"/>
 			<Input value="{FinenessQP}" width="200px"/>
 			<ToolbarSpacer/>
 		</content>
