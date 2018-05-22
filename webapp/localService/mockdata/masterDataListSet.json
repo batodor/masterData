@@ -1,61 +1,109 @@
 [{
 	"Title": "Limits for Standart Rating",
-	"Id": "limitsStandart"
+	"Id": "limitsStandart",
+	"Order": 3
 }, {
 	"Title": "Limits for Express Rating",
-	"Id": "limitsExpress"
+	"Id": "limitsExpress",
+	"Order": 2
 }, {
 	"Title": "Sales Program",
-	"Id": "salesProgram"
+	"Id": "salesProgram",
+	"Order": 6
 }, {
 	"Title": "FCA Price for Domestic Market",
-	"Id": "fcaDomestic"
+	"Id": "fcaDomestic",
+	"Order": 24
 }, {
 	"Title": "FCA Price for Product",
-	"Id": "fcaProduct"
+	"Id": "fcaProduct",
+	"Order": 25
 }, {
 	"Title": "FCA Price for Resource",
-	"Id": "fcaResource"
+	"Id": "fcaResource",
+	"Order": 26
 }, {
 	"Title": "Product Recipe",
-	"Id": "productRecipe"
+	"Id": "productRecipe",
+	"Order": 5
 }, {
 	"Title": "Strategy",
-	"Id": "strategy"
+	"Id": "strategy",
+	"Order": 27
 }, {
 	"Title": "Growth Factor",
-	"Id": "growthFactor"
-}, {
-	"Title": "Sales Scheme",
-	"Id": "salesScheme"
+	"Id": "growthFactor",
+	"Order": 22
 }, {
 	"Title": "Risk Type",
-	"Id": "riskType"
+	"Id": "riskType",
+	"Order": 9
 }, {
 	"Title": "Sales Direction",
-	"Id": "salesDirection"
+	"Id": "salesDirection",
+	"Order": 8
 }, {
 	"Title": "Country",
-	"Id": "country"
-}, {
-	"Title": "Type of Product",
-	"Id": "typeOfProduct"
+	"Id": "country",
+	"Order": 1
 }, {
 	"Title": "Port Costs",
-	"Id": "portCosts"
+	"Id": "portCosts",
+	"Order": 16
 }, {
 	"Title": "Parameters of Quality",
-	"Id": "poq"
+	"Id": "poq",
+	"Order": 12
 }, {
 	"Title": "Sales Market",
-	"Id": "salesMarket"
+	"Id": "salesMarket",
+	"Order": 7
 }, {
 	"Title": "Base for Measuring Qualitative Characteristics",
-	"Id": "bmqc"
+	"Id": "bmqc",
+	"Order": 10
 }, {
 	"Title": "Set of Base for Measuring Qualitative Characteristics",
-	"Id": "sbmqc"
+	"Id": "sbmqc",
+	"Order": 11
 }, {
 	"Title": "Production Unit",
-	"Id": "productionUnit"
+	"Id": "productionUnit",
+	"Order": 4
+}, {
+	"Title": "Quality Parameters",
+	"Id": "qualityParameters",
+	"Order": 13
+}, {
+	"Title": "Default Quality Parameters",
+	"Id": "dqp",
+	"Order": 14
+}, {
+	"Title": "Effective r/w Rates",
+	"Id": "effectiveRwRates",
+	"Order": 15
+}, {
+	"Title": "Survey & Forward rates",
+	"Id": "surveyForwardRates",
+	"Order": 17
+}, {
+	"Title": "Transit Cost",
+	"Id": "transitCost",
+	"Order": 18
+}, {
+	"Title": "Interest Rate",
+	"Id": "interestRate",
+	"Order": 19
+}, {
+	"Title": "Inflation Factor",
+	"Id": "inflationFactor",
+	"Order": 20
+}, {
+	"Title": "Index",
+	"Id": "index",
+	"Order": 21
+}, {
+	"Title": "Benchmark SUEK AG",
+	"Id": "benchmark",
+	"Order": 23
 }]

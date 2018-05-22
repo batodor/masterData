@@ -28,7 +28,7 @@ sap.ui.define([
 			var oViewModel = this._createViewModel();
 			this._oList = this.byId("list");
 			this._oList.setModel(oModel, "master");
-			var oSorter = new sap.ui.model.Sorter('Title');
+			var oSorter = new sap.ui.model.Sorter('Order');
 			this._oList.bindItems({
 				path: 'master>/',
 				template: this._oList['mBindingInfos'].items.template,
@@ -198,7 +198,7 @@ sap.ui.define([
 		 */
 		_onMasterMatched: function() {
 			this.getRouter().navTo("object", {
-				objectId: "salesScheme"
+				objectId: "country"
 			}, true);
 		},
 
