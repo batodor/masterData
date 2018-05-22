@@ -1,17 +1,29 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>limitsExpressRating}" class="sapUiContentPadding" id="limitsExpressDialog">
 		<content>
-			<Text text="{i18n>legalEntity}" width="250px"/>
-			<Input custom:key="legalEntity" value="{LegalEntity}" width="150px"/>
+			<Text text="{i18n>companyCode}" width="250px"/>
+			<Input value="{CompanyCode}" custom:key="companyCode" width="150px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>contryRating}" width="250px"/>
-			<Select selected="{ContryRating}" width="150px"></Select>
+			<Text text="{i18n>countryRating}" width="250px"/>
+			<Select selected="{ContryRating}" custom:key="countryRating" width="150px"></Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>financeCommercialRating}" width="250px"/>
-			<Select selected="{FinanceCommercialRating}" width="150px"></Select>
+			<Select selected="{FinanceCommercialRating}" custom:key="financeCommercialRating" width="150px"></Select>
 			<ToolbarSpacer/>
-			<Text text="{i18n>businessPartnersRole}" width="250px"/>
-			<Select selected="{BusinessPartnersRole}" width="150px"/>
+			<Text text="{i18n>commercialRating}" width="250px"/>
+			<Select selected="{CommercialRating}" custom:key="commercialRating" width="150px"></Select>
+			<ToolbarSpacer/>
+			<Text text="{i18n>bpRole}" width="250px"/>
+			<Input value="{BPRole}" custom:key="bpRole" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>subitem}" width="250px"/>
+			<Input value="{Subitem}" custom:key="subitem" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>dateFrom}" width="250px"/>
+			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>dateTo}" width="250px"/>
+			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>paymentTerms}" width="250px"/>
 			<Input value="{PaymentTerms}" width="150px"/>

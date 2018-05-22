@@ -7,19 +7,27 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>legalEntity}"/></Column>
+			<Column><Text class="black" text="{i18n>companyCode}"/></Column>
 			<Column><Text class="black" text="{i18n>countryRating}"/></Column>
 			<Column><Text class="black" text="{i18n>financeCommercialRating}"/></Column>
-			<Column><Label class="black" text="{i18n>businessPartnersRole}"/></Column>
-			<Column><Label class="black" text="{i18n>paymentTerms}"/></Column>
+			<Column><Text class="black" text="{i18n>commercialRating}"/></Column>
+			<Column><Text class="black" text="{i18n>bpRole}"/></Column>
+			<Column><Text class="black" text="{i18n>subitem}"/></Column>
+			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
+			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
+			<Column><Text class="black" text="{i18n>paymentTerms}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{LegalEntity}"/>
+					<Text text="{CompanyCode}"/>
 					<Text text="{CountryRating}"/>
 					<Text text="{FinanceCommercialRating}"/>
-					<Text text="{BusinessPartnersRole}"/>
+					<Text text="{CommercialRating}"/>
+					<Text text="{BPRole}"/>
+					<Text text="{Subitem}"/>
+					<Text text="{DateFrom}"/>
+					<Text text="{DateTo}"/>
 					<Text text="{PaymentTerms}"/>
 				</cells>
 			</ColumnListItem>
