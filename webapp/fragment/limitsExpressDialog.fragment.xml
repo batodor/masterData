@@ -14,7 +14,7 @@
 			<Select selected="{CommercialRating}" custom:key="commercialRating" width="150px"></Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>bpRole}" width="250px"/>
-			<Input value="{BPRole}" custom:key="bpRole" width="150px"/>
+			<Input value="{PartnersRole}" custom:key="bpRole" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>subitem}" width="250px"/>
 			<Input value="{Subitem}" custom:key="subitem" width="150px"/>

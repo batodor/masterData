@@ -11,7 +11,9 @@
 			<Input value="{QPName}" width="200px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>setOfBasesQP}" width="200px"/>
-			<Input value="{SetBasesQP}" width="200px"/>
+			<Select forceSelection="false" selectedKey="{SetBasesQP}" items="{ path: '/sbmqcSet', sorter: { path: 'Code' } }" width="200px">
+				<core:Item key="{Code}" text="{Code} - {NameBase}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>finenessQP}" width="200px"/>
 			<Input value="{FinenessQP}" width="200px"/>

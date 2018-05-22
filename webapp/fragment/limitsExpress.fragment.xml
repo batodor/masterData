@@ -24,7 +24,7 @@
 					<Text text="{CountryRating}"/>
 					<Text text="{FinanceCommercialRating}"/>
 					<Text text="{CommercialRating}"/>
-					<Text text="{BPRole}"/>
+					<Text text="{PartnersRole}"/>
 					<Text text="{Subitem}"/>
 					<Text text="{DateFrom}"/>
 					<Text text="{DateTo}"/>
