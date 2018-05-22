@@ -2,16 +2,16 @@
 	<Dialog title="{i18n>qualityParameters}" class="sapUiContentPadding" id="qualityParametersDialog">
 		<content>
 			<Text text="{i18n>qpKey}" width="300px"/>
-			<Input value="{Key}" custom:key="qpKey" width="200px"/>
+			<Input value="{QPKey}" custom:key="qpKey" width="200px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>qpCode}" width="300px"/>
-			<Input value="{Code}" width="200px" />
+			<Input value="{QPCode}" width="200px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>qpName}" width="300px"/>
-			<Input value="{Name}" width="200px"/>
+			<Input value="{QPName}" width="200px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>setOfBaseQP}" width="300px"/>
-			<Input value="{SetOfBaseQP}" width="200px"/>
+			<Input value="{SetBasesQP}" width="200px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>finenessQP}" width="300px"/>
 			<Input value="{FinenessQP}" width="200px"/>

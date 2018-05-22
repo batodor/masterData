@@ -11,16 +11,16 @@
 			<Column><Text class="black" text="{i18n>qpKey}"/></Column>
 			<Column><Text class="black" text="{i18n>qpCode}"/></Column>
 			<Column><Text class="black" text="{i18n>qpName}"/></Column>
-			<Column><Text class="black" text="{i18n>setOfBaseQP}"/></Column>
+			<Column><Text class="black" text="{i18n>setOfBasesQP}"/></Column>
 			<Column><Text class="black" text="{i18n>finenessQP}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{Key}"/>
-					<Text text="{Code}"/>
-					<Text text="{Name}"/>
-					<Text text="{SetOfBaseQP}"/>
+					<Text text="{QPKey}"/>
+					<Text text="{QPCode}"/>
+					<Text text="{QPName}"/>
+					<Text text="{SetBasesQP}"/>
 					<Text text="{FinenessQP}"/>
 				</cells>
 			</ColumnListItem>
