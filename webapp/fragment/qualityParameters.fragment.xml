@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="qualityParameters" visible="false" custom:id="qualityParameters" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<Toolbar class="white">
+				<SearchField placeholder="{i18n>qpName}" custom:id="qualityParameters" custom:key="Name" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column><Text class="black" text="{i18n>qpKey}"/></Column>
+			<Column><Text class="black" text="{i18n>qpCode}"/></Column>
+			<Column><Text class="black" text="{i18n>qpName}"/></Column>
+			<Column><Text class="black" text="{i18n>setOfBaseQP}"/></Column>
+			<Column><Text class="black" text="{i18n>finenessQP}"/></Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{Key}"/>
+					<Text text="{Code}"/>
+					<Text text="{Name}"/>
+					<Text text="{SetOfBaseQP}"/>
+					<Text text="{FinenessQP}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>
