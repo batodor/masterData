@@ -5,13 +5,21 @@
 			<Input value="{CompanyCode}" custom:key="companyCode" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>countryRating}" width="250px"/>
-			<Select selected="{ContryRating}" custom:key="countryRating" width="150px"></Select>
+			<Select selectedKey="{CountryRating}" custom:key="countryRating" forceSelection="false" items="{ path: '/dictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">
+				<core:Item key="{Rating}" text="{Rating}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>financeCommercialRating}" width="250px"/>
-			<Select selected="{FinanceCommercialRating}" custom:key="financeCommercialRating" width="150px"></Select>
+			<Select selectedKey="{FinanceCommercialRating}" custom:key="financeCommercialRating" forceSelection="false" 
+				items="{ path: '/dictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">
+				<core:Item key="{Rating}" text="{Rating}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>commercialRating}" width="250px"/>
-			<Select selected="{CommercialRating}" custom:key="commercialRating" width="150px"></Select>
+			<Select selectedKey="{CommercialRating}" custom:key="commercialRating" forceSelection="false" 
+				items="{ path: '/dictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">
+				<core:Item key="{Rating}" text="{Rating}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>bpRole}" width="250px"/>
 			<Input value="{PartnersRole}" custom:key="bpRole" width="150px"/>

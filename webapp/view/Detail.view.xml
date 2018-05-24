@@ -36,14 +36,24 @@
 			<core:Fragment fragmentName="fragment.qualityParameters" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.dqp" type="XML"></core:Fragment>
 		</semantic:content>
-		<semantic:addAction>
-			<semantic:AddAction id="tableAdd" press="tableAdd"/>
-		</semantic:addAction>
-		<semantic:editAction>
-			<semantic:EditAction enabled="false" id="tableEdit" press="tableEdit"/>
-		</semantic:editAction>
-		<semantic:deleteAction>
-			<semantic:DeleteAction enabled="false" id="tableDelete" press="tableDelete"/>
-		</semantic:deleteAction>
+		
+		<semantic:mainAction>
+			<semantic:MainAction
+				id="tableAdd"
+				press="tableAdd"
+				text="{i18n>add}" />
+		</semantic:mainAction>
+		<semantic:positiveAction>
+			<semantic:PositiveAction
+				id="tableEdit" 
+				press="tableEdit"
+				text="{i18n>edit}" />
+		</semantic:positiveAction>
+		<semantic:negativeAction>
+			<semantic:NegativeAction
+				id="tableDelete" 
+				press="tableDelete"
+				text="{i18n>delete}" />
+		</semantic:negativeAction>
 	</semantic:DetailPage>
 </mvc:View>
