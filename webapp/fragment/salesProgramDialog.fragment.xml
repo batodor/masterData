@@ -16,14 +16,19 @@
 			<Input value="{CV}" width="300px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>uom}" width="150px"/>
-			<Select forceSelection="false" selectedKey="{= ${CV} === '0' ? '' : 'KCK' }" 
+			<Select forceSelection="false" custom:name="UoM" selectedKey="{= ${CV} === '0' ? '' : 'KCK' }" 
 		        width="300px">
 				<core:Item key="" text=""/>
 				<core:Item key="KCK" text="KCK - Kcal/kg"/>
 			</Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>narGarGad}" width="150px"/>
-			<Input value="{NGG}" width="300px"/>
+			<Select forceSelection="false" selectedKey="{NGG}" width="300px">
+				<core:Item key="" text=""/>
+				<core:Item key="NAR" text="NAR"/>
+				<core:Item key="GAR" text="GAR"/>
+				<core:Item key="GAD" text="GAD"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Text text="{i18n>active}" width="150px"/>
 			<CheckBox selected="{Active}" width="300px"/>

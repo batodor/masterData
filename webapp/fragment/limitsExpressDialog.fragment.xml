@@ -25,7 +25,7 @@
 			<Input value="{PartnersRole}" custom:key="bpRole" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>subitem}" width="250px"/>
-			<Input value="{Subitem}" custom:key="subitem" width="150px"/>
+			<Input value="{Subitem}" type="Number" custom:key="subitem" width="150px"/>
 			<ToolbarSpacer/>
 			<Text text="{i18n>dateFrom}" width="250px"/>
 			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="150px"/>

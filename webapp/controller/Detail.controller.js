@@ -259,15 +259,22 @@ sap.ui.define([
 		getOdata: function(oDialog){
 			var oData = {};
 			var inputs = oDialog.getAggregation("content");
+			var typeArr = ["value", "dateValue", "selectedKey", "selected"];
 			for(var i in inputs){
-				if(inputs[i].getBindingInfo("value")){
-					oData[inputs[i].getBindingInfo("value").binding.sPath] = inputs[i].getValue();
-				}else if(inputs[i].getBindingInfo("dateValue")){
-					oData[inputs[i].getBindingInfo("dateValue").binding.sPath] = inputs[i].getDateValue();
-				}else if(inputs[i].getBindingInfo("selectedKey")){
-					oData[inputs[i].getBindingInfo("selectedKey").binding.sPath] = inputs[i].getSelectedKey();
-				}else if(inputs[i].getBindingInfo("selected")){
-					oData[inputs[i].getBindingInfo("selected").binding.sPath] = inputs[i].getSelected();
+				var input = inputs[i];
+				for(var j in typeArr){
+					var type = typeArr[j];
+					if(input.getBindingInfo(type)){
+						var value = input.getProperty(type);
+						var name = input.getBindingInfo(type).binding.sPath;
+						if(input.mProperties.hasOwnProperty("type") && input.getType() === "Number"){
+							value = parseInt(value);
+						}
+						if(input.data("name")){
+							name = input.data("name");
+						}
+						oData[name] = value;
+					}
 				}
 			}
 			return oData;
