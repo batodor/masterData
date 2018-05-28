@@ -109,7 +109,7 @@ sap.ui.define([
 			for (var i = 0; i < this.tableArr.length; i++) {
 				if (this.tableArr[i] === tableId) {
 					var table = this.byId(tableId);
-					table.setVisible(true);
+					table.setVisible(true).removeSelections();
 					if(table.getItems().length === 0){
 						table.bindItems({
 							path: "/" + tableId + 'Set',
