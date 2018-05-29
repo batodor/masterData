@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>productRecipeHeader}" class="sapUiContentPadding" id="productRecipeHeaderDialog">
+		<content>
+			<Text text="{i18n>productCode}" width="250px"/>
+			<Input custom:key="productCode" value="{Code}" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>recipeNumber}" width="250px"/>
+			<Input value="{RecipeNumber}" width="150px"/>
+			<ToolbarSpacer/>
+			<Text text="{i18n>name}" width="250px"/>
+			<Input value="{Name}" width="150px" />
+			<ToolbarSpacer/>
+			<Text text="{i18n>dateFrom}" width="250px"/>
+			<DatePicker value="{DateFrom}" width="155px" />
+			<ToolbarSpacer/>
+			<Text text="{i18n>dateTo}" width="250px"/>
+			<DatePicker value="{DateTo}" width="155px"/>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="productRecipeHeader" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="productRecipeHeader" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="productRecipeHeader" visible="false" type="Accept" press="dialogEdit"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

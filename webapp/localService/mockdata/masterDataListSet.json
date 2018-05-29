@@ -15,91 +15,95 @@
     "Id": "productionUnit",
     "Order": 4
 }, {
-    "Title": "Product Recipe",
-    "Id": "productRecipe",
+    "Title": "Product Recipe Header",
+    "Id": "productRecipeHeader",
     "Order": 5
+}, {
+    "Title": "Product Recipe Item",
+    "Id": "productRecipeItem",
+    "Order": 6
 }, {
     "Title": "Sales Program",
     "Id": "salesProgram",
-    "Order": 6
+    "Order": 7
 }, {
     "Title": "Sales Market",
     "Id": "salesMarket",
-    "Order": 7
+    "Order": 8
 }, {
     "Title": "Sales Direction",
     "Id": "salesDirection",
-    "Order": 8
+    "Order": 9
 }, {
     "Title": "Risk Type",
     "Id": "riskType",
-    "Order": 9
+    "Order": 10
 }, {
     "Title": "Base for Measuring Qualitative Characteristics",
     "Id": "bmqc",
-    "Order": 10
+    "Order": 11
 }, {
     "Title": "Set of Base for Measuring Qualitative Characteristics",
     "Id": "sbmqc",
-    "Order": 11
+    "Order": 12
 }, {
     "Title": "Quality Parameters",
     "Id": "qualityParameters",
-    "Order": 12
+    "Order": 13
 }, {
     "Title": "Default Quality Parameters",
     "Id": "dqp",
-    "Order": 13
+    "Order": 14
 }, {
     "Title": "Effective r/w Rates",
     "Id": "effectiveRwRates",
-    "Order": 14
+    "Order": 15
 }, {
     "Title": "Port Costs",
     "Id": "portCosts",
-    "Order": 15
+    "Order": 16
 }, {
     "Title": "Survey & Forward rates",
     "Id": "surveyForwardRates",
-    "Order": 16
+    "Order": 17
 }, {
     "Title": "Transit Cost",
     "Id": "transitCost",
-    "Order": 17
+    "Order": 18
 }, {
     "Title": "Interest Rate",
     "Id": "interestRate",
-    "Order": 18
+    "Order": 19
 }, {
     "Title": "Inflation Factor",
     "Id": "inflationFactor",
-    "Order": 19
+    "Order": 20
 }, {
     "Title": "Index",
     "Id": "index",
-    "Order": 20
+    "Order": 21
 }, {
     "Title": "Growth Factor",
     "Id": "growthFactor",
-    "Order": 21
+    "Order": 22
 }, {
     "Title": "Benchmark SUEK AG",
     "Id": "benchmark",
-    "Order": 22
+    "Order": 23
 }, {
     "Title": "FCA Price for Domestic Market",
     "Id": "fcaDomestic",
-    "Order": 23
+    "Order": 24
 }, {
     "Title": "FCA Price for Product",
     "Id": "fcaProduct",
-    "Order": 24
+    "Order": 25
 }, {
     "Title": "FCA Price for Resource",
     "Id": "fcaResource",
-    "Order": 25
+    "Order": 26
 }, {
     "Title": "Strategy",
     "Id": "strategy",
-    "Order": 26
+    "Order": 27
 }]

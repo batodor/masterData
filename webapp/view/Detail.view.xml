@@ -9,7 +9,8 @@
 			<core:Fragment fragmentName="fragment.fcaDomestic" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.fcaProduct" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.fcaResource" type="XML"></core:Fragment>
-			<core:Fragment fragmentName="fragment.productRecipe" type="XML"></core:Fragment>
+			<core:Fragment fragmentName="fragment.productRecipeHeader" type="XML"></core:Fragment>
+			<core:Fragment fragmentName="fragment.productRecipeItem" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.strategy" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.growthFactor" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.salesScheme" type="XML"></core:Fragment>
@@ -55,5 +56,12 @@
 				press="tableDelete"
 				text="{i18n>delete}" />
 		</semantic:negativeAction>
+		<semantic:saveAsTileAction>
+			<Button 
+				id="tableDetails"
+				type="Emphasized"
+				text="{i18n>details}"
+				press="tableDetails"/>
+		</semantic:saveAsTileAction>
 	</semantic:DetailPage>
 </mvc:View>

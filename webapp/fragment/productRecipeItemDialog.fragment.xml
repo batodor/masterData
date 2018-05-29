@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>productRecipe}" class="sapUiContentPadding" id="productRecipeDialog">
+	<Dialog title="{i18n>productRecipeItem}" class="sapUiContentPadding" id="productRecipeItemDialog">
 		<content>
 			<Text text="{i18n>productCode}" width="250px"/>
 			<Input custom:key="productCode" value="{ProductCode}" width="150px"/>
@@ -17,9 +17,9 @@
 			<Input value="{RecipeNumber}" width="150px"/>
 		</content>
 		<buttons>
-			<Button text="{i18n>cancel}" custom:id="productRecipe" type="Back" press="dialogCancel"/>
-			<Button text="{i18n>add}" custom:id="productRecipe" visible="false" type="Accept" press="dialogAdd"/>
-			<Button text="{i18n>edit}" custom:id="productRecipe" visible="false" type="Accept" press="dialogEdit"/>
+			<Button text="{i18n>cancel}" custom:id="productRecipeItem" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="productRecipeItem" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="productRecipeItem" visible="false" type="Accept" press="dialogEdit"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

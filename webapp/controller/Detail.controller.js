@@ -31,7 +31,7 @@ sap.ui.define([
 			this.setModel(oViewModel, "detailView");
 
 			// Define list of tables ids
-			this.tableArr = [ "limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource", "productRecipe", "strategy", 
+			this.tableArr = [ "limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource", "productRecipeHeader", "productRecipeItem", "strategy", 
 				"growthFactor", "salesScheme", "riskType", "salesDirection", "incoterms", "currency", "uom", "country", "rwStation", "port", "vesselType", "materialGroup", "poq", 
 				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc", "crossBorder", "productionUnit", "addressType", "qualityParameters", "dqp"];
 
@@ -127,12 +127,15 @@ sap.ui.define([
 			}
 			if(this.id === "country"){
 				this.setInputVisible(["tableAdd", "tableDelete"], false);
+			}if(this.id === "productRecipeHeader"){
+				this.setInputVisible(["tableDetails"], true);
 			}else if(this.id === "currency"){
 				this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], false);
 			}else{
 				this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], true);
+				this.setInputVisible(["tableDetails"], false);
 			}
-			this.setInputEnabled(["tableEdit", "tableDelete"], false);
+			this.setInputEnabled(["tableEdit", "tableDelete", "tableDetails"], false);
 		},
 
 		// Event on selection of table items
@@ -141,9 +144,9 @@ sap.ui.define([
 			var selectedCount = table.getSelectedItems().length;
 			var tableId = table.data("id");
 			if (selectedCount > 0) {
-				this.setInputEnabled(["tableDelete", "tableEdit"], true);
+				this.setInputEnabled(["tableDelete", "tableEdit", "tableDetails"], true);
 			} else {
-				this.setInputEnabled(["tableDelete", "tableEdit"], false);
+				this.setInputEnabled(["tableDelete", "tableEdit", "tableDetails"], false);
 			}
 		},
 		
@@ -213,6 +216,17 @@ sap.ui.define([
 						MessageToast.show("Delete canceled!");
 					}
 				}
+			});
+		},
+		tableDetails: function(){
+			var oTable = this.byId(this.id);
+			var key = oTable.data("key");
+			var detailsTableId = oTable.data("details");
+			var url = oTable.getSelectedItem().getBindingContextPath();
+			var oModel = oTable.getModel();
+			var oData = oModel.getData(url);
+			this.getRouter().navTo("object", {
+				objectId: detailsTableId
 			});
 		},
 
