@@ -3,25 +3,27 @@
 		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-				<SearchField placeholder="{i18n>productCode}" custom:id="productRecipeItem" custom:key="ProductCode" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<SearchField placeholder="{i18n>productCode}" custom:id="productRecipeItem" custom:key="Content" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<ToolbarSpacer/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>productCode}"/></Column>
-			<Column><Text class="black" text="{i18n>salesProgram}"/></Column>
-			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
-			<Column><Label class="black" text="{i18n>dateTo}"/></Column>
-			<Column><Label class="black" text="{i18n>recipeNumber}"/></Column>
+			<Column><Text class="black" text="{i18n>itemNumber}"/></Column>
+			<Column><Text class="black" text="{i18n>recipeNumber}"/></Column>
+			<Column><Text class="black" text="{i18n>uom}"/></Column>
+			<Column><Text class="black" text="{i18n>content}"/></Column>
+			<Column><Text class="black" text="{i18n>material}"/></Column>
+			<Column><Text class="black" text="{i18n>productionUnit}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{ProductCode}"/>
-					<Text text="{SalesProgram}"/>
-					<Text text="{DateFrom}"/>
-					<Text text="{DateTo}"/>
+					<Text text="{ItemNumber}"/>
 					<Text text="{RecipeNumber}"/>
+					<Text text="{UOM}"/>
+					<Text text="{Content}"/>
+					<Text text="{Material}"/>
+					<Text text="{ProductionUnit}"/>
 				</cells>
 			</ColumnListItem>
 		</items>

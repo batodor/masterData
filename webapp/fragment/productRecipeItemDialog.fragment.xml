@@ -1,20 +1,23 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>productRecipeItem}" class="sapUiContentPadding" id="productRecipeItemDialog">
 		<content>
-			<Text text="{i18n>productCode}" width="250px"/>
-			<Input custom:key="productCode" value="{ProductCode}" width="150px"/>
+			<Text text="{i18n>itemNumber}" width="150px"/>
+			<Input custom:key="itemNumber" value="{ItemNumber}" width="150px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>salesProgram}" width="250px"/>
-			<Input value="{SalesProgram}" width="150px" />
+			<Text text="{i18n>recipeNumber}" width="150px"/>
+			<Input custom:key="recipeNumber" value="{RecipeNumber}" width="150px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>dateFrom}" width="250px"/>
-			<DatePicker value="{DateFrom}" width="155px" />
+			<Text text="{i18n>uom}" width="150px"/>
+			<Input value="{UOM}" width="150px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>dateTo}" width="250px"/>
-			<DatePicker value="{DateTo}" width="155px"/>
+			<Text text="{i18n>content}" width="150px"/>
+			<Input value="{Content}" width="150px" />
 			<ToolbarSpacer/>
-			<Text text="{i18n>recipeNumber}" width="250px"/>
-			<Input value="{RecipeNumber}" width="150px"/>
+			<Text text="{i18n>material}" width="150px"/>
+			<Input value="{Material}" width="150px" />
+			<ToolbarSpacer/>
+			<Text text="{i18n>productionUnit}" width="150px"/>
+			<Input value="{ProductionUnit}" width="150px"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productRecipeItem" type="Back" press="dialogCancel"/>

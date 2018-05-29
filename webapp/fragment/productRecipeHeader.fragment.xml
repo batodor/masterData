@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="productRecipeHeader" visible="false" custom:id="productRecipeHeader" custom:key="Code" custom:details="productRecipeItem" 
-		items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" 
+		custom:filter="RecipeNumber" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" 
 		busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
@@ -21,8 +21,8 @@
 					<Text text="{Code}"/>
 					<Text text="{RecipeNumber}"/>
 					<Text text="{Name}"/>
-					<Text text="{DateFrom}"/>
-					<Text text="{DateTo}"/>
+					<Text text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+					<Text text="{ path: 'DateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
 				</cells>
 			</ColumnListItem>
 		</items>

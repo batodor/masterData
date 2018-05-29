@@ -40,11 +40,19 @@ sap.ui.define([
 			
 			var eventBus = sap.ui.getCore().getEventBus();
 		    eventBus.subscribe("MainDetailChannel", "onNavigateEvent", this.onDataReceived, this);
+		    
+		    //Declare global filter
+		    this.filter = [];
 		},
 		
 		// Passed data from Master view
 		onDataReceived : function(channel, event, data) {
 			this.byId("page").setTitle(data.title);
+			if(data.filter){
+				this.filter.push(data.filter);
+			}else{
+				this.filter = [];
+			}
 		},
 
 		/* =========================================================== */
@@ -113,7 +121,8 @@ sap.ui.define([
 					if(table.getItems().length === 0){
 						table.bindItems({
 							path: "/" + tableId + 'Set',
-							template: table['mBindingInfos'].items.template
+							template: table['mBindingInfos'].items.template,
+							filter: this.filter
 						});
 					}
 				} else {
@@ -221,10 +230,16 @@ sap.ui.define([
 		tableDetails: function(){
 			var oTable = this.byId(this.id);
 			var key = oTable.data("key");
+			var filterKey = oTable.data("filter");
 			var detailsTableId = oTable.data("details");
 			var url = oTable.getSelectedItem().getBindingContextPath();
 			var oModel = oTable.getModel();
 			var oData = oModel.getData(url);
+			
+			var filter = new Filter(filterKey, FilterOperator.EQ, oData[key]);
+			var eventBus = sap.ui.getCore().getEventBus();
+			eventBus.publish("MainDetailChannel", "onNavigateEvent", { filter : filter });
+			
 			this.getRouter().navTo("object", {
 				objectId: detailsTableId
 			});
