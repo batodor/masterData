@@ -122,7 +122,7 @@ sap.ui.define([
 						table.bindItems({
 							path: "/" + tableId + 'Set',
 							template: table['mBindingInfos'].items.template,
-							filter: this.filter
+							filters: this.filter
 						});
 					}
 				} else {
@@ -134,17 +134,22 @@ sap.ui.define([
 					}
 				}
 			}
+			this.setInputEnabled(["tableEdit", "tableDelete", "tableDetails"], false);
 			if(this.id === "country"){
 				this.setInputVisible(["tableAdd", "tableDelete"], false);
 			}if(this.id === "productRecipeHeader"){
 				this.setInputVisible(["tableDetails"], true);
+				this.byId('tableDetails').setText(this.getResourceBundle().getText("items"));
+			}else if(this.id === "productRecipeItem"){
+				this.setInputVisible(["tableDetails"], true);
+				this.setInputEnabled(["tableDetails"], true);
+				this.byId('tableDetails').setText(this.getResourceBundle().getText("headers"));
 			}else if(this.id === "currency"){
 				this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], false);
 			}else{
 				this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], true);
 				this.setInputVisible(["tableDetails"], false);
 			}
-			this.setInputEnabled(["tableEdit", "tableDelete", "tableDetails"], false);
 		},
 
 		// Event on selection of table items
@@ -230,15 +235,23 @@ sap.ui.define([
 		tableDetails: function(){
 			var oTable = this.byId(this.id);
 			var key = oTable.data("key");
-			var filterKey = oTable.data("filter");
 			var detailsTableId = oTable.data("details");
-			var url = oTable.getSelectedItem().getBindingContextPath();
-			var oModel = oTable.getModel();
-			var oData = oModel.getData(url);
+			var options = {};
+			if(key){
+				var title = oTable.data("title");
+				var filterKey = oTable.data("filter");
+				var url = oTable.getSelectedItem().getBindingContextPath();
+				var oModel = oTable.getModel();
+				var oData = oModel.getData(url);
+				var filter = new Filter(filterKey, FilterOperator.EQ, oData[key]);
+				options.filter = filter;
+				options.title = oData[title];
+			}else{
+				options.title = this.getResourceBundle().getText(detailsTableId);
+			}
 			
-			var filter = new Filter(filterKey, FilterOperator.EQ, oData[key]);
 			var eventBus = sap.ui.getCore().getEventBus();
-			eventBus.publish("MainDetailChannel", "onNavigateEvent", { filter : filter });
+			eventBus.publish("MainDetailChannel", "onNavigateEvent", options);
 			
 			this.getRouter().navTo("object", {
 				objectId: detailsTableId

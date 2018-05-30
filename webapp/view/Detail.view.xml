@@ -60,7 +60,7 @@
 			<Button 
 				id="tableDetails"
 				type="Emphasized"
-				text="{i18n>details}"
+				text="{i18n>items}"
 				press="tableDetails"/>
 		</semantic:saveAsTileAction>
 	</semantic:DetailPage>

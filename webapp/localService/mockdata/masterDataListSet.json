@@ -19,10 +19,6 @@
     "Id": "productRecipeHeader",
     "Order": 5
 }, {
-    "Title": "Product Recipe Item",
-    "Id": "productRecipeItem",
-    "Order": 6
-}, {
     "Title": "Sales Program",
     "Id": "salesProgram",
     "Order": 7
