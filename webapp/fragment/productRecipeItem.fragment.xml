@@ -11,7 +11,7 @@
 			<Column><Text class="black" text="{i18n>material}"/></Column>
 			<Column><Text class="black" text="{i18n>productionUnit}"/></Column>
 			<Column><Text class="black" text="{i18n>content}"/></Column>
-			<Column><Text class="black" text="{i18n>uom}"/></Column>
+			<!--<Column><Text class="black" text="{i18n>uom}"/></Column>-->
 		</columns>
 		<items>
 			<ColumnListItem>
@@ -20,7 +20,7 @@
 					<Text text="{Material}"/>
 					<Text text="{ProductionUnit}"/>
 					<Text text="{Content} %"/>
-					<Text text="{UOM}"/>
+					<!--<Text text="{UOM}"/>-->
 				</cells>
 			</ColumnListItem>
 		</items>
