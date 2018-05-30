@@ -1,18 +1,15 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="productRecipeItem" visible="false" custom:id="productRecipeItem" custom:details="productRecipeHeader" items="{}" 
-		select="onTableSelect" width="auto" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" 
-		busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="productRecipeItem" visible="false" custom:id="productRecipeItem" custom:details="productRecipeHeader" 
+		custom:filter="RecipeNumber" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" 
+		growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-				<SearchField placeholder="{i18n>productCode}" custom:id="productRecipeItem" custom:key="Content" showSearchButton="true" search="triggerSearch" width="auto"/>
-				<ToolbarSpacer/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>
 			<Column><Text class="black" text="{i18n>itemNumber}"/></Column>
-			<Column><Text class="black" text="{i18n>recipeNumber}"/></Column>
-			<Column><Text class="black" text="{i18n>uom}"/></Column>
 			<Column><Text class="black" text="{i18n>content}"/></Column>
+			<Column><Text class="black" text="{i18n>uom}"/></Column>
 			<Column><Text class="black" text="{i18n>material}"/></Column>
 			<Column><Text class="black" text="{i18n>productionUnit}"/></Column>
 		</columns>
@@ -20,9 +17,8 @@
 			<ColumnListItem>
 				<cells>
 					<Text text="{ItemNumber}"/>
-					<Text text="{RecipeNumber}"/>
-					<Text text="{UOM}"/>
 					<Text text="{Content}"/>
+					<Text text="{UOM}"/>
 					<Text text="{Material}"/>
 					<Text text="{ProductionUnit}"/>
 				</cells>

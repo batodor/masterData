@@ -4,14 +4,11 @@
 			<Text text="{i18n>itemNumber}" width="150px"/>
 			<Input custom:key="itemNumber" value="{ItemNumber}" width="150px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>recipeNumber}" width="150px"/>
-			<Input custom:key="recipeNumber" value="{RecipeNumber}" width="150px"/>
+			<Text text="{i18n>content}" width="150px"/>
+			<Input value="{Content}" width="150px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>uom}" width="150px"/>
 			<Input value="{UOM}" width="150px"/>
-			<ToolbarSpacer/>
-			<Text text="{i18n>content}" width="150px"/>
-			<Input value="{Content}" width="150px" />
 			<ToolbarSpacer/>
 			<Text text="{i18n>material}" width="150px"/>
 			<Input value="{Material}" width="150px" />

@@ -1,3 +1,6 @@
+.sapUiSizeCompact .sapMTB.sapMListHdrTBar{
+	height: auto;
+}
 .sapUiBlockLayoutSizeL .sapUiBlockCellContent>.sapMText,
 .sapMFlexItem>.sapMText {
     font-size: .95rem;

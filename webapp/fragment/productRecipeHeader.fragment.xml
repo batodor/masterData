@@ -9,16 +9,14 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>productCode}"/></Column>
 			<Column><Text class="black" text="{i18n>recipeNumber}"/></Column>
-			<Column><Text class="black" text="{i18n>name}"/></Column>
+			<Column><Text class="black" text="{i18n>salesProgram}"/></Column>
 			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
 			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{Code}"/>
 					<Text text="{RecipeNumber}"/>
 					<Text text="{Name}"/>
 					<Text text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>

@@ -113,11 +113,16 @@ sap.ui.define([
 		 */
 		_onObjectMatched: function(oEvent) {
 			var tableId = oEvent.getParameter("arguments").objectId;
+			var filter = oEvent.getParameter("arguments").filter;
 			this.id = tableId;
 			for (var i = 0; i < this.tableArr.length; i++) {
 				if (this.tableArr[i] === tableId) {
 					var table = this.byId(tableId);
 					table.setVisible(true).removeSelections();
+					if(filter){
+						var filterKey = table.data("filter");
+						this.filter = new Filter(filterKey, FilterOperator.EQ, filter);
+					}
 					if(table.getItems().length === 0){
 						table.bindItems({
 							path: "/" + tableId + 'Set',
@@ -236,26 +241,25 @@ sap.ui.define([
 			var oTable = this.byId(this.id);
 			var key = oTable.data("key");
 			var detailsTableId = oTable.data("details");
-			var options = {};
+			var eventOptions = {};
+			var routerOptions = {};
 			if(key){
 				var title = oTable.data("title");
 				var filterKey = oTable.data("filter");
 				var url = oTable.getSelectedItem().getBindingContextPath();
-				var oModel = oTable.getModel();
-				var oData = oModel.getData(url);
+				var oData = oTable.getModel().getData(url);
 				var filter = new Filter(filterKey, FilterOperator.EQ, oData[key]);
-				options.filter = filter;
-				options.title = oData[title];
+				eventOptions.filter = filter; // for tableDetails function
+				eventOptions.title = oData[title];
+				routerOptions.filter = oData[key]; // for router filtration
 			}else{
-				options.title = this.getResourceBundle().getText(detailsTableId);
+				eventOptions.title = this.getResourceBundle().getText(detailsTableId);
 			}
-			
 			var eventBus = sap.ui.getCore().getEventBus();
-			eventBus.publish("MainDetailChannel", "onNavigateEvent", options);
+			eventBus.publish("MainDetailChannel", "onNavigateEvent", eventOptions);
 			
-			this.getRouter().navTo("object", {
-				objectId: detailsTableId
-			});
+			routerOptions.objectId = detailsTableId;
+			this.getRouter().navTo("object", routerOptions);
 		},
 
 		// Function for openning the dialog for create/edit/copy functions
