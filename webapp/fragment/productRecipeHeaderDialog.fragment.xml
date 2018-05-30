@@ -1,20 +1,20 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>productRecipeHeader}" class="sapUiContentPadding" id="productRecipeHeaderDialog">
 		<content>
-			<Text text="{i18n>productCode}" width="250px"/>
-			<Input custom:key="productCode" value="{Code}" width="150px"/>
+			<Label required="true" text="{i18n>recipeNumber}" width="150px"/>
+			<Input value="{RecipeNumber}" custom:key="recipeNumber" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>recipeNumber}" width="250px"/>
-			<Input value="{RecipeNumber}" width="150px"/>
+			<Label required="true" text="{i18n>salesProgram} *" width="150px"/>
+			<Select selectedKey="{Code}" custom:key="salesProgram" forceSelection="false" 
+				items="{ path: '/salesProgramSet', sorter: { path: 'SalesProgram' } }" width="250px">
+				<core:Item key="{SalesProgram}" text="{SalesProgram} - {Description}"/>
+			</Select>
 			<ToolbarSpacer/>
-			<Text text="{i18n>name}" width="250px"/>
-			<Input value="{Name}" width="150px" />
+			<Label text="{i18n>dateFrom}" width="150px"/>
+			<DatePicker dateValue="{DateFrom}" width="255px" />
 			<ToolbarSpacer/>
-			<Text text="{i18n>dateFrom}" width="250px"/>
-			<DatePicker value="{DateFrom}" width="155px" />
-			<ToolbarSpacer/>
-			<Text text="{i18n>dateTo}" width="250px"/>
-			<DatePicker value="{DateTo}" width="155px"/>
+			<Label text="{i18n>dateTo}" width="150px"/>
+			<DatePicker dateValue="{DateTo}" width="255px"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productRecipeHeader" type="Back" press="dialogCancel"/>
