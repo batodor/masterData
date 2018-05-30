@@ -319,6 +319,14 @@ sap.ui.define([
 						if(input.data("name")){
 							name = input.data("name");
 						}
+						if(input.hasOwnProperty("_oMaxDate")){
+							value = input.getDateValue();
+							if(value) {
+								value.setMinutes(-value.getTimezoneOffset());
+							} else { 
+								value = null;
+							}
+						}
 						oData[name] = value;
 					}
 				}

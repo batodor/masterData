@@ -4,7 +4,7 @@
 			<Label required="true" text="{i18n>recipeNumber}" width="150px"/>
 			<Input value="{RecipeNumber}" custom:key="recipeNumber" width="250px"/>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>salesProgram} *" width="150px"/>
+			<Label required="true" text="{i18n>salesProgram}" width="150px"/>
 			<Select selectedKey="{Code}" custom:key="salesProgram" forceSelection="false" 
 				items="{ path: '/salesProgramSet', sorter: { path: 'SalesProgram' } }" width="250px">
 				<core:Item key="{SalesProgram}" text="{SalesProgram} - {Description}"/>
