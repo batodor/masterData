@@ -2,19 +2,19 @@
 	<Dialog title="{i18n>productRecipeItem}" class="sapUiContentPadding" id="productRecipeItemDialog">
 		<content>
 			<Label required="true"  text="{i18n>itemNumber}" width="150px"/>
-			<Input custom:key="itemNumber" value="{ItemNumber}" width="150px"/>
-			<ToolbarSpacer/>
-			<Label text="{i18n>content}" width="150px"/>
-			<Input value="{Content}" width="150px" />
-			<ToolbarSpacer/>
-			<Label text="{i18n>uom}" width="150px"/>
-			<Input value="{UOM}" width="150px"/>
+			<Input custom:key="itemNumber" value="{ItemNumber}" width="200px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>material}" width="150px"/>
-			<Input value="{Material}" width="150px" />
+			<Input value="{Material}" width="200px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>productionUnit}" width="150px"/>
-			<Input value="{ProductionUnit}" width="150px"/>
+			<Input value="{ProductionUnit}" width="200px"/>
+			<ToolbarSpacer/>
+			<Label text="{i18n>content}" width="150px"/>
+			<Input value="{Content}" width="200px" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>uom}" width="150px"/>
+			<Input value="{UOM}" width="200px"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productRecipeItem" type="Back" press="dialogCancel"/>
