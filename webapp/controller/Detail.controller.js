@@ -142,8 +142,9 @@ sap.ui.define([
 			this.setInputEnabled(["tableEdit", "tableDelete", "tableDetails"], false);
 			if(this.id === "country"){
 				this.setInputVisible(["tableAdd", "tableDelete"], false);
-			}if(this.id === "productRecipeHeader"){
+			}else if(this.id === "productRecipeHeader"){
 				this.setInputVisible(["tableDetails"], true);
+				this.setInputVisible(["tableEdit"], false);
 				this.byId('tableDetails').setText(this.getResourceBundle().getText("items"));
 			}else if(this.id === "productRecipeItem"){
 				this.setInputVisible(["tableDetails"], true);
