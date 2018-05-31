@@ -119,14 +119,11 @@ sap.ui.define([
 				if (this.tableArr[i] === tableId) {
 					var table = this.byId(tableId);
 					table.setVisible(true).removeSelections();
-					if(filter){
-						// if no filter from eventBus
-						if(this.filter.length === 0){ 
-							this.byId("page").setTitle("Recipe Number: " + filter);
-						}
+					// if no filter from eventBus
+					if(filter && this.filter.length === 0){ 
+						this.byId("page").setTitle("Recipe Number: " + filter);
 						var filterKey = table.data("filter");
-						this.filter = new Filter(filterKey, FilterOperator.EQ, filter);
-						
+						this.filter.push(new Filter(filterKey, FilterOperator.EQ, filter));
 					}
 					if(table.getItems().length === 0){
 						table.bindItems({
@@ -216,6 +213,11 @@ sap.ui.define([
 		tableAdd: function() {
 			sap.ui.getCore().byId(this.id + "Dialog").unbindElement();
 			var oDialog = this.dialogOpen();
+			if(this.filter.length > 0){
+				var filterKey = this.filter[0].sPath;
+				var value = this.filter[0].oValue1;
+				sap.ui.getCore().byId(this.id + filterKey).setValue(value).setEditable(false);
+			}
 			this.setEnabled(oDialog, true);
 			oDialog.getButtons()[1].setVisible(true);
 			oDialog.getButtons()[2].setVisible(false);

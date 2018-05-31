@@ -4,6 +4,9 @@
 			<Label required="true"  text="{i18n>itemNumber}" width="150px"/>
 			<Input custom:key="itemNumber" value="{ItemNumber}" width="200px"/>
 			<ToolbarSpacer/>
+			<Label required="true"  text="{i18n>recipeNumber}" width="150px"/>
+			<Input custom:key="recipeNumber" id="productRecipeItemRecipeNumber" value="{RecipeNumber}" width="200px"/>
+			<ToolbarSpacer/>
 			<Label text="{i18n>material}" width="150px"/>
 			<Input value="{Material}" width="200px" />
 			<ToolbarSpacer/>
@@ -20,8 +23,6 @@
 				<core:Item key="" text=""/>
 				<core:Item key="%" text="%"/>
 			</Select>
-			
-			<Input value="{RecipeNumber}" width="200px" visible="false"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productRecipeItem" type="Back" press="dialogCancel"/>
