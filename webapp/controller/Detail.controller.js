@@ -213,12 +213,12 @@ sap.ui.define([
 		tableAdd: function() {
 			sap.ui.getCore().byId(this.id + "Dialog").unbindElement();
 			var oDialog = this.dialogOpen();
+			this.setEnabled(oDialog, true);
 			if(this.filter.length > 0){
 				var filterKey = this.filter[0].sPath;
 				var value = this.filter[0].oValue1;
-				sap.ui.getCore().byId(this.id + filterKey).setValue(value).setEditable(false);
+				sap.ui.getCore().byId(this.id + filterKey).setValue(value).setEnabled(false);
 			}
-			this.setEnabled(oDialog, true);
 			oDialog.getButtons()[1].setVisible(true);
 			oDialog.getButtons()[2].setVisible(false);
 		},
