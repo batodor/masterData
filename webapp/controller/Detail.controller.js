@@ -112,12 +112,11 @@ sap.ui.define([
 		 * @private
 		 */
 		_onObjectMatched: function(oEvent) {
-			var tableId = oEvent.getParameter("arguments").objectId;
+			this.id = oEvent.getParameter("arguments").objectId;
 			var filter = oEvent.getParameter("arguments").filter;
-			this.id = tableId;
 			for (var i = 0; i < this.tableArr.length; i++) {
-				if (this.tableArr[i] === tableId) {
-					var table = this.byId(tableId);
+				if (this.tableArr[i] === this.id) {
+					var table = this.byId(this.id);
 					table.setVisible(true).removeSelections();
 					// if no filter from eventBus
 					if(filter && this.filter.length === 0){ 
@@ -126,7 +125,7 @@ sap.ui.define([
 						this.filter.push(new Filter(filterKey, FilterOperator.EQ, filter));
 					}
 					table.bindItems({
-						path: "/" + tableId + 'Set',
+						path: "/" + this.id + 'Set',
 						template: table['mBindingInfos'].items.template,
 						filters: this.filter
 					});
@@ -139,7 +138,10 @@ sap.ui.define([
 					}
 				}
 			}
+			this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], true);
+			this.setInputVisible(["tableDetails"], false);
 			this.setInputEnabled(["tableEdit", "tableDelete", "tableDetails"], false);
+			
 			if(this.id === "country"){
 				this.setInputVisible(["tableAdd", "tableDelete"], false);
 			}else if(this.id === "productRecipeHeader"){
@@ -152,9 +154,6 @@ sap.ui.define([
 				this.byId('tableDetails').setText(this.getResourceBundle().getText("headers"));
 			}else if(this.id === "currency"){
 				this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], false);
-			}else{
-				this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], true);
-				this.setInputVisible(["tableDetails"], false);
 			}
 		},
 
