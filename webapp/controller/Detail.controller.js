@@ -120,8 +120,13 @@ sap.ui.define([
 					var table = this.byId(tableId);
 					table.setVisible(true).removeSelections();
 					if(filter){
+						// if no filter from eventBus
+						if(this.filter.length === 0){ 
+							this.byId("page").setTitle("Recipe Number: " + filter);
+						}
 						var filterKey = table.data("filter");
 						this.filter = new Filter(filterKey, FilterOperator.EQ, filter);
+						
 					}
 					if(table.getItems().length === 0){
 						table.bindItems({

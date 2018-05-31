@@ -16,10 +16,12 @@
 			<Input value="{Content}" width="200px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>uom}" width="150px"/>
-			<Select forceSelection="false" custom:name="UOM" width="200px">
+			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '' ? '%' : '' }" width="200px">
 				<core:Item key="" text=""/>
 				<core:Item key="%" text="%"/>
 			</Select>
+			
+			<Input value="{RecipeNumber}" width="200px" visible="false"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productRecipeItem" type="Back" press="dialogCancel"/>
