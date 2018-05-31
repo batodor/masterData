@@ -15,7 +15,7 @@
     "Id": "productionUnit",
     "Order": 4
 }, {
-    "Title": "Product Recipe Header",
+    "Title": "Product Recipe",
     "Id": "productRecipeHeader",
     "Order": 5
 }, {
