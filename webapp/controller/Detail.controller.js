@@ -125,13 +125,11 @@ sap.ui.define([
 						var filterKey = table.data("filter");
 						this.filter.push(new Filter(filterKey, FilterOperator.EQ, filter));
 					}
-					if(table.getItems().length === 0){
-						table.bindItems({
-							path: "/" + tableId + 'Set',
-							template: table['mBindingInfos'].items.template,
-							filters: this.filter
-						});
-					}
+					table.bindItems({
+						path: "/" + tableId + 'Set',
+						template: table['mBindingInfos'].items.template,
+						filters: this.filter
+					});
 				} else {
 					// Just in case if any of the fragment (table) has syntax error
 					try {
