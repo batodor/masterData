@@ -2,24 +2,38 @@
 	<Dialog title="{i18n>productRecipeItem}" class="sapUiContentPadding" id="productRecipeItemDialog">
 		<content>
 			<Label required="true"  text="{i18n>recipeNumber}" width="150px"/>
-			<Input custom:key="recipeNumber" id="productRecipeItemRecipeNumber" value="{RecipeNumber}" width="200px" />
+			<Input custom:key="recipeNumber" id="productRecipeItemRecipeNumber" value="{RecipeNumber}" width="250px" />
 			<ToolbarSpacer/>
 			<Label required="true"  text="{i18n>itemNumber}" width="150px"/>
-			<Input custom:key="itemNumber" value="{ItemNumber}" width="200px"/>
+			<Input custom:key="itemNumber" value="{ItemNumber}" width="250px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>material}" width="150px"/>
-			<Input value="{Material}" width="200px" />
+			<Input 
+				type="Text"
+				custom:id="material"
+				custom:code="Code"
+				id="materialInput"
+				placeholder="{i18n>plsEnter} {i18n>material}"
+				showSuggestion="true"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				suggestionItems="{/materialSet}"
+				value="{Material}" width="250px" >
+				<suggestionItems>
+					<core:Item text="{Name}" />
+				</suggestionItems>
+			</Input>
 			<ToolbarSpacer/>
 			<Label text="{i18n>productionUnit}" width="150px"/>
-			<Select forceSelection="false" selectedKey="{ProductionUnit}" items="{ path: '/productionUnitSet', sorter: { path: 'Code' } }" width="200px">
+			<Select forceSelection="false" selectedKey="{ProductionUnit}" items="{ path: '/productionUnitSet', sorter: { path: 'Code' } }" width="250px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
 			<Label text="{i18n>content}" width="150px"/>
-			<Input value="{Content}" width="200px" />
+			<Input value="{Content}" width="250px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>uom}" width="150px"/>
-			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '%' ? '%' : '' }" width="200px">
+			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '%' ? '%' : '' }" width="250px">
 				<core:Item key="" text=""/>
 				<core:Item key="%" text="%"/>
 			</Select>

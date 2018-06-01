@@ -33,7 +33,7 @@ sap.ui.define([
 			// Define list of tables ids
 			this.tableArr = [ "limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource", "productRecipeHeader", "productRecipeItem", "strategy", 
 				"growthFactor", "salesScheme", "riskType", "salesDirection", "incoterms", "currency", "uom", "country", "rwStation", "port", "vesselType", "materialGroup", "poq", 
-				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc", "crossBorder", "productionUnit", "addressType", "qualityParameters", "dqp"];
+				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc", "crossBorder", "productionUnit", "addressType", "qualityParameters", "dqp", "material"];
 
 			// Define all Dialog fragments inside view as depended of this view passing the tableArr of ids
 			this.addDialogs(this.tableArr);
@@ -42,7 +42,8 @@ sap.ui.define([
 		    eventBus.subscribe("MainDetailChannel", "onNavigateEvent", this.onDataReceived, this);
 		    
 		    //Declare global filter
-		    this.filter = [];
+		    this.filter = []; // for router
+		    this.search = {}; // for searchFields
 		},
 		
 		// Passed data from Master view
@@ -192,19 +193,25 @@ sap.ui.define([
 			var query = oEvent.getParameter("query"),
 				id = oEvent.getSource().data('id'),
 				key = oEvent.getSource().data('key'),
+				operator = oEvent.getSource().data('operator'),
 				oTable = this.byId(id),
-				oViewModel = oTable.getModel(),
 				filters = [];
-			
+				
+			if(oEvent.sId === "change"){
+				query = oEvent.getParameter("newValue");
+			}
+			if(!oTable){
+				oTable = sap.ui.getCore().byId(id);
+			}
 			if(query){
 				var keyFilter = new Filter(key, FilterOperator.Contains, query);
+				if(operator){
+					keyFilter = new Filter(key, FilterOperator[operator], query);
+				}
 				filters.push(keyFilter);
 			}
 			
 			oTable.getBinding("items").filter(filters, "Application");
-			if (filters.length !== 0) {
-				oViewModel.setProperty("/tableNoDataText", this.getResourceBundle().getText("worklistNoDataWithSearchText"));
-			}
 		},
 
 		// Table buttons function for create/edit/copy/delete of items
@@ -402,6 +409,22 @@ sap.ui.define([
 			searchField.getBinding("suggestionItems").attachEventOnce('dataReceived', function() {
 		        searchField.suggest();
 		    }); 
+		},
+		
+		handleValueHelp: function(oEvent){
+			var id = oEvent.getSource().data("id");
+			var code = oEvent.getSource().data("code");
+			var selectedCode = oEvent.getSource().getValue();
+			var table = sap.ui.getCore().byId(id);
+			
+			table.bindItems({
+				path: "/" + id + 'Set',
+				template: table['mBindingInfos'].items.template
+			});
+			table.getModel().attachEventOnce("requestCompleted", function(){
+				console.log(table);
+			});
+			this[id + "Dialog"].open();
 		}
 	});
 
