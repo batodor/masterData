@@ -2,12 +2,12 @@
 	<Dialog title="{i18n>material}" class="sapUiContentPadding" id="materialDialog">
 		<content>
 			<Table mode="SingleSelectLeft" includeItemInSelection="true" id="material" items="{}" select="onTableSelect" width="800px" updateFinished="onListUpdateFinished"
-				noDataText="{i18n>detailLineItemTableNoDataText}" thredshold="15" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}">
+				noDataText="{i18n>detailLineItemTableNoDataText}" growingThreshold="10" growing="true" growingScrollToLoad="false" busyIndicatorDelay="{detailView>/lineItemTableDelay}">
 				<headerToolbar>
 					<Toolbar class="white">
 						<SearchField placeholder="{i18n>materialCode}" maxLength="18" custom:id="material" custom:key="Code" custom:operator="EQ" showSearchButton="true" search="triggerSearch" width="100%"/>
 						<ToolbarSpacer/>
-						<ComboBox placeholder="{i18n>devision}" custom:key="material" change="triggerSearch" forceSelection="false" width="100%"
+						<ComboBox placeholder="{i18n>devision}" custom:id="material" custom:operator="EQ" custom:key="material" change="triggerSearch" forceSelection="false" width="100%"
 							items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }">
 							<core:Item key="{Code}" text="{Code} - {Name}"/>
 						</ComboBox>
