@@ -237,6 +237,7 @@ sap.ui.define([
 		// Close/create/edit/save dialog functions
 		// Save used for valueHelp function
 		dialogCancel: function(oEvent) {
+			this.search = {}; // nullify search object
 			var tableId = oEvent.getSource().data("id");
 			this[tableId + "Dialog"].close();
 		},
