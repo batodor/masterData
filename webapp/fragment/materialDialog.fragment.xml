@@ -7,14 +7,14 @@
 				<headerToolbar>
 					<Toolbar class="white">
 						<SearchField placeholder="{i18n>materialCode}" maxLength="18" custom:id="material" custom:key="Code" custom:operator="EQ" showSearchButton="true" 
-							search="triggerSearch" width="100%"/>
+							search="triggerSearch" width="100%" id="materialCodeFilter" />
 						<ToolbarSpacer/>
-						<ComboBox placeholder="{i18n>devision}" custom:id="material" custom:operator="EQ" custom:key="Division" change="triggerSearch" forceSelection="false" width="100%"
-							items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }">
+						<ComboBox placeholder="{i18n>devision}" id="materialDivisionFilter" custom:id="material" custom:operator="EQ" custom:key="Division" change="triggerSearch" 
+							forceSelection="false" width="100%" items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }">
 							<core:Item key="{Code}" text="{Code} - {Name}"/>
 						</ComboBox>
 						<ToolbarSpacer/>
-						<SearchField placeholder="{i18n>materialName}" maxLength="40" custom:id="material" custom:key="Name" showSearchButton="true" search="triggerSearch" width="100%"/>
+						<SearchField placeholder="{i18n>materialName}" id="materialNameFilter" maxLength="40" custom:id="material" custom:key="Name" showSearchButton="true" search="triggerSearch" width="100%"/>
 					</Toolbar>
 				</headerToolbar>
 				<columns>

@@ -11,6 +11,7 @@
 			<Input 
 				type="Text"
 				custom:id="material"
+				custom:filters="Code,Division,Name"
 				id="materialValueHelp"
 				placeholder="{i18n>plsEnter} {i18n>material}"
 				showValueHelp="true"

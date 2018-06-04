@@ -148,27 +148,34 @@ sap.ui.define([
 
 		// Search function for all tables
 		triggerSearch: function(oEvent) {
-			var query = oEvent.getParameter("query"),
+			var query = oEvent.getParameter("query") || oEvent.getParameter("newValue"),
 				id = oEvent.getSource().data('id'),
 				key = oEvent.getSource().data('key'),
-				operator = oEvent.getSource().data('operator'),
-				oTable = this.byId(id),
+				customOperator = oEvent.getSource().data('operator'),
+				oTable = this.byId(id) || sap.ui.getCore().byId(id),
 				filters = [];
 				
-			if(oEvent.sId === "change"){
-				query = oEvent.getParameter("newValue");
-			}
-			if(!oTable){
-				oTable = sap.ui.getCore().byId(id);
+			if(!this.search[id]){ 
+				this.search[id] = {};
 			}
 			if(query){
-				var keyFilter = new Filter(key, FilterOperator.Contains, query);
-				if(operator){
-					keyFilter = new Filter(key, FilterOperator[operator], query);
+				var operator = FilterOperator.Contains;
+				if(customOperator){
+					operator = FilterOperator[customOperator];
 				}
-				filters.push(keyFilter);
+				this.search[id][key] = new Filter({path: key, operator: operator, value1: query });
+			}else{
+				delete this.search[id][key];
 			}
-			oTable.getBinding("items").filter(filters, "Application");
+			var filterKeys = Object.keys(this.search[id]);
+			for(var i in filterKeys){
+				filters.push(this.search[id][filterKeys[i]]);
+			}
+			var newFilter = new Filter({ filters: filters, and: true });
+			if(filters.length === 0){
+				newFilter = filters;
+			}
+			oTable.getBinding("items").filter(newFilter);
 		},
 
 		// Table buttons function for create/edit/copy/delete/details of items
@@ -237,7 +244,6 @@ sap.ui.define([
 		// Close/create/edit/save dialog functions
 		// Save used for valueHelp function
 		dialogCancel: function(oEvent) {
-			this.search = {}; // nullify search object
 			var tableId = oEvent.getSource().data("id");
 			this[tableId + "Dialog"].close();
 		},
@@ -361,11 +367,26 @@ sap.ui.define([
 		// On value help opens new dialog with filters
 		handleValueHelp: function(oEvent){
 			var id = oEvent.getSource().data("id");
+			var filters = oEvent.getSource().data("filters");
 			var table = sap.ui.getCore().byId(id);
 			table.bindItems({
 				path: "/" + id + 'Set',
 				template: table['mBindingInfos'].items.template
 			});
+			this.search = {}; // nullify search object
+			if(filters){
+				var filtersArr = filters.split(',');
+				var typeArr = ["value", "dateValue", "selectedKey", "selected"];
+				for(var i in filtersArr){
+					for(var j in typeArr){
+						var input = sap.ui.getCore().byId(id + filtersArr[i] + "Filter");
+						var type = typeArr[j];
+						if(input.mProperties.hasOwnProperty(type)){
+							input.setProperty(type);
+						}
+					}
+				}
+			}
 			this[id + "Dialog"].getButtons()[1].setEnabled(false);
 			this[id + "Dialog"].open();
 		}
