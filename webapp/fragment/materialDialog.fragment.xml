@@ -1,11 +1,13 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>material}" class="sapUiContentPadding" id="materialDialog">
 		<content>
-			<Table mode="SingleSelectLeft" includeItemInSelection="true" id="material" items="{}" select="onTableSelect" width="800px" updateFinished="onListUpdateFinished"
-				noDataText="{i18n>detailLineItemTableNoDataText}" growingThreshold="10" growing="true" growingScrollToLoad="false" busyIndicatorDelay="{detailView>/lineItemTableDelay}">
+			<Table mode="SingleSelectLeft" includeItemInSelection="true" custom:id="material" id="material" items="{}" select="onTableSelect" width="800px" 
+				updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growingThreshold="10" growing="true" growingScrollToLoad="false" 
+				busyIndicatorDelay="{detailView>/lineItemTableDelay}">
 				<headerToolbar>
 					<Toolbar class="white">
-						<SearchField placeholder="{i18n>materialCode}" maxLength="18" custom:id="material" custom:key="Code" custom:operator="EQ" showSearchButton="true" search="triggerSearch" width="100%"/>
+						<SearchField placeholder="{i18n>materialCode}" maxLength="18" custom:id="material" custom:key="Code" custom:operator="EQ" showSearchButton="true" 
+							search="triggerSearch" width="100%"/>
 						<ToolbarSpacer/>
 						<ComboBox placeholder="{i18n>devision}" custom:id="material" custom:operator="EQ" custom:key="material" change="triggerSearch" forceSelection="false" width="100%"
 							items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }">
@@ -33,7 +35,7 @@
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="material" type="Back" press="dialogCancel"/>
-			<Button text="{i18n>save}" custom:id="material" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>save}" custom:id="material" custom:key="Code" type="Accept" id="materialSave" enabled="false" press="dialogSave"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

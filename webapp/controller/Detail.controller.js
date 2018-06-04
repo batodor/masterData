@@ -133,7 +133,9 @@ sap.ui.define([
 				} else {
 					// Just in case if any of the fragment (table) has syntax error
 					try {
-						this.byId(this.tableArr[i]).setVisible(false);
+						if(this.byId(this.tableArr[i])){
+							this.byId(this.tableArr[i]).setVisible(false);
+						}
 					} catch (err) {
 						console.log("Error in table with ID: " + this.tableArr[i]);
 					}
@@ -162,11 +164,11 @@ sap.ui.define([
 		onTableSelect: function(oEvent) {
 			var table = oEvent.getSource();
 			var selectedCount = table.getSelectedItems().length;
-			var tableId = table.data("id");
+			var id = table.data("id");
 			if (selectedCount > 0) {
-				this.setInputEnabled(["tableDelete", "tableEdit", "tableDetails"], true);
+				this.setInputEnabled(["tableDelete", "tableEdit", "tableDetails", id + "Save"], true);
 			} else {
-				this.setInputEnabled(["tableDelete", "tableEdit", "tableDetails"], false);
+				this.setInputEnabled(["tableDelete", "tableEdit", "tableDetails", id + "Save"], false);
 			}
 		},
 		
@@ -175,6 +177,8 @@ sap.ui.define([
 			for(var i in idArr){
 				if(this.byId(idArr[i])){
 					this.byId(idArr[i]).setEnabled(flag);
+				}else if(sap.ui.getCore().byId(idArr[i])){
+					sap.ui.getCore().byId(idArr[i]).setEnabled(flag);
 				}
 			}
 		},
@@ -312,6 +316,15 @@ sap.ui.define([
 			oModel.update(url, oData);
 			this[tableId + "Dialog"].close();
 		},
+		dialogSave: function(oEvent){
+			var id = oEvent.getSource().data("id");
+			var key = oEvent.getSource().data("key");
+			var item = sap.ui.getCore().byId(id).getSelectedItem();
+			var path = item.getBindingContextPath();
+			var data = item.getModel().getData(path);
+			sap.ui.getCore().byId(id + "ValueHelp").setValue(data[key]);
+			this[id + "Dialog"].close();
+		},
 		
 		// Set odata from any dialog, oDialog = object dialog / return object Data
 		getOdata: function(oDialog){
@@ -413,17 +426,12 @@ sap.ui.define([
 		
 		handleValueHelp: function(oEvent){
 			var id = oEvent.getSource().data("id");
-			var code = oEvent.getSource().data("code");
-			var selectedCode = oEvent.getSource().getValue();
 			var table = sap.ui.getCore().byId(id);
-			
 			table.bindItems({
 				path: "/" + id + 'Set',
 				template: table['mBindingInfos'].items.template
 			});
-			table.getModel().attachEventOnce("requestCompleted", function(){
-				console.log(table);
-			});
+			this[id + "Dialog"].getButtons()[1].setEnabled(false);
 			this[id + "Dialog"].open();
 		}
 	});

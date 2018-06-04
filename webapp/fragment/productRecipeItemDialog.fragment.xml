@@ -11,8 +11,7 @@
 			<Input 
 				type="Text"
 				custom:id="material"
-				custom:code="Code"
-				id="materialInput"
+				id="materialValueHelp"
 				placeholder="{i18n>plsEnter} {i18n>material}"
 				showSuggestion="true"
 				showValueHelp="true"
