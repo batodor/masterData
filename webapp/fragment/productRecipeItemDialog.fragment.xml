@@ -13,14 +13,9 @@
 				custom:id="material"
 				id="materialValueHelp"
 				placeholder="{i18n>plsEnter} {i18n>material}"
-				showSuggestion="true"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				suggestionItems="{/materialSet}"
 				value="{Material}" width="250px" >
-				<suggestionItems>
-					<core:Item text="{Name}" />
-				</suggestionItems>
 			</Input>
 			<ToolbarSpacer/>
 			<Label text="{i18n>productionUnit}" width="150px"/>

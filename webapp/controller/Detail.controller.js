@@ -57,52 +57,6 @@ sap.ui.define([
 		},
 
 		/* =========================================================== */
-		/* event handlers                                              */
-		/* =========================================================== */
-
-		/**
-		 * Event handler when the share by E-Mail button has been clicked
-		 * @public
-		 */
-		onShareEmailPress: function() {
-			var oViewModel = this.getModel("detailView");
-
-			sap.m.URLHelper.triggerEmail(
-				null,
-				oViewModel.getProperty("/shareSendEmailSubject"),
-				oViewModel.getProperty("/shareSendEmailMessage")
-			);
-		},
-
-		/**
-		 * Event handler when the share in JAM button has been clicked
-		 * @public
-		 */
-		onShareInJamPress: function() {
-			var oViewModel = this.getModel("detailView"),
-				oShareDialog = sap.ui.getCore().createComponent({
-					name: "sap.collaboration.components.fiori.sharing.dialog",
-					settings: {
-						object: {
-							id: location.href,
-							share: oViewModel.getProperty("/shareOnJamTitle")
-						}
-					}
-				});
-
-			oShareDialog.open();
-		},
-
-		/**
-		 * Updates the item count within the line item table's header
-		 * @param {object} oEvent an event containing the total number of items in the list
-		 * @private
-		 */
-		onListUpdateFinished: function() {
-			
-		},
-
-		/* =========================================================== */
 		/* begin: internal methods                                     */
 		/* =========================================================== */
 
@@ -214,15 +168,15 @@ sap.ui.define([
 				}
 				filters.push(keyFilter);
 			}
-			
 			oTable.getBinding("items").filter(filters, "Application");
 		},
 
-		// Table buttons function for create/edit/copy/delete of items
+		// Table buttons function for create/edit/copy/delete/details of items
+		// Details used for second level details of current active table
 		tableAdd: function() {
-			sap.ui.getCore().byId(this.id + "Dialog").unbindElement();
-			var oDialog = this.dialogOpen();
-			this.setEnabled(oDialog, true);
+			var oDialog = this[this.id + "Dialog"];
+			oDialog.unbindElement();
+			this.setEnabledDialog(oDialog, true);
 			if(this.filter.length > 0){
 				var filterKey = this.filter[0].sPath;
 				var value = this.filter[0].oValue1;
@@ -230,14 +184,16 @@ sap.ui.define([
 			}
 			oDialog.getButtons()[1].setVisible(true);
 			oDialog.getButtons()[2].setVisible(false);
+			oDialog.open();
 		},
 		tableEdit: function() {
+			var oDialog = this[this.id + "Dialog"];
 			var url = this.byId(this.id).getSelectedItem().getBindingContextPath();
 			sap.ui.getCore().byId(this.id + "Dialog").bindElement(url);
-			var oDialog = this.dialogOpen();
-			this.setEnabled(oDialog, false);
+			this.setEnabledDialog(oDialog, false);
 			oDialog.getButtons()[1].setVisible(false);
 			oDialog.getButtons()[2].setVisible(true);
+			oDialog.open();
 		},
 		tableDelete: function() {
 			var url = this.byId(this.id).getSelectedItem().getBindingContextPath();
@@ -278,14 +234,8 @@ sap.ui.define([
 			this.getRouter().navTo("object", routerOptions);
 		},
 
-		// Function for openning the dialog for create/edit/copy functions
-		// Also returns dialog object
-		dialogOpen: function() {
-			this[this.id + "Dialog"].open();
-			return this[this.id + "Dialog"];
-		},
-
-		// Close/create/edit dialog functions
+		// Close/create/edit/save dialog functions
+		// Save used for valueHelp function
 		dialogCancel: function(oEvent) {
 			var tableId = oEvent.getSource().data("id");
 			this[tableId + "Dialog"].close();
@@ -326,7 +276,7 @@ sap.ui.define([
 			this[id + "Dialog"].close();
 		},
 		
-		// Set odata from any dialog, oDialog = object dialog / return object Data
+		// Set odata from any dialog, argument oDialog = object dialog / return object inputs Data
 		getOdata: function(oDialog){
 			var oData = {};
 			var inputs = oDialog.getAggregation("content");
@@ -359,8 +309,9 @@ sap.ui.define([
 			return oData;
 		},
 		
-		// Set key inputs as disabled/enabled for editting, oDialog = object dialog, flag = boolean flag for enabled/disabled
-		setEnabled: function(oDialog, flag){
+		// Set key inputs as disabled/enabled for editting
+		// Arguments: oDialog = object dialog, flag = boolean flag for enabled/disabled
+		setEnabledDialog: function(oDialog, flag){
 			var inputs = oDialog.getAggregation("content");
 			for(var i in inputs){
 				if(inputs[i].data("key")){
@@ -373,7 +324,8 @@ sap.ui.define([
 			}
 		},
 		
-		// Add all dialog xml fragments to this view as dependent, tableArr: array of string ids of tables
+		// Add all dialog xml fragments to this view as dependent
+		// Arguments: tableArr = array of string ids of tables declared on init
 		addDialogs: function(tableArr){
 			for(var i in tableArr){
 				// Just in case if any of the dialog fragment has syntax error
@@ -387,7 +339,7 @@ sap.ui.define([
 			}
 		},
 		
-		// Checks the key values to lock them on update
+		// Checks the key values to lock them on dialogEdit
 		checkKeys: function(oDialog){
 			var check = this.getModel('i18n').getResourceBundle().getText("plsEnter");
 			var inputs = oDialog.getAggregation("content");
@@ -405,25 +357,7 @@ sap.ui.define([
 			return check;
 		},
 		
-		onSuggest: function (oEvent) {
-			var value = oEvent.getParameter("suggestValue");
-			var filters = [];
-			if (value) {
-				filters = [
-					new sap.ui.model.Filter([
-						new Filter("Partner", FilterOperator.Contains, value),
-						new Filter("Name", FilterOperator.Contains, value)
-					], false)
-				];
-			}
-
-			var searchField = oEvent.getSource();
-			searchField.getBinding("suggestionItems").filter(filters);
-			searchField.getBinding("suggestionItems").attachEventOnce('dataReceived', function() {
-		        searchField.suggest();
-		    }); 
-		},
-		
+		// On value help opens new dialog with filters
 		handleValueHelp: function(oEvent){
 			var id = oEvent.getSource().data("id");
 			var table = sap.ui.getCore().byId(id);
