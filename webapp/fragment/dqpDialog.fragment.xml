@@ -22,7 +22,9 @@
 			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>baseQP}" width="150px"/>
-			<Input value="{BaseQP}" maxLength="7" custom:key="baseQP" width="200px"/>
+			<Select selectedKey="{BaseQP}" custom:key="baseQP" forceSelection="false" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="200px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Label text="{i18n>uom}" width="150px"/>
 			<Select selectedKey="{UOM}" forceSelection="false" items="{ path: '/uomSet', sorter: { path: 'UOMName' } }" width="200px">
