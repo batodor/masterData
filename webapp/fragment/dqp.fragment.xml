@@ -8,22 +8,22 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>productionUnitName}"/></Column>
-			<Column><Text class="black" text="{i18n>materialName}"/></Column>
-			<Column><Text class="black" text="{i18n>qpKey}"/></Column>
-			<Column><Text class="black" text="{i18n>qpBase}"/></Column>
+			<Column><Text class="black" text="{i18n>typeOfProduct}"/></Column>
+			<Column><Text class="black" text="{i18n>salesProgram}"/></Column>
+			<Column><Text class="black" text="{i18n>salesRegion}"/></Column>
+			<Column><Text class="black" text="{i18n>qp}"/></Column>
+			<Column><Text class="black" text="{i18n>baseQP}"/></Column>
 			<Column><Text class="black" text="{i18n>uom}"/></Column>
-			<Column><Text class="black" text="{i18n>defaultValue}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{ProductionUnitName}"/>
-					<Text text="{MaterialName}"/>
-					<Text text="{QPKey}"/>
-					<Text text="{QPBase}"/>
-					<Text text="{Uom}"/>
-					<Text text="{DefaultValue}"/>
+					<Text text="{TypeOfProduct}"/>
+					<Text text="{SalesProgram}"/>
+					<Text text="{SalesRegion}"/>
+					<Text text="{QP}"/>
+					<Text text="{BaseQP}"/>
+					<Text text="{UOM}"/>
 				</cells>
 			</ColumnListItem>
 		</items>

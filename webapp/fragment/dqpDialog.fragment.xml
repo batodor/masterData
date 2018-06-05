@@ -1,24 +1,25 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>dqp}" class="sapUiContentPadding" id="dqpDialog">
 		<content>
-			<Text text="{i18n>productionUnitName}" width="300px"/>
-			<Input value="{ProductionUnitName}" custom:key="productionUnitName" width="200px"/>
+			<Text text="{i18n>typeOfProduct}" width="150px"/>
+			<Input value="{TypeOfProduct}" custom:key="typeOfProduct" width="200px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>materialName}" width="300px"/>
-			<Input value="{MaterialName}" custom:key="materialName" width="200px" />
+			<Text text="{i18n>salesProgram}" width="150px"/>
+			<Input value="{MaterialName}" custom:key="salesProgram" width="200px" />
 			<ToolbarSpacer/>
-			<Text text="{i18n>qpKey}" width="300px"/>
-			<Input value="{QPKey}" custom:key="qpKey" width="200px"/>
+			<Text text="{i18n>salesRegion}" width="150px"/>
+			<Input value="{SalesRegion}" custom:key="salesRegion" width="200px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>qpBase}" width="300px"/>
-			<Input value="{QPBase}" custom:key="qpBase" width="200px"/>
+			<Text text="{i18n>qp}" width="150px"/>
+			<Input value="{QP}" width="200px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>uom}" width="300px"/>
-			<Input value="{Uom}" custom:key="uom" width="200px"/>
+			<Text text="{i18n>baseQP}" width="150px"/>
+			<Input value="{BaseQP}" width="200px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>defaultValue}" width="300px"/>
-			<Input value="{DefaultValue}" width="200px"/>
+			<Text text="{i18n>uom}" width="150px"/>
+			<Input value="{UOM}" width="200px"/>
 			<ToolbarSpacer/>
+			
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="dqp" type="Back" press="dialogCancel"/>
