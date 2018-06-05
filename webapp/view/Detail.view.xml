@@ -18,7 +18,6 @@
 			<core:Fragment fragmentName="fragment.salesRegion" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.incoterms" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.currency" type="XML"></core:Fragment>
-			<core:Fragment fragmentName="fragment.uom" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.country" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.rwStation" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.port" type="XML"></core:Fragment>

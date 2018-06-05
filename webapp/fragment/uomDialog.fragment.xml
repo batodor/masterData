@@ -1,19 +1,35 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>uom}" class="sapUiContentPadding" id="uomDialog">
 		<content>
-			<Text text="{i18n>uomCode}" width="150px"/>
-			<Input value="{UOMCode}" custom:key="uomCode" width="250px"/>
-			<ToolbarSpacer/>
-			<Text text="{i18n>uomName}" width="150px"/>
-			<Input value="{UOMName}" width="250px" />
-			<ToolbarSpacer/>
-			<Text text="{i18n>uomQP}" width="150px"/>
-			<Input value="{UOMQP}" width="250px" />
+			<Table mode="SingleSelectLeft" includeItemInSelection="true" id="uom" custom:id="uom" items="{}" select="onTableSelect" width="500px" 
+				updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growingThreshold="10" growing="true" growingScrollToLoad="false"
+				busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<Toolbar class="white">
+						<SearchField placeholder="{i18n>uomCode}" maxLength="3" custom:id="uom" custom:key="UOMCode" custom:operator="EQ" showSearchButton="true" 
+							search="triggerSearch" width="100%" id="uomUOMCodeFilter" />
+						<ToolbarSpacer/>
+						<SearchField placeholder="{i18n>uomName}" maxLength="10" custom:id="uom" custom:key="UOMName" showSearchButton="true" 
+							search="triggerSearch" width="100%" id="uomUOMNameFilter" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column><Text class="black" text="{i18n>uomCode}"/></Column>
+					<Column><Text class="black" text="{i18n>uomName}"/></Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{UOMCode}"/>
+							<Text text="{UOMName}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="uom" type="Back" press="dialogCancel"/>
-			<Button text="{i18n>add}" custom:id="uom" visible="false" type="Accept" press="dialogAdd"/>
-			<Button text="{i18n>edit}" custom:id="uom" visible="false" type="Accept" press="dialogEdit"/>
+			<Button text="{i18n>save}" custom:id="uom" custom:key="UOMCode" type="Accept" id="uomSave" enabled="false" press="dialogSave"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

@@ -27,9 +27,18 @@
 			</Select>
 			<ToolbarSpacer/>
 			<Label text="{i18n>uom}" width="150px"/>
-			<Select selectedKey="{UOM}" forceSelection="false" items="{ path: '/uomSet', sorter: { path: 'UOMName' } }" width="200px">
-				<core:Item key="{UOMCode}" text="{UOMCode} - {UOMName}"/>
-			</Select>
+			<!--<Select selectedKey="{UOM}" forceSelection="false" items="{ path: '/uomSet', sorter: { path: 'UOMName' } }" width="200px">-->
+			<!--	<core:Item key="{UOMCode}" text="{UOMCode} - {UOMName}"/>-->
+			<!--</Select>-->
+			<Input 
+				type="Text"
+				custom:id="uom"
+				custom:filters="UOMCode,UOMName"
+				id="uomValueHelp"
+				placeholder="{i18n>plsEnter} {i18n>uom}"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{UOM}" width="200px" />
 			<ToolbarSpacer/>
 		</content>
 		<buttons>

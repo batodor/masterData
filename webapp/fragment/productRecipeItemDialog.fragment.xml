@@ -16,8 +16,7 @@
 				placeholder="{i18n>plsEnter} {i18n>material}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{Material}" width="250px" >
-			</Input>
+				value="{Material}" width="250px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>productionUnit}" width="150px"/>
 			<Select forceSelection="false" selectedKey="{ProductionUnit}" items="{ path: '/productionUnitSet', sorter: { path: 'Code' } }" width="250px">
