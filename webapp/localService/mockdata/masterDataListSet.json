@@ -27,8 +27,8 @@
     "Id": "salesMarket",
     "Order": 8
 }, {
-    "Title": "Sales Direction",
-    "Id": "salesDirection",
+    "Title": "Sales Region",
+    "Id": "salesRegion",
     "Order": 9
 }, {
     "Title": "Risk Type",

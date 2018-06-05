@@ -3,7 +3,7 @@
 		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-				<SearchField placeholder="{i18n>materialName}" custom:id="dqp" custom:key="MaterialName" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<!--<SearchField placeholder="{i18n>materialName}" custom:id="dqp" custom:key="MaterialName" showSearchButton="true" search="triggerSearch" width="auto"/>-->
 				<ToolbarSpacer/>
 			</Toolbar>
 		</headerToolbar>
@@ -18,10 +18,10 @@
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{TypeOfProduct}"/>
+					<Text text="{TypeProductName}"/>
 					<Text text="{SalesProgram}"/>
-					<Text text="{SalesRegion}"/>
-					<Text text="{QP}"/>
+					<Text text="{SalesRegionName}"/>
+					<Text text="{QPName}"/>
 					<Text text="{BaseQP}"/>
 					<Text text="{UOM}"/>
 				</cells>

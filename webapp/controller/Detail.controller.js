@@ -32,7 +32,7 @@ sap.ui.define([
 
 			// Define list of tables ids
 			this.tableArr = [ "limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource", "productRecipeHeader", "productRecipeItem", "strategy", 
-				"growthFactor", "salesScheme", "riskType", "salesDirection", "incoterms", "currency", "uom", "country", "rwStation", "port", "vesselType", "materialGroup", "poq", 
+				"growthFactor", "salesScheme", "riskType", "salesRegion", "incoterms", "currency", "uom", "country", "rwStation", "port", "vesselType", "materialGroup", "poq", 
 				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc", "crossBorder", "productionUnit", "addressType", "qualityParameters", "dqp", "material"];
 
 			// Define all Dialog fragments inside view as depended of this view passing the tableArr of ids
@@ -111,6 +111,8 @@ sap.ui.define([
 				this.byId('tableDetails').setText(this.getResourceBundle().getText("headers"));
 			}else if(this.id === "currency"){
 				this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], false);
+			}else if(this.id === "dqp"){
+				this.setInputVisible(["tableEdit"], false);
 			}
 		},
 
