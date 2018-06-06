@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>dqp}" class="sapUiContentPadding" id="dqpDialog">
 		<content>
-			<Label required="true" text="{i18n>typeOfProduct}" width="150px"/>
+			<Label required="true" text="{i18n>productType}" width="150px"/>
 			<Select selectedKey="{TypeProduct}" custom:key="typeOfProduct" forceSelection="false" items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }" width="200px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>

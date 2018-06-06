@@ -8,7 +8,7 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>typeOfProduct}"/></Column>
+			<Column><Text class="black" text="{i18n>productType}"/></Column>
 			<Column><Text class="black" text="{i18n>salesProgram}"/></Column>
 			<Column><Text class="black" text="{i18n>salesRegion}"/></Column>
 			<Column><Text class="black" text="{i18n>qp}"/></Column>
