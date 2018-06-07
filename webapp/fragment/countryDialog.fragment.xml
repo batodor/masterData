@@ -1,16 +1,16 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>country}" class="sapUiContentPadding" id="countryDialog">
 		<content>
-			<Text text="{i18n>countryCode}" width="150px"/>
+			<Label required="true" text="{i18n>countryCode}" width="150px"/>
 			<Input custom:key="countryCode" value="{Code}" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>countryName}" width="150px"/>
+			<Label required="true" text="{i18n>countryName}" width="150px"/>
 			<Input custom:key="countryName" value="{Name}" width="250px" />
 			<ToolbarSpacer/>
-			<Text text="{i18n>sanction}" width="150px"/>
+			<Label text="{i18n>sanction}" width="150px"/>
 			<CheckBox selected="{Sanction}" width="250px" />
 			<ToolbarSpacer/>
-			<Text text="{i18n>countryRating}" width="150px"/>
+			<Label text="{i18n>countryRating}" width="150px"/>
 			<Select selectedKey="{Rating}" forceSelection="false" items="{ path: '/dictionaryRatingSet', sorter: { path: 'Rating' } }" width="250px">
 				<core:Item key="{Rating}" text="{Rating}"/>
 			</Select>

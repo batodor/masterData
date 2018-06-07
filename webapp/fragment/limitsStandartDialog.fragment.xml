@@ -1,22 +1,22 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>limitsStandartRating}" class="sapUiContentPadding" id="limitsStandartDialog">
 		<content>
-			<Text text="{i18n>legalEntity}" width="250px"/>
+			<Label required="true" text="{i18n>legalEntity}" width="250px"/>
 			<Input custom:key="legalEntity" value="{LegalEntity}" width="150px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>rating}" width="250px"/>
+			<Label text="{i18n>rating}" width="250px"/>
 			<Select selected="{Rating}" width="150px"></Select>
 			<ToolbarSpacer/>
-			<Text text="{i18n>businessPartnersRole}" width="250px"/>
+			<Label text="{i18n>businessPartnersRole}" width="250px"/>
 			<Select selected="{BusinessPartnersRole}" width="150px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>tonnage}" width="250px"/>
+			<Label text="{i18n>tonnage}" width="250px"/>
 			<Input value="{Tonnage}" width="150px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>uom}" width="250px"/>
+			<Label text="{i18n>uom}" width="250px"/>
 			<Select selected="{Uom}" width="150px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>paymentTerms}" width="250px"/>
+			<Label text="{i18n>paymentTerms}" width="250px"/>
 			<Input value="{PaymentTerms}" width="150px"/>
 		</content>
 		<buttons>

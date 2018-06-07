@@ -13,7 +13,7 @@
 				custom:id="material"
 				custom:filters="Code,Division,Name"
 				id="materialValueHelp"
-				placeholder="{i18n>plsEnter} {i18n>material}"
+				placeholder="{i18n>plsChoose} {i18n>material}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{Material}" width="250px" />

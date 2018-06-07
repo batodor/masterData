@@ -1,36 +1,27 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>productionUnit}" class="sapUiContentPadding" id="productionUnitDialog">
 		<content>
-			<Text text="{i18n>productionUnitCode}" width="250px"/>
+			<Label required="true" text="{i18n>productionUnitCode}" width="200px"/>
 			<Input value="{Code}" custom:key="productionUnitCode" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>productionUnitName}" width="250px"/>
+			<Label text="{i18n>productionUnitName}" width="200px"/>
 			<Input value="{Name}" width="250px" />
 			<ToolbarSpacer/>
-			<Text text="{i18n>internalExternal}" width="250px"/>
+			<Label text="{i18n>internalExternal}" width="200px"/>
 			<Select forceSelection="false" selectedKey="{Type}" items="{ path: '/dictionaryUnitTypeSet', sorter: { path: 'Name' } }" width="250px">
 				<core:Item key="{Code}" text="{Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Text text="{i18n>partner}" width="250px"/>
-			<!--<Select forceSelection="false" selectedKey="{Partner}" items="{ path: '/dictionaryBPIntSet', sorter: { path: 'Name' } }" width="250px">-->
-			<!--	<core:Item key="{Partner}" text="{Partner} - {Name}"/>-->
-			<!--</Select>-->
-			<SearchField
-				width="256px"
-				placeholder="{i18n>search} {i18n>partner}"
-				enableSuggestions="true"
-				suggest="onSuggest"
-				value="{Partner}"
-				suggestionItems="{
-					path: '/dictionaryBPIntSet',
-					sorter: { path: 'Name' }
-				}"
-				>
-				<suggestionItems>
-					<SuggestionItem text="{Partner}" description="{Name}" key="{Partner}"/>
-				</suggestionItems>
-			</SearchField>
+			<Label text="{i18n>partner}" width="200px"/>
+			<Input 
+				type="Text"
+				custom:id="dictionaryBPInt"
+				custom:filters="Name,Partner"
+				id="dictionaryBPIntValueHelp"
+				placeholder="{i18n>plsChoose} {i18n>partner}"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{Partner}" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productionUnit" type="Back" press="dialogCancel"/>

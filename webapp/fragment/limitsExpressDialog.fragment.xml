@@ -1,40 +1,40 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>limitsExpressRating}" class="sapUiContentPadding" id="limitsExpressDialog">
 		<content>
-			<Text text="{i18n>companyCode}" width="250px"/>
+			<Label required="true" text="{i18n>companyCode}" width="250px"/>
 			<Input value="{CompanyCode}" custom:key="companyCode" width="150px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>countryRating}" width="250px"/>
+			<Label required="true" text="{i18n>countryRating}" width="250px"/>
 			<Select selectedKey="{CountryRating}" custom:key="countryRating" forceSelection="false" items="{ path: '/dictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">
 				<core:Item key="{Rating}" text="{Rating}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Text text="{i18n>financeCommercialRating}" width="250px"/>
+			<Label required="true" text="{i18n>financeCommercialRating}" width="250px"/>
 			<Select selectedKey="{FinanceCommercialRating}" custom:key="financeCommercialRating" forceSelection="false" 
 				items="{ path: '/dictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">
 				<core:Item key="{Rating}" text="{Rating}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Text text="{i18n>commercialRating}" width="250px"/>
+			<Label required="true" text="{i18n>commercialRating}" width="250px"/>
 			<Select selectedKey="{CommercialRating}" custom:key="commercialRating" forceSelection="false" 
 				items="{ path: '/dictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">
 				<core:Item key="{Rating}" text="{Rating}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Text text="{i18n>bpRole}" width="250px"/>
+			<Label required="true" text="{i18n>bpRole}" width="250px"/>
 			<Input value="{PartnersRole}" custom:key="bpRole" width="150px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>subitem}" width="250px"/>
+			<Label required="true" text="{i18n>subitem}" width="250px"/>
 			<Input value="{Subitem}" type="Number" custom:key="subitem" width="150px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>dateFrom}" width="250px"/>
+			<Label required="true" text="{i18n>dateFrom}" width="250px"/>
 			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="150px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>dateTo}" width="250px"/>
+			<Label required="true" text="{i18n>dateTo}" width="250px"/>
 			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="150px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>paymentTerms}" width="250px"/>
-			<Input value="{PaymentTerms}" width="150px"/>
+			<Label text="{i18n>paymentTerms}" width="250px"/>
+			<Input value="{PaymentTerms}" maxLength="4" width="150px"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="limitsExpress" type="Back" press="dialogCancel"/>

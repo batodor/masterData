@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>dictionaryBPInt}" class="sapUiContentPadding" id="dictionaryBPIntDialog">
+		<content>
+			<Table mode="SingleSelectLeft" includeItemInSelection="true" id="dictionaryBPInt" custom:id="dictionaryBPInt" items="{}" select="onTableSelect" width="500px" 
+				updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growingThreshold="10" growing="true" growingScrollToLoad="false"
+				busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<Toolbar class="white">
+						<SearchField placeholder="{i18n>name}" maxLength="10" custom:id="dictionaryBPInt" custom:key="dictionaryBPIntName" showSearchButton="true" 
+							search="triggerSearch" width="100%" id="dictionaryBPIntNameFilter" />
+						<ToolbarSpacer/>
+						<SearchField placeholder="{i18n>partner}" custom:id="dictionaryBPInt" custom:key="dictionaryBPIntPartner" custom:operator="EQ" showSearchButton="true" 
+							search="triggerSearch" width="100%" id="dictionaryBPIntPartnerFilter" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column><Text class="black" text="{i18n>partner}"/></Column>
+					<Column><Text class="black" text="{i18n>name}"/></Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{Partner}"/>
+							<Text text="{Name}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="dictionaryBPInt" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>save}" custom:id="dictionaryBPInt" custom:key="Partner" type="Accept" id="dictionaryBPIntSave" enabled="false" press="dialogSave"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
