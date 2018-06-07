@@ -1,10 +1,10 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>productRecipeItem}" class="sapUiContentPadding" id="productRecipeItemDialog">
 		<content>
-			<Label required="true"  text="{i18n>recipeNumber}" width="150px"/>
+			<Label required="true" text="{i18n>recipeNumber}" width="150px"/>
 			<Input custom:key="recipeNumber" id="productRecipeItemRecipeNumber" value="{RecipeNumber}" width="250px" />
 			<ToolbarSpacer/>
-			<Label required="true"  text="{i18n>itemNumber}" width="150px"/>
+			<Label required="true" text="{i18n>itemNumber}" width="150px"/>
 			<Input custom:key="itemNumber" value="{ItemNumber}" width="250px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>material}" width="150px"/>

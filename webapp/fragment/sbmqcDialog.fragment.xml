@@ -1,13 +1,13 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>sbmqc}" class="sapUiContentPadding" id="sbmqcDialog">
 		<content>
-			<Text text="{i18n>sbmqcCode}" width="300px"/>
-			<Input value="{Code}" custom:key="sbmqcCode" width="200px"/>
+			<Label required="true" text="{i18n>sbmqcCode}" width="300px"/>
+			<Input value="{Code}" maxLength="12" custom:key="sbmqcCode" width="200px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>sbmqcName}" width="300px"/>
-			<Input value="{Name}" width="200px" />
+			<Label text="{i18n>sbmqcName}" width="300px"/>
+			<TextArea value="{Name}" maxLength="100" width="200px" />
 			<ToolbarSpacer/>
-			<Text text="{i18n>bmqcName}" width="300px"/>
+			<Label required="true" text="{i18n>bmqcName}" width="300px"/>
 			<Select forceSelection="false" selectedKey="{CodeBase}" custom:key="bmqcName" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="200px">
 				<core:Item key="{Code}" text="{Name}"/>
 			</Select>

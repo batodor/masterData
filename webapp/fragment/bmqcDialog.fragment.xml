@@ -1,11 +1,11 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>bmqc}" class="sapUiContentPadding" id="bmqcDialog">
 		<content>
-			<Text text="{i18n>bmqcCode}" width="300px"/>
-			<Input value="{Code}" custom:key="bmqcCode" width="200px"/>
+			<Label required="true" text="{i18n>bmqcCode}" width="250px"/>
+			<Input value="{Code}" maxLength="7" custom:key="bmqcCode" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>bmqcName}" width="300px"/>
-			<Input value="{Name}" width="200px" />
+			<Label text="{i18n>bmqcName}" width="250px"/>
+			<TextArea value="{Name}" maxLength="100" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="bmqc" type="Back" press="dialogCancel"/>

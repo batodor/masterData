@@ -2,11 +2,11 @@
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>riskType}" class="sapUiContentPadding" id="riskTypeDialog">
 		<content>
-			<Text text="{i18n>riskType}" width="150px"/>
-			<Input custom:key="riskType" value="{RiskType}" width="250px"/>
+			<Label required="true" text="{i18n>riskType}" width="150px"/>
+			<Input custom:key="riskType" maxLength="3" value="{RiskType}" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>description}" width="150px"/>
-			<TextArea value="{Description}" width="250px" />
+			<Label text="{i18n>description}" width="150px"/>
+			<TextArea value="{Description}" maxLength="40" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="riskType" type="Back" press="dialogCancel"/>

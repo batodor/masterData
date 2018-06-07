@@ -1,28 +1,28 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>salesProgram}" class="sapUiContentPadding" id="salesProgramDialog">
 		<content>
-			<Text text="{i18n>salesProgram}" width="150px"/>
-			<Input value="{SalesProgram}" custom:key="salesProgram" width="300px"/>
+			<Label required="true" text="{i18n>salesProgram}" width="150px"/>
+			<Input value="{SalesProgram}" maxLength="7" custom:key="salesProgram" width="300px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>description}" width="150px"/>
-			<TextArea value="{Description}" width="300px" />
+			<Label text="{i18n>description}" width="150px"/>
+			<TextArea value="{Description}" maxLength="60" width="300px" />
 			<ToolbarSpacer/>
-			<Text text="{i18n>incoterms}" width="150px"/>
+			<Label text="{i18n>incoterms}" width="150px"/>
 			<Select forceSelection="false" selectedKey="{Incoterms}" items="{ path: '/incotermsSet', sorter: { path: 'Description' } }" width="300px">
 				<core:Item key="{Incoterms}" text="{Incoterms} - {Description}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Text text="{i18n>cvNar}" width="150px"/>
+			<Label text="{i18n>cvNar}" width="150px"/>
 			<Input value="{CV}" width="300px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>uom}" width="150px"/>
+			<Label text="{i18n>uom}" width="150px"/>
 			<Select forceSelection="false" custom:name="UoM" selectedKey="{= ${CV} === '0' ? '' : 'KCK' }" 
 		        width="300px">
 				<core:Item key="" text=""/>
 				<core:Item key="KCK" text="KCK - Kcal/kg"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Text text="{i18n>narGarGad}" width="150px"/>
+			<Label text="{i18n>narGarGad}" width="150px"/>
 			<Select forceSelection="false" selectedKey="{NGG}" width="300px">
 				<core:Item key="" text=""/>
 				<core:Item key="NAR" text="NAR"/>
@@ -30,7 +30,7 @@
 				<core:Item key="GAD" text="GAD"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Text text="{i18n>active}" width="150px"/>
+			<Label text="{i18n>active}" width="150px"/>
 			<CheckBox selected="{Active}" width="300px"/>
 		</content>
 		<buttons>
