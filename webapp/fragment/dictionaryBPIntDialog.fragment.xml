@@ -6,11 +6,11 @@
 				busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 				<headerToolbar>
 					<Toolbar class="white">
-						<SearchField placeholder="{i18n>name}" maxLength="10" custom:id="dictionaryBPInt" custom:key="dictionaryBPIntName" showSearchButton="true" 
-							search="triggerSearch" width="100%" id="dictionaryBPIntNameFilter" />
-						<ToolbarSpacer/>
 						<SearchField placeholder="{i18n>partner}" custom:id="dictionaryBPInt" custom:key="dictionaryBPIntPartner" custom:operator="EQ" showSearchButton="true" 
 							search="triggerSearch" width="100%" id="dictionaryBPIntPartnerFilter" />
+						<ToolbarSpacer/>
+						<SearchField placeholder="{i18n>name}" maxLength="10" custom:id="dictionaryBPInt" custom:key="dictionaryBPIntName" showSearchButton="true" 
+							search="triggerSearch" width="100%" id="dictionaryBPIntNameFilter" />
 					</Toolbar>
 				</headerToolbar>
 				<columns>
