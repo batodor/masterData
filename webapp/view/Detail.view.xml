@@ -35,6 +35,7 @@
 			<core:Fragment fragmentName="fragment.addressType" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.qualityParameters" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.dqp" type="XML"></core:Fragment>
+			<core:Fragment fragmentName="fragment.benchmark" type="XML"></core:Fragment>
 		</semantic:content>
 		
 		<semantic:mainAction>

@@ -51,40 +51,40 @@
     "Id": "dqp",
     "Order": 14
 }, {
+    "Title": "Benchmark SUEK AG",
+    "Id": "benchmark",
+    "Order": 15
+}, {
     "Title": "Effective r/w Rates",
     "Id": "effectiveRwRates",
-    "Order": 15
+    "Order": 16
 }, {
     "Title": "Port Costs",
     "Id": "portCosts",
-    "Order": 16
+    "Order": 17
 }, {
     "Title": "Survey & Forward rates",
     "Id": "surveyForwardRates",
-    "Order": 17
+    "Order": 18
 }, {
     "Title": "Transit Cost",
     "Id": "transitCost",
-    "Order": 18
+    "Order": 19
 }, {
     "Title": "Interest Rate",
     "Id": "interestRate",
-    "Order": 19
+    "Order": 20
 }, {
     "Title": "Inflation Factor",
     "Id": "inflationFactor",
-    "Order": 20
+    "Order": 21
 }, {
     "Title": "Index",
     "Id": "index",
-    "Order": 21
+    "Order": 22
 }, {
     "Title": "Growth Factor",
     "Id": "growthFactor",
-    "Order": 22
-}, {
-    "Title": "Benchmark SUEK AG",
-    "Id": "benchmark",
     "Order": 23
 }, {
     "Title": "FCA Price for Domestic Market",

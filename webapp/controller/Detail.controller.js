@@ -34,7 +34,7 @@ sap.ui.define([
 			this.tableArr = [ "limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource", "productRecipeHeader", "productRecipeItem", "strategy", 
 				"growthFactor", "salesScheme", "riskType", "salesRegion", "incoterms", "currency", "uom", "country", "rwStation", "port", "vesselType", "materialGroup", "poq", 
 				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc", "crossBorder", "productionUnit", "addressType", "qualityParameters", "dqp", "material",
-				"dictionaryBPInt"];
+				"dictionaryBPInt", "benchmark", "portPopup"];
 
 			// Define all Dialog fragments inside view as depended of this view passing the tableArr of ids
 			this.addDialogs(this.tableArr);
@@ -114,6 +114,8 @@ sap.ui.define([
 				this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], false);
 			}else if(this.id === "dqp"){
 				this.setInputVisible(["tableEdit"], false);
+			}else if(this.id === "benchmark"){
+				this.byId(this.id).ondblclick = this.onDoubleClick.bind(this, this.id);
 			}
 		},
 
@@ -282,7 +284,7 @@ sap.ui.define([
 			var item = sap.ui.getCore().byId(id).getSelectedItem();
 			var path = item.getBindingContextPath();
 			var data = item.getModel().getData(path);
-			sap.ui.getCore().byId(id + "ValueHelp").setValue(data[key]);
+			sap.ui.getCore().byId(id + this.id + "ValueHelp").setValue(data[key]);
 			this[id + "Dialog"].close();
 		},
 		
@@ -370,10 +372,14 @@ sap.ui.define([
 		// On value help opens new dialog with filters
 		handleValueHelp: function(oEvent){
 			var id = oEvent.getSource().data("id");
+			var bindSet = "/" + id + 'Set';
+			if(oEvent.getSource().data("set")){
+				bindSet = "/" + oEvent.getSource().data("set") + 'Set';
+			}
 			var filters = oEvent.getSource().data("filters");
 			var table = sap.ui.getCore().byId(id);
 			table.bindItems({
-				path: "/" + id + 'Set',
+				path: bindSet,
 				template: table['mBindingInfos'].items.template
 			});
 			this.search = {}; // nullify search object
@@ -392,6 +398,11 @@ sap.ui.define([
 			}
 			this[id + "Dialog"].getButtons()[1].setEnabled(false);
 			this[id + "Dialog"].open();
+		},
+		
+		// Double click event on table row
+		onDoubleClick: function(id){
+			alert(id);
 		}
 	});
 

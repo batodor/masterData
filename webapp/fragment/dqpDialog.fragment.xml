@@ -34,7 +34,7 @@
 				type="Text"
 				custom:id="uom"
 				custom:filters="UOMCode,UOMName"
-				id="uomValueHelp"
+				id="uomdqpValueHelp"
 				placeholder="{i18n>plsEnter} {i18n>uom}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"

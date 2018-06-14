@@ -12,7 +12,7 @@
 				type="Text"
 				custom:id="material"
 				custom:filters="Code,Division,Name"
-				id="materialValueHelp"
+				id="materialproductRecipeValueHelp"
 				placeholder="{i18n>plsChoose} {i18n>material}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"

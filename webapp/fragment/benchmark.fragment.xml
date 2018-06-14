@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="benchmark" visible="false" custom:id="benchmark" items="{}" select="onTableSelect" width="auto" 
+		updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<Toolbar class="white">
+				<!--<SearchField placeholder="{i18n>salesProgram}" custom:id="benchmark" custom:key="SalesRegion" showSearchButton="true" search="triggerSearch" width="auto"/>-->
+				<ToolbarSpacer/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column><Text class="black" text="{i18n>salesProgram}"/></Column>
+			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
+			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
+			<Column><Text class="black" text="{i18n>product}"/></Column>
+			<Column><Text class="black" text="{i18n>salesMarket}"/></Column>
+			<Column><Text class="black" text="{i18n>forumlaBenchmark}"/></Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{CodeSalesProgram}"/>
+					<Text text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+					<Text text="{ path: 'DateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+					<Text text="{Product}"/>
+					<Text text="{SalesMarket}"/>
+					<Text text="{Formula}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>
