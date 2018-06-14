@@ -35,6 +35,8 @@ sap.ui.define([
 				"growthFactor", "salesScheme", "riskType", "salesRegion", "incoterms", "currency", "uom", "country", "rwStation", "port", "vesselType", "materialGroup", "poq", 
 				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc", "crossBorder", "productionUnit", "addressType", "qualityParameters", "dqp", "material",
 				"dictionaryBPInt", "benchmark", "portPopup"];
+			
+			this.typeArr = ["value", "dateValue", "selectedKey", "selected"];
 
 			// Define all Dialog fragments inside view as depended of this view passing the tableArr of ids
 			this.addDialogs(this.tableArr);
@@ -292,11 +294,10 @@ sap.ui.define([
 		getOdata: function(oDialog){
 			var oData = {};
 			var inputs = oDialog.getAggregation("content");
-			var typeArr = ["value", "dateValue", "selectedKey", "selected"];
 			for(var i in inputs){
 				var input = inputs[i];
-				for(var j in typeArr){
-					var type = typeArr[j];
+				for(var j in this.typeArr){
+					var type = this.typeArr[j];
 					if(input.getBindingInfo(type)){
 						var value = input.getProperty(type);
 						var name = input.getBindingInfo(type).binding.sPath;
@@ -326,11 +327,31 @@ sap.ui.define([
 		setEnabledDialog: function(oDialog, flag){
 			var inputs = oDialog.getAggregation("content");
 			for(var i in inputs){
-				if(inputs[i].data("key")){
-					if(flag){
-						inputs[i].setEnabled(true);
-					}else{
-						inputs[i].setEnabled(false);
+				for(var j in this.typeArr){
+					var type = this.typeArr[j];
+					var input = inputs[i];
+					if(input.mProperties.hasOwnProperty(type)){
+						if(input.data("key")){
+							input.setEnabled(flag);
+						}else{
+							input.setEnabled(true);
+						}
+					}
+				}
+				
+			}
+		},
+		
+		// Set key all inputs as disabled for editting
+		// Arguments: oDialog = object dialog
+		setDisabledDialog: function(oDialog){
+			var inputs = oDialog.getAggregation("content");
+			for(var i in inputs){
+				for(var j in this.typeArr){
+					var type = this.typeArr[j];
+					var input = inputs[i];
+					if(input.mProperties.hasOwnProperty(type)){
+						input.setEnabled(false);
 					}
 				}
 			}
@@ -385,11 +406,10 @@ sap.ui.define([
 			this.search = {}; // nullify search object
 			if(filters){
 				var filtersArr = filters.split(',');
-				var typeArr = ["value", "dateValue", "selectedKey", "selected"];
 				for(var i in filtersArr){
-					for(var j in typeArr){
+					for(var j in this.typeArr){
 						var input = sap.ui.getCore().byId(id + filtersArr[i] + "Filter");
-						var type = typeArr[j];
+						var type = this.typeArr[j];
 						if(input.mProperties.hasOwnProperty(type)){
 							input.setProperty(type);
 						}
@@ -402,7 +422,13 @@ sap.ui.define([
 		
 		// Double click event on table row
 		onDoubleClick: function(id){
-			alert(id);
+			var oDialog = this[id + "Dialog"];
+			var url = this.byId(id).getSelectedItem().getBindingContextPath();
+			sap.ui.getCore().byId(id + "Dialog").bindElement(url);
+			this.setDisabledDialog(oDialog);
+			oDialog.getButtons()[1].setVisible(false);
+			oDialog.getButtons()[2].setVisible(false);
+			this[id + "Dialog"].open();
 		}
 	});
 

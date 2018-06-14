@@ -13,7 +13,7 @@
 			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
 			<Column><Text class="black" text="{i18n>product}"/></Column>
 			<Column><Text class="black" text="{i18n>salesMarket}"/></Column>
-			<Column><Text class="black" text="{i18n>forumlaBenchmark}"/></Column>
+			<Column><Text class="black" text="{i18n>formulaBenchmark}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
