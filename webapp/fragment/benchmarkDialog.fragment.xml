@@ -43,7 +43,7 @@
 				custom:set="port"
 				custom:filters="Country,Code,Name,Station"
 				id="portPopupbenchmarkValueHelp"
-				placeholder="{i18n>plsEnter} {i18n>port}"
+				placeholder="{i18n>plsChoose} {i18n>transshipmentPoint}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{TransshipmentPoint}" width="250px" />
