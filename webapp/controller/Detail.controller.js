@@ -116,9 +116,10 @@ sap.ui.define([
 				this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], false);
 			}else if(this.id === "dqp"){
 				this.setInputVisible(["tableEdit"], false);
-			}else if(this.id === "benchmark"){
-				this.byId(this.id).ondblclick = this.onDoubleClick.bind(this, this.id);
 			}
+			
+			// Bind double click event
+			this.byId(this.id).ondblclick = this.onDoubleClick.bind(this, this.id);
 		},
 
 		// Event on selection of table items
@@ -423,12 +424,16 @@ sap.ui.define([
 		// Double click event on table row
 		onDoubleClick: function(id){
 			var oDialog = this[id + "Dialog"];
-			var url = this.byId(id).getSelectedItem().getBindingContextPath();
-			sap.ui.getCore().byId(id + "Dialog").bindElement(url);
-			this.setDisabledDialog(oDialog);
-			oDialog.getButtons()[1].setVisible(false);
-			oDialog.getButtons()[2].setVisible(false);
-			this[id + "Dialog"].open();
+			if(this.byId(id).getSelectedItem()){
+				var url = this.byId(id).getSelectedItem().getBindingContextPath();
+				sap.ui.getCore().byId(id + "Dialog").bindElement(url);
+				this.setDisabledDialog(oDialog);
+				oDialog.getButtons()[1].setVisible(false);
+				oDialog.getButtons()[2].setVisible(false);
+				this[id + "Dialog"].open();
+			}else{
+				return true;
+			}
 		}
 	});
 
