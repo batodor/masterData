@@ -2,19 +2,25 @@
 	<Dialog title="{i18n>benchmark}" class="sapUiContentPadding" id="benchmarkDialog">
 		<content>
 			<Label required="true" text="{i18n>salesProgram}" width="220px"/>
-			<Input value="{CodeSalesProgram}" custom:key="salesProgram" width="250px"/>
+			<Select selectedKey="{CodeSalesProgram}" custom:key="salesProgram" forceSelection="false" 
+				items="{ path: '/salesProgramSet', sorter: { path: 'SalesProgram' } }" width="250px">
+				<core:Item key="{SalesProgram}" text="{SalesProgram} - {Description}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="220px"/>
-			<DatePicker value="{DateFrom}" custom:key="dateFrom" width="255px"/>
+			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="255px"/>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateTo}" width="220px"/>
-			<DatePicker value="{DateTo}" custom:key="dateTo" width="255px"/>
+			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="255px"/>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>product}" width="220px"/>
 			<Input value="{Product}" custom:key="product" width="250px"/>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>salesMarket}" width="220px"/>
-			<Input value="{SalesMarket}" custom:key="salesMarket" width="250px"/>
+			<Select selectedKey="{SalesMarket}" custom:key="salesMarket" forceSelection="false" 
+				items="{ path: '/salesMarketSet', sorter: { path: 'Name' } }" width="250px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Label text="{i18n>incoterms}" width="220px"/>
 			<Select selectedKey="{Incoterms}" forceSelection="false" 
