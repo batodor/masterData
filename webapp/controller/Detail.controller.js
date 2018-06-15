@@ -128,9 +128,9 @@ sap.ui.define([
 			var selectedCount = table.getSelectedItems().length;
 			var id = table.data("id");
 			if (selectedCount > 0) {
-				this.setInputEnabled(["tableDelete", "tableEdit", "tableDetails", id + "Save"], true);
+				this.setInputEnabled(["tableDelete", "tableEdit", "tableDetails", id + "Select"], true);
 			} else {
-				this.setInputEnabled(["tableDelete", "tableEdit", "tableDetails", id + "Save"], false);
+				this.setInputEnabled(["tableDelete", "tableEdit", "tableDetails", id + "Select"], false);
 			}
 		},
 		
@@ -249,8 +249,8 @@ sap.ui.define([
 			this.getRouter().navTo("object", routerOptions);
 		},
 
-		// Close/create/edit/save dialog functions
-		// Save used for valueHelp function
+		// Close/create/save/select dialog functions
+		// Select used for valueHelp function
 		dialogCancel: function(oEvent) {
 			var tableId = oEvent.getSource().data("id");
 			this[tableId + "Dialog"].close();
@@ -271,7 +271,7 @@ sap.ui.define([
 				});
 			}
 		},
-		dialogEdit: function(oEvent) {
+		dialogSave: function(oEvent) {
 			var tableId = oEvent.getSource().data("id");
 			var dialog = sap.ui.getCore().byId(tableId + "Dialog");
 			var url = dialog.getBindingContext().getPath();
@@ -281,7 +281,7 @@ sap.ui.define([
 			oModel.update(url, oData);
 			this[tableId + "Dialog"].close();
 		},
-		dialogSave: function(oEvent){
+		dialogSelect: function(oEvent){
 			var id = oEvent.getSource().data("id");
 			var key = oEvent.getSource().data("key");
 			var item = sap.ui.getCore().byId(id).getSelectedItem();
@@ -331,7 +331,7 @@ sap.ui.define([
 				for(var j in this.typeArr){
 					var type = this.typeArr[j];
 					var input = inputs[i];
-					if(input.mProperties.hasOwnProperty(type)){
+					if(input.mBindingInfos.hasOwnProperty(type)){
 						if(input.data("key")){
 							input.setEnabled(flag);
 						}else{
@@ -351,7 +351,7 @@ sap.ui.define([
 				for(var j in this.typeArr){
 					var type = this.typeArr[j];
 					var input = inputs[i];
-					if(input.mProperties.hasOwnProperty(type)){
+					if(input.mBindingInfos.hasOwnProperty(type)){
 						input.setEnabled(false);
 					}
 				}
@@ -426,11 +426,11 @@ sap.ui.define([
 			var oDialog = this[id + "Dialog"];
 			if(this.byId(id).getSelectedItem()){
 				var url = this.byId(id).getSelectedItem().getBindingContextPath();
-				sap.ui.getCore().byId(id + "Dialog").bindElement(url);
+				oDialog.bindElement(url);
 				this.setDisabledDialog(oDialog);
 				oDialog.getButtons()[1].setVisible(false);
 				oDialog.getButtons()[2].setVisible(false);
-				this[id + "Dialog"].open();
+				oDialog.open();
 			}else{
 				return true;
 			}

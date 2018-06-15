@@ -2,16 +2,16 @@
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>currency}" class="sapUiContentPadding" id="currencyDialog">
 		<content>
-			<Text text="{i18n>currencyCode}" width="150px"/>
+			<Label required="true" text="{i18n>currencyCode}" width="150px"/>
 			<Input custom:key="currencyCode" value="{CurrencyCode}" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>currencyName}" width="150px"/>
+			<Label text="{i18n>currencyName}" width="150px"/>
 			<Input value="{CurrencyName}" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="currency" type="Back" press="dialogCancel"/>
 			<Button text="{i18n>add}" custom:id="currency" visible="false" type="Accept" press="dialogAdd"/>
-			<Button text="{i18n>edit}" custom:id="currency" visible="false" type="Accept" press="dialogEdit"/>
+			<Button text="{i18n>save}" custom:id="currency" visible="false" type="Accept" press="dialogSave"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

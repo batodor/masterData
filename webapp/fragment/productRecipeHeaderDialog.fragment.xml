@@ -19,7 +19,7 @@
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productRecipeHeader" type="Back" press="dialogCancel"/>
 			<Button text="{i18n>add}" custom:id="productRecipeHeader" visible="false" type="Accept" press="dialogAdd"/>
-			<Button text="{i18n>edit}" custom:id="productRecipeHeader" visible="false" type="Accept" press="dialogEdit"/>
+			<Button text="{i18n>save}" custom:id="productRecipeHeader" visible="false" type="Accept" press="dialogSave"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

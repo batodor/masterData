@@ -14,7 +14,8 @@
 							<core:Item key="{Code}" text="{Code} - {Name}"/>
 						</ComboBox>
 						<ToolbarSpacer/>
-						<SearchField placeholder="{i18n>materialName}" id="materialNameFilter" maxLength="40" custom:id="material" custom:key="Name" showSearchButton="true" search="triggerSearch" width="100%"/>
+						<SearchField placeholder="{i18n>materialName}" id="materialNameFilter" maxLength="40" custom:id="material" custom:key="Name" showSearchButton="true" 
+							search="triggerSearch" width="100%"/>
 					</Toolbar>
 				</headerToolbar>
 				<columns>
@@ -35,7 +36,7 @@
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="material" type="Back" press="dialogCancel"/>
-			<Button text="{i18n>save}" custom:id="material" custom:key="Code" type="Accept" id="materialSave" enabled="false" press="dialogSave"/>
+			<Button text="{i18n>select}" custom:id="material" custom:key="Code" type="Accept" id="materialSelect" enabled="false" press="dialogSelect"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

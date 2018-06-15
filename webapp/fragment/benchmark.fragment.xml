@@ -8,12 +8,12 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>salesProgram}"/></Column>
-			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
-			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
-			<Column><Text class="black" text="{i18n>product}"/></Column>
-			<Column><Text class="black" text="{i18n>salesMarket}"/></Column>
-			<Column><Text class="black" text="{i18n>formulaBenchmark}"/></Column>
+			<Column hAlign="Center"><Text class="black" text="{i18n>salesProgram}"/></Column>
+			<Column hAlign="Center"><Text class="black" text="{i18n>dateFrom}"/></Column>
+			<Column hAlign="Center"><Text class="black" text="{i18n>dateTo}"/></Column>
+			<Column hAlign="Center"><Text class="black" text="{i18n>product}"/></Column>
+			<Column hAlign="Center"><Text class="black" text="{i18n>salesMarket}"/></Column>
+			<Column hAlign="Center"><Text class="black" text="{i18n>formulaBenchmark}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>

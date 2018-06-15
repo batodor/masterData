@@ -29,7 +29,7 @@
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="uom" type="Back" press="dialogCancel"/>
-			<Button text="{i18n>save}" custom:id="uom" custom:key="UOMCode" type="Accept" id="uomSave" enabled="false" press="dialogSave"/>
+			<Button text="{i18n>select}" custom:id="uom" custom:key="UOMCode" type="Accept" id="uomSelect" enabled="false" press="dialogSelect"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

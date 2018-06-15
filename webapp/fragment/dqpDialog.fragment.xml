@@ -27,9 +27,6 @@
 			</Select>
 			<ToolbarSpacer/>
 			<Label text="{i18n>uom}" width="150px"/>
-			<!--<Select selectedKey="{UOM}" forceSelection="false" items="{ path: '/uomSet', sorter: { path: 'UOMName' } }" width="200px">-->
-			<!--	<core:Item key="{UOMCode}" text="{UOMCode} - {UOMName}"/>-->
-			<!--</Select>-->
 			<Input 
 				type="Text"
 				custom:id="uom"
@@ -44,7 +41,7 @@
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="dqp" type="Back" press="dialogCancel"/>
 			<Button text="{i18n>add}" custom:id="dqp" visible="false" type="Accept" press="dialogAdd"/>
-			<Button text="{i18n>edit}" custom:id="dqp" visible="false" type="Accept" press="dialogEdit"/>
+			<Button text="{i18n>save}" custom:id="dqp" visible="false" type="Accept" press="dialogSave"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

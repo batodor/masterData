@@ -1,19 +1,19 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>materialGroup}" class="sapUiContentPadding" id="materialGroupDialog">
 		<content>
-			<Text text="{i18n>materialGroupCode}" width="150px"/>
+			<Label required="true" text="{i18n>materialGroupCode}" width="150px"/>
 			<Input value="{MaterialGroupCode}" custom:key="materialGroupCode" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>materialGroupName}" width="150px"/>
+			<Label text="{i18n>materialGroupName}" width="150px"/>
 			<Input value="{MaterialGroupName}" width="250px" />
 			<ToolbarSpacer/>
-			<Text text="{i18n>active}" width="150px"/>
+			<Label text="{i18n>active}" width="150px"/>
 			<CheckBox selected="{Active}" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="materialGroup" type="Back" press="dialogCancel"/>
 			<Button text="{i18n>add}" custom:id="materialGroup" visible="false" type="Accept" press="dialogAdd"/>
-			<Button text="{i18n>edit}" custom:id="materialGroup" visible="false" type="Accept" press="dialogEdit"/>
+			<Button text="{i18n>save}" custom:id="materialGroup" visible="false" type="Accept" press="dialogSave"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

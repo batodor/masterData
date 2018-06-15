@@ -52,14 +52,6 @@
 			<Input value="{CVNAR}" width="250px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>uom}" width="220px"/>
-			<!--<Input -->
-			<!--	custom:id="uom"-->
-			<!--	custom:filters="UOMCode,UOMName"-->
-			<!--	id="uombenchmarkValueHelp"-->
-			<!--	placeholder="{i18n>plsEnter} {i18n>uom}"-->
-			<!--	showValueHelp="true"-->
-			<!--	valueHelpRequest="handleValueHelp"-->
-			<!--	value="{UOM}" width="250px" />-->
 			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '' ? '' : 'KCK' }" 
 		        width="250px">
 				<core:Item key="" text=""/>
@@ -72,7 +64,7 @@
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="benchmark" type="Back" press="dialogCancel"/>
 			<Button text="{i18n>add}" custom:id="benchmark" visible="false" type="Accept" press="dialogAdd"/>
-			<Button text="{i18n>edit}" custom:id="benchmark" visible="false" type="Accept" press="dialogEdit"/>
+			<Button text="{i18n>save}" custom:id="benchmark" visible="false" type="Accept" press="dialogSave"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

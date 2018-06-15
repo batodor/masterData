@@ -1,22 +1,22 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>growthFactor}" class="sapUiContentPadding" id="growthFactorDialog">
 		<content>
-			<Text text="{i18n>costType}" width="250px"/>
+			<Label required="true" text="{i18n>costType}" width="250px"/>
 			<Input value="{CostType}" custom:key="costType" width="150px" />
 			<ToolbarSpacer/>
-			<Text text="{i18n>dateFrom}" width="250px"/>
+			<Label text="{i18n>dateFrom}" width="250px"/>
 			<DatePicker value="{DateFrom}" width="155px" />
 			<ToolbarSpacer/>
-			<Text text="{i18n>dateTo}" width="250px"/>
+			<Label text="{i18n>dateTo}" width="250px"/>
 			<DatePicker value="{DateTo}" width="155px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>growthFactor}" width="250px"/>
+			<Label text="{i18n>growthFactor}" width="250px"/>
 			<Input value="{GrowthFactor}" width="150px"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="growthFactor" type="Back" press="dialogCancel"/>
 			<Button text="{i18n>add}" custom:id="growthFactor" visible="false" type="Accept" press="dialogAdd"/>
-			<Button text="{i18n>edit}" custom:id="growthFactor" visible="false" type="Accept" press="dialogEdit"/>
+			<Button text="{i18n>save}" custom:id="growthFactor" visible="false" type="Accept" press="dialogSave"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

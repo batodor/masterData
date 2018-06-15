@@ -1,19 +1,19 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>rwStation}" class="sapUiContentPadding" id="rwStationDialog">
 		<content>
-			<Text text="{i18n>stationCode}" width="150px"/>
+			<Label required="true" text="{i18n>stationCode}" width="150px"/>
 			<Input value="{Code}" custom:key="stationCode" width="250px"/>
 			<ToolbarSpacer/>
-			<Text text="{i18n>countryName}" width="150px"/>
+			<Label text="{i18n>countryName}" width="150px"/>
 			<Input value="{Country}" width="250px" />
 			<ToolbarSpacer/>
-			<Text text="{i18n>stationName}" width="150px"/>
+			<Label text="{i18n>stationName}" width="150px"/>
 			<Input value="{Name}" width="250px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="rwStation" type="Back" press="dialogCancel"/>
 			<Button text="{i18n>add}" custom:id="rwStation" visible="false" type="Accept" press="dialogAdd"/>
-			<Button text="{i18n>edit}" custom:id="rwStation" visible="false" type="Accept" press="dialogEdit"/>
+			<Button text="{i18n>save}" custom:id="rwStation" visible="false" type="Accept" press="dialogSave"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>
