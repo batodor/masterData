@@ -41,7 +41,7 @@
 			<Input 
 				custom:id="portPopup"
 				custom:set="port"
-				custom:filters="Country,Code,Name,Station"
+				custom:filters="Country,Code,Name"
 				id="portPopupbenchmarkValueHelp"
 				placeholder="{i18n>plsChoose} {i18n>transshipmentPoint}"
 				showValueHelp="true"
