@@ -34,7 +34,7 @@ sap.ui.define([
 			this.tableArr = [ "limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource", "productRecipeHeader", "productRecipeItem", "strategy", 
 				"growthFactor", "salesScheme", "riskType", "salesRegion", "incoterms", "currency", "uom", "country", "rwStation", "port", "vesselType", "materialGroup", "poq", 
 				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc", "crossBorder", "productionUnit", "addressType", "qualityParameters", "dqp", "material",
-				"dictionaryBPInt", "benchmark", "portPopup", "qualityParametersUom"];
+				"dictionaryBPInt", "benchmark", "portPopup", "qualityParametersUom", "qualityParametersPopup"];
 			
 			this.typeArr = ["value", "dateValue", "selectedKey", "selected"];
 

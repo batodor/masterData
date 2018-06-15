@@ -2,11 +2,19 @@
 	<Dialog title="{i18n>qualityParametersUom}" class="sapUiContentPadding" id="qualityParametersUomDialog">
 		<content>
 			<Label required="true" text="{i18n>qpKey}" width="150px"/>
-			<Input custom:key="qpKey" value="{QPKey}" width="250px"/>
+			<Input 
+				custom:id="qualityParametersPopup"
+				custom:key="qpKey"
+				custom:filters="QPCode,QPName"
+				custom:set="qualityParameters"
+				id="qualityParametersPopupqualityParametersUomValueHelp"
+				placeholder="{i18n>plsEnter} {i18n>qpKey}"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{QPKey}" width="250px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>uom}" width="150px"/>
 			<Input 
-				type="Text"
 				custom:id="uom"
 				custom:filters="UOMCode,UOMName"
 				id="uomqualityParametersUomValueHelp"

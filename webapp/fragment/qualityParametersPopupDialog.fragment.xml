@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>qualityParameters}" class="sapUiContentPadding" id="qualityParametersPopupDialog">
+		<content>
+			<Table mode="SingleSelectLeft" includeItemInSelection="true" id="qualityParametersPopup" custom:id="qualityParametersPopup" items="{}" select="onTableSelect" width="500px" 
+				updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growingThreshold="10" growing="true" growingScrollToLoad="false"
+				busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<Toolbar class="white">
+						<SearchField placeholder="{i18n>qpCode}" custom:id="qualityParametersPopup" custom:key="QPCode" custom:operator="EQ" showSearchButton="true" 
+							search="triggerSearch" width="100%" id="qualityParametersPopupQPCodeFilter" />
+						<ToolbarSpacer/>
+						<SearchField placeholder="{i18n>qpName}" custom:id="qualityParametersPopup" custom:key="QPName" showSearchButton="true" 
+							search="triggerSearch" width="100%" id="qualityParametersPopupQPNameFilter" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column><Text class="black" text="{i18n>qpCode}"/></Column>
+					<Column><Text class="black" text="{i18n>qpName}"/></Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{QPCode}"/>
+							<Text text="{QPName}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="qualityParametersPopup" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>select}" custom:id="qualityParametersPopup" custom:key="QPCode" type="Accept" id="qualityParametersPopupSelect" enabled="false" press="dialogSelect"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
