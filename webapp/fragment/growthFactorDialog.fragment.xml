@@ -16,6 +16,7 @@
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="growthFactor" type="Back" press="dialogCancel"/>
 			<Button text="{i18n>add}" custom:id="growthFactor" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="growthFactor" visible="false" type="Default" press="dialogEdit"/>
 			<Button text="{i18n>save}" custom:id="growthFactor" visible="false" type="Accept" press="dialogSave"/>
 		</buttons>
 	</Dialog>

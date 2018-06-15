@@ -189,26 +189,30 @@ sap.ui.define([
 		// Table buttons function for create/edit/copy/delete/details of items
 		// Details used for second level details of current active table
 		tableAdd: function() {
-			var oDialog = this[this.id + "Dialog"];
-			oDialog.unbindElement();
-			this.setEnabledDialog(oDialog, true);
+			var dialog = this[this.id + "Dialog"];
+			dialog.unbindElement();
+			this.setEnabledDialog(dialog, true);
 			if(this.filter.length > 0){
 				var filterKey = this.filter[0].sPath;
 				var value = this.filter[0].oValue1;
 				sap.ui.getCore().byId(this.id + filterKey).setValue(value).setEnabled(false);
 			}
-			oDialog.getButtons()[1].setVisible(true);
-			oDialog.getButtons()[2].setVisible(false);
-			oDialog.open();
+			var buttons = dialog.getButtons();
+			buttons[1].setVisible(true);
+			buttons[2].setVisible(false);
+			buttons[3].setVisible(false);
+			dialog.open();
 		},
 		tableEdit: function() {
-			var oDialog = this[this.id + "Dialog"];
+			var dialog = this[this.id + "Dialog"];
 			var url = this.byId(this.id).getSelectedItem().getBindingContextPath();
 			sap.ui.getCore().byId(this.id + "Dialog").bindElement(url);
-			this.setEnabledDialog(oDialog, false);
-			oDialog.getButtons()[1].setVisible(false);
-			oDialog.getButtons()[2].setVisible(true);
-			oDialog.open();
+			this.setEnabledDialog(dialog, false);
+			var buttons = dialog.getButtons();
+			buttons[1].setVisible(false);
+			buttons[2].setVisible(false);
+			buttons[3].setVisible(true).setEnabled(true);
+			dialog.open();
 		},
 		tableDelete: function() {
 			var url = this.byId(this.id).getSelectedItem().getBindingContextPath();
@@ -249,7 +253,7 @@ sap.ui.define([
 			this.getRouter().navTo("object", routerOptions);
 		},
 
-		// Close/create/save/select dialog functions
+		// Close/create/save/edit/select dialog functions
 		// Select used for valueHelp function
 		dialogCancel: function(oEvent) {
 			var tableId = oEvent.getSource().data("id");
@@ -281,6 +285,18 @@ sap.ui.define([
 			oModel.update(url, oData);
 			this[tableId + "Dialog"].close();
 		},
+		dialogEdit: function(oEvent){
+			var button = oEvent.getSource();
+			var id = button.data("id");
+			var dialog = sap.ui.getCore().byId(id + "Dialog");
+			if(dialog.getButtons()[3].getEnabled()){
+				this.setDisabledDialog(dialog);
+				dialog.getButtons()[3].setEnabled(false);
+			}else{
+				this.setEnabledDialog(dialog, false);
+				dialog.getButtons()[3].setEnabled(true);
+			}
+		},
 		dialogSelect: function(oEvent){
 			var id = oEvent.getSource().data("id");
 			var key = oEvent.getSource().data("key");
@@ -292,9 +308,9 @@ sap.ui.define([
 		},
 		
 		// Set odata from any dialog, argument oDialog = object dialog / return object inputs Data
-		getOdata: function(oDialog){
+		getOdata: function(dialog){
 			var oData = {};
-			var inputs = oDialog.getAggregation("content");
+			var inputs = dialog.getAggregation("content");
 			for(var i in inputs){
 				var input = inputs[i];
 				for(var j in this.typeArr){
@@ -324,9 +340,9 @@ sap.ui.define([
 		},
 		
 		// Set key inputs as disabled/enabled for editting
-		// Arguments: oDialog = object dialog, flag = boolean flag for enabled/disabled
-		setEnabledDialog: function(oDialog, flag){
-			var inputs = oDialog.getAggregation("content");
+		// Arguments: dialog = object dialog, flag = boolean flag for enabled/disabled
+		setEnabledDialog: function(dialog, flag){
+			var inputs = dialog.getAggregation("content");
 			for(var i in inputs){
 				for(var j in this.typeArr){
 					var type = this.typeArr[j];
@@ -344,9 +360,9 @@ sap.ui.define([
 		},
 		
 		// Set key all inputs as disabled for editting
-		// Arguments: oDialog = object dialog
-		setDisabledDialog: function(oDialog){
-			var inputs = oDialog.getAggregation("content");
+		// Arguments: dialog = object dialog
+		setDisabledDialog: function(dialog){
+			var inputs = dialog.getAggregation("content");
 			for(var i in inputs){
 				for(var j in this.typeArr){
 					var type = this.typeArr[j];
@@ -374,9 +390,9 @@ sap.ui.define([
 		},
 		
 		// Checks the key values to lock them on dialogEdit
-		checkKeys: function(oDialog){
+		checkKeys: function(dialog){
 			var check = this.getModel('i18n').getResourceBundle().getText("plsEnter");
-			var inputs = oDialog.getAggregation("content");
+			var inputs = dialog.getAggregation("content");
 			for(var i in inputs){
 				var oInput = inputs[i];
 				if(oInput.data("key")){
@@ -423,14 +439,17 @@ sap.ui.define([
 		
 		// Double click event on table row
 		onDoubleClick: function(id){
-			var oDialog = this[id + "Dialog"];
+			var dialog = this[id + "Dialog"];
 			if(this.byId(id).getSelectedItem()){
 				var url = this.byId(id).getSelectedItem().getBindingContextPath();
-				oDialog.bindElement(url);
-				this.setDisabledDialog(oDialog);
-				oDialog.getButtons()[1].setVisible(false);
-				oDialog.getButtons()[2].setVisible(false);
-				oDialog.open();
+				dialog.bindElement(url);
+				this.setDisabledDialog(dialog);
+				dialog.getButtons()[1].setVisible(false);
+				if(this.byId("tableEdit").getVisible()){
+					dialog.getButtons()[2].setVisible(true);
+					dialog.getButtons()[3].setVisible(true).setEnabled(false);
+				}
+				dialog.open();
 			}else{
 				return true;
 			}

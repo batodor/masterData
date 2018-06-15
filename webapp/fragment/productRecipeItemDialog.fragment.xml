@@ -35,6 +35,7 @@
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productRecipeItem" type="Back" press="dialogCancel"/>
 			<Button text="{i18n>add}" custom:id="productRecipeItem" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="productRecipeItem" visible="false" type="Default" press="dialogEdit"/>
 			<Button text="{i18n>save}" custom:id="productRecipeItem" visible="false" type="Accept" press="dialogSave"/>
 		</buttons>
 	</Dialog>
