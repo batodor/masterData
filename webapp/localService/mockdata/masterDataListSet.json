@@ -47,59 +47,63 @@
     "Id": "qualityParameters",
     "Order": 13
 }, {
+    "Title": "Quality Parameters UOM",
+    "Id": "qualityParametersUom",
+    "Order": 14
+},{
     "Title": "Default Quality Parameters",
     "Id": "dqp",
-    "Order": 14
+    "Order": 15
 }, {
     "Title": "Benchmark SUEK AG",
     "Id": "benchmark",
-    "Order": 15
+    "Order": 16
 }, {
     "Title": "Effective r/w Rates",
     "Id": "effectiveRwRates",
-    "Order": 16
+    "Order": 17
 }, {
     "Title": "Port Costs",
     "Id": "portCosts",
-    "Order": 17
+    "Order": 18
 }, {
     "Title": "Survey & Forward rates",
     "Id": "surveyForwardRates",
-    "Order": 18
+    "Order": 19
 }, {
     "Title": "Transit Cost",
     "Id": "transitCost",
-    "Order": 19
+    "Order": 20
 }, {
     "Title": "Interest Rate",
     "Id": "interestRate",
-    "Order": 20
+    "Order": 21
 }, {
     "Title": "Inflation Factor",
     "Id": "inflationFactor",
-    "Order": 21
+    "Order": 22
 }, {
     "Title": "Index",
     "Id": "index",
-    "Order": 22
+    "Order": 23
 }, {
     "Title": "Growth Factor",
     "Id": "growthFactor",
-    "Order": 23
+    "Order": 24
 }, {
     "Title": "FCA Price for Domestic Market",
     "Id": "fcaDomestic",
-    "Order": 24
+    "Order": 25
 }, {
     "Title": "FCA Price for Product",
     "Id": "fcaProduct",
-    "Order": 25
+    "Order": 26
 }, {
     "Title": "FCA Price for Resource",
     "Id": "fcaResource",
-    "Order": 26
+    "Order": 27
 }, {
     "Title": "Strategy",
     "Id": "strategy",
-    "Order": 27
+    "Order": 28
 }]
