@@ -427,7 +427,7 @@ sap.ui.define([
 					for(var j in this.typeArr){
 						var input = sap.ui.getCore().byId(id + filtersArr[i] + "Filter");
 						var type = this.typeArr[j];
-						if(input.mBindingInfos.hasOwnProperty(type)){
+						if(input.mProperties.hasOwnProperty(type)){
 							input.setProperty(type);
 						}
 					}
