@@ -2,7 +2,16 @@
 	<Dialog title="{i18n>qualityParameters}" class="sapUiContentPadding" id="qualityParametersDialog">
 		<content>
 			<Label required="true" text="{i18n>qpKey}" width="200px"/>
-			<Input value="{QPKey}" maxLength="20" custom:key="qpKey" width="200px"/>
+			<Input 
+				custom:id="qualityParametersPopup"
+				custom:key="qpKey"
+				custom:filters="QPCode,QPName"
+				custom:set="qualityParameters"
+				id="qualityParametersPopupqualityParametersValueHelp"
+				placeholder="{i18n>plsEnter} {i18n>qpKey}"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{QPKey}" width="200px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>qpCode}" width="200px"/>
 			<Input value="{QPCode}" maxLength="20" width="200px" />

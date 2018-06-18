@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="qualityParametersUom" visible="false" custom:id="qualityParametersUom" items="{}" select="onTableSelect" width="auto" 
+	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="drq" visible="false" custom:id="drq" items="{}" select="onTableSelect" width="auto" 
 		updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" 
 		busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
@@ -9,20 +9,22 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
+			<Column><Text class="black" text="{i18n>productionUnit}"/></Column>
+			<Column><Text class="black" text="{i18n>material}"/></Column>
 			<Column><Text class="black" text="{i18n>qpKey}"/></Column>
+			<Column><Text class="black" text="{i18n>baseQP}"/></Column>
 			<Column><Text class="black" text="{i18n>uom}"/></Column>
-			<Column><Text class="black" text="{i18n>minValue}"/></Column>
-			<Column><Text class="black" text="{i18n>maxValue}"/></Column>
-			<Column><Text class="black" text="{i18n>normalPrecision}"/></Column>
+			<Column><Text class="black" text="{i18n>defaultValue}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
 				<cells>
+					<Text text="{ProductionUnit}"/>
+					<Text text="{Material}"/>
 					<Text text="{QPKey}"/>
+					<Text text="{BaseQP}"/>
 					<Text text="{UOM}"/>
-					<Text text="{MinValue}"/>
-					<Text text="{MaxValue}"/>
-					<Text text="{NormalPrecision}"/>
+					<Text text="{DefaultValue}"/>
 				</cells>
 			</ColumnListItem>
 		</items>
