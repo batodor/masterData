@@ -433,14 +433,15 @@ sap.ui.define([
 					}
 				}
 			}
+			table.ondblclick = this.onDoubleClickSelect.bind(this, id);
 			this[id + "Dialog"].getButtons()[1].setEnabled(false);
 			this[id + "Dialog"].open();
 		},
 		
-		// Double click event on table row
+		// Double click event to open dialog
 		onDoubleClick: function(id){
-			var dialog = this[id + "Dialog"];
 			if(this.byId(id).getSelectedItem()){
+				var dialog = this[id + "Dialog"];
 				var url = this.byId(id).getSelectedItem().getBindingContextPath();
 				dialog.bindElement(url);
 				this.setDisabledDialog(dialog);
@@ -452,6 +453,20 @@ sap.ui.define([
 				dialog.open();
 			}else{
 				return true;
+			}
+		},
+		
+		// Double click event to select row
+		onDoubleClickSelect: function(id){
+			var table = this.byId(id) || sap.ui.getCore().byId(id);
+			if(table.getSelectedItem()){
+				var button = this.byId(id + "Select") || sap.ui.getCore().byId(id + "Select");
+				var key = button.data("key");
+				var item = table.getSelectedItem();
+				var path = item.getBindingContextPath();
+				var data = item.getModel().getData(path);
+				sap.ui.getCore().byId(id + this.id + "ValueHelp").setValue(data[key]);
+				this[id + "Dialog"].close();
 			}
 		}
 	});
