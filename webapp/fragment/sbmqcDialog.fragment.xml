@@ -2,13 +2,13 @@
 	<Dialog title="{i18n>sbmqc}" class="sapUiContentPadding" id="sbmqcDialog">
 		<content>
 			<Label required="true" text="{i18n>sbmqcCode}" width="300px"/>
-			<Input value="{Code}" maxLength="12" custom:key="sbmqcCode" width="200px"/>
+			<Input value="{Code}" maxLength="12" custom:key="sbmqcCode" width="300px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>sbmqcName}" width="300px"/>
-			<TextArea value="{Name}" maxLength="100" width="200px" />
+			<TextArea value="{Name}" maxLength="100" width="300px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>bmqcName}" width="300px"/>
-			<Select forceSelection="false" selectedKey="{CodeBase}" custom:key="bmqcName" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="200px">
+			<Select forceSelection="false" selectedKey="{CodeBase}" custom:key="bmqcName" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="300px">
 				<core:Item key="{Code}" text="{Name}"/>
 			</Select>
 			<Input value="{NameBase}" visible="false" custom:key="" width="200px" />
