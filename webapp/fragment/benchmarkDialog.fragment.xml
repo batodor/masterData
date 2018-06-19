@@ -14,16 +14,10 @@
 			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="255px"/>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>product}" width="220px"/>
-			<Input 
-				type="Text"
-				custom:id="material"
-				custom:filters="Code,Division,Name"
-				custom:key="product"
-				id="materialbenchmarkValueHelp"
-				placeholder="{i18n>plsChoose} {i18n>product}"
-				showValueHelp="true"
-				valueHelpRequest="handleValueHelp"
-				value="{Product}" width="250px" />
+			<Select selectedKey="{Product}" custom:key="product" forceSelection="false" 
+				items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }" width="250px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>salesMarket}" width="220px"/>
 			<Select selectedKey="{SalesMarket}" custom:key="salesMarket" forceSelection="false" 
