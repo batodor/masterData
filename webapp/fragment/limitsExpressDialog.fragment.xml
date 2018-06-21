@@ -33,8 +33,8 @@
 			<Label required="true" text="{i18n>dateTo}" width="250px"/>
 			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="150px"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>paymentTerms}" width="250px"/>
-			<Input value="{PaymentTerms}" maxLength="4" width="150px"/>
+			<Label text="{i18n>paymentMethod}" width="250px"/>
+			<Input value="{PaymentMethod}" maxLength="4" width="150px"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="limitsExpress" type="Back" press="dialogCancel"/>
