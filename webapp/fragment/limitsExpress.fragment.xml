@@ -15,7 +15,7 @@
 			<Column><Text class="black" text="{i18n>subitem}"/></Column>
 			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
 			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
-			<Column><Text class="black" text="{i18n>paymentTerms}"/></Column>
+			<Column><Text class="black" text="{i18n>paymentMethod}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
