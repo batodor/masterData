@@ -14,7 +14,7 @@
 			<Column><Text class="black" text="{i18n>qp}"/></Column>
 			<Column><Text class="black" text="{i18n>baseQP}"/></Column>
 			<Column><Text class="black" text="{i18n>uom}"/></Column>
-			<Column><Text class="black" text="{i18n>qpName}"/></Column>
+			<Column><Text class="black" text="{i18n>fineUOM}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
@@ -25,7 +25,7 @@
 					<Text text="{QPName}"/>
 					<Text text="{BaseQP}"/>
 					<Text text="{UOM}"/>
-					<Text text="{QPName}"/>
+					<Text text="{FineUOM}"/>
 				</cells>
 			</ColumnListItem>
 		</items>
