@@ -37,6 +37,8 @@
 				valueHelpRequest="handleValueHelp"
 				value="{UOM}" width="200px" />
 			<ToolbarSpacer/>
+			<Label text="{i18n>qpName}" width="150px"/>
+			<Input value="{QPName}" width="200px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="dqp" type="Back" press="dialogCancel"/>
