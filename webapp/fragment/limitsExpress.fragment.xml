@@ -16,6 +16,7 @@
 			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
 			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
 			<Column><Text class="black" text="{i18n>paymentMethod}"/></Column>
+			<Column><Text class="black" text="{i18n>paymentTerm}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
@@ -29,6 +30,7 @@
 					<Text text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
 					<Text text="{ path: 'DateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
 					<Text text="{PaymentMethod}"/>
+					<Text text="{PaymentTerm}"/>
 				</cells>
 			</ColumnListItem>
 		</items>
