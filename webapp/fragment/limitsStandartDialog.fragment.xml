@@ -17,11 +17,15 @@
 			<Select selected="{Uom}" width="150px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>paymentTerms}" width="250px"/>
-			<Input value="{PaymentTerms}" width="150px"/>
+			<Select selectedKey="{PaymentTerms}" forceSelection="false" 
+				items="{ path: '/dictionaryPaymentTermsSet', sorter: { path: 'Name' } }" width="150px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
+			</Select>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="limitsStandart" type="Back" press="dialogCancel"/>
 			<Button text="{i18n>add}" custom:id="limitsStandart" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="limitsStandart" visible="false" type="Default" press="dialogEdit"/>
 			<Button text="{i18n>save}" custom:id="limitsStandart" visible="false" type="Accept" press="dialogSave"/>
 		</buttons>
 	</Dialog>

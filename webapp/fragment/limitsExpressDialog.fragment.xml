@@ -34,10 +34,16 @@
 			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="150px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>paymentMethod}" width="250px"/>
-			<Input value="{PaymentMethod}" maxLength="4" width="150px"/>
+			<Select selectedKey="{PaymentMethod}" forceSelection="false" 
+				items="{ path: '/dictionaryPaymentMethodsSet', sorter: { path: 'Name' } }" width="150px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Label text="{i18n>paymentTerm}" width="250px"/>
-			<Input value="{PaymentTerm}" maxLength="4" width="150px"/>
+			<Select selectedKey="{PaymentTerm}" forceSelection="false" 
+				items="{ path: '/dictionaryPaymentTermsSet', sorter: { path: 'Name' } }" width="150px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
+			</Select>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="limitsExpress" type="Back" press="dialogCancel"/>
