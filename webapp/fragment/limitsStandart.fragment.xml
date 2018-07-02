@@ -18,9 +18,9 @@
 				<cells>
 					<Text text="{LegalEntity}"/>
 					<Text text="{Rating}"/>
-					<Text text="{BusinessPartnersRole}"/>
-					<Text text="{DateFrom}"/>
-					<Text text="{DateTo}"/>
+					<Text text="{BusinessPartnerRole}"/>
+					<Text text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+					<Text text="{ path: 'DateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
 				</cells>
 			</ColumnListItem>
 		</items>
