@@ -17,7 +17,7 @@
 				type="Text"
 				custom:id="dictionaryBPInt"
 				custom:filters="Name,Partner"
-				id="dictionaryBPIntValueHelp"
+				id="dictionaryBPIntproductionUnitValueHelp"
 				placeholder="{i18n>plsChoose} {i18n>partner}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"

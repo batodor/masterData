@@ -10,9 +10,8 @@
 			<Column><Text class="black" text="{i18n>legalEntity}"/></Column>
 			<Column><Text class="black" text="{i18n>rating}"/></Column>
 			<Column><Text class="black" text="{i18n>businessPartnersRole}"/></Column>
-			<Column><Text class="black" text="{i18n>tonnage}"/></Column>
-			<Column><Text class="black" text="{i18n>uom}"/></Column>
-			<Column><Text class="black" text="{i18n>paymentTerms}"/></Column>
+			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
+			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
@@ -20,9 +19,8 @@
 					<Text text="{LegalEntity}"/>
 					<Text text="{Rating}"/>
 					<Text text="{BusinessPartnersRole}"/>
-					<Text text="{Tonnage}"/>
-					<Text text="{Uom}"/>
-					<Text text="{PaymentTerms}"/>
+					<Text text="{DateFrom}"/>
+					<Text text="{DateTo}"/>
 				</cells>
 			</ColumnListItem>
 		</items>
