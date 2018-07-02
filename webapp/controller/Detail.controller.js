@@ -204,14 +204,23 @@ sap.ui.define([
 			dialog.open();
 		},
 		tableEdit: function() {
+			var table = this.byId(this.id);
 			var dialog = this[this.id + "Dialog"];
-			var url = this.byId(this.id).getSelectedItem().getBindingContextPath();
+			var url = table.getSelectedItem().getBindingContextPath();
 			sap.ui.getCore().byId(this.id + "Dialog").bindElement(url);
 			this.setEnabledDialog(dialog, false);
 			var buttons = dialog.getButtons();
 			buttons[1].setVisible(false);
 			buttons[2].setVisible(false);
 			buttons[3].setVisible(true).setEnabled(true);
+			if(table.data("table")){
+				var nextTable = sap.ui.getCore().byId(table.data("table"));
+				var nextUrl = url + "/" + table.data("table");
+				nextTable.bindItems({
+					path: nextUrl,
+					template: nextTable['mBindingInfos'].items.template
+				});
+			}
 			dialog.open();
 		},
 		tableDelete: function() {
@@ -441,14 +450,23 @@ sap.ui.define([
 		// Double click event to open dialog
 		onDoubleClick: function(id){
 			if(this.byId(id).getSelectedItem()){
+				var table = this.byId(id);
 				var dialog = this[id + "Dialog"];
-				var url = this.byId(id).getSelectedItem().getBindingContextPath();
+				var url = table.getSelectedItem().getBindingContextPath();
 				dialog.bindElement(url);
 				this.setDisabledDialog(dialog);
 				dialog.getButtons()[1].setVisible(false);
 				if(this.byId("tableEdit").getVisible()){
 					dialog.getButtons()[2].setVisible(true);
 					dialog.getButtons()[3].setVisible(true).setEnabled(false);
+				}
+				if(table.data("table")){
+					var nextTable = this.byId(table.data("table")) || sap.ui.getCore().byId(table.data("table"));
+					var nextUrl = url + "/" + table.data("table");
+					nextTable.bindItems({
+						path: nextUrl,
+						template: nextTable['mBindingInfos'].items.template
+					});
 				}
 				dialog.open();
 			}else{

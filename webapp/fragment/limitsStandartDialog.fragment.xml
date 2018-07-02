@@ -1,26 +1,55 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>limitsStandartRating}" class="sapUiContentPadding" id="limitsStandartDialog">
 		<content>
-			<Label required="true" text="{i18n>legalEntity}" width="250px"/>
-			<Input custom:key="legalEntity" value="{LegalEntity}" width="150px"/>
+			<Label required="true" text="{i18n>legalEntity}" width="200px"/>
+			<Label custom:key="legalEntity" text="{LegalEntity}" width="150px"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>rating}" width="250px"/>
-			<Select selected="{Rating}" width="150px"></Select>
+			<Label required="true" text="{i18n>rating}" width="200px"/>
+			<Label custom:key="rating" text="{Rating}" width="150px" />
 			<ToolbarSpacer/>
-			<Label text="{i18n>businessPartnersRole}" width="250px"/>
-			<Select selected="{BusinessPartnersRole}" width="150px"/>
+			<Label required="true" text="{i18n>businessPartnersRole}" width="200px"/>
+			<Label custom:key="businessPartnersRole" text="{BusinessPartnerRole}" width="150px"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>tonnage}" width="250px"/>
-			<Input value="{Tonnage}" width="150px"/>
+			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
+			<Label custom:key="dateFrom" text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>uom}" width="250px"/>
-			<Select selected="{Uom}" width="150px"/>
+			<Label required="true" text="{i18n>dateTo}" width="200px"/>
+			<Label custom:key="dateTo" text="{ path: 'DateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>paymentTerms}" width="250px"/>
-			<Select selectedKey="{PaymentTerms}" forceSelection="false" 
-				items="{ path: '/dictionaryPaymentTermsSet', sorter: { path: 'Name' } }" width="150px">
-				<core:Item key="{Code}" text="{Code} - {Name}"/>
-			</Select>
+			<Label text="" />
+			<Table mode="SingleSelectLeft" includeItemInSelection="true" id="LimitsForStandardRating_MasterDetailN" visible="false" custom:id="LimitsForStandardRating_MasterDetailN" 
+				items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" 
+				growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<Toolbar class="white">
+						<ToolbarSpacer/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column><Text class="black" text="{i18n>tonnageSign}"/></Column>
+					<Column><Text class="black" text="{i18n>tonnage}"/></Column>
+					<Column><Text class="black" text="{i18n>tonnageUom}"/></Column>
+					<Column><Text class="black" text="{i18n>periodSign}"/></Column>
+					<Column><Text class="black" text="{i18n>period}"/></Column>
+					<Column><Text class="black" text="{i18n>periodUom}"/></Column>
+					<Column><Text class="black" text="{i18n>paymentMethod}"/></Column>
+					<Column><Text class="black" text="{i18n>paymentTerms}"/></Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{TonnageSign}"/>
+							<Text text="{Tonnage}"/>
+							<Text text="{TonnageUom}"/>
+							<Text text="{PeriodSign}"/>
+							<Text text="{Period}"/>
+							<Text text="{PeriodUom}"/>
+							<Text text="{PaymentMethod}"/>
+							<Text text="{PaymentTerms}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="limitsStandart" type="Back" press="dialogCancel"/>

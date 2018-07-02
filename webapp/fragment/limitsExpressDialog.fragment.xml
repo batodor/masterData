@@ -28,10 +28,10 @@
 			<Input value="{Subitem}" type="Number" custom:key="subitem" width="150px"/>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="250px"/>
-			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="150px"/>
+			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="155px"/>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateTo}" width="250px"/>
-			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="150px"/>
+			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="155px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>paymentMethod}" width="250px"/>
 			<Select selectedKey="{PaymentMethod}" forceSelection="false" 
