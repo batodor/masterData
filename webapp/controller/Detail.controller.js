@@ -249,7 +249,7 @@ sap.ui.define([
 							buttons[5].setVisible(true).setEnabled(false);
 						}else{
 							buttons[3].setVisible(false);
-							buttons[5].setVisible(true).setDisabled(true);
+							buttons[5].setVisible(true).setEnabled(true);
 						}
 					}else{
 						innerTable.setVisible(true);
