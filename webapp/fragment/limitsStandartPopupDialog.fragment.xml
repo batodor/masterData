@@ -46,18 +46,18 @@
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			
-			<Label text="{SubItem}" visible="false" />
-			<Label text="{LegalEntity}" visible="false" />
-			<Label text="{Rating}" visible="false" />
-			<Label text="{BusinessPartnerRole}" visible="false" />
-			<Label text="{DateFrom}" visible="false" />
-			<Label text="{DateTo}" visible="false" />
+			<Text custom:key="subItem" text="{SubItem}" visible="false" />
+			<Text custom:key="legalEntity" text="{LegalEntity}" visible="false" />
+			<Text custom:key="rating" text="{Rating}" visible="false" />
+			<Text custom:key="businessPartnersRole" text="{BusinessPartnerRole}" visible="false" />
+			<Text custom:key="dateFrom" text="{DateFrom}" visible="false" />
+			<Text custom:key="dateTo" text="{DateTo}" visible="false" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="limitsStandartPopup" type="Back" press="dialogCancel"/>
-			<Button text="{i18n>add}" custom:id="limitsStandartPopup" visible="false" type="Accept" press="dialogAdd"/>
-			<Button text="{i18n>edit}" custom:id="limitsStandartPopup" visible="false" type="Default" press="dialogEdit"/>
-			<Button text="{i18n>save}" custom:id="limitsStandartPopup" visible="false" type="Accept" press="dialogSave"/>
+			<Button text="{i18n>add}" custom:id="limitsStandart" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="limitsStandart" visible="false" type="Default" press="dialogEdit"/>
+			<Button text="{i18n>save}" custom:id="limitsStandart" visible="false" type="Accept" press="dialogSave"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

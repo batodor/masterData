@@ -74,6 +74,10 @@ span[data-rating="C"] {
     font-weight: bold;
 }
 
+#LimitsForStandardRating_MasterDetailNBlock .sapUiBlockCellContent {
+	padding: 0;
+}
+
 
 /* --- Tabs styles --- */
 

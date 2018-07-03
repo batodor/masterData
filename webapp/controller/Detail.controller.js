@@ -34,7 +34,7 @@ sap.ui.define([
 			this.tableArr = [ "limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource", "productRecipeHeader", "productRecipeItem", "strategy", 
 				"growthFactor", "salesScheme", "riskType", "salesRegion", "incoterms", "currency", "uom", "country", "rwStation", "port", "vesselType", "materialGroup", "poq", 
 				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc", "crossBorder", "productionUnit", "addressType", "qualityParameters", "dqp", "material",
-				"dictionaryBPInt", "benchmark", "portPopup", "qualityParametersUom", "qualityParametersPopup", "drq", "limitsStandartPopup"];
+				"dictionaryBPInt", "benchmark", "portPopup", "qualityParametersUom", "qualityParametersPopup", "drq"];
 			
 			this.typeArr = ["value", "dateValue", "selectedKey", "selected"];
 
@@ -119,7 +119,7 @@ sap.ui.define([
 			}
 			
 			// Bind double click event
-			this.byId(this.id).ondblclick = this.onDoubleClick.bind(this, this.id);
+			this.byId(this.id).ondblclick = this.tableEdit.bind(this, this.id);
 		},
 
 		// Event on selection of table items
@@ -132,8 +132,8 @@ sap.ui.define([
 			} else {
 				this.setInputEnabled(["tableDelete", "tableEdit", "tableDetails", id + "Select"], false);
 			}
-			if(table.data("dialog")){
-				id = table.data("dialog");
+			if(table.data("crud")){
+				id = table.data("crud");
 				this.setInputEnabled([ id + "Delete", id + "Edit"], true);
 			}
 		},
@@ -194,6 +194,7 @@ sap.ui.define([
 		// Details used for second level details of current active table
 		tableAdd: function(oEvent) {
 			var id = oEvent.getSource().data("id") || this.id;
+			var table = this.byId(id) || sap.ui.getCore().byId(id);
 			var dialog = this[id + "Dialog"];
 			dialog.unbindElement();
 			this.setEnabledDialog(dialog, true);
@@ -202,39 +203,80 @@ sap.ui.define([
 				var value = this.filter[0].oValue1;
 				sap.ui.getCore().byId(id + filterKey).setValue(value).setEnabled(false);
 			}
+			if(table.data("table")){
+				var nextId = table.data("table");
+				var nextTable = this.byId(nextId) || sap.ui.getCore().byId(nextId);
+				var nextBlock = this.byId(nextId + "Block") || sap.ui.getCore().byId(nextId + "Block");
+				nextTable.setVisible(false);
+				nextBlock.setVisible(true);
+			}
 			var buttons = dialog.getButtons();
 			buttons[1].setVisible(true);
 			buttons[2].setVisible(false);
 			buttons[3].setVisible(false);
 			dialog.open();
 		},
-		tableEdit: function(oEvent) {
-			var id = oEvent.getSource().data("id") || this.id;
+		tableEdit: function(argument) {
+			var id = typeof argument === 'string' ? argument : argument.getSource().data("id") || this.id;
 			var table = this.byId(id) || sap.ui.getCore().byId(id);
-			var dialog = this[id + "Dialog"];
-			if(table.data("dialog")){
-				dialog = this[table.data("dialog") + "Dialog"];
-			}
-			var url = table.getSelectedItem().getBindingContextPath();
-			dialog.bindElement(url);
-			this.setEnabledDialog(dialog, false);
-			
-			if(table.data("table")){
-				var nextId = table.data("table");
-				var nextTable = this.byId(nextId) || sap.ui.getCore().byId(nextId);
-				var nextUrl = url + "/" + nextId;
-				nextTable.bindItems({
-					path: nextUrl,
-					template: nextTable['mBindingInfos'].items.template
-				});
-				nextTable.ondblclick = this.onDoubleClick.bind(this, nextId);
-			}else{
+			if(table.getSelectedItem()){
+				var dialog = table.data("dialog") ? this[table.data("dialog") + "Dialog"] : this[id + "Dialog"];
+				var url = table.getSelectedItem().getBindingContextPath();
+				
+				// if on doubleclick preview then disable inputs, else enable inputs
+				typeof argument === 'string' ? this.setDisabledDialog(dialog) : this.setEnabledDialog(dialog, false);
 				var buttons = dialog.getButtons();
-				buttons[1].setVisible(false);
-				buttons[2].setVisible(false);
-				buttons[3].setVisible(true).setEnabled(true);
+				
+				// Checks if edit dialog has inner table to bind it
+				if(table.data("table")){
+					var innerId = table.data("table");
+					var innerTable = this.byId(innerId) || sap.ui.getCore().byId(innerId);
+					var innerBlock = this.byId(innerId + "Block") || sap.ui.getCore().byId(innerId + "Block");
+					
+					// Also enabled/disable innerBlock inputs
+					typeof argument === 'string' ? this.setDisabledDialog(innerBlock) : this.setEnabledDialog(innerBlock, false);
+					
+					// Check for flag to go to edit mode from dialog with inner table
+					buttons[1].setVisible(false);
+					if(table.data("crud")){
+						innerTable.setVisible(false);
+						innerBlock.setVisible(true);
+						buttons[2].setVisible(false);
+						buttons[4].setVisible(false);
+						
+						if(typeof argument === 'string'){
+							buttons[3].setVisible(true);
+							buttons[5].setVisible(true).setEnabled(false);
+						}else{
+							buttons[3].setVisible(false);
+							buttons[5].setVisible(true).setDisabled(true);
+						}
+					}else{
+						innerTable.setVisible(true);
+						innerBlock.setVisible(false);
+						buttons[2].setVisible(true).setEnabled(false);
+						buttons[3].setVisible(false);
+						buttons[4].setVisible(true).setEnabled(false);
+						buttons[5].setVisible(false);
+					}
+					var nextUrl = url + "/" + innerId;
+					innerTable.bindItems({
+						path: nextUrl,
+						template: innerTable['mBindingInfos'].items.template
+					});
+					innerTable.ondblclick = this.tableEdit.bind(this, innerId);
+				}else{
+					buttons[1].setVisible(false);
+					if(this.byId("tableEdit").getVisible()){
+						buttons[2].setVisible(true);
+						buttons[3].setVisible(true).setEnabled(false);
+					}
+				}
+				dialog.bindElement(url);
+				dialog.open();
+			}else{
+				return true;
 			}
-			dialog.open();
 		},
 		tableDelete: function(oEvent) {
 			var id = oEvent.getSource().data("id") || this.id;
@@ -306,6 +348,12 @@ sap.ui.define([
 			var url = dialog.getBindingContext().getPath();
 			var oModel = dialog.getModel();
 			var oData = this.getOdata(dialog);
+			
+			// Get odata from inner block
+			if(oEvent.getSource().data("block")){
+				var innerTable = sap.ui.getCore().byId(oEvent.getSource().data("block"));
+				oData = Object.assign(oData, this.getOdata(innerTable));
+			}
 			dialog.unbindElement();
 			oModel.update(url, oData);
 			this[tableId + "Dialog"].close();
@@ -314,12 +362,23 @@ sap.ui.define([
 			var button = oEvent.getSource();
 			var id = button.data("id");
 			var dialog = sap.ui.getCore().byId(id + "Dialog");
-			if(dialog.getButtons()[3].getEnabled()){
-				this.setDisabledDialog(dialog);
-				dialog.getButtons()[3].setEnabled(false);
+			if(button.data("block")){
+				var block = sap.ui.getCore().byId(button.data("block"));
+				if(dialog.getButtons()[5].getEnabled()){
+					this.setDisabledDialog(block);
+					dialog.getButtons()[5].setEnabled(false);
+				}else{
+					this.setEnabledDialog(block, false);
+					dialog.getButtons()[5].setEnabled(true);
+				}
 			}else{
-				this.setEnabledDialog(dialog, false);
-				dialog.getButtons()[3].setEnabled(true);
+				if(dialog.getButtons()[3].getEnabled()){
+					this.setDisabledDialog(dialog);
+					dialog.getButtons()[3].setEnabled(false);
+				}else{
+					this.setEnabledDialog(dialog, false);
+					dialog.getButtons()[3].setEnabled(true);
+				}
 			}
 		},
 		dialogSelect: function(oEvent){
@@ -332,10 +391,10 @@ sap.ui.define([
 			this[id + "Dialog"].close();
 		},
 		
-		// Set odata from any dialog, argument oDialog = object dialog / return object inputs Data
-		getOdata: function(dialog){
+		// Set odata from any dialog, argument object = any object / return object inputs Data
+		getOdata: function(object){
 			var oData = {};
-			var inputs = dialog.getAggregation("content");
+			var inputs = object.getAggregation("content");
 			for(var i in inputs){
 				var input = inputs[i];
 				for(var j in this.typeArr){
@@ -461,40 +520,6 @@ sap.ui.define([
 			table.ondblclick = this.onDoubleClickSelect.bind(this, id);
 			this[id + "Dialog"].getButtons()[1].setEnabled(false);
 			this[id + "Dialog"].open();
-		},
-		
-		// Double click event to open dialog
-		onDoubleClick: function(id){
-			var table = this.byId(id) || sap.ui.getCore().byId(id);
-			if(table.getSelectedItem()){
-				var dialog = this[id + "Dialog"];
-				if(table.data("dialog")){
-					dialog = this[table.data("dialog") + "Dialog"];
-				}
-				var url = table.getSelectedItem().getBindingContextPath();
-				dialog.bindElement(url);
-				this.setDisabledDialog(dialog);
-				var buttons = dialog.getButtons();
-				if(table.data("table")){
-					var nextId = table.data("table");
-					var nextTable = this.byId(nextId) || sap.ui.getCore().byId(nextId);
-					var nextUrl = url + "/" + nextId;
-					nextTable.bindItems({
-						path: nextUrl,
-						template: nextTable['mBindingInfos'].items.template
-					});
-					nextTable.ondblclick = this.onDoubleClick.bind(this, nextId);
-				}else{
-					buttons[1].setVisible(false);
-					if(this.byId("tableEdit").getVisible()){
-						buttons[2].setVisible(true);
-						buttons[3].setVisible(true).setEnabled(false);
-					}
-				}
-				dialog.open();
-			}else{
-				return true;
-			}
 		},
 		
 		// Double click event to select row
