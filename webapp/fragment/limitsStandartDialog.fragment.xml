@@ -105,7 +105,7 @@
 			<Button text="{i18n>add}" custom:id="limitsStandart" visible="false" type="Accept" press="dialogAdd"/>
 			<Button text="{i18n>edit}" custom:id="LimitsForStandardRating_MasterDetailN" id="limitsStandartEdit" enabled="false" type="Default" press="tableEdit"/>
 			<Button text="{i18n>edit}" custom:id="limitsStandart" custom:block="LimitsForStandardRating_MasterDetailNBlock" type="Default" press="dialogEdit"/>
-			<Button text="{i18n>delete}" custom:id="limitsStandart" id="limitsStandartDelete" enabled="false" type="Reject" press="tableDelete"/>
+			<Button text="{i18n>delete}" custom:id="LimitsForStandardRating_MasterDetailN" id="limitsStandartDelete" enabled="false" type="Reject" press="tableDelete"/>
 			<Button text="{i18n>save}" custom:id="limitsStandart" custom:block="LimitsForStandardRating_MasterDetailNBlock" id="limitsStandartSave"  visible="false" type="Accept" 
 				press="dialogSave"/>
 		</buttons>
