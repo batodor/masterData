@@ -1,0 +1,42 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>limitsStandartRating}" class="sapUiContentPadding" id="limitsStandartPopupDialog">
+		<content>
+			<Label text="{i18n>tonnageSign}" width="200px"/>
+			<Input value="{TonnageSign}" width="150px" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>tonnage}" width="200px"/>
+			<Input value="{Tonnage}" width="150px" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>tonnageUom}" width="200px"/>
+			<Input value="{TonnageUOM}" width="150px" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>periodSign}" width="200px"/>
+			<Input value="{PeriodSign}" width="150px" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>period}" width="200px"/>
+			<Input value="{Period}" width="150px" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>periodUom}" width="200px"/>
+			<Input value="{PeriodUOM}" width="150px" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>paymentMethod}" width="200px"/>
+			<Input value="{PaymentMethod}" width="150px" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>paymentTerms}" width="200px"/>
+			<Input value="{PaymentTerms}" width="150px" />
+			
+			<Label text="{SubItem}" visible="false" />
+			<Label text="{LegalEntity}" visible="false" />
+			<Label text="{Rating}" visible="false" />
+			<Label text="{BusinessPartnerRole}" visible="false" />
+			<Label text="{DateFrom}" visible="false" />
+			<Label text="{DateTo}" visible="false" />
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="limitsStandartPopup" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="limitsStandartPopup" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="limitsStandartPopup" visible="false" type="Default" press="dialogEdit"/>
+			<Button text="{i18n>save}" custom:id="limitsStandartPopup" visible="false" type="Accept" press="dialogSave"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

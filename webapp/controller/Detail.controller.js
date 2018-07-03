@@ -34,7 +34,7 @@ sap.ui.define([
 			this.tableArr = [ "limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource", "productRecipeHeader", "productRecipeItem", "strategy", 
 				"growthFactor", "salesScheme", "riskType", "salesRegion", "incoterms", "currency", "uom", "country", "rwStation", "port", "vesselType", "materialGroup", "poq", 
 				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc", "crossBorder", "productionUnit", "addressType", "qualityParameters", "dqp", "material",
-				"dictionaryBPInt", "benchmark", "portPopup", "qualityParametersUom", "qualityParametersPopup", "drq"];
+				"dictionaryBPInt", "benchmark", "portPopup", "qualityParametersUom", "qualityParametersPopup", "drq", "limitsStandartPopup"];
 			
 			this.typeArr = ["value", "dateValue", "selectedKey", "selected"];
 
@@ -132,6 +132,10 @@ sap.ui.define([
 			} else {
 				this.setInputEnabled(["tableDelete", "tableEdit", "tableDetails", id + "Select"], false);
 			}
+			if(table.data("dialog")){
+				id = table.data("dialog");
+				this.setInputEnabled([ id + "Delete", id + "Edit"], true);
+			}
 		},
 		
 		// Enable/Disables inputs depending flag arg
@@ -188,14 +192,15 @@ sap.ui.define([
 
 		// Table buttons function for create/edit/copy/delete/details of items
 		// Details used for second level details of current active table
-		tableAdd: function() {
-			var dialog = this[this.id + "Dialog"];
+		tableAdd: function(oEvent) {
+			var id = oEvent.getSource().data("id") || this.id;
+			var dialog = this[id + "Dialog"];
 			dialog.unbindElement();
 			this.setEnabledDialog(dialog, true);
 			if(this.filter.length > 0){
 				var filterKey = this.filter[0].sPath;
 				var value = this.filter[0].oValue1;
-				sap.ui.getCore().byId(this.id + filterKey).setValue(value).setEnabled(false);
+				sap.ui.getCore().byId(id + filterKey).setValue(value).setEnabled(false);
 			}
 			var buttons = dialog.getButtons();
 			buttons[1].setVisible(true);
@@ -203,29 +208,39 @@ sap.ui.define([
 			buttons[3].setVisible(false);
 			dialog.open();
 		},
-		tableEdit: function() {
-			var table = this.byId(this.id);
-			var dialog = this[this.id + "Dialog"];
+		tableEdit: function(oEvent) {
+			var id = oEvent.getSource().data("id") || this.id;
+			var table = this.byId(id) || sap.ui.getCore().byId(id);
+			var dialog = this[id + "Dialog"];
+			if(table.data("dialog")){
+				dialog = this[table.data("dialog") + "Dialog"];
+			}
 			var url = table.getSelectedItem().getBindingContextPath();
-			sap.ui.getCore().byId(this.id + "Dialog").bindElement(url);
+			dialog.bindElement(url);
 			this.setEnabledDialog(dialog, false);
-			var buttons = dialog.getButtons();
-			buttons[1].setVisible(false);
-			buttons[2].setVisible(false);
-			buttons[3].setVisible(true).setEnabled(true);
+			
 			if(table.data("table")){
-				var nextTable = sap.ui.getCore().byId(table.data("table"));
-				var nextUrl = url + "/" + table.data("table");
+				var nextId = table.data("table");
+				var nextTable = this.byId(nextId) || sap.ui.getCore().byId(nextId);
+				var nextUrl = url + "/" + nextId;
 				nextTable.bindItems({
 					path: nextUrl,
 					template: nextTable['mBindingInfos'].items.template
 				});
+				nextTable.ondblclick = this.onDoubleClick.bind(this, nextId);
+			}else{
+				var buttons = dialog.getButtons();
+				buttons[1].setVisible(false);
+				buttons[2].setVisible(false);
+				buttons[3].setVisible(true).setEnabled(true);
 			}
 			dialog.open();
 		},
-		tableDelete: function() {
-			var url = this.byId(this.id).getSelectedItem().getBindingContextPath();
-			var oModel = this.byId(this.id).getModel();
+		tableDelete: function(oEvent) {
+			var id = oEvent.getSource().data("id") || this.id;
+			var table = this.byId(id) || sap.ui.getCore().byId(id);
+			var url = table.getSelectedItem().getBindingContextPath();
+			var oModel = table.getModel();
 			MessageBox.confirm("Are you sure you want to delete?", {
 				actions: ["Delete", sap.m.MessageBox.Action.CLOSE],
 				onClose: function(sAction) {
@@ -237,8 +252,9 @@ sap.ui.define([
 				}
 			});
 		},
-		tableDetails: function(){
-			var oTable = this.byId(this.id);
+		tableDetails: function(oEvent){
+			var id = oEvent.getSource().data("id") || this.id;
+			var oTable = this.byId(id) || sap.ui.getCore().byId(id);
 			var key = oTable.data("key");
 			var detailsTableId = oTable.data("details");
 			var eventOptions = {};
@@ -449,24 +465,31 @@ sap.ui.define([
 		
 		// Double click event to open dialog
 		onDoubleClick: function(id){
-			if(this.byId(id).getSelectedItem()){
-				var table = this.byId(id);
+			var table = this.byId(id) || sap.ui.getCore().byId(id);
+			if(table.getSelectedItem()){
 				var dialog = this[id + "Dialog"];
+				if(table.data("dialog")){
+					dialog = this[table.data("dialog") + "Dialog"];
+				}
 				var url = table.getSelectedItem().getBindingContextPath();
 				dialog.bindElement(url);
 				this.setDisabledDialog(dialog);
-				dialog.getButtons()[1].setVisible(false);
-				if(this.byId("tableEdit").getVisible()){
-					dialog.getButtons()[2].setVisible(true);
-					dialog.getButtons()[3].setVisible(true).setEnabled(false);
-				}
+				var buttons = dialog.getButtons();
 				if(table.data("table")){
-					var nextTable = this.byId(table.data("table")) || sap.ui.getCore().byId(table.data("table"));
-					var nextUrl = url + "/" + table.data("table");
+					var nextId = table.data("table");
+					var nextTable = this.byId(nextId) || sap.ui.getCore().byId(nextId);
+					var nextUrl = url + "/" + nextId;
 					nextTable.bindItems({
 						path: nextUrl,
 						template: nextTable['mBindingInfos'].items.template
 					});
+					nextTable.ondblclick = this.onDoubleClick.bind(this, nextId);
+				}else{
+					buttons[1].setVisible(false);
+					if(this.byId("tableEdit").getVisible()){
+						buttons[2].setVisible(true);
+						buttons[3].setVisible(true).setEnabled(false);
+					}
 				}
 				dialog.open();
 			}else{

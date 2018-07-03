@@ -17,33 +17,33 @@
 			<Label custom:key="dateTo" text="{ path: 'DateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
 			<ToolbarSpacer/>
 			<Label text="" />
-			<Table mode="SingleSelectLeft" includeItemInSelection="true" id="LimitsForStandardRating_MasterDetailN" visible="false" custom:id="LimitsForStandardRating_MasterDetailN" 
+			<Table mode="SingleSelectLeft" includeItemInSelection="true" id="LimitsForStandardRating_MasterDetailN" custom:dialog="limitsStandartPopup" 
 				items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" 
-				growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+				growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}">
 				<headerToolbar>
 					<Toolbar class="white">
 						<ToolbarSpacer/>
 					</Toolbar>
 				</headerToolbar>
 				<columns>
-					<Column><Text class="black" text="{i18n>tonnageSign}"/></Column>
-					<Column><Text class="black" text="{i18n>tonnage}"/></Column>
-					<Column><Text class="black" text="{i18n>tonnageUom}"/></Column>
-					<Column><Text class="black" text="{i18n>periodSign}"/></Column>
-					<Column><Text class="black" text="{i18n>period}"/></Column>
-					<Column><Text class="black" text="{i18n>periodUom}"/></Column>
-					<Column><Text class="black" text="{i18n>paymentMethod}"/></Column>
-					<Column><Text class="black" text="{i18n>paymentTerms}"/></Column>
+					<Column hALign="Center"><Text class="black" text="{i18n>tonnageSign}"/></Column>
+					<Column hALign="Center"><Text class="black" text="{i18n>tonnage}"/></Column>
+					<Column hALign="Center"><Text class="black" text="{i18n>tonnageUom}"/></Column>
+					<Column hALign="Center"><Text class="black" text="{i18n>periodSign}"/></Column>
+					<Column hALign="Center"><Text class="black" text="{i18n>period}"/></Column>
+					<Column hALign="Center"><Text class="black" text="{i18n>periodUom}"/></Column>
+					<Column hALign="Center"><Text class="black" text="{i18n>paymentMethod}"/></Column>
+					<Column hALign="Center"><Text class="black" text="{i18n>paymentTerms}"/></Column>
 				</columns>
 				<items>
 					<ColumnListItem>
 						<cells>
 							<Text text="{TonnageSign}"/>
 							<Text text="{Tonnage}"/>
-							<Text text="{TonnageUom}"/>
+							<Text text="{TonnageUOM}"/>
 							<Text text="{PeriodSign}"/>
 							<Text text="{Period}"/>
-							<Text text="{PeriodUom}"/>
+							<Text text="{PeriodUOM}"/>
 							<Text text="{PaymentMethod}"/>
 							<Text text="{PaymentTerms}"/>
 						</cells>
@@ -53,9 +53,9 @@
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="limitsStandart" type="Back" press="dialogCancel"/>
-			<Button text="{i18n>add}" custom:id="limitsStandart" visible="false" type="Accept" press="dialogAdd"/>
-			<Button text="{i18n>edit}" custom:id="limitsStandart" visible="false" type="Default" press="dialogEdit"/>
-			<Button text="{i18n>save}" custom:id="limitsStandart" visible="false" type="Accept" press="dialogSave"/>
+			<Button text="{i18n>add}" custom:id="limitsStandartPopup" type="Emphasized" press="tableAdd"/>
+			<Button text="{i18n>edit}" custom:id="LimitsForStandardRating_MasterDetailN" id="limitsStandartPopupEdit" enabled="false" type="Default" press="tableEdit"/>
+			<Button text="{i18n>delete}" custom:id="LimitsForStandardRating_MasterDetailN" id="limitsStandartPopupDelete" enabled="false" type="Reject" press="tableDelete"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>
