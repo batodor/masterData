@@ -11,10 +11,10 @@
 			<Input custom:key="businessPartnersRole" value="{BusinessPartnerRole}" width="150px"/>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
-			<DatePicker custom:key="dateFrom" dateValue="{DateFrom}" width="155px"/>
+			<DatePicker custom:key="dateFrom" dateValue="{DateFrom}" width="156px"/>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateTo}" width="200px"/>
-			<DatePicker custom:key="dateTo" dateValue="{DateTo}" width="155px"/>
+			<DatePicker custom:key="dateTo" dateValue="{DateTo}" width="156px"/>
 			<ToolbarSpacer/>
 			<l:BlockLayout>
 				<l:BlockLayoutRow>

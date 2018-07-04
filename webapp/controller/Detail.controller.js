@@ -214,6 +214,7 @@ sap.ui.define([
 			buttons[1].setVisible(true);
 			buttons[2].setVisible(false);
 			buttons[3].setVisible(false);
+			buttons[4].setVisible(false);
 			dialog.open();
 		},
 		tableEdit: function(argument) {
