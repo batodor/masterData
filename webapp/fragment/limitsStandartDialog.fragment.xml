@@ -37,27 +37,27 @@
 						<Input value="{Tonnage}" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>tonnageUom}" width="200px"/>
-						<ComboBox selectedKey="{TonnageUOM}" forceSelection="false"  width="200px">
+						<Select selectedKey="{TonnageUOM}" forceSelection="false"  width="200px">
 							<core:Item key="" text=""/>
 							<core:Item key="TO" text="TO"/>
-						</ComboBox>
+						</Select>
 						<ToolbarSpacer/>
 						<Label text="{i18n>periodSign}" width="200px"/>
-						<ComboBox selectedKey="{PeriodSign}" forceSelection="false"  width="200px">
+						<Select selectedKey="{PeriodSign}" forceSelection="false"  width="200px">
 							<core:Item key="" text=""/>
 							<core:Item key="&#60;" text="&#60;"/>
 							<core:Item key="&#62;" text="&#62;"/>
 							<core:Item key="=" text="="/>
-						</ComboBox>
+						</Select>
 						<ToolbarSpacer/>
 						<Label text="{i18n>period}" width="200px"/>
 						<Input value="{Period}" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>periodUom}" width="200px"/>
-						<ComboBox selectedKey="{TonnageUOM}" forceSelection="false"  width="200px">
+						<Select selectedKey="{PeriodUOM}" forceSelection="false"  width="200px">
 							<core:Item key="" text=""/>
 							<core:Item key="DAY" text="DAY"/>
-						</ComboBox>
+						</Select>
 						<ToolbarSpacer/>
 						<Label text="{i18n>paymentMethod}" width="200px"/>
 						<Select selectedKey="{PaymentMethod}" forceSelection="false" 
