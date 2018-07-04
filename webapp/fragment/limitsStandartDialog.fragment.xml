@@ -70,6 +70,8 @@
 							items="{ path: '/dictionaryPaymentTermsSet', sorter: { path: 'Name' } }" width="200px">
 							<core:Item key="{Code}" text="{Code} - {Name}"/>
 						</Select>
+						<ToolbarSpacer/>
+						<Input value="{SubItem}" placeholder="-1" width="200px" visible="false" />
 					</l:BlockLayoutCell>
 				</l:BlockLayoutRow>
 			</l:BlockLayout>

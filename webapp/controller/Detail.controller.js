@@ -203,18 +203,20 @@ sap.ui.define([
 				var value = this.filter[0].oValue1;
 				sap.ui.getCore().byId(id + filterKey).setValue(value).setEnabled(false);
 			}
+			var buttons = dialog.getButtons();
 			if(table.data("table")){
 				var nextId = table.data("table");
 				var nextTable = this.byId(nextId) || sap.ui.getCore().byId(nextId);
 				var nextBlock = this.byId(nextId + "Block") || sap.ui.getCore().byId(nextId + "Block");
 				nextTable.setVisible(false);
 				nextBlock.setVisible(true);
+				buttons[4].setVisible(false);
+				buttons[5].setVisible(false);
+				this.setEnabledDialog(nextBlock, true);
 			}
-			var buttons = dialog.getButtons();
 			buttons[1].setVisible(true);
 			buttons[2].setVisible(false);
 			buttons[3].setVisible(false);
-			buttons[4].setVisible(false);
 			dialog.open();
 		},
 		tableEdit: function(argument) {
@@ -403,12 +405,15 @@ sap.ui.define([
 					if(input.getBindingInfo(type)){
 						var value = input.getProperty(type);
 						var name = input.getBindingInfo(type).binding.sPath;
+						// if type of input is number then convert from string to number
 						if(input.mProperties.hasOwnProperty("type") && input.getType() === "Number"){
 							value = parseInt(value);
 						}
+						// If inputs name is not defined
 						if(input.data("name")){
 							name = input.data("name");
 						}
+						// Remove offset for dates
 						if(input.hasOwnProperty("_oMaxDate")){
 							value = input.getDateValue();
 							if(value) {
@@ -416,6 +421,10 @@ sap.ui.define([
 							} else { 
 								value = null;
 							}
+						}
+						// Set default value(placeholder) if value is not defined
+						if(!value && input.mProperties.hasOwnProperty("placeholder")){
+							value = input.mProperties.placeholder;
 						}
 						oData[name] = value;
 					}
