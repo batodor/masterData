@@ -12,7 +12,10 @@
 			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>businessPartnersRole}" width="200px"/>
-			<Input custom:key="businessPartnersRole" value="{BusinessPartnerRole}" width="200px"/>
+			<Select selectedKey="{BusinessPartnerRole}" custom:key="businessPartnersRole" forceSelection="false" 
+				items="{ path: '/dictionaryBusinessPartnerFunctionsSet', sorter: { path: 'Name' } }" width="200px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker custom:key="dateFrom" dateValue="{DateFrom}" width="206px"/>
