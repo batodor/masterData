@@ -331,14 +331,19 @@ sap.ui.define([
 		},
 		dialogAdd: function(oEvent) {
 			var button = oEvent.getSource();
-			var tableId = button.data("id");
+			var id = button.data("id");
 			var dialog = button.getParent();
 			var oModel = dialog.getModel();
 			var oData = this.getOdata(dialog);
+			// Get odata from inner block
+			if(button.data("block")){
+				var innerBlock = sap.ui.getCore().byId(oEvent.getSource().data("block"));
+				oData = Object.assign(oData, this.getOdata(innerBlock));
+			}
 			var bCheckAlert = this.checkKeys(dialog);
 			if(bCheckAlert === "Please, enter"){
-				oModel.create("/" + tableId + "Set", oData);
-				this[tableId + "Dialog"].close();
+				oModel.create("/" + id + "Set", oData);
+				this[id + "Dialog"].close();
 			}else{
 				MessageBox.alert(bCheckAlert.slice(0, -2), {
 					actions: [sap.m.MessageBox.Action.CLOSE]
@@ -354,8 +359,8 @@ sap.ui.define([
 			
 			// Get odata from inner block
 			if(oEvent.getSource().data("block")){
-				var innerTable = sap.ui.getCore().byId(oEvent.getSource().data("block"));
-				oData = Object.assign(oData, this.getOdata(innerTable));
+				var innerBlock = sap.ui.getCore().byId(oEvent.getSource().data("block"));
+				oData = Object.assign(oData, this.getOdata(innerBlock));
 			}
 			dialog.unbindElement();
 			oModel.update(url, oData);
@@ -405,6 +410,11 @@ sap.ui.define([
 					if(input.getBindingInfo(type)){
 						var value = input.getProperty(type);
 						var name = input.getBindingInfo(type).binding.sPath;
+						
+						// Set default value(placeholder) if value is not defined
+						if(!value && input.mProperties.hasOwnProperty("placeholder")){
+							value = input.mProperties.placeholder;
+						}
 						// if type of input is number then convert from string to number
 						if(input.mProperties.hasOwnProperty("type") && input.getType() === "Number"){
 							value = parseInt(value);
@@ -421,10 +431,6 @@ sap.ui.define([
 							} else { 
 								value = null;
 							}
-						}
-						// Set default value(placeholder) if value is not defined
-						if(!value && input.mProperties.hasOwnProperty("placeholder")){
-							value = input.mProperties.placeholder;
 						}
 						oData[name] = value;
 					}
