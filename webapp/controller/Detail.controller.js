@@ -212,8 +212,8 @@ sap.ui.define([
 			}else{
 				dialog.unbindElement();
 			}
-			buttons[1].setVisible(true);
-			this.setInput([buttons[2], buttons[3]], false, "Visible");
+			buttons[2].setVisible(true);
+			this.setInput([buttons[1], buttons[3]], false, "Visible");
 			dialog.open();
 		},
 		// Worst function, coz used as table edit and as double click on table for edit
