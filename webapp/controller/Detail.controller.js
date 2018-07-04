@@ -98,24 +98,23 @@ sap.ui.define([
 					}
 				}
 			}
-			this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], true);
-			this.setInputVisible(["tableDetails"], false);
-			this.setInputEnabled(["tableEdit", "tableDelete", "tableDetails"], false);
+			this.setInput(["tableAdd", "tableEdit", "tableDelete"], true, "Visible");
+			this.setInput(["tableDetails"], false, "Visible");
+			this.setInput(["tableEdit", "tableDelete", "tableDetails"], false, "Enabled");
 			
 			if(this.id === "country"){
-				this.setInputVisible(["tableAdd", "tableDelete"], false);
+				this.setInput(["tableAdd", "tableDelete"], false, "Visible");
 			}else if(this.id === "productRecipeHeader"){
-				this.setInputVisible(["tableDetails"], true);
-				this.setInputVisible(["tableEdit"], false);
+				this.byId("tableDetails").setVisible(true);
+				this.byId("tableEdit").setVisible(false);
 				this.byId('tableDetails').setText(this.getResourceBundle().getText("items"));
 			}else if(this.id === "productRecipeItem"){
-				this.setInputVisible(["tableDetails"], true);
-				this.setInputEnabled(["tableDetails"], true);
+				this.byId("tableDetails").setVisible(true).setEnabled(true);
 				this.byId('tableDetails').setText(this.getResourceBundle().getText("headers"));
 			}else if(this.id === "currency"){
-				this.setInputVisible(["tableAdd", "tableEdit", "tableDelete"], false);
+				this.setInput(["tableAdd", "tableEdit", "tableDelete"], false, "Visible");
 			}else if(this.id === "dqp"){
-				this.setInputVisible(["tableEdit"], false);
+				this.byId("tableEdit").setVisible(false);
 			}
 			
 			// Bind double click event
@@ -128,32 +127,28 @@ sap.ui.define([
 			var selectedCount = table.getSelectedItems().length;
 			var id = table.data("id");
 			if (selectedCount > 0) {
-				this.setInputEnabled(["tableDelete", "tableEdit", "tableDetails", id + "Select"], true);
+				this.setInput(["tableDelete", "tableEdit", "tableDetails", id + "Select"], true, "Enabled");
 			} else {
-				this.setInputEnabled(["tableDelete", "tableEdit", "tableDetails", id + "Select"], false);
+				this.setInput(["tableDelete", "tableEdit", "tableDetails", id + "Select"], false, "Enabled");
 			}
 			if(table.data("crud")){
 				id = table.data("crud");
-				this.setInputEnabled([ id + "Delete", id + "Edit"], true);
+				this.setInput([ id + "Delete", id + "Edit"], true, "Enabled");
 			}
 		},
 		
 		// Enable/Disables inputs depending flag arg
-		setInputEnabled: function(idArr, flag){
+		setInput: function(idArr, flag, func){
+			var evalStr = 'input.set' + func + '(flag)';
 			for(var i in idArr){
-				if(this.byId(idArr[i])){
-					this.byId(idArr[i]).setEnabled(flag);
-				}else if(sap.ui.getCore().byId(idArr[i])){
-					sap.ui.getCore().byId(idArr[i]).setEnabled(flag);
+				var input = null;
+				if(typeof idArr[i] === "string"){
+					input = this.byId(idArr[i]) || sap.ui.getCore().byId(idArr[i]);
+				}else if(typeof idArr[i] === "object"){
+					input = idArr[i];
 				}
-			}
-		},
-		
-		// Enable/Disables inputs depending flag arg
-		setInputVisible: function(idArr, flag){
-			for(var i in idArr){
-				if(this.byId(idArr[i])){
-					this.byId(idArr[i]).setVisible(flag);
+				if(input){
+					eval(evalStr);
 				}
 			}
 		},
@@ -195,9 +190,8 @@ sap.ui.define([
 		tableAdd: function(oEvent) {
 			var id = oEvent.getSource().data("id") || this.id;
 			var table = this.byId(id) || sap.ui.getCore().byId(id);
-			var dialog = this[id + "Dialog"];
-			dialog.unbindElement();
-			this.setEnabledDialog(dialog, true);
+			var dialog = table.data("dialog") ? this[table.data("dialog") + "Dialog"] : this[id + "Dialog"];
+			this.setEnabledDialog(dialog, true, true);
 			if(this.filter.length > 0){
 				var filterKey = this.filter[0].sPath;
 				var value = this.filter[0].oValue1;
@@ -208,17 +202,21 @@ sap.ui.define([
 				var nextId = table.data("table");
 				var nextTable = this.byId(nextId) || sap.ui.getCore().byId(nextId);
 				var nextBlock = this.byId(nextId + "Block") || sap.ui.getCore().byId(nextId + "Block");
-				nextTable.setVisible(false);
 				nextBlock.setVisible(true);
-				buttons[4].setVisible(false);
-				buttons[5].setVisible(false);
-				this.setEnabledDialog(nextBlock, true);
+				this.setInput([nextTable, buttons[4], buttons[5]], false, "Visible");
+				this.setEnabledDialog(nextBlock, true, true);
+			}
+			if(table.data("crud")){
+				this.clearValues(nextBlock);
+				this.setEnabledDialog(dialog, true);
+			}else{
+				dialog.unbindElement();
 			}
 			buttons[1].setVisible(true);
-			buttons[2].setVisible(false);
-			buttons[3].setVisible(false);
+			this.setInput([buttons[2], buttons[3]], false, "Visible");
 			dialog.open();
 		},
+		// Worst function, coz used as table edit and as double click on table for edit
 		tableEdit: function(argument) {
 			var id = typeof argument === 'string' ? argument : argument.getSource().data("id") || this.id;
 			var table = this.byId(id) || sap.ui.getCore().byId(id);
@@ -227,7 +225,7 @@ sap.ui.define([
 				var url = table.getSelectedItem().getBindingContextPath();
 				
 				// if on doubleclick preview then disable inputs, else enable inputs
-				typeof argument === 'string' ? this.setDisabledDialog(dialog) : this.setEnabledDialog(dialog, false);
+				typeof argument === 'string' ? this.setEnabledDialog(dialog, false) : this.setEnabledDialog(dialog, true);
 				var buttons = dialog.getButtons();
 				
 				// Checks if edit dialog has inner table to bind it
@@ -237,30 +235,25 @@ sap.ui.define([
 					var innerBlock = this.byId(innerId + "Block") || sap.ui.getCore().byId(innerId + "Block");
 					
 					// Also enabled/disable innerBlock inputs
-					typeof argument === 'string' ? this.setDisabledDialog(innerBlock) : this.setEnabledDialog(innerBlock, false);
+					typeof argument === 'string' ? this.setEnabledDialog(innerBlock, false) : this.setEnabledDialog(innerBlock, true);
 					
 					// Check for flag to go to edit mode from dialog with inner table
-					buttons[1].setVisible(false);
+					buttons[2].setVisible(false);
 					if(table.data("crud")){
-						innerTable.setVisible(false);
-						innerBlock.setVisible(true);
-						buttons[2].setVisible(false);
-						buttons[4].setVisible(false);
+						this.setInput([innerTable, buttons[1], buttons[3], buttons[5]], false, "Visible");
+						this.setInput([innerBlock], true, "Visible");
 						
 						if(typeof argument === 'string'){
-							buttons[3].setVisible(true);
-							buttons[5].setVisible(true).setEnabled(false);
+							buttons[4].setVisible(true);
+							buttons[6].setVisible(true).setEnabled(false);
 						}else{
-							buttons[3].setVisible(false);
-							buttons[5].setVisible(true).setEnabled(true);
+							buttons[4].setVisible(false);
+							buttons[6].setVisible(true).setEnabled(true);
 						}
 					}else{
-						innerTable.setVisible(true);
-						innerBlock.setVisible(false);
-						buttons[2].setVisible(true).setEnabled(false);
-						buttons[3].setVisible(false);
-						buttons[4].setVisible(true).setEnabled(false);
-						buttons[5].setVisible(false);
+						this.setInput([innerBlock, buttons[4], buttons[6]], false, "Visible");
+						this.setInput([innerTable, buttons[1], buttons[3], buttons[5]], true, "Visible");
+						this.setInput([buttons[3], buttons[5]], false, "Enabled");
 					}
 					var nextUrl = url + "/" + innerId;
 					innerTable.bindItems({
@@ -370,22 +363,23 @@ sap.ui.define([
 			var button = oEvent.getSource();
 			var id = button.data("id");
 			var dialog = sap.ui.getCore().byId(id + "Dialog");
+			var dialogButtons = dialog.getButtons();
 			if(button.data("block")){
 				var block = sap.ui.getCore().byId(button.data("block"));
-				if(dialog.getButtons()[5].getEnabled()){
-					this.setDisabledDialog(block);
-					dialog.getButtons()[5].setEnabled(false);
-				}else{
+				if(dialogButtons[6].getEnabled()){
 					this.setEnabledDialog(block, false);
-					dialog.getButtons()[5].setEnabled(true);
+					dialogButtons[6].setEnabled(false);
+				}else{
+					this.setEnabledDialog(block, true);
+					dialogButtons[6].setEnabled(true);
 				}
 			}else{
 				if(dialog.getButtons()[3].getEnabled()){
-					this.setDisabledDialog(dialog);
-					dialog.getButtons()[3].setEnabled(false);
-				}else{
 					this.setEnabledDialog(dialog, false);
-					dialog.getButtons()[3].setEnabled(true);
+					dialogButtons[3].setEnabled(false);
+				}else{
+					this.setEnabledDialog(dialog, true);
+					dialogButtons[3].setEnabled(true);
 				}
 			}
 		},
@@ -441,36 +435,26 @@ sap.ui.define([
 		
 		// Set key inputs as disabled/enabled for editting
 		// Arguments: dialog = object dialog, flag = boolean flag for enabled/disabled
-		setEnabledDialog: function(dialog, flag){
+		// all = boolean set all inputs
+		setEnabledDialog: function(dialog, flag, all){
 			var inputs = dialog.getAggregation("content");
 			for(var i in inputs){
 				for(var j in this.typeArr){
 					var type = this.typeArr[j];
 					var input = inputs[i];
 					if(input.mBindingInfos.hasOwnProperty(type)){
-						if(input.data("key")){
+						if(all){
 							input.setEnabled(flag);
-						}else{
-							input.setEnabled(true);
+						}else{ 
+							if(input.data("key")){
+								input.setEnabled(false);
+							}else{
+								input.setEnabled(flag);
+							}
 						}
 					}
 				}
 				
-			}
-		},
-		
-		// Set key all inputs as disabled for editting
-		// Arguments: dialog = object dialog
-		setDisabledDialog: function(dialog){
-			var inputs = dialog.getAggregation("content");
-			for(var i in inputs){
-				for(var j in this.typeArr){
-					var type = this.typeArr[j];
-					var input = inputs[i];
-					if(input.mBindingInfos.hasOwnProperty(type)){
-						input.setEnabled(false);
-					}
-				}
 			}
 		},
 		
@@ -489,10 +473,10 @@ sap.ui.define([
 			}
 		},
 		
-		// Checks the key values to lock them on dialogEdit
-		checkKeys: function(dialog){
+		// Checks the key inputs for empty values for dialog Add/Edit
+		checkKeys: function(object){
 			var check = this.getModel('i18n').getResourceBundle().getText("plsEnter");
-			var inputs = dialog.getAggregation("content");
+			var inputs = object.getAggregation("content");
 			for(var i in inputs){
 				var oInput = inputs[i];
 				if(oInput.data("key")){
@@ -549,6 +533,21 @@ sap.ui.define([
 				var data = item.getModel().getData(path);
 				sap.ui.getCore().byId(id + this.id + "ValueHelp").setValue(data[key]);
 				this[id + "Dialog"].close();
+			}
+		},
+		
+		// Clears all the input values in object(dialog)
+		clearValues: function(object){
+			var inputs = object.getAggregation("content");
+			for(var i in inputs){
+				for(var j in this.typeArr){
+					var input = inputs[i];
+					var type = this.typeArr[j];
+					if(input.mProperties.hasOwnProperty(type)){
+						var evalStr = 'input.set' + type.charAt(0).toUpperCase() + type.substr(1) + '("")';
+						eval(evalStr);
+					}
+				}
 			}
 		}
 	});
