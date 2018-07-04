@@ -2,41 +2,45 @@
 	<Dialog title="{i18n>limitsStandartRating}" class="sapUiContentPadding" id="limitsStandartDialog">
 		<content>
 			<Label required="true" text="{i18n>legalEntity}" width="200px"/>
-			<Input custom:key="legalEntity" value="{LegalEntity}" width="150px"/>
+			<Select selectedKey="{LegalEntity}" custom:key="legalEntity" forceSelection="false" items="{ path: '/dictionaryCompanyCodesSet', sorter: { path: 'Name' } }" width="200px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>rating}" width="200px"/>
-			<Input custom:key="rating" value="{Rating}" width="150px" />
+			<Select selectedKey="{Rating}" custom:key="rating" forceSelection="false" items="{ path: '/dictionaryRatingSet', sorter: { path: 'Rating' } }" width="200px">
+				<core:Item key="{Rating}" text="{Rating}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>businessPartnersRole}" width="200px"/>
-			<Input custom:key="businessPartnersRole" value="{BusinessPartnerRole}" width="150px"/>
+			<Input custom:key="businessPartnersRole" value="{BusinessPartnerRole}" width="200px"/>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
-			<DatePicker custom:key="dateFrom" dateValue="{DateFrom}" width="156px"/>
+			<DatePicker custom:key="dateFrom" dateValue="{DateFrom}" width="206px"/>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateTo}" width="200px"/>
-			<DatePicker custom:key="dateTo" dateValue="{DateTo}" width="156px"/>
+			<DatePicker custom:key="dateTo" dateValue="{DateTo}" width="206px"/>
 			<ToolbarSpacer/>
 			<l:BlockLayout>
 				<l:BlockLayoutRow>
 					<l:BlockLayoutCell class="sapUiNoMargin" id="LimitsForStandardRating_MasterDetailNBlock">
 						<Label text="{i18n>tonnageSign}" width="200px"/>
-						<ComboBox selectedKey="{TonnageSign}" forceSelection="false"  width="150px">
+						<ComboBox selectedKey="{TonnageSign}" forceSelection="false"  width="200px">
 							<core:Item key="&#60;" text="&#60;"/>
 							<core:Item key="&#62;" text="&#62;"/>
 							<core:Item key="=" text="="/>
 						</ComboBox>
 						<ToolbarSpacer/>
 						<Label text="{i18n>tonnage}" width="200px"/>
-						<Input value="{Tonnage}" width="150px" />
+						<Input value="{Tonnage}" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>tonnageUom}" width="200px"/>
-						<ComboBox selectedKey="{TonnageUOM}" forceSelection="false"  width="150px">
+						<ComboBox selectedKey="{TonnageUOM}" forceSelection="false"  width="200px">
 							<core:Item key="" text=""/>
 							<core:Item key="TO" text="TO"/>
 						</ComboBox>
 						<ToolbarSpacer/>
 						<Label text="{i18n>periodSign}" width="200px"/>
-						<ComboBox selectedKey="{PeriodSign}" forceSelection="false"  width="150px">
+						<ComboBox selectedKey="{PeriodSign}" forceSelection="false"  width="200px">
 							<core:Item key="" text=""/>
 							<core:Item key="&#60;" text="&#60;"/>
 							<core:Item key="&#62;" text="&#62;"/>
@@ -44,23 +48,23 @@
 						</ComboBox>
 						<ToolbarSpacer/>
 						<Label text="{i18n>period}" width="200px"/>
-						<Input value="{Period}" width="150px" />
+						<Input value="{Period}" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>periodUom}" width="200px"/>
-						<ComboBox selectedKey="{TonnageUOM}" forceSelection="false"  width="150px">
+						<ComboBox selectedKey="{TonnageUOM}" forceSelection="false"  width="200px">
 							<core:Item key="" text=""/>
 							<core:Item key="DAY" text="DAY"/>
 						</ComboBox>
 						<ToolbarSpacer/>
 						<Label text="{i18n>paymentMethod}" width="200px"/>
 						<Select selectedKey="{PaymentMethod}" forceSelection="false" 
-							items="{ path: '/dictionaryPaymentMethodsSet', sorter: { path: 'Name' } }" width="150px">
+							items="{ path: '/dictionaryPaymentMethodsSet', sorter: { path: 'Name' } }" width="200px">
 							<core:Item key="{Code}" text="{Code} - {Name}"/>
 						</Select>
 						<ToolbarSpacer/>
 						<Label text="{i18n>paymentTerms}" width="200px"/>
 						<Select selectedKey="{PaymentTerms}" forceSelection="false" 
-							items="{ path: '/dictionaryPaymentTermsSet', sorter: { path: 'Name' } }" width="150px">
+							items="{ path: '/dictionaryPaymentTermsSet', sorter: { path: 'Name' } }" width="200px">
 							<core:Item key="{Code}" text="{Code} - {Name}"/>
 						</Select>
 					</l:BlockLayoutCell>
