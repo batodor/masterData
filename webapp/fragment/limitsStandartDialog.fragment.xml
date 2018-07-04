@@ -27,14 +27,14 @@
 				<l:BlockLayoutRow>
 					<l:BlockLayoutCell class="sapUiNoMargin" id="LimitsForStandardRating_MasterDetailNBlock">
 						<Label text="{i18n>tonnageSign}" width="200px"/>
-						<ComboBox selectedKey="{TonnageSign}" forceSelection="false"  width="200px">
+						<Select selectedKey="{TonnageSign}" forceSelection="false"  width="200px">
 							<core:Item key="&#60;" text="&#60;"/>
 							<core:Item key="&#62;" text="&#62;"/>
 							<core:Item key="=" text="="/>
-						</ComboBox>
+						</Select>
 						<ToolbarSpacer/>
 						<Label text="{i18n>tonnage}" width="200px"/>
-						<Input value="{Tonnage}" width="200px" />
+						<Input custom:name="Tonnage" value="{= ${Tonnage} ? ${Tonnage} : '0' }" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>tonnageUom}" width="200px"/>
 						<Select selectedKey="{TonnageUOM}" forceSelection="false"  width="200px">
@@ -50,8 +50,8 @@
 							<core:Item key="=" text="="/>
 						</Select>
 						<ToolbarSpacer/>
-						<Label text="{i18n>period}" width="200px"/>
-						<Input value="{Period}" width="200px" />
+							<Label text="{i18n>period}" width="200px"/>
+						<Input custom:name="Period" value="{= ${Period} ? ${Period} : '0' }" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>periodUom}" width="200px"/>
 						<Select selectedKey="{PeriodUOM}" forceSelection="false"  width="200px">

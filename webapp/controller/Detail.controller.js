@@ -115,8 +115,9 @@ sap.ui.define([
 				this.setInput(["tableAdd", "tableEdit", "tableDelete"], false, "Visible");
 			}else if(this.id === "dqp"){
 				this.byId("tableEdit").setVisible(false);
+			}else if(this.id === "limitsStandart"){
+				this.byId("tableDelete").setVisible(false);
 			}
-			
 			// Bind double click event
 			this.byId(this.id).ondblclick = this.tableEdit.bind(this, this.id);
 		},
@@ -213,7 +214,7 @@ sap.ui.define([
 				dialog.unbindElement();
 			}
 			buttons[2].setVisible(true);
-			this.setInput([buttons[1], buttons[3]], false, "Visible");
+			this.setInput([buttons[1], buttons[3], buttons[6]], false, "Visible");
 			dialog.open();
 		},
 		// Worst function, coz used as table edit and as double click on table for edit
@@ -279,11 +280,22 @@ sap.ui.define([
 			var table = this.byId(id) || sap.ui.getCore().byId(id);
 			var url = table.getSelectedItem().getBindingContextPath();
 			var oModel = table.getModel();
+			var settings = {};
+			if(table.data("table")){
+				var that = this;
+				settings.success = function(){
+					setTimeout(function(){
+						if(table.getItems().length === 0){
+							that[table.data("crud") + "Dialog"].close();
+						}
+					},10);
+				};
+			}
 			MessageBox.confirm("Are you sure you want to delete?", {
 				actions: ["Delete", sap.m.MessageBox.Action.CLOSE],
 				onClose: function(sAction) {
 					if (sAction === "Delete") {
-						oModel.remove(url);              
+						oModel.remove(url, settings);              
 					} else {
 						MessageToast.show("Delete canceled!");
 					}
@@ -328,17 +340,21 @@ sap.ui.define([
 			var dialog = button.getParent();
 			var oModel = dialog.getModel();
 			var oData = this.getOdata(dialog);
+			var bCheckAlert = this.checkKeys(dialog);
+			
 			// Get odata from inner block
 			if(button.data("block")){
 				var innerBlock = sap.ui.getCore().byId(oEvent.getSource().data("block"));
 				oData = Object.assign(oData, this.getOdata(innerBlock));
+				bCheckAlert = bCheckAlert + this.checkKeys(innerBlock);
 			}
-			var bCheckAlert = this.checkKeys(dialog);
-			if(bCheckAlert === "Please, enter"){
+			
+			if(!bCheckAlert){
 				oModel.create("/" + id + "Set", oData);
 				this[id + "Dialog"].close();
 			}else{
-				MessageBox.alert(bCheckAlert.slice(0, -2), {
+				var msg = this.getModel('i18n').getResourceBundle().getText("plsEnter") + " " + bCheckAlert.slice(0, -2);
+				MessageBox.alert(msg, {
 					actions: [sap.m.MessageBox.Action.CLOSE]
 				});
 			}
@@ -475,7 +491,7 @@ sap.ui.define([
 		
 		// Checks the key inputs for empty values for dialog Add/Edit
 		checkKeys: function(object){
-			var check = this.getModel('i18n').getResourceBundle().getText("plsEnter");
+			var check = "";
 			var inputs = object.getAggregation("content");
 			for(var i in inputs){
 				var oInput = inputs[i];
