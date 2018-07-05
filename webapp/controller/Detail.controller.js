@@ -141,7 +141,7 @@ sap.ui.define([
 		// Enable/Disables inputs depending flag arg
 		setInput: function(idArr, flag, func){
 			var evalStr = 'input.set' + func + '(flag)';
-			for(var i in idArr){
+			for(var i = 0; i < idArr.length; i++){
 				var input = null;
 				if(typeof idArr[i] === "string"){
 					input = this.byId(idArr[i]) || sap.ui.getCore().byId(idArr[i]);
@@ -413,9 +413,9 @@ sap.ui.define([
 		getOdata: function(object){
 			var oData = {};
 			var inputs = object.getAggregation("content");
-			for(var i in inputs){
+			for(var i = 0; i < inputs.length; i++){
 				var input = inputs[i];
-				for(var j in this.typeArr){
+				for(var j = 0; j < this.typeArr.length; j++){
 					var type = this.typeArr[j];
 					if(input.getBindingInfo(type)){
 						var value = input.getProperty(type);
@@ -454,8 +454,8 @@ sap.ui.define([
 		// all = boolean set all inputs
 		setEnabledDialog: function(dialog, flag, all){
 			var inputs = dialog.getAggregation("content");
-			for(var i in inputs){
-				for(var j in this.typeArr){
+			for(var i = 0; i < inputs.length; i++){
+				for(var j = 0; j < this.typeArr.length; j++){
 					var type = this.typeArr[j];
 					var input = inputs[i];
 					if(input.mBindingInfos.hasOwnProperty(type)){
@@ -470,14 +470,13 @@ sap.ui.define([
 						}
 					}
 				}
-				
 			}
 		},
 		
 		// Add all dialog xml fragments to this view as dependent
 		// Arguments: tableArr = array of string ids of tables declared on init
 		addDialogs: function(tableArr){
-			for(var i in tableArr){
+			for(var i = 0; i < tableArr.length; i++){
 				// Just in case if any of the dialog fragment has syntax error
 				try {
 					this[tableArr[i] + "Dialog"] = sap.ui.xmlfragment("fragment." + tableArr[i] + "Dialog", this);
@@ -493,7 +492,7 @@ sap.ui.define([
 		checkKeys: function(object){
 			var check = "";
 			var inputs = object.getAggregation("content");
-			for(var i in inputs){
+			for(var i = 0; i < inputs.length; i++){
 				var oInput = inputs[i];
 				if(oInput.data("key")){
 					if((oInput.mProperties.hasOwnProperty("value") && !oInput.getValue()) || 
@@ -523,8 +522,8 @@ sap.ui.define([
 			this.search = {}; // nullify search object
 			if(filters){
 				var filtersArr = filters.split(',');
-				for(var i in filtersArr){
-					for(var j in this.typeArr){
+				for(var i = 0; i < filtersArr.length; i++){
+					for(var j = 0; j < this.typeArr.length; j++){
 						var input = sap.ui.getCore().byId(id + filtersArr[i] + "Filter");
 						var type = this.typeArr[j];
 						if(input.mProperties.hasOwnProperty(type)){
@@ -555,8 +554,8 @@ sap.ui.define([
 		// Clears all the input values in object(dialog)
 		clearValues: function(object){
 			var inputs = object.getAggregation("content");
-			for(var i in inputs){
-				for(var j in this.typeArr){
+			for(var i = 0; i < inputs.length; i++){
+				for(var j = 0; j < this.typeArr.length; j++){
 					var input = inputs[i];
 					var type = this.typeArr[j];
 					if(input.mProperties.hasOwnProperty(type)){

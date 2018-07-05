@@ -34,7 +34,7 @@
 						</Select>
 						<ToolbarSpacer/>
 						<Label text="{i18n>tonnage}" width="200px"/>
-						<Input custom:name="Tonnage" type="Number" value="{Tonnage}" width="200px" />
+						<Input custom:name="Tonnage" value="{= ${Tonnage} ? ${Tonnage} : '0' }" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>tonnageUom}" width="200px"/>
 						<Select selectedKey="{TonnageUOM}" forceSelection="false"  width="200px">
@@ -51,7 +51,7 @@
 						</Select>
 						<ToolbarSpacer/>
 							<Label text="{i18n>period}" width="200px"/>
-						<Input custom:name="Period" type="Number" value="{Period}" width="200px" />
+						<Input custom:name="Period" value="{= ${Period} ? ${Period} : '0' }" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>periodUom}" width="200px"/>
 						<Select selectedKey="{PeriodUOM}" forceSelection="false"  width="200px">
