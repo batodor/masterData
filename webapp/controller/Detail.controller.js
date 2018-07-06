@@ -213,8 +213,8 @@ sap.ui.define([
 			}else{
 				dialog.unbindElement();
 			}
-			buttons[2].setVisible(true);
-			this.setInput([buttons[1], buttons[3], buttons[6]], false, "Visible");
+			buttons[1].setVisible(true);
+			this.setInput([buttons[2], buttons[3], buttons[6]], false, "Visible");
 			dialog.open();
 		},
 		// Worst function, coz used as table edit and as double click on table for edit
@@ -265,8 +265,13 @@ sap.ui.define([
 				}else{
 					buttons[1].setVisible(false);
 					if(this.byId("tableEdit").getVisible()){
-						buttons[2].setVisible(true);
-						buttons[3].setVisible(true).setEnabled(false);
+						if(typeof argument === 'string'){
+							buttons[2].setVisible(true);
+							buttons[3].setVisible(true).setEnabled(false);
+						}else{
+							buttons[2].setVisible(false);
+							buttons[3].setVisible(true);
+						}
 					}
 				}
 				dialog.bindElement(url);
