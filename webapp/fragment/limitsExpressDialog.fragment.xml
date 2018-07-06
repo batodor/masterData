@@ -15,12 +15,12 @@
 				<core:Item key="{Rating}" text="{Rating}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>commercialRating}" width="250px"/>
-			<Select selectedKey="{CommercialRating}" custom:key="commercialRating" forceSelection="false" 
-				items="{ path: '/dictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">
-				<core:Item key="{Rating}" text="{Rating}"/>
-			</Select>
-			<ToolbarSpacer/>
+			<!--<Label required="true" text="{i18n>commercialRating}" width="250px"/>-->
+			<!--<Select selectedKey="{CommercialRating}" custom:key="commercialRating" forceSelection="false" -->
+			<!--	items="{ path: '/dictionaryRatingSet', sorter: { path: 'Rating' } }" width="150px">-->
+			<!--	<core:Item key="{Rating}" text="{Rating}"/>-->
+			<!--</Select>-->
+			<!--<ToolbarSpacer/>-->
 			<Label required="true" text="{i18n>bpRole}" width="250px"/>
 			<Input value="{PartnersRole}" custom:key="bpRole" width="150px"/>
 			<ToolbarSpacer/>
