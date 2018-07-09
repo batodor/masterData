@@ -7,7 +7,7 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>companyCode}"/></Column>
+			<Column><Text class="black" text="{i18n>legalEntity}"/></Column>
 			<Column><Text class="black" text="{i18n>countryRating}"/></Column>
 			<Column><Text class="black" text="{i18n>financeCommercialRating}"/></Column>
 			<!--<Column><Text class="black" text="{i18n>commercialRating}"/></Column>-->
