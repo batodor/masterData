@@ -30,7 +30,7 @@
 						<Input custom:name="Tonnage" value="{= ${Tonnage} ? ${Tonnage} : '0' }" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>tonnagePaymentCond}" width="200px"/>
-						<Input value="{TonnagePaymentCond}" type="Number" width="200px" />
+						<Input custom:name="TonnagePaymentCond" value="{= ${TonnagePaymentCond} ? ${TonnagePaymentCond} : '0' }" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>tonnageSign}" width="200px"/>
 						<Select selectedKey="{TonnageSign}" forceSelection="false"  width="200px">
@@ -49,7 +49,7 @@
 						<Input custom:name="Period" value="{= ${Period} ? ${Period} : '0' }" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>periodPaymentCond}" width="200px"/>
-						<Input value="{PeriodPaymentCond}" type="Number" width="200px" />
+						<Input custom:name="PeriodPaymentCond" value="{= ${PeriodPaymentCond} ? ${PeriodPaymentCond} : '0' }" type="Number" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>periodSign}" width="200px"/>
 						<Select selectedKey="{PeriodSign}" forceSelection="false"  width="200px">
