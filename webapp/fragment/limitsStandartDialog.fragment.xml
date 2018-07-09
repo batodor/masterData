@@ -26,6 +26,12 @@
 			<l:BlockLayout>
 				<l:BlockLayoutRow>
 					<l:BlockLayoutCell class="sapUiNoMargin" id="LimitsForStandardRating_MasterDetailNBlock">
+						<Label text="{i18n>tonnage}" width="200px"/>
+						<Input custom:name="Tonnage" value="{= ${Tonnage} ? ${Tonnage} : '0' }" width="200px" />
+						<ToolbarSpacer/>
+						<Label text="{i18n>tonnagePaymentCond}" width="200px"/>
+						<Input value="{TonnagePaymentCond}" type="Number" width="200px" />
+						<ToolbarSpacer/>
 						<Label text="{i18n>tonnageSign}" width="200px"/>
 						<Select selectedKey="{TonnageSign}" forceSelection="false"  width="200px">
 							<core:Item key="&#60;" text="&#60;"/>
@@ -33,14 +39,17 @@
 							<core:Item key="=" text="="/>
 						</Select>
 						<ToolbarSpacer/>
-						<Label text="{i18n>tonnage}" width="200px"/>
-						<Input custom:name="Tonnage" value="{= ${Tonnage} ? ${Tonnage} : '0' }" width="200px" />
-						<ToolbarSpacer/>
 						<Label text="{i18n>tonnageUom}" width="200px"/>
 						<Select selectedKey="{TonnageUOM}" forceSelection="false"  width="200px">
 							<core:Item key="" text=""/>
 							<core:Item key="TO" text="TO"/>
 						</Select>
+						<ToolbarSpacer/>
+						<Label text="{i18n>period}" width="200px"/>
+						<Input custom:name="Period" value="{= ${Period} ? ${Period} : '0' }" width="200px" />
+						<ToolbarSpacer/>
+						<Label text="{i18n>periodPaymentCond}" width="200px"/>
+						<Input value="{PeriodPaymentCond}" type="Number" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>periodSign}" width="200px"/>
 						<Select selectedKey="{PeriodSign}" forceSelection="false"  width="200px">
@@ -49,9 +58,6 @@
 							<core:Item key="&#62;" text="&#62;"/>
 							<core:Item key="=" text="="/>
 						</Select>
-						<ToolbarSpacer/>
-							<Label text="{i18n>period}" width="200px"/>
-						<Input custom:name="Period" value="{= ${Period} ? ${Period} : '0' }" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>periodUom}" width="200px"/>
 						<Select selectedKey="{PeriodUOM}" forceSelection="false"  width="200px">
@@ -84,11 +90,13 @@
 					</Toolbar>
 				</headerToolbar>
 				<columns>
-					<Column hALign="Center"><Text class="black" text="{i18n>tonnageSign}"/></Column>
 					<Column hALign="Center"><Text class="black" text="{i18n>tonnage}"/></Column>
+					<Column hALign="Center"><Text class="black" text="{i18n>tonnagePaymentCond}"/></Column>
+					<Column hALign="Center"><Text class="black" text="{i18n>tonnageSign}"/></Column>
 					<Column hALign="Center"><Text class="black" text="{i18n>tonnageUom}"/></Column>
-					<Column hALign="Center"><Text class="black" text="{i18n>periodSign}"/></Column>
 					<Column hALign="Center"><Text class="black" text="{i18n>period}"/></Column>
+					<Column hALign="Center"><Text class="black" text="{i18n>periodPaymentCond}"/></Column>
+					<Column hALign="Center"><Text class="black" text="{i18n>periodSign}"/></Column>
 					<Column hALign="Center"><Text class="black" text="{i18n>periodUom}"/></Column>
 					<Column hALign="Center"><Text class="black" text="{i18n>paymentMethod}"/></Column>
 					<Column hALign="Center"><Text class="black" text="{i18n>paymentTerms}"/></Column>
@@ -96,11 +104,13 @@
 				<items>
 					<ColumnListItem>
 						<cells>
-							<Text text="{TonnageSign}"/>
 							<Text text="{Tonnage}"/>
+							<Text text="{TonnagePaymentCond}"/>
+							<Text text="{TonnageSign}"/>
 							<Text text="{TonnageUOM}"/>
-							<Text text="{PeriodSign}"/>
 							<Text text="{Period}"/>
+							<Text text="{PeriodPaymentCond}"/>
+							<Text text="{PeriodSign}"/>
 							<Text text="{PeriodUOM}"/>
 							<Text text="{PaymentMethod}"/>
 							<Text text="{PaymentTerms}"/>

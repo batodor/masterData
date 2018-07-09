@@ -6,7 +6,9 @@
     font-size: .95rem;
     line-height: 1.2rem;
 }
-
+.sapMLabel, .sapMInput, .sapMSlt {
+	vertical-align:middle;
+}
 .sapMSF{
 	display: inline-block;
 }
