@@ -82,7 +82,7 @@
 				</l:BlockLayoutRow>
 			</l:BlockLayout>
 			<Table mode="SingleSelectLeft" includeItemInSelection="true" id="LimitsForStandardRating_MasterDetailN" custom:table="LimitsForStandardRating_MasterDetailN" 
-				custom:dialog="limitsStandart" custom:crud="limitsStandart" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished" 
+				custom:dialog="limitsStandart" custom:crud="limitsStandart" items="{}" select="onTableSelect" width="1000px" updateFinished="onListUpdateFinished" 
 				noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}">
 				<headerToolbar>
 					<Toolbar class="white">
@@ -91,15 +91,15 @@
 				</headerToolbar>
 				<columns>
 					<Column hALign="Center"><Text class="black" text="{i18n>tonnage}"/></Column>
-					<Column hALign="Center"><Text class="black" text="{i18n>tonnagePaymentCond}"/></Column>
-					<Column hALign="Center"><Text class="black" text="{i18n>tonnageSign}"/></Column>
+					<Column hALign="Center" width="120px"><Text class="black" text="{i18n>tonnagePaymentCond}"/></Column>
+					<Column hALign="Center" width="60px"><Text class="black" text="{i18n>tonnageSign}"/></Column>
 					<Column hALign="Center"><Text class="black" text="{i18n>tonnageUom}"/></Column>
 					<Column hALign="Center"><Text class="black" text="{i18n>period}"/></Column>
-					<Column hALign="Center"><Text class="black" text="{i18n>periodPaymentCond}"/></Column>
-					<Column hALign="Center"><Text class="black" text="{i18n>periodSign}"/></Column>
-					<Column hALign="Center"><Text class="black" text="{i18n>periodUom}"/></Column>
-					<Column hALign="Center"><Text class="black" text="{i18n>paymentMethod}"/></Column>
-					<Column hALign="Center"><Text class="black" text="{i18n>paymentTerms}"/></Column>
+					<Column hALign="Center" width="120px"><Text class="black" text="{i18n>periodPaymentCond}"/></Column>
+					<Column hALign="Center" width="60px"><Text class="black" text="{i18n>periodSign}"/></Column>
+					<Column hALign="Center" width="60px"><Text class="black" text="{i18n>periodUom}"/></Column>
+					<Column hALign="Center" width="60px"><Text class="black" text="{i18n>paymentMethod}"/></Column>
+					<Column hALign="Center" width="60px"><Text class="black" text="{i18n>paymentTerms}"/></Column>
 				</columns>
 				<items>
 					<ColumnListItem>

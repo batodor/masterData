@@ -18,7 +18,7 @@
 				<cells>
 					<Text text="{Code}"/>
 					<Text text="{Name}"/>
-					<Text text="{Type}"/>
+					<Text text="{= ${Type} === 'I' ? 'Internal' : 'External' }"/>
 					<Text text="{Partner}"/>
 				</cells>
 			</ColumnListItem>
