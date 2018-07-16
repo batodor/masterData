@@ -2,9 +2,9 @@
 	<Dialog title="{i18n>inflationFactor}" class="sapUiContentPadding" id="inflationFactorDialog">
 		<content>
 			<Label required="true" text="{i18n>costType}" width="200px"/>
-			<!--<Select selectedKey="{CostType}" custom:key="costType" forceSelection="false" items="{ path: '/dictionaryCostTypeSet', sorter: { path: 'Name' } }" width="200px">-->
-			<!--	<core:Item key="{Code}" text="{Code} - {Name}"/>-->
-			<!--</Select>-->
+			<Select selectedKey="{CostType}" custom:key="costType" forceSelection="false" items="{ path: '/dictionaryCostTypeSet', sorter: { path: 'Name' } }" width="200px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>

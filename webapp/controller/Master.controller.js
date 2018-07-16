@@ -50,12 +50,11 @@ sap.ui.define([
 				var tableId = oList.data("selected");
 				var data = oModel.getData();
 				for(var i in data){
-					if(data[i].Id === tableId){
+					if(data[i].Id === tableId && data[i].Order > oList.getGrowingThreshold()){
 						var eventBus = sap.ui.getCore().getEventBus();
 						eventBus.publish("MainDetailChannel", "onNavigateEvent", { title : data[i].Title });
 						
 						var oGrowingTrigger = that.byId('list-trigger');
-						oList.setGrowingThreshold(parseInt(i));
 						oGrowingTrigger.firePress();
 							
 						var list = oList.getItems();
@@ -82,6 +81,14 @@ sap.ui.define([
 			// hide pull to refresh if necessary
 			//this.byId("pullToRefresh").hide();
 			//this.getCount();
+			var parameters = oEvent.getParameters();
+			var actual = parameters.actual;
+			if(parameters.reason === "Growing" && actual !== 0){
+				var oList = oEvent.getSource();
+				var threshold = oList.getGrowingThreshold();
+				var oGrowingTrigger = this.byId('list-trigger');
+				oGrowingTrigger.firePress();
+			}
 		},
 			
 		/**
