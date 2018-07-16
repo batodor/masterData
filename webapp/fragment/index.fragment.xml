@@ -31,7 +31,7 @@
 					<Text text="{Geolocation}"/>
 					<Text text="{BaseCV}"/>
 					<Text text="{BaseQP}"/>
-					<Text text="{NarGarGad}"/>
+					<Text text="{NGG}"/>
 				</cells>
 			</ColumnListItem>
 		</items>
