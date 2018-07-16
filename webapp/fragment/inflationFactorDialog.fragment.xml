@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>inflationFactor}" class="sapUiContentPadding" id="inflationFactorDialog">
+		<content>
+			<Label required="true" text="{i18n>costType}" width="200px"/>
+			<!--<Select selectedKey="{CostType}" custom:key="costType" forceSelection="false" items="{ path: '/dictionaryCostTypeSet', sorter: { path: 'Name' } }" width="200px">-->
+			<!--	<core:Item key="{Code}" text="{Code} - {Name}"/>-->
+			<!--</Select>-->
+			<ToolbarSpacer/>
+			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
+			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>
+			<ToolbarSpacer/>
+			<Label required="true" text="{i18n>dateTo}" width="200px"/>
+			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="206px"/>
+			<ToolbarSpacer/>
+			<Label text="{i18n>inflationFactor}" width="200px"/>
+			<Input value="{InflationFactor}" width="200px" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>uom}" width="200px"/>
+			<Select selectedKey="{UOM}" forceSelection="false" width="200px">
+				<core:Item key="" text=""/>
+				<core:Item key="%" text="%"/>
+			</Select>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="inflationFactor" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="inflationFactor" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="inflationFactor" visible="false" type="Default" press="dialogEdit"/>
+			<Button text="{i18n>save}" custom:id="inflationFactor" visible="false" type="Accept" press="dialogSave"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

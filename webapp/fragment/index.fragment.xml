@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="index" visible="false" custom:id="index"
+		items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" 
+		growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<Toolbar class="white">
+				<ToolbarSpacer/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column><Text class="black" text="{i18n>index}"/></Column>
+			<Column><Text class="black" text="{i18n>materialGroup}"/></Column>
+			<Column><Text class="black" text="{i18n>currency}"/></Column>
+			<Column><Text class="black" text="{i18n>incoterms}"/></Column>
+			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
+			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
+			<Column><Text class="black" text="{i18n>geolocation}"/></Column>
+			<Column><Text class="black" text="{i18n>baseCV}"/></Column>
+			<Column><Text class="black" text="{i18n>baseQP}"/></Column>
+			<Column><Text class="black" text="{i18n>narGarGad}"/></Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{Index}"/>
+					<Text text="{MaterialGroup}"/>
+					<Text text="{Currency}"/>
+					<Text text="{Incoterms}"/>
+					<Text text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+					<Text text="{ path: 'DateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+					<Text text="{Geolocation}"/>
+					<Text text="{BaseCV}"/>
+					<Text text="{BaseQP}"/>
+					<Text text="{NarGarGad}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

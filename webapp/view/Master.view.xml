@@ -10,7 +10,7 @@
 			</Bar>
 		</semantic:subHeader>
 		<semantic:content>
-			<List id="list" items="{}" visible="{device>/support/touch}" busyIndicatorDelay="{masterView>/delay}" noDataText="{masterView>/noDataText}"
+			<List id="list" items="{}" busyIndicatorDelay="{masterView>/delay}" noDataText="{masterView>/noDataText}"
 				mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" growing="true" growingScrollToLoad="true"
 				selectionChange="onSelectionChange" updateFinished="onUpdateFinished">
 				<items>

@@ -1,0 +1,50 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>index}" class="sapUiContentPadding" id="IndexDialog">
+		<content>
+			<Label required="true" text="{i18n>index}" width="200px"/>
+			<Input value="{Index}" width="200px" custom:key="{i18n>index}" />
+			<ToolbarSpacer/>
+			<Label required="true" text="{i18n>materialGroup}" width="200px"/>
+			<Input 
+				type="Text"
+				custom:id="material"
+				custom:filters="Code,Division,Name"
+				custom:key="{i18n>materialGroup}"
+				id="materialIndexItemValueHelp"
+				placeholder="{i18n>plsChoose} {i18n>material}"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{Material}" width="200px" />
+			<ToolbarSpacer/>
+			<Label required="true" text="{i18n>currency}" width="200px"/>
+			<Input value="{Currency}" width="200px" custom:key="{i18n>currency}" />
+			<ToolbarSpacer/>
+			<Label required="true" text="{i18n>incoterms}" width="200px"/>
+			<Input value="{Incoterms}" width="200px" custom:key="{i18n>incoterms}" />
+			<ToolbarSpacer/>
+			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
+			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>
+			<ToolbarSpacer/>
+			<Label required="true" text="{i18n>dateTo}" width="200px"/>
+			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="206px"/>
+			<ToolbarSpacer/>
+			<Label text="{i18n>geolocation}" width="200px"/>
+			<Input value="{Geolocation}" width="200px" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>baseCV}" width="200px"/>
+			<Input value="{BaseCV}" width="200px" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>baseQP}" width="200px"/>
+			<Input value="{BaseQP}" width="200px" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>narGarGad}" width="200px"/>
+			<Input value="{NarGarGad}" width="200px" />
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="Index" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="Index" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="Index" visible="false" type="Default" press="dialogEdit"/>
+			<Button text="{i18n>save}" custom:id="Index" visible="false" type="Accept" press="dialogSave"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
