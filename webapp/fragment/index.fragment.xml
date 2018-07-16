@@ -14,7 +14,7 @@
 			<Column><Text class="black" text="{i18n>incoterms}"/></Column>
 			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
 			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
-			<Column><Text class="black" text="{i18n>geolocation}"/></Column>
+			<Column width="80px"><Text class="black" text="{i18n>geolocation}"/></Column>
 			<Column><Text class="black" text="{i18n>baseCV}"/></Column>
 			<Column><Text class="black" text="{i18n>baseQP}"/></Column>
 			<Column><Text class="black" text="{i18n>narGarGad}"/></Column>

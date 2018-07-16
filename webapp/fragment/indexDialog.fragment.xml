@@ -5,22 +5,26 @@
 			<Input value="{Index}" width="200px" custom:key="{i18n>index}" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>materialGroup}" width="200px"/>
-			<Input 
-				type="Text"
-				custom:id="material"
-				custom:filters="Code,Division,Name"
-				custom:key="{i18n>materialGroup}"
-				id="materialindexValueHelp"
-				placeholder="{i18n>plsChoose} {i18n>material}"
-				showValueHelp="true"
-				valueHelpRequest="handleValueHelp"
-				value="{MaterialGroup}" width="200px" />
+			<Select selectedKey="{MaterialGroup}" custom:key="materialGroup" forceSelection="false" items="{ path: '/dictionaryMaterialGroupsSet', sorter: { path: 'Name' } }" width="200px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>currency}" width="200px"/>
-			<Input value="{Currency}" width="200px" custom:key="{i18n>currency}" />
+			<Input 
+				custom:id="currencyPopup"
+				custom:set="currency"
+				custom:key="currency"
+				custom:filters="CurrencyCode,CurrencyName"
+				id="currencyPopupindexValueHelp"
+				placeholder="{i18n>plsChoose} {i18n>currency}"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{Currency}" width="200px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>incoterms}" width="200px"/>
-			<Input value="{Incoterms}" width="200px" custom:key="{i18n>incoterms}" />
+			<Select forceSelection="false" selectedKey="{Incoterms}" custom:key="incoterms" items="{ path: '/incotermsSet', sorter: { path: 'Incoterms' } }" width="200px">
+				<core:Item key="{Incoterms}" text="{Incoterms} - {Description}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>
@@ -35,10 +39,17 @@
 			<Input value="{BaseCV}" width="200px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>baseQP}" width="200px"/>
-			<Input value="{BaseQP}" width="200px" />
+			<Select forceSelection="false" selectedKey="{BaseQP}" items="{ path: '/bmqcSet', sorter: { path: 'Code' } }" width="200px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
+			</Select>
 			<ToolbarSpacer/>
 			<Label text="{i18n>narGarGad}" width="200px"/>
-			<Input value="{NGG}" width="200px" />
+			<Select forceSelection="false" selectedKey="{NGG}" width="200px">
+				<core:Item key="" text=""/>
+				<core:Item key="NAR" text="NAR"/>
+				<core:Item key="GAR" text="GAR"/>
+				<core:Item key="GAD" text="GAD"/>
+			</Select>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="index" type="Back" press="dialogCancel"/>
