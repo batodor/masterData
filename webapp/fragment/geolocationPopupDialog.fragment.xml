@@ -12,14 +12,26 @@
 						<SearchField placeholder="{i18n>name}" custom:id="geolocationPopup" custom:key="Name" showSearchButton="true" 
 							search="triggerSearch" width="100%" id="geolocationPopupNameFilter" />
 						<ToolbarSpacer/>
-						<CheckBox text="{i18n>trainStation}" custom:id="geolocationPopup" custom:operator="EQ" custom:key="TrainStationID" 
-							select="triggerSearch" width="100px" id="geolocationPopupTrainStationIDFilter" />
+						<ComboBox placeholder="{i18n>trainStation}" custom:id="geolocationPopup" custom:operator="EQ" custom:key="TrainStationID" 
+							change="triggerSearch" width="100%" id="geolocationPopupTrainStationIDFilter">
+							<core:Item key="" text=""/>
+							<core:Item key="true" text="true"/>
+							<core:Item key="false" text="false"/>
+						</ComboBox>
 						<ToolbarSpacer/>
-						<CheckBox text="{i18n>seaHarbor}" custom:id="geolocationPopup" custom:operator="EQ" custom:key="SeaHarborIndicator" 
-							select="triggerSearch" width="100px" id="geolocationPopupSeaHarborIndicatorFilter" />
+						<ComboBox placeholder="{i18n>seaHarbor}" custom:id="geolocationPopup" custom:operator="EQ" custom:key="SeaHarborIndicator" 
+							change="triggerSearch" width="100%" id="geolocationPopupSeaHarborIndicatorFilter">
+							<core:Item key="" text=""/>
+							<core:Item key="true" text="true"/>
+							<core:Item key="false" text="false"/>
+						</ComboBox>
 						<ToolbarSpacer/>
-						<CheckBox text="{i18n>crossBorder}" custom:id="geolocationPopup" custom:operator="EQ" custom:key="CrossBorderIndicator" 
-							select="triggerSearch" width="100px" id="geolocationPopupCrossBorderIndicatorFilter" />
+						<ComboBox placeholder="{i18n>crossBorder}" custom:id="geolocationPopup" custom:operator="EQ" custom:key="CrossBorderIndicator" 
+							change="triggerSearch" width="100%" id="geolocationPopupCrossBorderIndicatorFilter">
+							<core:Item key="" text=""/>
+							<core:Item key="true" text="true"/>
+							<core:Item key="false" text="false"/>
+						</ComboBox>
 					</Toolbar>
 				</headerToolbar>
 				<columns>
