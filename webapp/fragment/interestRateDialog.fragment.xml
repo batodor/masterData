@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>index}" class="sapUiContentPadding" id="interestRateDialog">
+		<content>
+			<Label required="true" text="{i18n>country}" width="200px"/>
+			<Input value="{Country}" width="200px" custom:key="{i18n>country}" />
+			<ToolbarSpacer/>
+			<Label required="true" text="{i18n>currency}" width="200px"/>
+			<Input 
+				custom:id="currencyPopup"
+				custom:set="currency"
+				custom:filters="CurrencyCode,CurrencyName"
+				id="currencyPopupinterestRateValueHelp"
+				placeholder="{i18n>plsChoose} {i18n>currency}"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{Currency}" width="200px" />
+			<ToolbarSpacer/>
+			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
+			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>
+			<ToolbarSpacer/>
+			<Label text="{i18n>interestRate}" width="200px"/>
+			<Input value="{InterestRate}" width="200px" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>uom}" width="200px"/>
+			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '%' ? '%' : '%' }" width="200px">
+				<core:Item key="" text=""/>
+				<core:Item key="%" text="%"/>
+			</Select>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="index" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="index" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="index" visible="false" type="Default" press="dialogEdit"/>
+			<Button text="{i18n>save}" custom:id="index" visible="false" type="Accept" press="dialogSave"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="interestRate" visible="false" custom:id="interestRate"
+		items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" 
+		growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<Toolbar class="white">
+				<ToolbarSpacer/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column><Text class="black" text="{i18n>country}"/></Column>
+			<Column><Text class="black" text="{i18n>currency}"/></Column>
+			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
+			<Column><Text class="black" text="{i18n>interestRate}"/></Column>
+			<Column><Text class="black" text="{i18n>uom}"/></Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{Country}"/>
+					<Text text="{Currency}"/>
+					<Text text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+					<Text text="{InterestRate}"/>
+					<Text text="{UOM}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

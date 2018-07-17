@@ -1,23 +1,34 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>fcaProduct}" class="sapUiContentPadding" id="fcaProductDialog">
 		<content>
-			<Label required="true" text="{i18n>salesProgram}" width="250px"/>
-			<Input value="{SalesProgram}" custom:key="salesProgram" width="150px"/>
+			<Label required="true" text="{i18n>salesProgram}" width="200px"/>
+			<Select selectedKey="{SalesProgram}" custom:key="salesProgram" forceSelection="false" 
+				items="{ path: '/salesProgramSet', sorter: { path: 'SalesProgram' } }" width="200px">
+				<core:Item key="{SalesProgram}" text="{SalesProgram} - {Description}"/>
+			</Select>
 			<ToolbarSpacer/>
-			<Label text="{i18n>productCode}" width="250px"/>
-			<Input value="{ProductCode}" width="150px"/>
+			<Label text="{i18n>productCode}" width="200px"/>
+			<Input value="{ProductCode}" width="200px"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>dateFrom}" width="250px"/>
-			<DatePicker value="{DateFrom}" width="150px"/>
+			<Label text="{i18n>dateFrom}" width="200px"/>
+			<DatePicker value="{DateFrom}" width="206px"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>dateTo}" width="250px"/>
-			<DatePicker value="{DateTo}" width="150px"/>
+			<Label text="{i18n>dateTo}" width="200px"/>
+			<DatePicker value="{DateTo}" width="206px"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>minFcaPrice}" width="250px"/>
-			<Input value="{MinFcaPrice}" width="150px"/>
+			<Label text="{i18n>minFcaPrice}" width="200px"/>
+			<Input value="{MinFcaPrice}" width="200px"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>currency}" width="250px"/>
-			<Select selected="{Currency}" width="150px"/>
+			<Label text="{i18n>currency}" width="200px"/>
+			<Input 
+				custom:id="currencyPopup"
+				custom:set="currency"
+				custom:filters="CurrencyCode,CurrencyName"
+				id="currencyPopupfcaProductValueHelp"
+				placeholder="{i18n>plsChoose} {i18n>currency}"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{Currency}" width="200px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="fcaProduct" type="Back" press="dialogCancel"/>

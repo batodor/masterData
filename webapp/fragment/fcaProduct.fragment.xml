@@ -18,7 +18,7 @@
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{SalesRegion}"/>
+					<Text text="{SalesProgram}"/>
 					<Text text="{ProductCode}"/>
 					<Text text="{DateFrom}"/>
 					<Text text="{DateTo}"/>

@@ -12,6 +12,7 @@
 			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
 			<Column><Label class="black" text="{i18n>dateTo}"/></Column>
 			<Column><Label class="black" text="{i18n>growthFactor}"/></Column>
+			<Column><Label class="black" text="{i18n>uom}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
@@ -20,6 +21,7 @@
 					<Text text="{DateFrom}"/>
 					<Text text="{DateTo}"/>
 					<Text text="{GrowthFactor}"/>
+					<Text text="{UOM}"/>
 				</cells>
 			</ColumnListItem>
 		</items>
