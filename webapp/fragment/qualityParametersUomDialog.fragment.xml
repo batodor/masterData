@@ -8,7 +8,6 @@
 				custom:filters="QPCode,QPName"
 				custom:set="qualityParameters"
 				id="qualityParametersPopupqualityParametersUomValueHelp"
-				placeholder="{i18n>plsEnter} {i18n>qpKey}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{QPKey}" width="250px" />
@@ -19,7 +18,6 @@
 				custom:key="uom"
 				custom:filters="UOMCode,UOMName"
 				id="uomqualityParametersUomValueHelp"
-				placeholder="{i18n>plsEnter} {i18n>uom}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{UOM}" width="250px" />

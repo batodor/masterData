@@ -16,7 +16,6 @@
 				custom:key="currency"
 				custom:filters="CurrencyCode,CurrencyName"
 				id="currencyPopupindexValueHelp"
-				placeholder="{i18n>plsChoose} {i18n>currency}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{Currency}" width="200px" />
@@ -38,7 +37,6 @@
 				custom:set="dictionaryTransportConnectionPoints"
 				custom:filters="Code,Name,TrainStationID,SeaHarborIndicator,CrossBorderIndicator"
 				id="geolocationPopupindexValueHelp"
-				placeholder="{i18n>plsChoose} {i18n>geolocation}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{Geolocation}" width="200px" />

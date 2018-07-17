@@ -13,7 +13,6 @@
 				custom:id="material"
 				custom:filters="Code,Division,Name"
 				id="materialproductRecipeItemValueHelp"
-				placeholder="{i18n>plsChoose} {i18n>material}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{Material}" width="250px" />

@@ -8,7 +8,6 @@
 				custom:filters="QPCode,QPName"
 				custom:set="qualityParameters"
 				id="qualityParametersPopupqualityParametersValueHelp"
-				placeholder="{i18n>plsEnter} {i18n>qpKey}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{QPKey}" width="200px" />

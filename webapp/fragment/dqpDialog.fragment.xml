@@ -32,7 +32,6 @@
 				custom:id="uom"
 				custom:filters="UOMCode,UOMName"
 				id="uomdqpValueHelp"
-				placeholder="{i18n>plsEnter} {i18n>uom}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{UOM}" width="200px" />

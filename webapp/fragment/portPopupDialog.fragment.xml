@@ -15,15 +15,12 @@
 						<SearchField placeholder="{i18n>portName}" id="portPopupNameFilter" custom:id="portPopup" custom:key="Name" showSearchButton="true" 
 							search="triggerSearch" width="100%"/>
 						<ToolbarSpacer/>
-						<!--<SearchField placeholder="{i18n>stationName}" id="portPopupStationFilter" custom:id="portPopup" custom:key="Station" showSearchButton="true" -->
-						<!--	search="triggerSearch" width="100%"/>-->
 					</Toolbar>
 				</headerToolbar>
 				<columns>
 					<Column><Text class="black" text="{i18n>countryName}"/></Column>
 					<Column><Text class="black" text="{i18n>portCode}"/></Column>
 					<Column><Text class="black" text="{i18n>portName}"/></Column>
-					<!--<Column><Text class="black" text="{i18n>stationName}"/></Column>-->
 				</columns>
 				<items>
 					<ColumnListItem>
@@ -31,7 +28,6 @@
 							<Text text="{Country}"/>
 							<Text text="{Code}"/>
 							<Text text="{Name}"/>
-							<!--<Text text="{Station}"/>-->
 						</cells>
 					</ColumnListItem>
 				</items>

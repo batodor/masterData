@@ -18,7 +18,6 @@
 				custom:id="dictionaryBPInt"
 				custom:filters="Name,Partner"
 				id="dictionaryBPIntproductionUnitValueHelp"
-				placeholder="{i18n>plsChoose} {i18n>partner}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{Partner}" width="250px" />

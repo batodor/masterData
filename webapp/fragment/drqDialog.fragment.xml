@@ -26,7 +26,6 @@
 				custom:filters="QPCode,QPName"
 				custom:set="qualityParameters"
 				id="qualityParametersPopupdrqValueHelp"
-				placeholder="{i18n>plsChoose} {i18n>qpKey}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{QPKey}" width="200px" />
@@ -43,7 +42,6 @@
 				custom:key="uom"
 				custom:filters="UOMCode,UOMName"
 				id="uomdrqValueHelp"
-				placeholder="{i18n>plsEnter} {i18n>uom}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{UOM}" width="200px" />

@@ -25,7 +25,6 @@
 				custom:set="currency"
 				custom:filters="CurrencyCode,CurrencyName"
 				id="currencyPopupfcaProductValueHelp"
-				placeholder="{i18n>plsChoose} {i18n>currency}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{Currency}" width="200px" />
