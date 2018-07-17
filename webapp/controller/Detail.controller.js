@@ -157,7 +157,7 @@ sap.ui.define([
 
 		// Search function for all tables
 		triggerSearch: function(oEvent) {
-			var query = oEvent.getParameter("query") || oEvent.getParameter("newValue") || oEvent.getParameter("selected"),
+			var query = oEvent.getParameter("query") || oEvent.getSource().getProperty("selectedKey") || oEvent.getParameter("selected"),
 				id = oEvent.getSource().data('id'),
 				key = oEvent.getSource().data('key'),
 				customOperator = oEvent.getSource().data('operator'),
