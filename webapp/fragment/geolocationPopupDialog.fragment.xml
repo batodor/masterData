@@ -1,0 +1,50 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>geolocation}" class="sapUiContentPadding" id="geolocationPopupDialog">
+		<content>
+			<Table mode="SingleSelectLeft" includeItemInSelection="true" id="geolocationPopup" custom:id="geolocationPopup" width="auto" items="{}" select="onTableSelect"
+				updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growingThreshold="10" growing="true" growingScrollToLoad="false"
+				busyIndicatorDelay="{detailView>/lineItemTableDelay}">
+				<headerToolbar>
+					<Toolbar class="white">
+						<SearchField placeholder="{i18n>code}" custom:id="geolocationPopup" custom:key="Code" custom:operator="EQ" showSearchButton="true" 
+							search="triggerSearch" width="100%" id="geolocationPopupCodeFilter" />
+						<ToolbarSpacer/>
+						<SearchField placeholder="{i18n>name}" custom:id="geolocationPopup" custom:key="Name" showSearchButton="true" 
+							search="triggerSearch" width="100%" id="geolocationPopupNameFilter" />
+						<ToolbarSpacer/>
+						<CheckBox text="{i18n>trainStation}" custom:id="geolocationPopup" custom:operator="EQ" custom:key="TrainStationID" 
+							select="triggerSearch" width="100px" id="geolocationPopupTrainStationIDFilter" />
+						<ToolbarSpacer/>
+						<CheckBox text="{i18n>seaHarbor}" custom:id="geolocationPopup" custom:operator="EQ" custom:key="SeaHarborIndicator" 
+							select="triggerSearch" width="100px" id="geolocationPopupSeaHarborIndicatorFilter" />
+						<ToolbarSpacer/>
+						<CheckBox text="{i18n>crossBorder}" custom:id="geolocationPopup" custom:operator="EQ" custom:key="CrossBorderIndicator" 
+							select="triggerSearch" width="100px" id="geolocationPopupCrossBorderIndicatorFilter" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="100px"><Text class="black" text="{i18n>code}"/></Column>
+					<Column width="100px"><Text class="black" text="{i18n>name}"/></Column>
+					<Column width="100px"><Text class="black" text="{i18n>trainStation}"/></Column>
+					<Column width="100px"><Text class="black" text="{i18n>seaHarbor}"/></Column>
+					<Column width="100px"><Text class="black" text="{i18n>crossBorder}"/></Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{Code}"/>
+							<Text text="{Name}"/>
+							<CheckBox enabled="false" selected="{TrainStationID}"/>
+							<CheckBox enabled="false" selected="{SeaHarborIndicator}"/>
+							<CheckBox enabled="false" selected="{CrossBorderIndicator}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="geolocationPopup" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>select}" custom:id="geolocationPopup" custom:key="Code" type="Accept" id="geolocationPopupSelect" enabled="false" press="dialogSelect"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

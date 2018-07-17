@@ -34,7 +34,8 @@ sap.ui.define([
 			this.tableArr = [ "limitsStandart", "limitsExpress", "salesProgram", "fcaDomestic", "fcaProduct", "fcaResource", "productRecipeHeader", "productRecipeItem", "strategy", 
 				"growthFactor", "salesScheme", "riskType", "salesRegion", "incoterms", "currency", "uom", "country", "rwStation", "port", "vesselType", "materialGroup", "poq", 
 				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc", "crossBorder", "productionUnit", "addressType", "qualityParameters", "dqp", "material",
-				"dictionaryBPInt", "benchmark", "portPopup", "qualityParametersUom", "qualityParametersPopup", "drq", "inflationFactor", "index", "currencyPopup", "interestRate"];
+				"dictionaryBPInt", "benchmark", "portPopup", "qualityParametersUom", "qualityParametersPopup", "drq", "inflationFactor", "index", "currencyPopup", "interestRate",
+				"geolocationPopup"];
 			
 			this.typeArr = ["value", "dateValue", "selectedKey", "selected"];
 
@@ -156,7 +157,7 @@ sap.ui.define([
 
 		// Search function for all tables
 		triggerSearch: function(oEvent) {
-			var query = oEvent.getParameter("query") || oEvent.getParameter("newValue"),
+			var query = oEvent.getParameter("query") || oEvent.getParameter("newValue") || oEvent.getParameter("selected"),
 				id = oEvent.getSource().data('id'),
 				key = oEvent.getSource().data('key'),
 				customOperator = oEvent.getSource().data('operator'),
@@ -166,7 +167,7 @@ sap.ui.define([
 			if(!this.search[id]){ 
 				this.search[id] = {};
 			}
-			if(query){
+			if(typeof query !== "undefined"){
 				var operator = FilterOperator.Contains;
 				if(customOperator){
 					operator = FilterOperator[customOperator];
@@ -175,6 +176,7 @@ sap.ui.define([
 			}else{
 				delete this.search[id][key];
 			}
+			
 			var filterKeys = Object.keys(this.search[id]);
 			for(var i in filterKeys){
 				filters.push(this.search[id][filterKeys[i]]);
