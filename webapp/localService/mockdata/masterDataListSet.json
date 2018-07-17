@@ -110,4 +110,8 @@
     "Title": "Strategy",
     "Id": "strategy",
     "Order": 29
+}, {
+    "Title": "Interest Rate",
+    "Id": "interestRate",
+    "Order": 30
 }]

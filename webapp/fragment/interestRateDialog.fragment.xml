@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>index}" class="sapUiContentPadding" id="interestRateDialog">
+	<Dialog title="{i18n>interestRate}" class="sapUiContentPadding" id="interestRateDialog">
 		<content>
 			<Label required="true" text="{i18n>country}" width="200px"/>
 			<Input value="{Country}" width="200px" custom:key="{i18n>country}" />
@@ -8,6 +8,7 @@
 			<Input 
 				custom:id="currencyPopup"
 				custom:set="currency"
+				custom:key="currency"
 				custom:filters="CurrencyCode,CurrencyName"
 				id="currencyPopupinterestRateValueHelp"
 				placeholder="{i18n>plsChoose} {i18n>currency}"
@@ -28,10 +29,10 @@
 			</Select>
 		</content>
 		<buttons>
-			<Button text="{i18n>cancel}" custom:id="index" type="Back" press="dialogCancel"/>
-			<Button text="{i18n>add}" custom:id="index" visible="false" type="Accept" press="dialogAdd"/>
-			<Button text="{i18n>edit}" custom:id="index" visible="false" type="Default" press="dialogEdit"/>
-			<Button text="{i18n>save}" custom:id="index" visible="false" type="Accept" press="dialogSave"/>
+			<Button text="{i18n>cancel}" custom:id="interestRate" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="interestRate" visible="false" type="Accept" press="dialogAdd"/>
+			<Button text="{i18n>edit}" custom:id="interestRate" visible="false" type="Default" press="dialogEdit"/>
+			<Button text="{i18n>save}" custom:id="interestRate" visible="false" type="Accept" press="dialogSave"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>
