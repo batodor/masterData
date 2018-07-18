@@ -157,12 +157,16 @@ sap.ui.define([
 
 		// Search function for all tables
 		triggerSearch: function(oEvent) {
-			var query = oEvent.getParameter("query") || oEvent.getSource().getProperty("selectedKey") || oEvent.getParameter("selected"),
+			var query = oEvent.getParameter("query") || oEvent.getParameter("selected"),
 				id = oEvent.getSource().data('id'),
 				key = oEvent.getSource().data('key'),
 				customOperator = oEvent.getSource().data('operator'),
 				oTable = this.byId(id) || sap.ui.getCore().byId(id),
 				filters = [];
+			
+			if(oEvent.getSource()["mProperties"].hasOwnProperty("selectedKey")){
+				query = oEvent.getSource().getProperty("selectedKey");
+			}
 				
 			if(!this.search[id]){ 
 				this.search[id] = {};
