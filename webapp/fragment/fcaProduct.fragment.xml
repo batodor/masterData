@@ -9,7 +9,7 @@
 		</headerToolbar>
 		<columns>
 			<Column><Text class="black" text="{i18n>salesProgram}"/></Column>
-			<Column><Text class="black" text="{i18n>productCode}"/></Column>
+			<!--<Column><Text class="black" text="{i18n>productCode}"/></Column>-->
 			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
 			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
 			<Column><Text class="black" text="{i18n>minFcaPrice}"/></Column>
@@ -19,10 +19,10 @@
 			<ColumnListItem>
 				<cells>
 					<Text text="{SalesProgram}"/>
-					<Text text="{ProductCode}"/>
-					<Text text="{DateFrom}"/>
-					<Text text="{DateTo}"/>
-					<Text text="{MinFcaPrice}"/>
+					<!--<Text text="{ProductCode}"/>-->
+					<Text text="{ path: 'FromDate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+					<Text text="{ path: 'ToDate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+					<Text text="{MinFCAPrice}"/>
 					<Text text="{Currency}"/>
 				</cells>
 			</ColumnListItem>

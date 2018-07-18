@@ -7,17 +7,17 @@
 				<core:Item key="{SalesProgram}" text="{SalesProgram} - {Description}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label text="{i18n>productCode}" width="200px"/>
-			<Input value="{ProductCode}" width="200px"/>
+			<!--<Label text="{i18n>productCode}" width="200px"/>-->
+			<!--<Input value="{ProductCode}" width="200px"/>-->
+			<!--<ToolbarSpacer/>-->
+			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
+			<DatePicker value="{FromDate}" custom:key="dateFrom" width="206px"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>dateFrom}" width="200px"/>
-			<DatePicker value="{DateFrom}" width="206px"/>
-			<ToolbarSpacer/>
-			<Label text="{i18n>dateTo}" width="200px"/>
-			<DatePicker value="{DateTo}" width="206px"/>
+			<Label required="true" text="{i18n>dateTo}" width="200px"/>
+			<DatePicker value="{ToDate}" custom:key="dateTo" width="206px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>minFcaPrice}" width="200px"/>
-			<Input value="{MinFcaPrice}" width="200px"/>
+			<Input value="{MinFCAPrice}" width="200px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>currency}" width="200px"/>
 			<Input 
