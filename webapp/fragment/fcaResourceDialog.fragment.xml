@@ -7,29 +7,30 @@
 				<core:Item key="{SalesProgram}" text="{SalesProgram} - {Description}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label text="{i18n>productionUnit}" width="200px"/>
-			<Select forceSelection="false" selectedKey="{ProductionUnit}" items="{ path: '/productionUnitSet', sorter: { path: 'Code' } }" width="200px">
+			<Label required="true" text="{i18n>productionUnit}" width="200px"/>
+			<Select forceSelection="false" custom:key="productionUnit" selectedKey="{ProductionUnit}" items="{ path: '/productionUnitSet', sorter: { path: 'Code' } }" width="200px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label text="{i18n>material}" width="200px"/>
+			<Label required="true" text="{i18n>material}" width="200px"/>
 			<Input 
 				type="Text"
 				custom:id="material"
+				custom:key="material" 
 				custom:filters="Code,Division,Name"
 				id="materialfcaResourceValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{Material}" width="200px" />
 			<ToolbarSpacer/>
-			<Label text="{i18n>dateFrom}" width="200px"/>
-			<DatePicker value="{DateFrom}" width="206px"/>
+			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
+			<DatePicker custom:key="dateFrom" value="{FromDate}" width="206px"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>dateTo}" width="200px"/>
-			<DatePicker value="{DateTo}" width="206px"/>
+			<Label required="true" text="{i18n>dateTo}" width="200px"/>
+			<DatePicker custom:key="dateTo" value="{ToDate}" width="206px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>minFcaPrice}" width="200px"/>
-			<Input value="{MinFcaPrice}" width="200px"/>
+			<Input value="{MinFCAPrice}" width="200px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>currency}" width="200px"/>
 			<Input 

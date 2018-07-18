@@ -22,9 +22,9 @@
 					<Text text="{SalesProgram}"/>
 					<Text text="{ProductionUnit}"/>
 					<Text text="{Material}"/>
-					<Text text="{DateFrom}"/>
-					<Text text="{DateTo}"/>
-					<Text text="{MinFcaPrice}"/>
+					<Text text="{ path: 'FromDate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+					<Text text="{ path: 'ToDate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+					<Text text="{MinFCAPrice}"/>
 					<Text text="{Currency}"/>
 				</cells>
 			</ColumnListItem>
