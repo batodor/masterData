@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>productionUnit}" class="sapUiContentPadding" id="productionUnitPopupDialog">
+		<content>
+			<Table mode="SingleSelectLeft" includeItemInSelection="true" id="productionUnitPopup" custom:id="productionUnitPopup" items="{}" select="onTableSelect" width="500px" 
+				updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growingThreshold="10" growing="true" growingScrollToLoad="false"
+				busyIndicatorDelay="{detailView>/lineItemTableDelay}">
+				<headerToolbar>
+					<Toolbar class="white">
+						<SearchField placeholder="{i18n>code}" custom:id="productionUnitPopup" custom:key="Code" custom:operator="EQ" showSearchButton="true" 
+							search="triggerSearch" width="100%" id="productionUnitPopupCodeFilter" />
+						<ToolbarSpacer/>
+						<SearchField placeholder="{i18n>name}" custom:id="productionUnitPopup" custom:key="Name" showSearchButton="true" 
+							search="triggerSearch" width="100%" id="productionUnitPopupNameFilter" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column><Text class="black" text="{i18n>code}"/></Column>
+					<Column><Text class="black" text="{i18n>name}"/></Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{Code}"/>
+							<Text text="{Name}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" custom:id="productionUnitPopup" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>select}" custom:id="productionUnitPopup" custom:key="Code" type="Accept" id="productionUnitPopupSelect" enabled="false" press="dialogSelect"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

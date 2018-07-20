@@ -8,13 +8,18 @@
 			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>productionUnit}" width="200px"/>
-			<Select forceSelection="false" custom:key="productionUnit" selectedKey="{ProductionUnit}" items="{ path: '/productionUnitSet', sorter: { path: 'Code' } }" width="200px">
-				<core:Item key="{Code}" text="{Code} - {Name}"/>
-			</Select>
+			<Input 
+				custom:id="productionUnitPopup"
+				custom:key="productionUnit" 
+				custom:set="productionUnit" 
+				custom:filters="Code,Name"
+				id="productionUnitPopupfcaResourceValueHelp"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{ProductionUnit}" width="200px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>material}" width="200px"/>
 			<Input 
-				type="Text"
 				custom:id="material"
 				custom:key="material" 
 				custom:filters="Code,Division,Name"
