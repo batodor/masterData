@@ -229,6 +229,7 @@ sap.ui.define([
 			var table = this.byId(id) || sap.ui.getCore().byId(id);
 			if(table.getSelectedItem()){
 				var dialog = table.data("dialog") ? this[table.data("dialog") + "Dialog"] : this[id + "Dialog"];
+				dialog.unbindElement();
 				var url = table.getSelectedItem().getBindingContextPath();
 				
 				// if on doubleclick preview then disable inputs, else enable inputs
