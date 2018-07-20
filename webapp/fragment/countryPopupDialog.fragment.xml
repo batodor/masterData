@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>geolocation}" class="sapUiContentPadding" id="countryPopupDialog">
+	<Dialog title="{i18n>country}" class="sapUiContentPadding" id="countryPopupDialog">
 		<content>
 			<Table mode="SingleSelectLeft" includeItemInSelection="true" id="countryPopup" custom:id="countryPopup" width="auto" items="{}" select="onTableSelect"
 				updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growingThreshold="10" growing="true" growingScrollToLoad="false"
@@ -11,35 +11,35 @@
 						<ToolbarSpacer/>
 						<SearchField placeholder="{i18n>name}" custom:id="countryPopup" custom:key="Name" showSearchButton="true" 
 							search="triggerSearch" width="100%" id="countryPopupNameFilter" />
-						<ToolbarSpacer/>
-						<ComboBox placeholder="{i18n>rating}" custom:id="countryPopup" custom:operator="EQ" custom:key="Rating" 
-							change="triggerSearch" width="100%" id="countryPopupRatingFilter">
-							<core:Item key="" text=""/>
-							<core:Item key="true" text="Yes"/>
-							<core:Item key="false" text="No"/>
-						</ComboBox>
-						<ToolbarSpacer/>
-						<ComboBox placeholder="{i18n>sanction}" custom:id="countryPopup" custom:operator="EQ" custom:key="Sanction" 
-							change="triggerSearch" width="100%" id="countryPopupSanctionFilter">
-							<core:Item key="" text=""/>
-							<core:Item key="true" text="Yes"/>
-							<core:Item key="false" text="No"/>
-						</ComboBox>
+						<!--<ToolbarSpacer/>-->
+						<!--<ComboBox placeholder="{i18n>sanction}" custom:id="countryPopup" custom:operator="EQ" custom:key="Sanction" -->
+						<!--	change="triggerSearch" width="100%" id="countryPopupSanctionFilter">-->
+						<!--	<core:Item key="" text=""/>-->
+						<!--	<core:Item key="true" text="Yes"/>-->
+						<!--	<core:Item key="false" text="No"/>-->
+						<!--</ComboBox>-->
+						<!--<ToolbarSpacer/>-->
+						<!--<ComboBox placeholder="{i18n>rating}" custom:id="countryPopup" custom:operator="EQ" custom:key="Rating" -->
+						<!--	change="triggerSearch" width="100%" id="countryPopupRatingFilter">-->
+						<!--	<core:Item key="" text=""/>-->
+						<!--	<core:Item key="true" text="Yes"/>-->
+						<!--	<core:Item key="false" text="No"/>-->
+						<!--</ComboBox>-->
 					</Toolbar>
 				</headerToolbar>
 				<columns>
 					<Column width="100px"><Text class="black" text="{i18n>code}"/></Column>
 					<Column width="100px"><Text class="black" text="{i18n>name}"/></Column>
-					<Column width="100px"><Text class="black" text="{i18n>rating}"/></Column>
-					<Column width="100px"><Text class="black" text="{i18n>sanction}"/></Column>
+					<!--<Column width="100px"><Text class="black" text="{i18n>sanction}"/></Column>-->
+					<!--<Column width="100px"><Text class="black" text="{i18n>rating}"/></Column>-->
 				</columns>
 				<items>
 					<ColumnListItem>
 						<cells>
 							<Text text="{Code}"/>
 							<Text text="{Name}"/>
-							<CheckBox enabled="false" selected="{Rating}"/>
-							<CheckBox enabled="false" selected="{Sanction}"/>
+							<!--<CheckBox enabled="false" selected="{Sanction}"/>-->
+							<!--<CheckBox enabled="false" selected="{Rating}"/>-->
 						</cells>
 					</ColumnListItem>
 				</items>

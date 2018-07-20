@@ -6,7 +6,7 @@
 				custom:id="countryPopup"
 				custom:set="country"
 				custom:key="{i18n>country}"
-				custom:filters="Code,Name,Rating,Sanction"
+				custom:filters="Code,Name"
 				id="countryPopupinterestRateValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
