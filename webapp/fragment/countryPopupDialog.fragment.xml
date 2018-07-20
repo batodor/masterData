@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>country}" class="sapUiContentPadding" id="countryPopupDialog">
 		<content>
-			<Table mode="SingleSelectLeft" includeItemInSelection="true" id="countryPopup" custom:id="countryPopup" width="auto" items="{}" select="onTableSelect"
+			<Table mode="SingleSelectLeft" includeItemInSelection="true" id="countryPopup" custom:id="countryPopup" width="500px" items="{}" select="onTableSelect"
 				updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growingThreshold="10" growing="true" growingScrollToLoad="false"
 				busyIndicatorDelay="{detailView>/lineItemTableDelay}">
 				<headerToolbar>
