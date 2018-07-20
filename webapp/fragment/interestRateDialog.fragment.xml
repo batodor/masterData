@@ -2,7 +2,15 @@
 	<Dialog title="{i18n>interestRate}" class="sapUiContentPadding" id="interestRateDialog">
 		<content>
 			<Label required="true" text="{i18n>country}" width="200px"/>
-			<Input value="{Country}" width="200px" custom:key="{i18n>country}" />
+			<Input 
+				custom:id="countryPopup"
+				custom:set="country"
+				custom:key="{i18n>country}"
+				custom:filters="Code,Name,Rating,Sanction"
+				id="countryPopupinterestRateValueHelp"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{Country}" width="200px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>currency}" width="200px"/>
 			<Input 
@@ -17,6 +25,9 @@
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>
+			<ToolbarSpacer/>
+			<Label required="true" text="{i18n>dateTo}" width="200px"/>
+			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="206px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>interestRate}" width="200px"/>
 			<Input value="{InterestRate}" width="200px" />

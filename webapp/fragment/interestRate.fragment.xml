@@ -11,6 +11,7 @@
 			<Column><Text class="black" text="{i18n>country}"/></Column>
 			<Column><Text class="black" text="{i18n>currency}"/></Column>
 			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
+			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
 			<Column><Text class="black" text="{i18n>interestRate}"/></Column>
 			<Column><Text class="black" text="{i18n>uom}"/></Column>
 		</columns>
@@ -20,6 +21,7 @@
 					<Text text="{Country}"/>
 					<Text text="{Currency}"/>
 					<Text text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+					<Text text="{ path: 'DateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
 					<Text text="{InterestRate}"/>
 					<Text text="{UOM}"/>
 				</cells>

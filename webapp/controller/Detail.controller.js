@@ -35,7 +35,7 @@ sap.ui.define([
 				"growthFactor", "salesScheme", "riskType", "salesRegion", "incoterms", "currency", "uom", "country", "rwStation", "port", "vesselType", "materialGroup", "poq", 
 				"terminal", "legalEntity", "branch", "salesMarket", "bmqc", "sbmqc", "crossBorder", "productionUnit", "addressType", "qualityParameters", "dqp", "material",
 				"dictionaryBPInt", "benchmark", "portPopup", "qualityParametersUom", "qualityParametersPopup", "drq", "inflationFactor", "index", "currencyPopup", "interestRate",
-				"geolocationPopup", "productionUnitPopup"];
+				"geolocationPopup", "productionUnitPopup", "countryPopup"];
 			
 			this.typeArr = ["value", "dateValue", "selectedKey", "selected"];
 
