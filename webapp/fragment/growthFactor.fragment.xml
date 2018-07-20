@@ -18,8 +18,8 @@
 			<ColumnListItem>
 				<cells>
 					<Text text="{CostType}"/>
-					<Text text="{DateFrom}"/>
-					<Text text="{DateTo}"/>
+					<Text text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+					<Text text="{ path: 'DateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
 					<Text text="{GrowthFactor}"/>
 					<Text text="{UOM}"/>
 				</cells>

@@ -7,10 +7,10 @@
 			</Select>
 			<ToolbarSpacer/>
 			<Label text="{i18n>dateFrom}" width="200px"/>
-			<DatePicker value="{DateFrom}" custom:key="dateFrom" width="155px" />
+			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="155px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>dateTo}" width="200px"/>
-			<DatePicker value="{DateTo}" custom:key="dateTo" width="155px"/>
+			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="155px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>growthFactor}" width="200px"/>
 			<Input value="{GrowthFactor}" width="150px"/>
