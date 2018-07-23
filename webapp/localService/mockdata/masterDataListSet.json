@@ -63,22 +63,6 @@
     "Id": "benchmark",
     "Order": 17
 }, {
-    "Title": "Effective r/w Rates",
-    "Id": "effectiveRwRates",
-    "Order": 18
-}, {
-    "Title": "Port Costs",
-    "Id": "portCosts",
-    "Order": 19
-}, {
-    "Title": "Survey & Forward rates",
-    "Id": "surveyForwardRates",
-    "Order": 20
-}, {
-    "Title": "Transit Cost",
-    "Id": "transitCost",
-    "Order": 21
-}, {
     "Title": "Interest Rate",
     "Id": "interestRate",
     "Order": 22
@@ -86,28 +70,20 @@
     "Title": "Inflation Factor",
     "Id": "inflationFactor",
     "Order": 23
+},{
+    "Title": "Growth Factor",
+    "Id": "growthFactor",
+    "Order": 24
 }, {
     "Title": "Index",
     "Id": "index",
-    "Order": 24
-}, {
-    "Title": "Growth Factor",
-    "Id": "growthFactor",
     "Order": 25
-}, {
-    "Title": "FCA Price for Domestic Market",
-    "Id": "fcaDomestic",
-    "Order": 26
 }, {
     "Title": "FCA Price for Product",
     "Id": "fcaProduct",
-    "Order": 27
+    "Order": 26
 }, {
     "Title": "FCA Price for Resource",
     "Id": "fcaResource",
-    "Order": 28
-}, {
-    "Title": "Strategy",
-    "Id": "strategy",
-    "Order": 29
+    "Order": 27
 }]
