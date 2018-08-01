@@ -76,6 +76,10 @@ span[data-rating="C"] {
     font-weight: bold;
 }
 
+.sapUshellShell .sapMPageBgStandard{
+	background-color:transparent;
+}
+
 #LimitsForStandardRating_MasterDetailNBlock .sapUiBlockCellContent {
 	padding: 0;
 }
