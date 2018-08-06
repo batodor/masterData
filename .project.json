@@ -9,7 +9,7 @@
     "lastVersionWeTriedToDeploy": "1.0.0"
   },
   "mockpreview": {
-    "mockUri": "/sap/opu/odata/sap/ZTS_MD_BP_SRV",
+    "mockUri": "/sap/opu/odata/sap/ZTS_MD_SRV",
     "metadataFilePath": "localService/metadata.xml",
     "mockRequestsFilePath": "localService/mockserver.js",
     "loadJSONFiles": true,
@@ -21,5 +21,12 @@
     "defaultLanguage": "",
     "defaultI18NPropertyFile": "",
     "resourceModelName": ""
-  }
+  },
+  "generation": [
+    {
+      "templateId": "servicecatalog.connectivityComponent",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Mon, 06 Aug 2018 14:27:32 GMT"
+    }
+  ]
 }

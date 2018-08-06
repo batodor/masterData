@@ -10,9 +10,8 @@
 			<Column><Text class="black" text="{i18n>legalEntity}"/></Column>
 			<Column><Text class="black" text="{i18n>countryRating}"/></Column>
 			<Column><Text class="black" text="{i18n>financeCommercialRating}"/></Column>
-			<!--<Column><Text class="black" text="{i18n>commercialRating}"/></Column>-->
 			<Column><Text class="black" text="{i18n>bpRole}"/></Column>
-			<Column><Text class="black" text="{i18n>subitem}"/></Column>
+			<!--<Column><Text class="black" text="{i18n>subitem}"/></Column>-->
 			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
 			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
 			<Column><Text class="black" text="{i18n>paymentMethod}"/></Column>
@@ -21,16 +20,15 @@
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{CompanyCode}"/>
+					<Text text="{CompanyCodeText}"/>
 					<Text text="{CountryRating}"/>
 					<Text text="{FinanceCommercialRating}"/>
-					<!--<Text text="{CommercialRating}"/>-->
-					<Text text="{PartnersRole}"/>
-					<Text text="{Subitem}"/>
+					<Text text="{PartnersRoleText}"/>
+					<!--<Text text="{Subitem}"/>-->
 					<Text text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
 					<Text text="{ path: 'DateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
-					<Text text="{PaymentMethod}"/>
-					<Text text="{PaymentTerm}"/>
+					<Text text="{PaymentMethodText}"/>
+					<Text text="{PaymentTermText}"/>
 				</cells>
 			</ColumnListItem>
 		</items>
