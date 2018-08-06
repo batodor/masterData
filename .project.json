@@ -1,6 +1,6 @@
 {
   "deploy": {
-    "destination": "ERE",
+    "destination": "ERD_210",
     "name": "ZTS_MASTERDATA"
   },
   "hcpdeploy": {
