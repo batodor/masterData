@@ -23,8 +23,6 @@
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Input value="{Subitem}" type="Number" width="200px" visible="false" />
-			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="250px"/>
 			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>
 			<ToolbarSpacer/>
@@ -42,6 +40,12 @@
 				items="{ path: '/dictionaryPaymentTermsSet', sorter: { path: 'Name' } }" width="200px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
+			
+			<Input value="{Subitem}" custom:name="Subitem" type="Number" visible="false" />
+			<Input value="{CompanyCodeText}" custom:name="CompanyCodeText" visible="false" />
+			<Input value="{PartnersRoleText}" custom:name="PartnersRoleText" visible="false" />
+			<Input value="{PaymentMethodText}" custom:name="PaymentMethodText" visible="false" />
+			<Input value="{PaymentTermText}" custom:name="PaymentTermText" visible="false" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="limitsExpress" type="Back" press="dialogCancel"/>

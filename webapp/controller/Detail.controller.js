@@ -198,6 +198,7 @@ sap.ui.define([
 			var id = oEvent.getSource().data("id") || this.id;
 			var table = this.byId(id) || sap.ui.getCore().byId(id);
 			var dialog = table.data("dialog") ? this[table.data("dialog") + "Dialog"] : this[id + "Dialog"];
+			this.clearValues(dialog);
 			this.setEnabledDialog(dialog, true, true);
 			if(this.filter.length > 0){
 				var filterKey = this.filter[0].sPath;
