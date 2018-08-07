@@ -573,6 +573,9 @@ sap.ui.define([
 					var type = this.typeArr[j];
 					if(input.mProperties.hasOwnProperty(type)){
 						var evalStr = 'input.set' + type.charAt(0).toUpperCase() + type.substr(1) + '("")';
+						if(type === "dateValue"){
+							var evalStr = 'input.setDateValue(null)';
+						}
 						eval(evalStr);
 					}
 				}
