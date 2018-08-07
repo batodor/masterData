@@ -1,6 +1,6 @@
 {
   "deploy": {
-    "destination": "ERD_210",
+    "destination": "ERD_150",
     "name": "ZTS_MASTERDATA"
   },
   "hcpdeploy": {
@@ -26,7 +26,7 @@
     {
       "templateId": "servicecatalog.connectivityComponent",
       "templateVersion": "0.0.0",
-      "dateTimeStamp": "Mon, 06 Aug 2018 14:27:32 GMT"
+      "dateTimeStamp": "Tue, 07 Aug 2018 09:29:13 GMT"
     }
   ]
 }

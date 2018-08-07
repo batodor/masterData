@@ -17,26 +17,19 @@
 				<core:Item key="{Rating}" text="{Rating}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<!--<Label required="true" text="{i18n>commercialRating}" width="250px"/>-->
-			<!--<Select selectedKey="{CommercialRating}" custom:key="commercialRating" forceSelection="false" -->
-			<!--	items="{ path: '/dictionaryRatingSet', sorter: { path: 'Rating' } }" width="200px">-->
-			<!--	<core:Item key="{Rating}" text="{Rating}"/>-->
-			<!--</Select>-->
-			<!--<ToolbarSpacer/>-->
 			<Label required="true" text="{i18n>bpRole}" width="250px"/>
 			<Select selectedKey="{PartnersRole}" custom:key="bpRole" forceSelection="false" 
 				items="{ path: '/dictionaryBusinessPartnerFunctionsSet', sorter: { path: 'Name' } }" width="200px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>subitem}" width="250px"/>
-			<Input value="{Subitem}" type="Number" custom:key="subitem" width="200px"/>
+			<Input value="{Subitem}" type="Number" width="200px" visible="false" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="250px"/>
 			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateTo}" width="250px"/>
-			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="206px"/>
+			<Label text="{i18n>dateTo}" width="250px"/>
+			<DatePicker dateValue="{DateTo}" width="206px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>paymentMethod}" width="250px"/>
 			<Select selectedKey="{PaymentMethod}" forceSelection="false" 
