@@ -8,18 +8,24 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>productionUnitCode}"/></Column>
-			<Column><Text class="black" text="{i18n>productionUnitName}"/></Column>
+			<Column><Text class="black" text="{i18n>producerConsumer}"/></Column>
+			<Column><Text class="black" text="{i18n>name}"/></Column>
 			<Column><Text class="black" text="{i18n>internalExternal}"/></Column>
 			<Column><Text class="black" text="{i18n>partner}"/></Column>
+			<Column><Text class="black" text="{i18n>producer}"/></Column>
+			<Column><Text class="black" text="{i18n>consumer}"/></Column>
+			<Column><Text class="black" text="{i18n>active}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{Code}"/>
+					<Text text="{ProducerConsumer}"/>
 					<Text text="{Name}"/>
-					<Text text="{= ${Type} === 'I' ? 'Internal' : 'External' }"/>
+					<Text text="{= ${InternalExternal} === 'I' ? 'Internal' : 'External' }"/>
 					<Text text="{Partner}"/>
+					<CheckBox enabled="false" selected="{Producer}" />
+					<CheckBox enabled="false" selected="{Consumer}" />
+					<CheckBox enabled="false" selected="{Active}" />
 				</cells>
 			</ColumnListItem>
 		</items>

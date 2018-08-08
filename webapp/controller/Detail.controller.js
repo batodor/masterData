@@ -116,7 +116,8 @@ sap.ui.define([
 				this.setInput(["tableAdd", "tableEdit", "tableDelete"], false, "Visible");
 			}else if(this.id === "dqp"){
 				this.byId("tableEdit").setVisible(false);
-			}else if(this.id === "limitsStandart"){
+			}else if(this.id === "limitsStandart" || this.id === "productionUnit" || this.id === "salesProgram" || this.id === "bmqc" || this.id === "sbmqc"
+				|| this.id === "salesMarket" || this.id === "salesRegion" || this.id === "riskType" || this.id === "qualityParametersUom"){
 				this.byId("tableDelete").setVisible(false);
 			}
 			// Bind double click event
@@ -580,6 +581,14 @@ sap.ui.define([
 					}
 				}
 			}
+		},
+			
+		checkValue: function(oEvent){
+			var Input = oEvent.getSource();
+			var maxValue = Input.data("max") ? parseInt(Input.data("max")) : 1000000000;
+			var value = parseInt(oEvent.getParameter('newValue'));
+			var valueState = isNaN(value) ? "Error" : value > maxValue ? "Error" : "Success";
+			Input.setValueState(valueState);
 		}
 	});
 

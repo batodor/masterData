@@ -1,14 +1,14 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>productionUnit}" class="sapUiContentPadding" id="productionUnitDialog">
 		<content>
-			<Label required="true" text="{i18n>productionUnitCode}" width="200px"/>
-			<Input value="{Code}" custom:key="productionUnitCode" width="250px"/>
+			<Label required="true" text="{i18n>producerConsumer}" width="200px"/>
+			<Input value="{ProducerConsumer}" custom:key="producerConsumer" width="250px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>productionUnitName}" width="200px"/>
 			<Input value="{Name}" width="250px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>internalExternal}" width="200px"/>
-			<Select forceSelection="false" selectedKey="{Type}" items="{ path: '/dictionaryUnitTypeSet', sorter: { path: 'Name' } }" width="250px">
+			<Select forceSelection="false" selectedKey="{InternalExternal}" items="{ path: '/dictionaryUnitTypeSet', sorter: { path: 'Name' } }" width="250px">
 				<core:Item key="{Code}" text="{Name}"/>
 			</Select>
 			<ToolbarSpacer/>
@@ -21,6 +21,15 @@
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{Partner}" width="250px" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>producer}" width="200px"/>
+			<CheckBox enabled="false" selected="{Producer}" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>consumer}" width="200px"/>
+			<CheckBox enabled="false" selected="{Consumer}" />
+			<ToolbarSpacer/>
+			<Label text="{i18n>active}" width="200px"/>
+			<CheckBox enabled="false" selected="{Active}" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productionUnit" type="Back" press="dialogCancel"/>

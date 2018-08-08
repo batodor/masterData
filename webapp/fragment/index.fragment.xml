@@ -16,7 +16,7 @@
 			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
 			<Column width="80px"><Text class="black" text="{i18n>geolocation}"/></Column>
 			<Column><Text class="black" text="{i18n>baseCV}"/></Column>
-			<Column><Text class="black" text="{i18n>baseQP}"/></Column>
+			<!--<Column><Text class="black" text="{i18n>baseQP}"/></Column>-->
 			<Column><Text class="black" text="{i18n>narGarGad}"/></Column>
 		</columns>
 		<items>
@@ -30,7 +30,7 @@
 					<Text text="{ path: 'DateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
 					<Text text="{Geolocation}"/>
 					<Text text="{BaseCV}"/>
-					<Text text="{BaseQP}"/>
+					<!--<Text text="{BaseQP}"/>-->
 					<Text text="{NGG}"/>
 				</cells>
 			</ColumnListItem>

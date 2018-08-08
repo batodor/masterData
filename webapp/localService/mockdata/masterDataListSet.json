@@ -11,7 +11,7 @@
     "Id": "limitsStandart",
     "Order": 3
 }, {
-    "Title": "Production Unit",
+    "Title": "Producer/Consumer",
     "Id": "productionUnit",
     "Order": 4
 }, {

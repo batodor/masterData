@@ -18,8 +18,8 @@
 				value="{Material}" width="250px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>productionUnit}" width="150px"/>
-			<Select forceSelection="false" selectedKey="{ProductionUnit}" items="{ path: '/productionUnitSet', sorter: { path: 'Code' } }" width="250px">
-				<core:Item key="{Code}" text="{Code} - {Name}"/>
+			<Select forceSelection="false" selectedKey="{ProductionUnit}" items="{ path: '/productionUnitSet', sorter: { path: 'Name' } }" width="250px">
+				<core:Item key="{ProducerConsumer}" text="{ProducerConsumer} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
 			<Label text="{i18n>content}" width="150px"/>

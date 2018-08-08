@@ -20,12 +20,12 @@
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker custom:key="dateFrom" dateValue="{DateFrom}" width="206px"/>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateTo}" width="200px"/>
-			<DatePicker custom:key="dateTo" dateValue="{DateTo}" width="206px"/>
-			<ToolbarSpacer/>
 			<l:BlockLayout>
 				<l:BlockLayoutRow>
 					<l:BlockLayoutCell class="sapUiNoMargin" id="LimitsForStandardRating_MasterDetailNBlock">
+						<Label text="{i18n>dateTo}" width="200px"/>
+						<DatePicker dateValue="{DateTo}" width="206px"/>
+						<ToolbarSpacer/>
 						<Label text="{i18n>tonnage}" width="200px"/>
 						<Input custom:name="Tonnage" value="{= ${Tonnage} ? ${Tonnage} : '0' }" width="200px" />
 						<ToolbarSpacer/>
@@ -35,7 +35,9 @@
 						<Label text="{i18n>tonnageSign}" width="200px"/>
 						<Select selectedKey="{TonnageSign}" forceSelection="false"  width="200px">
 							<core:Item key="&#60;" text="&#60;"/>
+							<core:Item key="&#60;=" text="&#60;="/>
 							<core:Item key="&#62;" text="&#62;"/>
+							<core:Item key="&#62;=" text="&#62;="/>
 							<core:Item key="=" text="="/>
 						</Select>
 						<ToolbarSpacer/>
@@ -55,7 +57,9 @@
 						<Select selectedKey="{PeriodSign}" forceSelection="false"  width="200px">
 							<core:Item key="" text=""/>
 							<core:Item key="&#60;" text="&#60;"/>
+							<core:Item key="&#60;=" text="&#60;="/>
 							<core:Item key="&#62;" text="&#62;"/>
+							<core:Item key="&#62;=" text="&#62;="/>
 							<core:Item key="=" text="="/>
 						</Select>
 						<ToolbarSpacer/>

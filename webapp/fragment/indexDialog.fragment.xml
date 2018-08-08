@@ -43,11 +43,11 @@
 			<ToolbarSpacer/>
 			<Label text="{i18n>baseCV}" width="200px"/>
 			<Input value="{BaseCV}" width="200px" />
-			<ToolbarSpacer/>
-			<Label text="{i18n>baseQP}" width="200px"/>
-			<Select forceSelection="false" selectedKey="{BaseQP}" items="{ path: '/bmqcSet', sorter: { path: 'Code' } }" width="200px">
-				<core:Item key="{Code}" text="{Code} - {Name}"/>
-			</Select>
+			<!--<ToolbarSpacer/>-->
+			<!--<Label text="{i18n>baseQP}" width="200px"/>-->
+			<!--<Select forceSelection="false" selectedKey="{BaseQP}" items="{ path: '/bmqcSet', sorter: { path: 'Code' } }" width="200px">-->
+			<!--	<core:Item key="{Code}" text="{Code} - {Name}"/>-->
+			<!--</Select>-->
 			<ToolbarSpacer/>
 			<Label text="{i18n>narGarGad}" width="200px"/>
 			<Select forceSelection="false" selectedKey="{NGG}" width="200px">
