@@ -23,7 +23,7 @@
 					<Text text="{Description}"/>
 					<Text text="{Incoterms}"/>
 					<Text text="{CV}"/>
-					<Text text="{UoM}"/>
+					<Text text="{UoMText}"/>
 					<Text text="{NGG}"/>
 					<CheckBox selected="{Active}" enabled="false" />
 				</cells>

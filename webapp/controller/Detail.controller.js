@@ -117,7 +117,7 @@ sap.ui.define([
 			}else if(this.id === "dqp"){
 				this.byId("tableEdit").setVisible(false);
 			}else if(this.id === "limitsStandart" || this.id === "productionUnit" || this.id === "salesProgram" || this.id === "bmqc" || this.id === "sbmqc"
-				|| this.id === "salesMarket" || this.id === "salesRegion" || this.id === "riskType" || this.id === "qualityParametersUom"){
+				|| this.id === "salesMarket" || this.id === "salesRegion" || this.id === "riskType" || this.id === "qualityParametersUom" || this.id === "qualityParameters"){
 				this.byId("tableDelete").setVisible(false);
 			}
 			// Bind double click event
@@ -440,7 +440,7 @@ sap.ui.define([
 							value = input.mProperties.placeholder;
 						}
 						// if type of input is number then convert from string to number
-						if(input.mProperties.hasOwnProperty("type") && input.getType() === "Number"){
+						if(input.mProperties.hasOwnProperty("type") && input.getType() === "Number" && !input.data("type")){
 							value = parseInt(value);
 						}
 						// If inputs name is not defined
