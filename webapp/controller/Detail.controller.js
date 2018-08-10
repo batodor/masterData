@@ -116,8 +116,8 @@ sap.ui.define([
 				this.setInput(["tableAdd", "tableEdit", "tableDelete"], false, "Visible");
 			}else if(this.id === "dqp"){
 				this.byId("tableEdit").setVisible(false);
-			}else if(this.id === "limitsStandart" || this.id === "productionUnit" || this.id === "salesProgram" || this.id === "bmqc" || this.id === "sbmqc"
-				|| this.id === "salesMarket" || this.id === "salesRegion" || this.id === "riskType" || this.id === "qualityParametersUom" || this.id === "qualityParameters"){
+			}else if(this.id === "productionUnit" || this.id === "salesProgram" || this.id === "bmqc" || this.id === "sbmqc" || this.id === "salesMarket" 
+				|| this.id === "salesRegion" || this.id === "riskType" || this.id === "qualityParametersUom" || this.id === "qualityParameters"){
 				this.byId("tableDelete").setVisible(false);
 			}
 			// Bind double click event
@@ -206,13 +206,20 @@ sap.ui.define([
 				var value = this.filter[0].oValue1;
 				sap.ui.getCore().byId(id + filterKey).setValue(value).setEnabled(false);
 			}
+			// Hide all buttons
 			var buttons = dialog.getButtons();
+			this.setInput(buttons, false, "Visible");
+			
+			// Then show the needed ones
+			this.setInput([buttons[0], buttons[1]], true, "Visible");
+			
 			if(table.data("table")){
 				var nextId = table.data("table");
 				var nextTable = this.byId(nextId) || sap.ui.getCore().byId(nextId);
 				var nextBlock = this.byId(nextId + "Block") || sap.ui.getCore().byId(nextId + "Block");
 				nextBlock.setVisible(true);
-				this.setInput([nextTable, buttons[4], buttons[5]], false, "Visible");
+				this.setInput([nextTable, buttons[1]], false, "Visible");
+				this.setInput([buttons[2]], true, "Visible");
 				this.setEnabledDialog(nextBlock, true, true);
 			}
 			if(table.data("crud")){
@@ -221,8 +228,7 @@ sap.ui.define([
 			}else{
 				dialog.unbindElement();
 			}
-			buttons[1].setVisible(true);
-			this.setInput([buttons[2], buttons[3], buttons[6]], false, "Visible");
+			
 			dialog.open();
 		},
 		// Worst function, coz used as table edit and as double click on table for edit
@@ -358,7 +364,7 @@ sap.ui.define([
 			
 			// Get odata from inner block
 			if(button.data("block")){
-				var innerBlock = sap.ui.getCore().byId(oEvent.getSource().data("block"));
+				var innerBlock = sap.ui.getCore().byId(button.data("block"));
 				oData = Object.assign(oData, this.getOdata(innerBlock));
 				bCheckAlert = bCheckAlert + this.checkKeys(innerBlock);
 			}

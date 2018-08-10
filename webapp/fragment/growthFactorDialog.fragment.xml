@@ -9,8 +9,8 @@
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="155px" />
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateTo}" width="200px"/>
-			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="155px"/>
+			<Label text="{i18n>dateTo}" width="200px"/>
+			<DatePicker dateValue="{DateTo}" width="155px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>growthFactor}" width="200px"/>
 			<Input value="{GrowthFactor}" width="150px"/>

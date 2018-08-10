@@ -19,7 +19,6 @@
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker custom:key="dateFrom" dateValue="{DateFrom}" width="206px"/>
-			<ToolbarSpacer/>
 			<l:BlockLayout>
 				<l:BlockLayoutRow>
 					<l:BlockLayoutCell class="sapUiNoMargin" id="LimitsForStandardRating_MasterDetailNBlock">
@@ -51,7 +50,7 @@
 						<Input custom:name="Period" value="{= ${Period} ? ${Period} : '0' }" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>periodPaymentCond}" width="200px"/>
-						<Input custom:name="PeriodPaymentCond" value="{= ${PeriodPaymentCond} ? ${PeriodPaymentCond} : '0' }" type="Number" width="200px" />
+						<Input custom:name="PeriodPaymentCond" value="{= ${PeriodPaymentCond} ? ${PeriodPaymentCond} : '0' }" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>periodSign}" width="200px"/>
 						<Select selectedKey="{PeriodSign}" forceSelection="false"  width="200px">

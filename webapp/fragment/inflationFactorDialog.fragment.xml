@@ -1,16 +1,22 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>inflationFactor}" class="sapUiContentPadding" id="inflationFactorDialog">
 		<content>
-			<Label required="true" text="{i18n>costType}" width="200px"/>
-			<Select selectedKey="{CostType}" custom:key="costType" forceSelection="false" items="{ path: '/dictionaryCostTypeSet', sorter: { path: 'Name' } }" width="200px">
-				<core:Item key="{Code}" text="{Code} - {Name}"/>
-			</Select>
+			<Label required="true" text="{i18n>currency}" width="200px"/>
+			<Input 
+				custom:id="currencyPopup"
+				custom:set="currency"
+				custom:key="currency"
+				custom:filters="CurrencyCode,CurrencyName"
+				id="currencyPopupinflationFactorValueHelp"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{Currency}" width="200px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateTo}" width="200px"/>
-			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="206px"/>
+			<Label text="{i18n>dateTo}" width="200px"/>
+			<DatePicker dateValue="{DateTo}" width="206px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>inflationFactor}" width="200px"/>
 			<Input value="{InflationFactor}" width="200px" />
