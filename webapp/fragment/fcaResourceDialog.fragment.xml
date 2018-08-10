@@ -31,8 +31,8 @@
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker custom:key="dateFrom" dateValue="{FromDate}" width="206px"/>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateTo}" width="200px"/>
-			<DatePicker custom:key="dateTo" dateValue="{ToDate}" width="206px"/>
+			<Label text="{i18n>dateTo}" width="200px"/>
+			<DatePicker dateValue="{ToDate}" width="206px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>minFcaPrice}" width="200px"/>
 			<Input value="{MinFCAPrice}" width="200px"/>
