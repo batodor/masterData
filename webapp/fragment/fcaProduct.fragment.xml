@@ -18,7 +18,7 @@
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{SalesProgram}"/>
+					<Text text="{SalesProgramText}"/>
 					<!--<Text text="{ProductCode}"/>-->
 					<Text text="{ path: 'FromDate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
 					<Text text="{ path: 'ToDate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
