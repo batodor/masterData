@@ -3,8 +3,8 @@
 		<content>
 			<Label required="true" text="{i18n>salesProgram}" width="220px"/>
 			<Select selectedKey="{CodeSalesProgram}" custom:key="salesProgram" forceSelection="false" 
-				items="{ path: '/salesProgramSet', sorter: { path: 'SalesProgram' } }" width="250px">
-				<core:Item key="{SalesProgram}" text="{SalesProgram} - {Description}"/>
+				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" width="250px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="220px"/>
@@ -22,6 +22,17 @@
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
+			<Label required="true" text="{i18n>deliveryPoint}" width="220px"/>
+			<Input 
+				custom:id="geolocationPopup"
+				custom:key="deliveryPoint"
+				custom:set="dictionaryTransportConnectionPoints"
+				custom:filters="Code,Name,TrainStationID,SeaHarborIndicator,CrossBorderIndicator"
+				id="geolocationPopupbenchmarkValueHelp"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{TransshipmentPoint}" width="250px" />
+			<ToolbarSpacer/>
 			<Label text="{i18n>dateTo}" width="220px"/>
 			<DatePicker dateValue="{DateTo}" width="255px"/>
 			<ToolbarSpacer/>
@@ -31,18 +42,8 @@
 				<core:Item key="{Incoterms}" text="{Incoterms} - {Description}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label text="{i18n>deliveryPoint}" width="220px"/>
-			<Input 
-				custom:id="geolocationPopup"
-				custom:set="dictionaryTransportConnectionPoints"
-				custom:filters="Code,Name,TrainStationID,SeaHarborIndicator,CrossBorderIndicator"
-				id="geolocationPopupbenchmarkValueHelp"
-				showValueHelp="true"
-				valueHelpRequest="handleValueHelp"
-				value="{TransshipmentPoint}" width="250px" />
-			<ToolbarSpacer/>
 			<Label text="{i18n>cvNar}" width="220px"/>
-			<Input value="{CVNAR}" width="250px"/>
+			<Input value="{CVNAR}" maxLength="15" placeholder="0" width="250px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>uom}" width="220px"/>
 			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '' ? '' : 'KCK' }" 

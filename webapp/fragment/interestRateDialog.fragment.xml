@@ -1,17 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>interestRate}" class="sapUiContentPadding" id="interestRateDialog">
 		<content>
-			<Label required="true" text="{i18n>country}" width="200px"/>
-			<Input 
-				custom:id="countryPopup"
-				custom:set="country"
-				custom:key="{i18n>country}"
-				custom:filters="Code,Name"
-				id="countryPopupinterestRateValueHelp"
-				showValueHelp="true"
-				valueHelpRequest="handleValueHelp"
-				value="{Country}" width="200px" />
-			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>currency}" width="200px"/>
 			<Input 
 				custom:id="currencyPopup"
@@ -24,10 +13,20 @@
 				value="{Currency}" width="200px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
-			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>
+			<DatePicker custom:key="dateFrom" dateValue="{DateFrom}" width="206px"/>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateTo}" width="200px"/>
-			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="206px"/>
+			<Label text="{i18n>dateTo}" width="200px"/>
+			<DatePicker dateValue="{DateTo}" width="206px"/>
+			<ToolbarSpacer/>
+			<Label text="{i18n>country}" width="200px"/>
+			<Input 
+				custom:id="countryPopup"
+				custom:set="country"
+				custom:filters="Code,Name"
+				id="countryPopupinterestRateValueHelp"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{Country}" width="200px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>interestRate}" width="200px"/>
 			<Input value="{InterestRate}" width="200px" />

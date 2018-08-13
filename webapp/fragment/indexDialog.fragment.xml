@@ -28,8 +28,8 @@
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateTo}" width="200px"/>
-			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="206px"/>
+			<Label text="{i18n>dateTo}" width="200px"/>
+			<DatePicker dateValue="{DateTo}" width="206px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>geolocation}" width="200px"/>
 			<Input 
