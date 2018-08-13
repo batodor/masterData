@@ -9,7 +9,7 @@
 		</headerToolbar>
 		<columns>
 			<Column><Text class="black" text="{i18n>index}"/></Column>
-			<Column><Text class="black" text="{i18n>materialGroup}"/></Column>
+			<Column><Text class="black" text="{i18n>productType}"/></Column>
 			<Column><Text class="black" text="{i18n>currency}"/></Column>
 			<Column><Text class="black" text="{i18n>incoterms}"/></Column>
 			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
@@ -23,7 +23,7 @@
 			<ColumnListItem>
 				<cells>
 					<Text text="{Index}"/>
-					<Text text="{MaterialGroup}"/>
+					<Text text="{ProductTypeText}"/>
 					<Text text="{Currency}"/>
 					<Text text="{Incoterms}"/>
 					<Text text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>

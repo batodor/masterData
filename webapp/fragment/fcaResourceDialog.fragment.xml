@@ -32,7 +32,7 @@
 			<DatePicker custom:key="dateFrom" dateValue="{FromDate}" width="206px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>dateTo}" width="200px"/>
-			<DatePicker dateValue="{ToDate}" width="206px"/>
+			<DatePicker dateValue="{ToDate}" custom:key="dateTo" custom:editable="true" width="206px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>minFcaPrice}" width="200px"/>
 			<Input value="{MinFCAPrice}" width="200px"/>

@@ -4,10 +4,11 @@
 			<Label required="true" text="{i18n>index}" width="200px"/>
 			<Input value="{Index}" width="200px" custom:key="{i18n>index}" />
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>materialGroup}" width="200px"/>
-			<Select selectedKey="{MaterialGroup}" custom:key="materialGroup" forceSelection="false" items="{ path: '/dictionaryMaterialGroupsSet', sorter: { path: 'Name' } }" width="200px">
+			<Label required="true" text="{i18n>productType}" width="200px"/>
+			<Select selectedKey="{ProductType}" custom:key="productType" forceSelection="false" items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }" width="200px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
+			
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>currency}" width="200px"/>
 			<Input 
@@ -28,8 +29,8 @@
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>dateTo}" width="200px"/>
-			<DatePicker dateValue="{DateTo}" width="206px"/>
+			<Label required="true" text="{i18n>dateTo}" width="200px"/>
+			<DatePicker dateValue="{DateTo}" custom:key="dateFrom" custom:editable="true" width="206px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>geolocation}" width="200px"/>
 			<Input 

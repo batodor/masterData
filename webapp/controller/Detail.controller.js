@@ -482,7 +482,7 @@ sap.ui.define([
 						if(all){
 							input.setEnabled(flag);
 						}else{ 
-							if(input.data("key")){
+							if(input.data("key") && !input.data("editable")){
 								input.setEnabled(false);
 							}else{
 								input.setEnabled(flag);
