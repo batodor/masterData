@@ -385,15 +385,23 @@ sap.ui.define([
 			var url = dialog.getBindingContext().getPath();
 			var oModel = dialog.getModel();
 			var oData = this.getOdata(dialog);
+			var bCheckAlert = this.checkKeys(dialog);
 			
 			// Get odata from inner block
 			if(oEvent.getSource().data("block")){
 				var innerBlock = sap.ui.getCore().byId(oEvent.getSource().data("block"));
 				oData = Object.assign(oData, this.getOdata(innerBlock));
 			}
-			dialog.unbindElement();
-			oModel.update(url, oData);
-			this[tableId + "Dialog"].close();
+			if(!bCheckAlert){
+				dialog.unbindElement();
+				oModel.update(url, oData);
+				this[tableId + "Dialog"].close();
+			}else{
+				var msg = this.getModel('i18n').getResourceBundle().getText("plsEnter") + " " + bCheckAlert.slice(0, -2);
+				MessageBox.alert(msg, {
+					actions: [sap.m.MessageBox.Action.CLOSE]
+				});
+			}
 		},
 		dialogEdit: function(oEvent){
 			var button = oEvent.getSource();
