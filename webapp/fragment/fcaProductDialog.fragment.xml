@@ -3,8 +3,8 @@
 		<content>
 			<Label required="true" text="{i18n>salesProgram}" width="200px"/>
 			<Select selectedKey="{SalesProgram}" custom:key="salesProgram" forceSelection="false" 
-				items="{ path: '/salesProgramSet', sorter: { path: 'SalesProgram' } }" width="200px">
-				<core:Item key="{SalesProgram}" text="{SalesProgram} - {Description}"/>
+				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" width="200px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
@@ -14,7 +14,7 @@
 			<DatePicker dateValue="{ToDate}" custom:key="dateTo" custom:editable="true" width="206px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>minFcaPrice}" width="200px"/>
-			<Input value="{MinFCAPrice}" maxLength="13" width="200px"/>
+			<Input value="{MinFCAPrice}" maxLength="15" placeholder="0" width="200px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>currency}" width="200px"/>
 			<Input 
