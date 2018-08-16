@@ -3,7 +3,7 @@
 		<content>
 			<Label required="true" text="{i18n>productionUnit}" width="150px"/>
 			<Select selectedKey="{ProductionUnit}" custom:key="productionUnit" forceSelection="false" 
-				items="{ path: '/productionUnitSet', sorter: { path: 'Name' } }" width="200px">
+				items="{ path: '/dictionaryProductionUnitSet', sorter: { path: 'Name' } }" width="200px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
@@ -28,7 +28,7 @@
 				id="qualityParametersPopupdrqValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{QPKey}" width="200px" />
+				value="{QPCode}" width="200px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>baseQP}" width="150px"/>
 			<Select selectedKey="{BaseQP}" custom:key="baseQP" forceSelection="false" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="200px">

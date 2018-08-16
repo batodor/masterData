@@ -114,8 +114,6 @@ sap.ui.define([
 				this.byId('tableDetails').setText(this.getResourceBundle().getText("headers"));
 			}else if(this.id === "currency"){
 				this.setInput(["tableAdd", "tableEdit", "tableDelete"], false, "Visible");
-			}else if(this.id === "dqp"){
-				this.byId("tableEdit").setVisible(false);
 			}else if(this.id === "productionUnit" || this.id === "salesProgram" || this.id === "bmqc" || this.id === "sbmqc" || this.id === "salesMarket" 
 				|| this.id === "salesRegion" || this.id === "riskType" || this.id === "qualityParametersUom" || this.id === "qualityParameters"){
 				this.byId("tableDelete").setVisible(false);
@@ -199,7 +197,7 @@ sap.ui.define([
 			var id = oEvent.getSource().data("id") || this.id;
 			var table = this.byId(id) || sap.ui.getCore().byId(id);
 			var dialog = table.data("dialog") ? this[table.data("dialog") + "Dialog"] : this[id + "Dialog"];
-			this.clearValues(dialog);
+			
 			this.setEnabledDialog(dialog, true, true);
 			if(this.filter.length > 0){
 				var filterKey = this.filter[0].sPath;
@@ -221,12 +219,13 @@ sap.ui.define([
 				this.setInput([nextTable, buttons[1]], false, "Visible");
 				this.setInput([buttons[2]], true, "Visible");
 				this.setEnabledDialog(nextBlock, true, true);
+				this.clearValues(nextBlock);
+			}else{
+				this.clearValues(dialog);
 			}
 			if(table.data("crud")){
 				this.clearValues(nextBlock);
 				this.setEnabledDialog(dialog, true);
-			}else{
-				dialog.unbindElement();
 			}
 			
 			dialog.open();

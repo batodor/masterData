@@ -3,7 +3,8 @@
 		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-				<SearchField placeholder="{i18n>qpName}" custom:id="dqp" custom:key="QPName" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<SearchField placeholder="{i18n>salesProgram}" custom:id="dqp" custom:key="TypeProductName" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<SearchField placeholder="{i18n>salesRegion}" custom:id="dqp" custom:key="SalesRegionName" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<ToolbarSpacer/>
 			</Toolbar>
 		</headerToolbar>
@@ -11,7 +12,7 @@
 			<Column><Text class="black" text="{i18n>productType}"/></Column>
 			<Column><Text class="black" text="{i18n>salesProgram}"/></Column>
 			<Column><Text class="black" text="{i18n>salesRegion}"/></Column>
-			<Column><Text class="black" text="{i18n>qp}"/></Column>
+			<Column><Text class="black" text="{i18n>qpCode}"/></Column>
 			<Column><Text class="black" text="{i18n>baseQP}"/></Column>
 			<Column><Text class="black" text="{i18n>uom}"/></Column>
 			<Column><Text class="black" text="{i18n>fineUOM}"/></Column>
@@ -24,7 +25,7 @@
 					<Text text="{SalesRegionName}"/>
 					<Text text="{QPName}"/>
 					<Text text="{BaseQP}"/>
-					<Text text="{UOM}"/>
+					<Text text="{UOMName}"/>
 					<Text text="{FineUOM}"/>
 				</cells>
 			</ColumnListItem>
