@@ -38,6 +38,7 @@
 							<core:Item key="&#62;" text="&#62;"/>
 							<core:Item key="&#62;=" text="&#62;="/>
 							<core:Item key="=" text="="/>
+							<core:Item key="" text=""/>
 						</Select>
 						<ToolbarSpacer/>
 						<Label text="{i18n>tonnageUom}" width="200px"/>
@@ -47,7 +48,7 @@
 						</Select>
 						<ToolbarSpacer/>
 						<Label text="{i18n>period}" width="200px"/>
-						<Input custom:name="Period" value="{= ${Period} ? ${Period} : '0' }" width="200px" />
+						<Input maxLength="4" placeholder="0" value="{Period}" width="200px" />
 						<ToolbarSpacer/>
 						<Label text="{i18n>periodPaymentCond}" width="200px"/>
 						<Input maxLength="3" placeholder="0" value="{PeriodPaymentCond}" width="200px" />
