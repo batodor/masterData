@@ -33,12 +33,12 @@
 						<ToolbarSpacer/>
 						<Label text="{i18n>tonnageSign}" width="200px"/>
 						<Select selectedKey="{TonnageSign}" forceSelection="false"  width="200px">
+							<core:Item key="" text=""/>
 							<core:Item key="&#60;" text="&#60;"/>
 							<core:Item key="&#60;=" text="&#60;="/>
 							<core:Item key="&#62;" text="&#62;"/>
 							<core:Item key="&#62;=" text="&#62;="/>
 							<core:Item key="=" text="="/>
-							<core:Item key="" text=""/>
 						</Select>
 						<ToolbarSpacer/>
 						<Label text="{i18n>tonnageUom}" width="200px"/>

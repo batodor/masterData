@@ -226,6 +226,8 @@ sap.ui.define([
 			if(table.data("crud")){
 				this.clearValues(nextBlock);
 				this.setEnabledDialog(dialog, true);
+			}else{
+				this.clearValues(dialog);
 			}
 			
 			dialog.open();
