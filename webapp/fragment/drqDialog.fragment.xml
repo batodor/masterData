@@ -47,7 +47,7 @@
 				value="{UOM}" width="200px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>defaultValue}" width="150px"/>
-			<Input value="{DefaultValue}" width="200px"/>
+			<Input value="{DefaultValue}" maxLength="5" placeholder="0" width="200px"/>
 			<ToolbarSpacer/>
 		</content>
 		<buttons>
