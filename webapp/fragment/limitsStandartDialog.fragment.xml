@@ -16,15 +16,15 @@
 				items="{ path: '/dictionaryBusinessPartnerFunctionsSet', sorter: { path: 'Name' } }" width="200px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
-			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
-			<DatePicker custom:key="dateFrom" dateValue="{DateFrom}" width="206px"/>
+			<!--<ToolbarSpacer/>-->
+			<!--<Label required="true" text="{i18n>dateFrom}" width="200px"/>-->
+			<!--<DatePicker custom:key="dateFrom" dateValue="{DateFrom}" width="206px"/>-->
 			<l:BlockLayout>
 				<l:BlockLayoutRow>
 					<l:BlockLayoutCell class="sapUiNoMargin" id="LimitsForStandardRating_MasterDetailNBlock">
-						<Label text="{i18n>dateTo}" width="200px"/>
-						<DatePicker dateValue="{DateTo}" width="206px"/>
-						<ToolbarSpacer/>
+						<!--<Label text="{i18n>dateTo}" width="200px"/>-->
+						<!--<DatePicker dateValue="{DateTo}" width="206px"/>-->
+						<!--<ToolbarSpacer/>-->
 						<Label text="{i18n>tonnage}" width="200px"/>
 						<Input custom:name="Tonnage" value="{= ${Tonnage} ? ${Tonnage} : '0' }" width="200px" />
 						<ToolbarSpacer/>

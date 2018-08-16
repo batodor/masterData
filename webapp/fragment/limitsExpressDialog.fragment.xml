@@ -23,12 +23,12 @@
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateFrom}" width="250px"/>
-			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>
-			<ToolbarSpacer/>
-			<Label text="{i18n>dateTo}" width="250px"/>
-			<DatePicker dateValue="{DateTo}" width="206px"/>
-			<ToolbarSpacer/>
+			<!--<Label required="true" text="{i18n>dateFrom}" width="250px"/>-->
+			<!--<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>-->
+			<!--<ToolbarSpacer/>-->
+			<!--<Label text="{i18n>dateTo}" width="250px"/>-->
+			<!--<DatePicker dateValue="{DateTo}" width="206px"/>-->
+			<!--<ToolbarSpacer/>-->
 			<Label text="{i18n>paymentMethod}" width="250px"/>
 			<Select selectedKey="{PaymentMethod}" forceSelection="false" 
 				items="{ path: '/dictionaryPaymentMethodsSet', sorter: { path: 'Name' } }" width="200px">

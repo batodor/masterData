@@ -11,8 +11,8 @@
 			<Column><Text class="black" text="{i18n>legalEntity}"/></Column>
 			<Column><Text class="black" text="{i18n>rating}"/></Column>
 			<Column><Text class="black" text="{i18n>businessPartnersRole}"/></Column>
-			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
-			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
+			<!--<Column><Text class="black" text="{i18n>dateFrom}"/></Column>-->
+			<!--<Column><Text class="black" text="{i18n>dateTo}"/></Column>-->
 		</columns>
 		<items>
 			<ColumnListItem>
@@ -20,8 +20,8 @@
 					<Text text="{LegalEntityText}"/>
 					<Text text="{Rating}"/>
 					<Text text="{BusinessPartnerRoleText}"/>
-					<Text text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
-					<Text text="{ path: 'DateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+					<!--<Text text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>-->
+					<!--<Text text="{ path: 'DateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>-->
 				</cells>
 			</ColumnListItem>
 		</items>
