@@ -17,7 +17,7 @@
 			<ColumnListItem>
 				<cells>
 					<Text text="{ItemNumber}"/>
-					<Text text="{Material}"/>
+					<Text text="{MaterialText}"/>
 					<Text text="{ProductionUnit}"/>
 					<Text text="{Content} %"/>
 					<!--<Text text="{UOM}"/>-->

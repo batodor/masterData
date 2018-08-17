@@ -3,15 +3,15 @@
 		<content>
 			<Label required="true" text="{i18n>salesProgram}" width="150px"/>
 			<Select selectedKey="{Code}" custom:key="salesProgram" forceSelection="false" 
-				items="{ path: '/salesProgramSet', sorter: { path: 'SalesProgram' } }" width="250px">
-				<core:Item key="{SalesProgram}" text="{SalesProgram} - {Description}"/>
+				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" width="250px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="150px"/>
 			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="255px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateTo}" width="150px"/>
-			<DatePicker dateValue="{DateTo}" custom:key="dateTo" width="255px"/>
+			<DatePicker dateValue="{DateTo}" custom:key="dateTo" custom:editable="true" width="255px"/>
 			
 			<Input value="{Name}" width="250px" visible="false"/>
 			<Input value="{RecipeNumber}" visible="false" width="250px"/>
