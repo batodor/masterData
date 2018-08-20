@@ -10,7 +10,7 @@
 				id="qualityParametersPopupqualityParametersUomValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{QPKey}" width="250px" />
+				value="{QPCode}" width="250px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>uom}" width="150px"/>
 			<Input 

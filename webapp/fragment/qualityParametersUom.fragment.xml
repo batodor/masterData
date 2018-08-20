@@ -4,12 +4,12 @@
 		busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-				<!--<SearchField placeholder="{i18n>qpKey}" custom:id="qualityParametersUom" custom:key="QPKey" showSearchButton="true" search="triggerSearch" width="auto"/>-->
+				<SearchField placeholder="{i18n>qpKey}" custom:id="qualityParametersUom" custom:key="QPCode" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<ToolbarSpacer/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>qpKey}"/></Column>
+			<Column><Text class="black" text="{i18n>qpCode}"/></Column>
 			<Column><Text class="black" text="{i18n>uom}"/></Column>
 			<Column><Text class="black" text="{i18n>minValue}"/></Column>
 			<Column><Text class="black" text="{i18n>maxValue}"/></Column>
@@ -18,8 +18,8 @@
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{QPKey}"/>
-					<Text text="{UOM}"/>
+					<Text text="{QPCode}"/>
+					<Text text="{UOMText}"/>
 					<Text text="{MinValue}"/>
 					<Text text="{MaxValue}"/>
 					<Text text="{NormalPrecision}"/>

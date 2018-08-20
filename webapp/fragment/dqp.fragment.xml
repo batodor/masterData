@@ -23,7 +23,7 @@
 					<Text text="{TypeProductName}"/>
 					<Text text="{SalesProgram}"/>
 					<Text text="{SalesRegionName}"/>
-					<Text text="{QPName}"/>
+					<Text text="{QPCode}"/>
 					<Text text="{BaseQP}"/>
 					<Text text="{UOMName}"/>
 					<Text text="{FineUOM}"/>

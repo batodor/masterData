@@ -2,7 +2,7 @@
 	<Dialog title="{i18n>salesMarket}" class="sapUiContentPadding" id="salesMarketDialog">
 		<content>
 			<Label required="true" text="{i18n>salesMarketCode}" width="150px"/>
-			<Input value="{Code}" custom:key="salesMarketCode" width="250px"/>
+			<Input value="{Code}" id="salesMarketInputCode" custom:key="salesMarketCode" width="250px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>salesMarketName}" width="150px"/>
 			<Input value="{Name}" width="250px" />

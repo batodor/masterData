@@ -88,6 +88,12 @@ sap.ui.define([
 						template: table['mBindingInfos'].items.template,
 						filters: this.filter
 					});
+					var toolbarContent = table.getHeaderToolbar().getContent();
+					for (var j = 0; j < toolbarContent.length; j++) {
+						if(toolbarContent[j].mProperties.hasOwnProperty("value")){
+							toolbarContent[j].setValue("");
+						}
+					}
 				} else {
 					// Just in case if any of the fragment (table) has syntax error
 					try {
@@ -230,6 +236,17 @@ sap.ui.define([
 				this.clearValues(dialog);
 			}
 			
+			var codes = ["salesMarket", "salesRegion", "riskType", "qualityParameters"];
+			if(codes.indexOf(id) > -1){
+				var inputCode = this.byId(id + "InputCode") || sap.ui.getCore().byId(id + "InputCode");
+				var model = new sap.ui.model.json.JSONModel();
+				model.loadData(table.getModel().sServiceUrl + "/dictionaryNextValueForCodeFieldSet");
+				model.attachRequestCompleted(function(data) {
+			        var code = data.getSource().getData().d.results[0][id];
+			        inputCode.setValue(code);
+			    });
+			}
+			
 			dialog.open();
 		},
 		// Worst function, coz used as table edit and as double click on table for edit
@@ -366,7 +383,7 @@ sap.ui.define([
 			// Get odata from inner block
 			if(button.data("block")){
 				var innerBlock = sap.ui.getCore().byId(button.data("block"));
-				oData = Object.assign(oData, this.getOdata(innerBlock));
+				oData = this.mergeObjects(oData, this.getOdata(innerBlock));
 				bCheckAlert = bCheckAlert + this.checkKeys(innerBlock);
 			}
 			
@@ -391,7 +408,7 @@ sap.ui.define([
 			// Get odata from inner block
 			if(oEvent.getSource().data("block")){
 				var innerBlock = sap.ui.getCore().byId(oEvent.getSource().data("block"));
-				oData = Object.assign(oData, this.getOdata(innerBlock));
+				oData = this.mergeObjects(oData, this.getOdata(innerBlock));
 			}
 			if(!bCheckAlert){
 				dialog.unbindElement();
@@ -429,12 +446,15 @@ sap.ui.define([
 			}
 		},
 		dialogSelect: function(oEvent){
-			var id = oEvent.getSource().data("id");
-			var key = oEvent.getSource().data("key");
+			var button = oEvent.getSource();
+			var id = button.data("id");
+			var key = button.data("key");
 			var item = sap.ui.getCore().byId(id).getSelectedItem();
 			var path = item.getBindingContextPath();
 			var data = item.getModel().getData(path);
-			sap.ui.getCore().byId(id + this.id + "ValueHelp").setValue(data[key]);
+			var customId = button.data("customId");
+			var valueHelpInput = customId ? sap.ui.getCore().byId(customId) : sap.ui.getCore().byId(id + this.id + "ValueHelp");
+			valueHelpInput.setValue(data[key]);
 			this[id + "Dialog"].close();
 		},
 		
@@ -537,12 +557,14 @@ sap.ui.define([
 		
 		// On value help opens new dialog with filters
 		handleValueHelp: function(oEvent){
-			var id = oEvent.getSource().data("id");
+			var button = oEvent.getSource();
+			var id = button.data("id");
 			var bindSet = "/" + id + 'Set';
-			if(oEvent.getSource().data("set")){
-				bindSet = "/" + oEvent.getSource().data("set") + 'Set';
+			if(button.data("set")){
+				bindSet = "/" + button.data("set") + 'Set';
 			}
-			var filters = oEvent.getSource().data("filters");
+			var customId = button.data("customId");
+			var filters = button.data("filters");
 			var table = sap.ui.getCore().byId(id);
 			table.bindItems({
 				path: bindSet,
@@ -562,7 +584,9 @@ sap.ui.define([
 				}
 			}
 			table.ondblclick = this.onDoubleClickSelect.bind(this, id);
-			this[id + "Dialog"].getButtons()[1].setEnabled(false);
+			var select = this[id + "Dialog"].getButtons()[1];
+			select.setEnabled(false);
+			customId ? select.data("customId", customId) : select.data("customId", null);
 			this[id + "Dialog"].open();
 		},
 		
@@ -604,6 +628,18 @@ sap.ui.define([
 			var value = parseInt(oEvent.getParameter('newValue'));
 			var valueState = isNaN(value) ? "Error" : value > maxValue ? "Error" : "Success";
 			Input.setValueState(valueState);
+		},
+		
+		// Object.assign doesnt work in IE so this function is created
+		mergeObjects: function(objOne, objTwo){
+			var objs = [objOne, objTwo],
+		    result =  objs.reduce(function (r, o) {
+		        Object.keys(o).forEach(function (k) {
+		            r[k] = o[k];
+		        });
+		        return r;
+		    }, {});
+		    return result;
 		}
 	});
 
