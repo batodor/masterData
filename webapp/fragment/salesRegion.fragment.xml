@@ -4,7 +4,7 @@
 		busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-				<SearchField placeholder="{i18n>description}" custom:id="salesRegion" custom:key="Name" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<!--<SearchField placeholder="{i18n>description}" custom:id="salesRegion" custom:key="Name" showSearchButton="true" search="triggerSearch" width="auto"/>-->
 				<ToolbarSpacer/>
 			</Toolbar>
 		</headerToolbar>
