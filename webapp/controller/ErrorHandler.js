@@ -4,14 +4,14 @@ sap.ui.define([
 	], function (UI5Object, MessageBox) {
 		"use strict";
 
-		return UI5Object.extend("masterdata.MasterData.controller.ErrorHandler", {
+		return UI5Object.extend("Offer.Offer.controller.ErrorHandler", {
 
 			/**
 			 * Handles application errors by automatically attaching to the model events and displaying errors when needed.
 			 * @class
 			 * @param {sap.ui.core.UIComponent} oComponent reference to the app's component
 			 * @public
-			 * @alias masterdata.MasterData.controller.ErrorHandler
+			 * @alias Offer.Offer.controller.ErrorHandler
 			 */
 			constructor : function (oComponent) {
 				this._oResourceBundle = oComponent.getModel("i18n").getResourceBundle();
@@ -47,21 +47,26 @@ sap.ui.define([
 					return;
 				}
 				this._bMessageOpen = true;
+				var msg = this._sErrorText;
+				try{
+					msg = JSON.parse(sDetails.responseText).error.message.value;
+				}catch(err){
+					console.log(err);
+				}
+				// 
 				MessageBox.error(
-					this._sErrorText,
+					msg,
 					{
 						id : "serviceErrorMessageBox",
-						details : sDetails,
-						styleClass : this._oComponent.getContentDensityClass(),
-						actions : [MessageBox.Action.CLOSE],
-						onClose : function () {
+						details: sDetails,
+						styleClass: this._oComponent.getContentDensityClass(),
+						actions: [MessageBox.Action.CLOSE],
+						onClose: function () {
 							this._bMessageOpen = false;
 						}.bind(this)
 					}
 				);
 			}
-
 		});
-
 	}
 );
