@@ -226,14 +226,10 @@ sap.ui.define([
 				this.setInput([buttons[2]], true, "Visible");
 				this.setEnabledDialog(nextBlock, true, true);
 				this.clearValues(nextBlock);
-			}else{
-				this.clearValues(dialog);
-			}
-			if(table.data("crud")){
-				this.clearValues(nextBlock);
-				this.setEnabledDialog(dialog, true);
-			}else{
-				this.clearValues(dialog);
+				if(table.data("crud")){
+					this.clearValues(nextBlock);
+					this.setEnabledDialog(dialog, true);
+				}
 			}
 			
 			var codes = ["salesMarket", "salesRegion", "riskType", "qualityParameters"];
@@ -370,7 +366,9 @@ sap.ui.define([
 		// Select used for valueHelp function
 		dialogCancel: function(oEvent) {
 			var tableId = oEvent.getSource().data("id");
-			this[tableId + "Dialog"].close();
+			var dialog = this[tableId + "Dialog"];
+			this.clearValues(dialog);
+			dialog.close();
 		},
 		dialogAdd: function(oEvent) {
 			var button = oEvent.getSource();
@@ -388,13 +386,17 @@ sap.ui.define([
 			}
 			
 			if(!bCheckAlert){
+				// Check if dates from and to are ok
+				var datesAlert = this.checkDates(oData);
+				if(datesAlert){
+					this.alertMsg(datesAlert);
+					return true;
+				}
 				oModel.create("/" + id + "Set", oData);
 				this[id + "Dialog"].close();
 			}else{
 				var msg = this.getModel('i18n').getResourceBundle().getText("plsEnter") + " " + bCheckAlert.slice(0, -2);
-				MessageBox.alert(msg, {
-					actions: [sap.m.MessageBox.Action.CLOSE]
-				});
+				this.alertMsg(msg);
 			}
 		},
 		dialogSave: function(oEvent) {
@@ -410,15 +412,20 @@ sap.ui.define([
 				var innerBlock = sap.ui.getCore().byId(oEvent.getSource().data("block"));
 				oData = this.mergeObjects(oData, this.getOdata(innerBlock));
 			}
+			
 			if(!bCheckAlert){
+				// Check if dates from and to are ok
+				var datesAlert = this.checkDates(oData);
+				if(datesAlert){
+					this.alertMsg(datesAlert);
+					return true;
+				}
 				dialog.unbindElement();
 				oModel.update(url, oData);
 				this[tableId + "Dialog"].close();
 			}else{
 				var msg = this.getModel('i18n').getResourceBundle().getText("plsEnter") + " " + bCheckAlert.slice(0, -2);
-				MessageBox.alert(msg, {
-					actions: [sap.m.MessageBox.Action.CLOSE]
-				});
+				this.alertMsg(msg);
 			}
 		},
 		dialogEdit: function(oEvent){
@@ -640,6 +647,28 @@ sap.ui.define([
 		        return r;
 		    }, {});
 		    return result;
+		},
+		
+		checkDates: function(oData){
+			var check = "";
+			if((oData.DateFrom && oData.DateTo) || (oData.FromDate && oData.ToDate)){
+				var DateFrom = oData.DateFrom;
+				var DateTo = oData.DateTo;
+				if(oData.FromDate && oData.ToDate){
+					DateFrom = oData.FromDate;
+					DateTo = oData.ToDate;
+				}
+				if(DateFrom > DateTo){
+					check = this.getResourceBundle().getText("wrongDates");
+				}
+			} 
+			return check;
+		},
+		
+		alertMsg: function(msg){
+			MessageBox.alert(msg, {
+				actions: [sap.m.MessageBox.Action.CLOSE]
+			});
 		}
 	});
 
