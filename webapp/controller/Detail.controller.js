@@ -365,7 +365,7 @@ sap.ui.define([
 		// Close/create/save/edit/select dialog functions
 		// Select used for valueHelp function
 		dialogCancel: function(oEvent) {
-			var tableId = oEvent.getSource().data("id");
+			var tableId = oEvent ? oEvent.getSource().data("id") : this.id;
 			var dialog = this[tableId + "Dialog"];
 			this.clearValues(dialog);
 			dialog.close();
@@ -393,7 +393,7 @@ sap.ui.define([
 					return true;
 				}
 				oModel.create("/" + id + "Set", oData);
-				this[id + "Dialog"].close();
+				this.dialogCancel();
 			}else{
 				var msg = this.getModel('i18n').getResourceBundle().getText("plsEnter") + " " + bCheckAlert.slice(0, -2);
 				this.alertMsg(msg);
@@ -422,7 +422,7 @@ sap.ui.define([
 				}
 				dialog.unbindElement();
 				oModel.update(url, oData);
-				this[tableId + "Dialog"].close();
+				this.dialogCancel();
 			}else{
 				var msg = this.getModel('i18n').getResourceBundle().getText("plsEnter") + " " + bCheckAlert.slice(0, -2);
 				this.alertMsg(msg);
