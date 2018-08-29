@@ -365,7 +365,7 @@ sap.ui.define([
 		// Close/create/save/edit/select dialog functions
 		// Select used for valueHelp function
 		dialogCancel: function(oEvent) {
-			var tableId = oEvent.sId === "press" ? oEvent.getSource().data("id") : this.id;
+			var tableId = oEvent ? oEvent.getSource().data("id") : this.id;
 			var dialog = this[tableId + "Dialog"];
 			this.clearValues(dialog);
 			dialog.close();

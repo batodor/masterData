@@ -19,10 +19,10 @@
 				valueHelpRequest="handleValueHelp"
 				value="{Material}" width="200px" />
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>qp}" width="150px"/>
+			<Label required="true" text="{i18n>qpCode}" width="150px"/>
 			<Input 
 				custom:id="qualityParametersPopup"
-				custom:key="qpKey"
+				custom:key="qpCode"
 				custom:filters="QPCode,QPName"
 				custom:set="qualityParameters"
 				id="qualityParametersPopupdrqValueHelp"

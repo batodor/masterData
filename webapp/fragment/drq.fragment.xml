@@ -6,14 +6,14 @@
 			<Toolbar class="white">
 				<SearchField placeholder="{i18n>productionUnit}" custom:id="drq" custom:key="ProductionUnit" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<SearchField placeholder="{i18n>material}" custom:id="drq" custom:key="Material" showSearchButton="true" search="triggerSearch" width="auto"/>
-				<SearchField placeholder="{i18n>qp}" custom:id="drq" custom:key="QPCode" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<SearchField placeholder="{i18n>qpCode}" custom:id="drq" custom:key="QPCode" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<ToolbarSpacer/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>
 			<Column><Text class="black" text="{i18n>productionUnit}"/></Column>
 			<Column><Text class="black" text="{i18n>material}"/></Column>
-			<Column><Text class="black" text="{i18n>qp}"/></Column>
+			<Column><Text class="black" text="{i18n>qpCode}"/></Column>
 			<Column><Text class="black" text="{i18n>baseQP}"/></Column>
 			<Column><Text class="black" text="{i18n>uom}"/></Column>
 			<Column><Text class="black" text="{i18n>defaultValue}"/></Column>

@@ -6,24 +6,28 @@
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>salesProgram}" width="150px"/>
-			<Select selectedKey="{SalesProgram}" custom:key="salesProgram" forceSelection="false" 
+			<Label required="false" text="{i18n>salesProgram}" width="150px"/>
+			<!-- custom:key="salesProgram" -->
+			<Select selectedKey="{SalesProgram}" forceSelection="false" 
 				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" width="200px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>salesRegion}" width="150px"/>
-			<Select selectedKey="{SalesRegion}" custom:key="salesRegion" forceSelection="false" items="{ path: '/salesRegionSet', sorter: { path: 'Name' } }" width="200px">
+			<Label required="false" text="{i18n>salesRegion}" width="150px"/>
+			<!-- custom:key="salesRegion" -->
+			<Select selectedKey="{SalesRegion}" forceSelection="false" items="{ path: '/salesRegionSet', sorter: { path: 'Name' } }" width="200px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>qp}" width="150px"/>
-			<Select selectedKey="{QP}" custom:key="qp" forceSelection="false" items="{ path: '/qualityParametersSet', sorter: { path: 'QPCode' } }" width="200px">
+			<Label required="false" text="{i18n>qp}" width="150px"/>
+			<!-- custom:key="qp" -->
+			<Select selectedKey="{QP}" forceSelection="false" items="{ path: '/qualityParametersSet', sorter: { path: 'QPCode' } }" width="200px">
 				<core:Item key="{QPKey}" text="{QPKey} - {QPCode}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>baseQP}" width="150px"/>
-			<Select selectedKey="{BaseQP}" custom:key="baseQP" forceSelection="false" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="200px">
+			<Label required="false" text="{i18n>baseQP}" width="150px"/>
+			<!-- custom:key="baseQP" -->
+			<Select selectedKey="{BaseQP}" forceSelection="false" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="200px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
