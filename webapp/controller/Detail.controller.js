@@ -365,7 +365,7 @@ sap.ui.define([
 		// Close/create/save/edit/select dialog functions
 		// Select used for valueHelp function
 		dialogCancel: function(oEvent) {
-			var tableId = oEvent.sId === "afterClose" ? this.id : oEvent.getSource().data("id");
+			var tableId = oEvent.sId === "press" ? oEvent.getSource().data("id") : this.id;
 			var dialog = this[tableId + "Dialog"];
 			this.clearValues(dialog);
 			dialog.close();
@@ -532,13 +532,13 @@ sap.ui.define([
 		// Add all dialog xml fragments to this view as dependent
 		// Arguments: tableArr = array of string ids of tables declared on init
 		addDialogs: function(tableArr){
-			var that = this;
+			//var that = this;
 			for(var i = 0; i < tableArr.length; i++){
 				// Just in case if any of the dialog fragment has syntax error
 				try {
 					this[tableArr[i] + "Dialog"] = sap.ui.xmlfragment("fragment." + tableArr[i] + "Dialog", this);
 					this.getView().addDependent(this[tableArr[i] + "Dialog"]);
-					this[tableArr[i] + "Dialog"].attachAfterClose(this.dialogCancel, that);
+					//this[tableArr[i] + "Dialog"].attachAfterClose(this.dialogCancel, that);
 				} catch (err) {
 					console.log("Error in dialog with ID: " + this.tableArr[i] + "Dialog");
 				}

@@ -1,10 +1,10 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Dialog title="{i18n>qualityParametersUom}" class="sapUiContentPadding" id="qualityParametersUomDialog">
 		<content>
-			<Label required="true" text="{i18n>qpKey}" width="150px"/>
+			<Label required="true" text="{i18n>qpCode}" width="150px"/>
 			<Input 
 				custom:id="qualityParametersPopup"
-				custom:key="qpKey"
+				custom:key="qpCode"
 				custom:filters="QPCode,QPName"
 				custom:set="qualityParameters"
 				id="qualityParametersPopupqualityParametersUomValueHelp"
