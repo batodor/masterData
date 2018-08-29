@@ -9,10 +9,10 @@
 				custom:set="qualityParameters"
 				custom:customId="qualityParametersInputCode"
 				id="qualityParametersInputCode"
-				showValueHelp="true"
+				showValueHelp="false"
 				valueHelpRequest="handleValueHelp"
 				value="{QPKey}" width="200px" />
-			<ToolbarSpacer/>
+            <ToolbarSpacer/>
 			<Label text="{i18n>qpCode}" width="200px"/>
 			<Input value="{QPCode}" maxLength="20" width="200px" />
 			<ToolbarSpacer/>
@@ -27,7 +27,6 @@
 			<Label text="{i18n>finenessQP}" width="200px"/>
 			<Input 
 				custom:id="qualityParametersPopup"
-				custom:key="qpKey"
 				custom:filters="QPCode,QPName"
 				custom:set="qualityParameters"
 				id="qualityParametersPopupqualityParametersValueHelp"
