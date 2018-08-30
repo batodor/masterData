@@ -29,8 +29,9 @@
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateTo}" width="200px"/>
-			<DatePicker dateValue="{DateTo}" custom:key="dateTo" custom:editable="true" width="206px"/>
+			<Label required="false" text="{i18n>dateTo}" width="200px"/>
+			<!-- custom:key="dateTo" -->
+			<DatePicker dateValue="{DateTo}" custom:editable="true" width="206px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>geolocation}" width="200px"/>
 			<Input 
@@ -43,7 +44,7 @@
 				value="{Geolocation}" width="200px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>baseCV}" width="200px"/>
-			<Input value="{BaseCV}" width="200px" />
+			<Input value="{BaseCV}" maxLength="3" width="200px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>narGarGad}" width="200px"/>
 			<Select forceSelection="false" selectedKey="{NGG}" width="200px">

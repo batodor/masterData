@@ -31,11 +31,12 @@
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker custom:key="dateFrom" dateValue="{FromDate}" width="206px"/>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateTo}" width="200px"/>
-			<DatePicker dateValue="{ToDate}" custom:key="dateTo" custom:editable="true" width="206px"/>
+			<Label required="false" text="{i18n>dateTo}" width="200px"/>
+			<!-- custom:key="dateTo" -->
+			<DatePicker dateValue="{ToDate}" custom:editable="true" width="206px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>minFcaPrice}" width="200px"/>
-			<Input value="{MinFCAPrice}" maxLength="15" placeholder="0" width="200px"/>
+			<Input value="{MinFCAPrice}" type="Number" custom:type="Number" maxLength="18" placeholder="0" width="200px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>currency}" width="200px"/>
 			<Input 
