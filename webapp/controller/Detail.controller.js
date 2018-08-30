@@ -203,7 +203,7 @@ sap.ui.define([
 			var id = oEvent.getSource().data("id") || this.id;
 			var table = this.byId(id) || sap.ui.getCore().byId(id);
 			var dialog = table.data("dialog") ? this[table.data("dialog") + "Dialog"] : this[id + "Dialog"];
-			
+			this.clearValues(dialog);
 			this.setEnabledDialog(dialog, true, true);
 			if(this.filter.length > 0){
 				var filterKey = this.filter[0].sPath;
@@ -552,7 +552,7 @@ sap.ui.define([
 			var inputs = object.getAggregation("content");
 			for(var i = 0; i < inputs.length; i++){
 				var oInput = inputs[i];
-				if(oInput.data("key")){
+				if(oInput.data("key") && !oInput.data("noCheck")){
 					if((oInput.mProperties.hasOwnProperty("value") && !oInput.getValue()) || 
 					(oInput.mProperties.hasOwnProperty("selectedKey") && !oInput.getSelectedKey()) ||
 					(oInput.mBindingInfos.hasOwnProperty("value") && !oInput.getValue()) ||
