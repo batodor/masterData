@@ -15,21 +15,23 @@
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker custom:key="dateFrom" dateValue="{DateFrom}" width="206px"/>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateTo}" width="200px"/>
-			<DatePicker custom:key="dateTo" custom:editable="true" dateValue="{DateTo}" width="206px"/>
-			<ToolbarSpacer/>
-			<Label text="{i18n>country}" width="200px"/>
+			<Label text="{i18n>country}" required="true" width="200px"/>
 			<Input 
 				custom:id="countryPopup"
 				custom:set="country"
+				custom:key="country"
 				custom:filters="Code,Name"
 				id="countryPopupinterestRateValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{Country}" width="200px" />
 			<ToolbarSpacer/>
+			<Label required="false" text="{i18n>dateTo}" width="200px"/>
+			<!-- custom:key="dateTo" -->
+			<DatePicker custom:editable="true" dateValue="{DateTo}" width="206px"/>
+			<ToolbarSpacer/>
 			<Label text="{i18n>interestRate}" width="200px"/>
-			<Input value="{InterestRate}" type="Number" change="checkValue" custom:max="99999" custom:type="string" placeholder="0" width="200px" />
+			<Input value="{InterestRate}" type="Number" change="checkValue" custom:max="99999" custom:type="Number" placeholder="0" width="200px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>uom}" width="200px"/>
 			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '%' ? '%' : '%' }" width="200px">
