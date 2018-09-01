@@ -121,7 +121,7 @@ sap.ui.define([
 			}else if(this.id === "currency"){
 				this.setInput(["tableAdd", "tableEdit", "tableDelete"], false, "Visible");
 			}else if(this.id === "productionUnit" || this.id === "salesProgram" || this.id === "bmqc" || this.id === "sbmqc" || this.id === "salesMarket" 
-				|| this.id === "salesRegion" || this.id === "riskType" || this.id === "qualityParametersUom" || this.id === "qualityParameters"){
+				|| this.id === "salesRegion" || this.id === "riskType" || this.id === "qualityParametersUom" || this.id === "qualityParameters" || this.id === "limitsStandart"){
 				this.byId("tableDelete").setVisible(false);
 			}
 			// Bind double click event
@@ -368,10 +368,10 @@ sap.ui.define([
 		// Close/create/save/edit/select dialog functions
 		// Select used for valueHelp function
 		dialogCancel: function(oEvent) {
-			var id = oEvent.getSource().data("id") || this.id;
+			var id = oEvent ? oEvent.getSource().data("id") : this.id;
 			var dialog = this[id + "Dialog"];
 			
-			if(oEvent.getSource().data("block") && dialog.getBindingContext()){
+			if(oEvent && oEvent.getSource().data("block") && dialog.getBindingContext()){
 				var table = this.byId(id) || sap.ui.getCore().byId(id);
 				var nextId = table.data("table");
 				var buttons = dialog.getButtons();

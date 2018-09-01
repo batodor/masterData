@@ -4,7 +4,7 @@
 		<headerToolbar>
 			<Toolbar class="white">
                 <SearchField placeholder="{i18n>productType}" custom:id="dqp" custom:key="TypeProductName" showSearchButton="true" search="triggerSearch" width="auto"/>				
-				<SearchField placeholder="{i18n>salesProgram}" custom:id="dqp" custom:key="SalesProgram" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<SearchField placeholder="{i18n>salesProgramCode}" custom:id="dqp" custom:key="SalesProgram" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<SearchField placeholder="{i18n>salesRegion}" custom:id="dqp" custom:key="SalesRegionName" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<ToolbarSpacer/>
 			</Toolbar>
@@ -24,7 +24,7 @@
 					<Text text="{TypeProductName}"/>
 					<Text text="{SalesProgram}"/>
 					<Text text="{SalesRegionName}"/>
-					<Text text="{QPCode}"/>
+					<Text text="{QPName}"/>
 					<Text text="{BaseQP}"/>
 					<Text text="{UOMName}"/>
 					<Text text="{FineUOM}"/>

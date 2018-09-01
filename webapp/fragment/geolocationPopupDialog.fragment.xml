@@ -56,7 +56,7 @@
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="geolocationPopup" type="Back" press="dialogCancel"/>
-			<Button text="{i18n>select}" custom:id="geolocationPopup" custom:key="Code" type="Accept" id="geolocationPopupSelect" enabled="false" press="dialogSelect"/>
+			<Button text="{i18n>select}" custom:id="geolocationPopup" custom:key="Code" custom:nameCode="Name" type="Accept" id="geolocationPopupSelect" enabled="false" press="dialogSelect"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

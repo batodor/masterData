@@ -28,10 +28,11 @@
 				custom:key="deliveryPoint"
 				custom:set="dictionaryDeliveryPoints"
 				custom:filters="Code,Name,TrainStationID,SeaHarborIndicator,CrossBorderIndicator"
+				custom:keyValue="{TransshipmentPoint}"
 				id="geolocationPopupbenchmarkValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{TransshipmentPoint}" width="250px" />
+				value="{TransshipmentPoint} - {TransshipmentPointText}" width="250px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>dateTo}" width="220px"/>
 			<DatePicker dateValue="{DateTo}" width="255px"/>

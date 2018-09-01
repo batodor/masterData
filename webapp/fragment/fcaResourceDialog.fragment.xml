@@ -19,7 +19,7 @@
 				value="{productionUnit}" width="200px" />
 -->			<Input 
 				custom:id="productionUnitPopup"
-				custom:key="productionUnit" 
+				custom:key="productionUnit"
 				custom:set="dictionaryProductRecipe" 
 				custom:filters="Code,Name"
 				custom:keyValue="{ProductionUnit}"

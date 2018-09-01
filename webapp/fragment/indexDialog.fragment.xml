@@ -37,12 +37,13 @@
 			<!-- custom:set="dictionaryTransportConnectionPoints" -->
 			<Input 
 				custom:id="geolocationPopup"
+				custom:key="Code" 
                 custom:set="dictionaryDeliveryPoints"
 				custom:filters="Code,Name,TrainStationID,SeaHarborIndicator,CrossBorderIndicator"
 				id="geolocationPopupindexValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{Geolocation}" width="300px" />
+				value="{Geolocation} - {GeolocationText}" width="300px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>baseCV}" width="200px"/>
 			<Input value="{BaseCV}" maxLength="7" width="300px" />
