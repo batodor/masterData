@@ -200,10 +200,13 @@ sap.ui.define([
 		// Table buttons function for create/edit/copy/delete/details of items
 		// Details used for second level details of current active table
 		tableAdd: function(oEvent) {
-			var id = oEvent.getSource().data("id") || this.id;
+			var button = oEvent.getSource();
+			var id = button.data("id") || this.id;
 			var table = this.byId(id) || sap.ui.getCore().byId(id);
 			var dialog = table.data("dialog") ? this[table.data("dialog") + "Dialog"] : this[id + "Dialog"];
-			this.clearValues(dialog);
+			if(!button.data("add")){
+				this.clearValues(dialog);
+			}
 			this.setEnabledDialog(dialog, true, true);
 			if(this.filter.length > 0){
 				var filterKey = this.filter[0].sPath;
@@ -365,10 +368,27 @@ sap.ui.define([
 		// Close/create/save/edit/select dialog functions
 		// Select used for valueHelp function
 		dialogCancel: function(oEvent) {
-			var tableId = oEvent ? oEvent.getSource().data("id") : this.id;
-			var dialog = this[tableId + "Dialog"];
-			this.clearValues(dialog);
-			dialog.close();
+			var id = oEvent.getSource().data("id") || this.id;
+			var dialog = this[id + "Dialog"];
+			
+			if(oEvent.getSource().data("block") && dialog.getBindingContext()){
+				var table = this.byId(id) || sap.ui.getCore().byId(id);
+				var nextId = table.data("table");
+				var buttons = dialog.getButtons();
+				var nextTable = this.byId(nextId) || sap.ui.getCore().byId(nextId);
+				var nextBlock = this.byId(nextId + "Block") || sap.ui.getCore().byId(nextId + "Block");
+				if(nextBlock.getVisible()){
+					this.setInput([nextBlock, buttons[2], buttons[4], buttons[6]], false, "Visible");
+					this.setInput([nextTable, buttons[1], buttons[3], buttons[5]], true, "Visible");
+				}else{
+					dialog.unbindElement();
+					dialog.close();
+				}
+			}else{
+				this.clearValues(dialog);
+				dialog.unbindElement();
+				dialog.close();
+			}
 		},
 		dialogAdd: function(oEvent) {
 			var button = oEvent.getSource();
@@ -377,6 +397,7 @@ sap.ui.define([
 			var oModel = dialog.getModel();
 			var oData = this.getOdata(dialog);
 			var bCheckAlert = this.checkKeys(dialog);
+			var custom = button.data("block") ? oEvent : null;
 			
 			// Get odata from inner block
 			if(button.data("block")){
@@ -393,19 +414,21 @@ sap.ui.define([
 					return true;
 				}
 				oModel.create("/" + id + "Set", oData);
-				this.dialogCancel();
+				this.dialogCancel(custom);
 			}else{
 				var msg = this.getModel('i18n').getResourceBundle().getText("plsEnter") + " " + bCheckAlert.slice(0, -2);
 				this.alertMsg(msg);
 			}
 		},
 		dialogSave: function(oEvent) {
-			var tableId = oEvent.getSource().data("id");
+			var button = oEvent.getSource();
+			var tableId = button.data("id");
 			var dialog = sap.ui.getCore().byId(tableId + "Dialog");
 			var url = dialog.getBindingContext().getPath();
 			var oModel = dialog.getModel();
 			var oData = this.getOdata(dialog);
 			var bCheckAlert = this.checkKeys(dialog);
+			var custom = button.data("block") ? oEvent : null;
 			
 			// Get odata from inner block
 			if(oEvent.getSource().data("block")){
@@ -420,9 +443,8 @@ sap.ui.define([
 					this.alertMsg(datesAlert);
 					return true;
 				}
-				dialog.unbindElement();
 				oModel.update(url, oData);
-				this.dialogCancel();
+				this.dialogCancel(custom);
 			}else{
 				var msg = this.getModel('i18n').getResourceBundle().getText("plsEnter") + " " + bCheckAlert.slice(0, -2);
 				this.alertMsg(msg);
@@ -456,12 +478,18 @@ sap.ui.define([
 			var button = oEvent.getSource();
 			var id = button.data("id");
 			var key = button.data("key");
+			var name = button.data("nameCode");
 			var item = sap.ui.getCore().byId(id).getSelectedItem();
 			var path = item.getBindingContextPath();
 			var data = item.getModel().getData(path);
 			var customId = button.data("customId");
 			var valueHelpInput = customId ? sap.ui.getCore().byId(customId) : sap.ui.getCore().byId(id + this.id + "ValueHelp");
-			valueHelpInput.setValue(data[key]);
+			if(name){
+				valueHelpInput.setValue(data[key] + " - " + data[name]);
+				valueHelpInput.data("keyValue", data[key]);
+			}else{
+				valueHelpInput.setValue(data[key]);
+			}
 			this[id + "Dialog"].close();
 		},
 		
@@ -488,6 +516,10 @@ sap.ui.define([
 						// If inputs name is not defined
 						if(input.data("name")){
 							name = input.data("name");
+						}
+						// If key value added then use it
+						if(input.data("keyValue")){
+							value = input.data("keyValue");
 						}
 						// Remove offset for dates
 						if(input.hasOwnProperty("_oMaxDate")){

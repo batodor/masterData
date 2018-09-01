@@ -2,10 +2,10 @@
 	<Dialog title="{i18n>index}" class="sapUiContentPadding" id="indexDialog">
 		<content>
 			<Label required="true" text="{i18n>index}" width="200px"/>
-			<Input value="{Index}" width="200px" custom:key="{i18n>index}" />
+			<Input value="{Index}" custom:key="{i18n>index}" width="300px"/>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>productType}" width="200px"/>
-			<Select selectedKey="{ProductType}" custom:key="productType" forceSelection="false" items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }" width="200px">
+			<Select selectedKey="{ProductType}" custom:key="productType" forceSelection="false" items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }" width="300px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			
@@ -19,35 +19,36 @@
 				id="currencyPopupindexValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{Currency}" width="200px" />
+				value="{Currency}" width="300px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>incoterms}" width="200px"/>
-			<Select forceSelection="false" selectedKey="{Incoterms}" custom:key="incoterms" items="{ path: '/incotermsSet', sorter: { path: 'Incoterms' } }" width="200px">
+			<Select forceSelection="false" selectedKey="{Incoterms}" custom:key="incoterms" items="{ path: '/incotermsSet', sorter: { path: 'Incoterms' } }" width="300px">
 				<core:Item key="{Incoterms}" text="{Incoterms} - {Description}"/>
 			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
-			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="206px"/>
+			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="306px"/>
 			<ToolbarSpacer/>
 			<Label required="false" text="{i18n>dateTo}" width="200px"/>
 			<!-- custom:key="dateTo" -->
-			<DatePicker dateValue="{DateTo}" custom:editable="true" width="206px"/>
+			<DatePicker dateValue="{DateTo}" custom:editable="true" width="306px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>geolocation}" width="200px"/>
+			<!-- custom:set="dictionaryTransportConnectionPoints" -->
 			<Input 
 				custom:id="geolocationPopup"
-				custom:set="dictionaryTransportConnectionPoints"
+                custom:set="dictionaryDeliveryPoints"
 				custom:filters="Code,Name,TrainStationID,SeaHarborIndicator,CrossBorderIndicator"
 				id="geolocationPopupindexValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{Geolocation}" width="200px" />
+				value="{Geolocation}" width="300px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>baseCV}" width="200px"/>
-			<Input value="{BaseCV}" maxLength="3" width="200px" />
+			<Input value="{BaseCV}" maxLength="7" width="300px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>narGarGad}" width="200px"/>
-			<Select forceSelection="false" selectedKey="{NGG}" width="200px">
+			<Select forceSelection="false" selectedKey="{NGG}" width="300px">
 				<core:Item key="" text=""/>
 				<core:Item key="NAR" text="NAR"/>
 				<core:Item key="GAR" text="GAR"/>

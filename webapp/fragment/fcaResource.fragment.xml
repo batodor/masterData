@@ -8,7 +8,7 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column><Text class="black" text="{i18n>salesProgram}"/></Column>
+			<Column width="190px"><Text class="black" text="{i18n>salesProgram}"/></Column>
 			<Column><Text class="black" text="{i18n>productionUnit}"/></Column>
 			<Column><Text class="black" text="{i18n>material}"/></Column>
 			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>

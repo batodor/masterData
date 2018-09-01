@@ -3,12 +3,12 @@
 		<content>
 			<Label required="true" text="{i18n>salesProgram}" width="200px"/>
 			<Select selectedKey="{SalesProgram}" custom:key="salesProgram" forceSelection="false" 
-				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" width="200px">
+				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" width="350px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>productionUnit}" width="200px"/>
-			<Input 
+<!--			<Input 
 				custom:id="productionUnitPopup"
 				custom:key="productionUnit" 
 				custom:set="productionUnit" 
@@ -16,27 +16,39 @@
 				id="productionUnitPopupfcaResourceValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{ProductionUnit}" width="200px" />
+				value="{productionUnit}" width="200px" />
+-->			<Input 
+				custom:id="productionUnitPopup"
+				custom:key="productionUnit" 
+				custom:set="dictionaryProductRecipe" 
+				custom:filters="Code,Name"
+				custom:keyValue="{ProductionUnit}"
+				id="productionUnitPopupfcaResourceValueHelp"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{ProductionUnit} - {ProductionUnitText}" width="350px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>material}" width="200px"/>
 			<Input 
 				custom:id="material"
-				custom:key="material" 
+				custom:key="material"
+				custom:set="material"
 				custom:filters="Code,Division,Name"
+				custom:keyValue="{Material}"
 				id="materialfcaResourceValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{Material}" width="200px" />
+				value="{Material} - {MaterialText}" width="350px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
-			<DatePicker custom:key="dateFrom" dateValue="{FromDate}" width="206px"/>
+			<DatePicker custom:key="dateFrom" dateValue="{FromDate}" width="356px"/>
 			<ToolbarSpacer/>
 			<Label required="false" text="{i18n>dateTo}" width="200px"/>
 			<!-- custom:key="dateTo" -->
-			<DatePicker dateValue="{ToDate}" custom:editable="true" width="206px"/>
+			<DatePicker dateValue="{ToDate}" custom:editable="true" width="356px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>minFcaPrice}" width="200px"/>
-			<Input value="{MinFCAPrice}" type="Number" custom:type="Number" maxLength="18" placeholder="0" width="200px"/>
+			<Input value="{MinFCAPrice}" type="Number" custom:type="Number" maxLength="18" placeholder="0" width="350px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>currency}" width="200px"/>
 			<Input 
@@ -46,7 +58,7 @@
 				id="currencyPopupfcaResourceValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{Currency}" width="200px" />
+				value="{Currency}" width="350px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="fcaResource" type="Back" press="dialogCancel"/>

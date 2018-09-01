@@ -36,7 +36,7 @@
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="material" type="Back" press="dialogCancel"/>
-			<Button text="{i18n>select}" custom:id="material" custom:key="Code" type="Accept" id="materialSelect" enabled="false" press="dialogSelect"/>
+			<Button text="{i18n>select}" custom:id="material" custom:key="Code" custom:nameCode="Name" type="Accept" id="materialSelect" enabled="false" press="dialogSelect"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

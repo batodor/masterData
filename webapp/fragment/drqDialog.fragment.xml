@@ -2,11 +2,15 @@
 	<Dialog title="{i18n>drq}" class="sapUiContentPadding" id="drqDialog">
 		<content>
 			<Label required="true" text="{i18n>productionUnit}" width="150px"/>
-			<Select selectedKey="{ProductionUnit}" custom:key="productionUnit" forceSelection="false" 
+			<Select forceSelection="false" selectedKey="{ProductionUnit}" custom:key="productionUnit"
+			items="{ path: '/dictionaryProductRecipeSet', sorter: { path: 'Name' } }" width="250px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
+			</Select>
+<!--			<Select selectedKey="{ProductionUnit}" custom:key="productionUnit" forceSelection="false" 
 				items="{ path: '/dictionaryProductionUnitSet', sorter: { path: 'Name' } }" width="200px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
-			<ToolbarSpacer/>
+-->			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>material}" width="150px"/>
 			<Input 
 				type="Text"
@@ -17,7 +21,7 @@
 				placeholder="{i18n>plsChoose} {i18n>material}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{Material}" width="200px" />
+				value="{Material}" width="250px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>qpCode}" width="150px"/>
 			<Input 
@@ -28,10 +32,10 @@
 				id="qualityParametersPopupdrqValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{QPCode}" width="200px" />
+				value="{QPCode}" width="250px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>baseQP}" width="150px"/>
-			<Select selectedKey="{BaseQP}" custom:key="baseQP" forceSelection="false" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="200px">
+			<Select selectedKey="{BaseQP}" custom:key="baseQP" forceSelection="false" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="250px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
@@ -44,10 +48,10 @@
 				id="uomdrqValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{UOM}" width="200px" />
+				value="{UOM}" width="250px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>defaultValue}" width="150px"/>
-			<Input value="{DefaultValue}" maxLength="5" placeholder="0" width="200px"/>
+			<Input value="{DefaultValue}" maxLength="5" placeholder="0" width="250px"/>
 			<ToolbarSpacer/>
 		</content>
 		<buttons>

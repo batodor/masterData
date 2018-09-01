@@ -124,8 +124,8 @@
 			</Table>
 		</content>
 		<buttons>
-			<Button text="{i18n>cancel}" custom:id="limitsStandart" type="Back" press="dialogCancel"/>
-			<Button text="{i18n>add}" custom:id="LimitsForStandardRating_MasterDetailN" visible="false" type="Emphasized" press="tableAdd"/>
+			<Button text="{i18n>cancel}" custom:block="LimitsForStandardRating_MasterDetailNBlock" custom:id="limitsStandart" type="Back" press="dialogCancel"/>
+			<Button text="{i18n>add}" custom:id="LimitsForStandardRating_MasterDetailN" custom:add="true" visible="false" type="Emphasized" press="tableAdd"/>
 			<Button text="{i18n>add}" custom:id="limitsStandart" custom:block="LimitsForStandardRating_MasterDetailNBlock" visible="false" type="Emphasized" press="dialogAdd"/>
 			<Button text="{i18n>edit}" custom:id="LimitsForStandardRating_MasterDetailN" id="limitsStandartEdit" enabled="false" type="Default" press="tableEdit"/>
 			<Button text="{i18n>edit}" custom:id="limitsStandart" custom:block="LimitsForStandardRating_MasterDetailNBlock" type="Default" press="dialogEdit"/>

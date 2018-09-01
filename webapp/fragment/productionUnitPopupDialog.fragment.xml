@@ -20,7 +20,7 @@
 				<items>
 					<ColumnListItem>
 						<cells>
-							<Text text="{ProducerConsumer}"/>
+							<Text text="{Code}"/>
 							<Text text="{Name}"/>
 						</cells>
 					</ColumnListItem>
@@ -29,7 +29,8 @@
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productionUnitPopup" type="Back" press="dialogCancel"/>
-			<Button text="{i18n>select}" custom:id="productionUnitPopup" custom:key="ProducerConsumer" type="Accept" id="productionUnitPopupSelect" enabled="false" press="dialogSelect"/>
+			<Button text="{i18n>select}" custom:id="productionUnitPopup" custom:key="Code" custom:nameCode="Name" type="Accept" id="productionUnitPopupSelect" 
+				enabled="false" press="dialogSelect"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

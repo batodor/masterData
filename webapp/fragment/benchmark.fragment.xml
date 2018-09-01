@@ -3,15 +3,18 @@
 		updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-				<SearchField placeholder="{i18n>salesProgram}" custom:id="benchmark" custom:operator="EQ" custom:key="CodeSalesProgram" showSearchButton="true" search="triggerSearch" width="auto"/>
-				<SearchField placeholder="{i18n>salesMarket}" custom:id="benchmark" custom:key="SalesMarket" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<!-- CodeSalesProgram -->
+				<!-- custom:operator="EQ"  -->
+				<SearchField placeholder="{i18n>salesProgram}" custom:id="benchmark" custom:key="SalesProgramName" showSearchButton="true" search="triggerSearch" width="auto"/>
+				<!-- SalesMarket -->
+				<SearchField placeholder="{i18n>salesMarket}" custom:id="benchmark" custom:key="SalesMarketName" showSearchButton="true" search="triggerSearch" width="auto"/>
 				<ToolbarSpacer/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column hAlign="Center"><Text class="black" text="{i18n>salesProgram}"/></Column>
-			<Column hAlign="Center"><Text class="black" text="{i18n>dateFrom}"/></Column>
-			<Column hAlign="Center"><Text class="black" text="{i18n>dateTo}"/></Column>
+			<Column hAlign="Center" width="150px"><Text class="black" text="{i18n>salesProgram}"/></Column>
+			<Column hAlign="Center" width="85px"><Text class="black" text="{i18n>dateFrom}"/></Column>
+			<Column hAlign="Center" width="85px"><Text class="black" text="{i18n>dateTo}"/></Column>
 			<Column hAlign="Center"><Text class="black" text="{i18n>productType}"/></Column>
 			<Column hAlign="Center"><Text class="black" text="{i18n>salesMarket}"/></Column>
 			<Column hAlign="Center"><Text class="black" text="{i18n>formulaBenchmark}"/></Column>
@@ -19,11 +22,11 @@
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{CodeSalesProgram}"/>
+					<Text text="{SalesProgramName}"/>
 					<Text text="{ path: 'DateFrom', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
 					<Text text="{ path: 'DateTo', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
-					<Text text="{Product}"/>
-					<Text text="{SalesMarket}"/>
+					<Text text="{ProductName}"/>
+					<Text text="{SalesMarketName}"/>
 					<Text text="{Formula}"/>
 				</cells>
 			</ColumnListItem>
