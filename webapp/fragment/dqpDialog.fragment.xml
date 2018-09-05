@@ -2,31 +2,40 @@
 	<Dialog title="{i18n>dqp}" class="sapUiContentPadding" id="dqpDialog">
 		<content>
 			<Label required="true" text="{i18n>productType}" width="150px"/>
-			<Select selectedKey="{TypeProduct}" custom:key="typeOfProduct" forceSelection="false" items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }" width="200px">
+			<Select selectedKey="{TypeProduct}" custom:key="typeOfProduct" forceSelection="false" items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }" width="330px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
 			<Label required="false" text="{i18n>salesProgram}" width="150px"/>
 			<Select selectedKey="{SalesProgram}" forceSelection="false" custom:key="salesProgram" custom:noCheck="true"
-				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" width="200px">
+				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" width="330px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
 			<Label required="false" text="{i18n>salesRegion}" width="150px"/>
 			<Select selectedKey="{SalesRegion}" custom:key="salesRegion" forceSelection="false" custom:noCheck="true" 
-				items="{ path: '/salesRegionSet', sorter: { path: 'Name' } }" width="200px">
+				items="{ path: '/salesRegionSet', sorter: { path: 'Name' } }" width="330px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="false" text="{i18n>qp}" width="150px"/>
-			<Select selectedKey="{QP}" custom:key="qp" forceSelection="false"  custom:noCheck="true" 
-				items="{ path: '/qualityParametersSet', sorter: { path: 'QPCode' } }" width="200px">
-				<core:Item key="{QPKey}" text="{QPKey} - {QPCode}"/>
-			</Select>
+			<Label required="false" text="{i18n>qpCode}" width="150px"/>
+			<!--<Select selectedKey="{QP}" custom:key="qp" forceSelection="false"  custom:noCheck="true" -->
+			<!--	items="{ path: '/qualityParametersSet', sorter: { path: 'QPCode' } }" width="200px">-->
+			<!--	<core:Item key="{QPKey}" text="{QPKey} - {QPCode}"/>-->
+			<!--</Select>-->
+			<Input 
+				custom:id="qualityParametersPopup"
+				custom:key="qpCode"
+				custom:filters="QPCode,QPName"
+				custom:set="qualityParameters"
+				id="qualityParametersPopupdqpValueHelp"
+				showValueHelp="true"
+				valueHelpRequest="handleValueHelp"
+				value="{QPName}" width="330px" />
 			<ToolbarSpacer/>
 			<Label required="false" text="{i18n>baseQP}" width="150px"/>
 			<Select selectedKey="{BaseQP}" custom:key="baseQP" forceSelection="false"  custom:noCheck="true" 
-				items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="200px">
+				items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="330px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
@@ -38,10 +47,10 @@
 				id="uomdqpValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{UOM}" width="200px" />
+				value="{UOM}" width="330px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>fineUOM}" width="150px"/>
-			<Input value="{FineUOM}" width="200px" />
+			<Input value="{FineUOM}" width="330px" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="dqp" type="Back" press="dialogCancel"/>

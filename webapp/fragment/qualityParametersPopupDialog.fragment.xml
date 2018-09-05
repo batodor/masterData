@@ -29,7 +29,7 @@
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="qualityParametersPopup" type="Back" press="dialogCancel"/>
-			<Button text="{i18n>select}" custom:id="qualityParametersPopup" custom:key="QPCode" type="Accept" id="qualityParametersPopupSelect" enabled="false" press="dialogSelect"/>
+			<Button text="{i18n>select}" custom:id="qualityParametersPopup" custom:key="QPCode" custom:nameCode="QPName" type="Accept" id="qualityParametersPopupSelect" enabled="false" press="dialogSelect"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>
