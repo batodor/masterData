@@ -15,16 +15,19 @@
 			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
 			<DatePicker custom:key="dateFrom" dateValue="{DateFrom}" width="206px"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>country}" required="true" width="200px"/>
+		    <!-- custom:key="country" -->
+			<Label text="{i18n>country}" required="false" width="200px"/>
 			<Input 
 				custom:id="countryPopup"
 				custom:set="country"
 				custom:key="country"
+				custom:noCheck="true"
 				custom:filters="Code,Name"
 				id="countryPopupinterestRateValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{Country}" width="200px" />
+				value="{Country}"
+				width="200px" />
 			<ToolbarSpacer/>
 			<Label required="false" text="{i18n>dateTo}" width="200px"/>
 			<!-- custom:key="dateTo" -->
