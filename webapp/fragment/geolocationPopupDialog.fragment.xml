@@ -14,21 +14,21 @@
 						<ToolbarSpacer/>
 						<ComboBox placeholder="{i18n>trainStation}" custom:id="geolocationPopup" custom:operator="EQ" custom:key="TrainStationID" 
 							change="triggerSearch" width="100%" id="geolocationPopupTrainStationIDFilter">
-							<core:Item key="" text=""/>
+							<core:Item key="null" text=""/>
 							<core:Item key="true" text="Yes"/>
 							<core:Item key="false" text="No"/>
 						</ComboBox>
 						<ToolbarSpacer/>
 						<ComboBox placeholder="{i18n>seaHarbor}" custom:id="geolocationPopup" custom:operator="EQ" custom:key="SeaHarborIndicator" 
 							change="triggerSearch" width="100%" id="geolocationPopupSeaHarborIndicatorFilter">
-							<core:Item key="" text=""/>
+							<core:Item key="null" text=""/>
 							<core:Item key="true" text="Yes"/>
 							<core:Item key="false" text="No"/>
 						</ComboBox>
 						<ToolbarSpacer/>
 						<ComboBox placeholder="{i18n>crossBorder}" custom:id="geolocationPopup" custom:operator="EQ" custom:key="CrossBorderIndicator" 
 							change="triggerSearch" width="100%" id="geolocationPopupCrossBorderIndicatorFilter">
-							<core:Item key="" text=""/>
+							<core:Item key="null" text=""/>
 							<core:Item key="true" text="Yes"/>
 							<core:Item key="false" text="No"/>
 						</ComboBox>
