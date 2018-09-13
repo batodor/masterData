@@ -2,23 +2,25 @@
 	<Dialog title="{i18n>productRecipeItem}" class="sapUiContentPadding" id="productRecipeItemDialog">
 		<content>
 			<Label required="true" text="{i18n>recipeNumber}" width="150px"/>
-			<Input custom:key="recipeNumber" id="productRecipeItemRecipeNumber" value="{RecipeNumber}" width="250px" />
+			<Input custom:key="recipeNumber" id="productRecipeItemRecipeNumber" value="{RecipeNumber}" width="330px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>itemNumber}" width="150px"/>
-			<Input custom:key="itemNumber" value="{ItemNumber}" width="250px"/>
+			<Input custom:key="itemNumber" value="{ItemNumber}" width="330px"/>
 			<ToolbarSpacer/>
 			<Label text="{i18n>material}" width="150px"/>
 			<Input 
 				type="Text"
 				custom:id="material"
 				custom:filters="Code,Division,Name"
+				custom:value="{Material}"
+				custom:name="Material"
 				id="materialproductRecipeItemValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{Material}" width="250px" />
+				value="{Material} - {MaterialText}" width="330px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>productionUnit}" width="150px"/>
-			<Select forceSelection="false" selectedKey="{ProductionUnit}" items="{ path: '/dictionaryProductRecipeSet', sorter: { path: 'Name' } }" width="250px">
+			<Select forceSelection="false" selectedKey="{ProductionUnit}" items="{ path: '/dictionaryProductRecipeSet', sorter: { path: 'Name' } }" width="330px">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 <!--			<Select forceSelection="false" selectedKey="{ProductionUnit}" items="{ path: '/productionUnitSet', sorter: { path: 'Name' } }" width="250px">
@@ -26,10 +28,10 @@
 			</Select> -->
 			<ToolbarSpacer/>
 			<Label text="{i18n>content}" width="150px"/>
-			<Input value="{Content}" type="Number" custom:type="Number" placeholder="0" width="250px" />
+			<Input value="{Content}" type="Number" custom:type="Number" placeholder="0" width="330px" />
 			<ToolbarSpacer/>
 			<Label text="{i18n>uom}" width="150px"/>
-			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '%' ? '%' : '%' }" width="250px">
+			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '%' ? '%' : '%' }" width="330px">
 				<core:Item key="" text=""/>
 				<core:Item key="%" text="%"/>
 			</Select>

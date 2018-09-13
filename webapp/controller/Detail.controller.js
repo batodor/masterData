@@ -490,6 +490,7 @@ sap.ui.define([
 			}else{
 				valueHelpInput.setValue(data[key]);
 			}
+			valueHelpInput.data("value", data[key]);
 			this[id + "Dialog"].close();
 		},
 		
@@ -520,6 +521,10 @@ sap.ui.define([
 						// If key value added then use it
 						if(input.data("keyValue")){
 							value = input.data("keyValue");
+						}
+						// If custom value
+						if(input.data("value")){
+							value = input.data("value");
 						}
 						// Remove offset for dates
 						if(input.hasOwnProperty("_oMaxDate")){
