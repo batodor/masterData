@@ -491,6 +491,7 @@ sap.ui.define([
 				valueHelpInput.setValue(data[key]);
 			}
 			valueHelpInput.data("value", data[key]);
+			//valueHelpInput.fireChange();
 			this[id + "Dialog"].close();
 		},
 		
@@ -601,6 +602,11 @@ sap.ui.define([
 			return check;
 		},
 		
+		// Input control value change
+		onChange: function(oEvent){
+			// alert("fff");
+		},
+			
 		// On value help opens new dialog with filters
 		handleValueHelp: function(oEvent){
 			var button = oEvent.getSource();

@@ -23,6 +23,7 @@
 			<!--	items="{ path: '/qualityParametersSet', sorter: { path: 'QPCode' } }" width="200px">-->
 			<!--	<core:Item key="{QPKey}" text="{QPKey} - {QPCode}"/>-->
 			<!--</Select>-->
+			<!-- change="onChange" -->
 			<Input 
 				custom:id="qualityParametersPopup"
 				custom:key="qpCode"
@@ -31,7 +32,8 @@
 				id="qualityParametersPopupdqpValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{QPName}" width="330px" />
+				value="{QPName}"
+				width="330px" />
 			<ToolbarSpacer/>
 			<Label required="false" text="{i18n>baseQP}" width="150px"/>
 			<Select selectedKey="{BaseQP}" custom:key="baseQP" forceSelection="false"  custom:noCheck="true" 
