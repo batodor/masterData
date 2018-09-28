@@ -46,24 +46,28 @@
 		<semantic:mainAction>
 			<semantic:MainAction
 				id="tableAdd"
+				visible="false"
 				press="tableAdd"
 				text="{i18n>add}" />
 		</semantic:mainAction>
 		<semantic:positiveAction>
 			<semantic:PositiveAction
 				id="tableEdit" 
+				visible="false"
 				press="tableEdit"
 				text="{i18n>edit}" />
 		</semantic:positiveAction>
 		<semantic:negativeAction>
 			<semantic:NegativeAction
 				id="tableDelete" 
+				visible="false"
 				press="tableDelete"
 				text="{i18n>delete}" />
 		</semantic:negativeAction>
 		<semantic:saveAsTileAction>
 			<Button 
 				id="tableDetails"
+				visible="false"
 				type="Emphasized"
 				text="{i18n>items}"
 				press="tableDetails"/>

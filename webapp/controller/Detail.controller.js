@@ -50,6 +50,7 @@ sap.ui.define([
 		    this.search = {}; // for searchFields
 		},
 		
+
 		// Passed data from Master view
 		onDataReceived : function(channel, event, data) {
 			this.byId("page").setTitle(data.title);
@@ -73,6 +74,7 @@ sap.ui.define([
 		_onObjectMatched: function(oEvent) {
 			this.id = oEvent.getParameter("arguments").objectId;
 			var filter = oEvent.getParameter("arguments").filter;
+
 			for (var i = 0; i < this.tableArr.length; i++) {
 				if (this.tableArr[i] === this.id) {
 					var table = this.byId(this.id);
@@ -105,29 +107,13 @@ sap.ui.define([
 					}
 				}
 			}
-			this.setInput(["tableAdd", "tableEdit", "tableDelete"], true, "Visible");
-			this.setInput(["tableDetails"], false, "Visible");
-			this.setInput(["tableEdit", "tableDelete", "tableDetails"], false, "Enabled");
-			
-			if(this.id === "country"){
-				this.setInput(["tableAdd", "tableDelete"], false, "Visible");
-			}else if(this.id === "productRecipeHeader"){
-				this.byId("tableDetails").setVisible(true);
-				this.byId("tableEdit").setVisible(false);
-				this.byId('tableDetails').setText(this.getResourceBundle().getText("items"));
-			}else if(this.id === "productRecipeItem"){
-				this.byId("tableDetails").setVisible(true).setEnabled(true);
-				this.byId('tableDetails').setText(this.getResourceBundle().getText("headers"));
-			}else if(this.id === "currency"){
-				this.setInput(["tableAdd", "tableEdit", "tableDelete"], false, "Visible");
-			}else if(this.id === "productionUnit" || this.id === "salesProgram" || this.id === "bmqc" || this.id === "sbmqc" || this.id === "salesMarket" 
-				|| this.id === "salesRegion" || this.id === "riskType" || this.id === "qualityParametersUom" || this.id === "qualityParameters" || this.id === "limitsStandart"){
-				this.byId("tableDelete").setVisible(false);
-			}
+
+			// Access control
+		    this.checkUserAccess();
 			// Bind double click event
 			this.byId(this.id).ondblclick = this.tableEdit.bind(this, this.id);
 		},
-
+		
 		// Event on selection of table items
 		onTableSelect: function(oEvent) {
 			var table = oEvent.getSource();
@@ -306,6 +292,17 @@ sap.ui.define([
 						}
 					}
 				}
+                // Hard coding. Code review required!
+                if (this.access === "R") {
+					// Limits for Standart Rating
+					sap.ui.getCore().byId("limitsStandartEdit").setVisible(false);
+					sap.ui.getCore().byId("limitsStandartBlockEdit").setVisible(false);
+					sap.ui.getCore().byId("limitsStandartAdd").setVisible(false);
+					sap.ui.getCore().byId("limitsStandartBlockAdd").setVisible(false);
+					sap.ui.getCore().byId("limitsStandartDelete").setVisible(false);
+					sap.ui.getCore().byId("limitsStandartSave").setVisible(false);
+                }
+				
 				dialog.bindElement(url);
 				dialog.open();
 			}else{
@@ -389,6 +386,17 @@ sap.ui.define([
 				dialog.unbindElement();
 				dialog.close();
 			}
+			
+            // Hard coding. Code review required!
+            if (this.access === "R") {
+			  // Limits for Standart Rating
+			  sap.ui.getCore().byId("limitsStandartEdit").setVisible(false);
+			  sap.ui.getCore().byId("limitsStandartBlockEdit").setVisible(false);
+			  sap.ui.getCore().byId("limitsStandartAdd").setVisible(false);
+			  sap.ui.getCore().byId("limitsStandartBlockAdd").setVisible(false);
+			  sap.ui.getCore().byId("limitsStandartDelete").setVisible(false);
+			  sap.ui.getCore().byId("limitsStandartSave").setVisible(false);
+            }
 		},
 		dialogAdd: function(oEvent) {
 			var button = oEvent.getSource();
@@ -491,7 +499,7 @@ sap.ui.define([
 				valueHelpInput.setValue(data[key]);
 			}
 			valueHelpInput.data("value", data[key]);
-			//valueHelpInput.fireChange();
+			valueHelpInput.fireChange();
 			this[id + "Dialog"].close();
 		},
 		
@@ -604,23 +612,100 @@ sap.ui.define([
 		
 		// Input control value change
 		onChange: function(oEvent){
-			// alert("fff");
+			var source = oEvent.getSource();
+			var baseqp = null;
+			var filter = null;
+			
+		 	// Default Quality Parameters -> QP Code
+		 	if (source.getId() === 'qualityParametersPopupdqpValueHelp') {
+		 		// Base QP
+		 		baseqp = sap.ui.getCore().byId('qualityParametersPopupdqpCombobox');
+		 		if ( sap.ui.getCore().byId('qualityParametersPopupdqpValueHelp').getValue().length !== 0 ) {
+					filter = new Filter({
+									   path: 'QPCode',
+                                       operator: FilterOperator.EQ,
+                                       value1: sap.ui.getCore().byId('qualityParametersPopupdqpValueHelp').data("value") });
+			        baseqp.bindItems({ path: '/dictionaryBaseQPForDefaultSetsSet',
+			        	               template: baseqp['mBindingInfos'].items.template.clone(),
+			        	               filters: filter});
+		 		} else {
+		 			// without filter
+			        baseqp.bindItems({ path: '/bmqcSet',
+			        	               template: baseqp['mBindingInfos'].items.template.clone() });
+			    }
+		 	}
+		 	
+		 	// Default Resource Quality -> QP Code
+		 	if (source.getId() === 'qualityParametersPopupdrqValueHelp') {
+		 		// Base QP
+		 		baseqp = sap.ui.getCore().byId('qualityParametersPopupdrqCombobox');
+		 		if ( sap.ui.getCore().byId('qualityParametersPopupdrqValueHelp').getValue().length !== 0 ) {
+					filter = new Filter({
+									   path: 'QPCode',
+                                       operator: FilterOperator.EQ,
+                                       value1: sap.ui.getCore().byId('qualityParametersPopupdrqValueHelp').data("value") });
+			        baseqp.bindItems({ path: '/dictionaryBaseQPForDefaultSetsSet',
+			        	               template: baseqp['mBindingInfos'].items.template.clone(),
+			        	               filters: filter});
+		 		} else {
+		 			// without filter
+			        baseqp.bindItems({ path: '/bmqcSet',
+			        	               template: baseqp['mBindingInfos'].items.template.clone() });
+			    }
+		 	}
+		 	
 		},
 			
 		// On value help opens new dialog with filters
 		handleValueHelp: function(oEvent){
 			var button = oEvent.getSource();
+			var parent = button.getParent();
 			var id = button.data("id");
+			var filter = null;
 			var bindSet = "/" + id + 'Set';
 			if(button.data("set")){
 				bindSet = "/" + button.data("set") + 'Set';
 			}
+
+			// ----------------------
+			// Value Help with filter
+			// ----------------------
+			// Default Quality Parameters
+			if (parent.getId() === 'dqpDialog') {
+				// UoM field (QP CODE filter)
+				if (button.getId() === 'uomdqpValueHelp') {
+					if ( sap.ui.getCore().byId('qualityParametersPopupdqpValueHelp').getValue().length !== 0 ) {
+						bindSet = "/dictionaryUOMForDefaultSetsSet";
+						filter = new Filter({
+									path: 'QPCode',
+                                    operator: FilterOperator.EQ,
+                                    value1: sap.ui.getCore().byId('qualityParametersPopupdqpValueHelp').data("value")
+						});
+					}
+				}
+			}
+			// Default Resource Quality
+			if (parent.getId() === 'drqDialog') {
+				// UoM field (QP CODE filter)
+				if (button.getId() === 'uomdrqValueHelp') {
+					if ( sap.ui.getCore().byId('qualityParametersPopupdrqValueHelp').getValue().length !== 0 ) {
+						bindSet = "/dictionaryUOMForDefaultSetsSet";
+						filter = new Filter({
+									path: 'QPCode',
+                                    operator: FilterOperator.EQ,
+                                    value1: sap.ui.getCore().byId('qualityParametersPopupdrqValueHelp').data("value")
+						});
+					}
+				}
+			}			
+
 			var customId = button.data("customId");
 			var filters = button.data("filters");
 			var table = sap.ui.getCore().byId(id);
 			table.bindItems({
 				path: bindSet,
-				template: table['mBindingInfos'].items.template
+				template: table['mBindingInfos'].items.template,
+				filters: filter
 			});
 			this.search = {}; // nullify search object
 			if(filters){
@@ -709,12 +794,77 @@ sap.ui.define([
 			} 
 			return check;
 		},
+
+	    // Checking input values for compliance with business-logic. For numeric values only.
+		checkDecimal: function(oEvent){
+			var input = oEvent.getSource();
+			var decimal = input.data("decimal") || 2;
+			var max = input.data("max") || 10;
+			var value = oEvent.getParameter("value");
+			var oLocale = new sap.ui.core.Locale("en-US");
+			var oFormatOptions = {
+			    minIntegerDigits: 0,
+			    maxIntegerDigits: max,
+			    minFractionDigits: 0,
+			    maxFractionDigits: decimal
+			};
+			var checkValue  = sap.ui.core.format.NumberFormat.getFloatInstance(oFormatOptions, oLocale);
+			var newValue = checkValue.format(value);
+			if( (newValue.indexOf("?") != -1) ||
+			    ( (value.length - value.indexOf(".")) >= 4 )  ){
+			   MessageBox.error("Value '"+ value +"' is invalid.\n" + "The value can be three digits to the decimal point and two after the decimal point.\n" + "Examples:  955.51,  50000000.13,  2,  999.05,  0.25;");
+			   oEvent.getSource().setValue( "0" );
+			 }else{
+			   //oEvent.getSource().setValue( newValue );
+			 }
+		},
 		
 		alertMsg: function(msg){
 			MessageBox.alert(msg, {
 				actions: [sap.m.MessageBox.Action.CLOSE]
 			});
-		}
-	});
+		},
 
+		// Check user access
+		checkUserAccess: function(){
+			this.getModel().callFunction("/GetUserFunctions", {
+				method: "GET",
+				success: this.onCheckUserAccessSuccess.bind(this, "GetUserFunctions")
+			});
+		},
+		
+        // Check user access - processing result
+		onCheckUserAccessSuccess: function(link, oData) {
+			var oResult = oData[link];
+			this.access = oResult.Access;
+
+            if (this.access === "R") {
+            	// Read only
+            	this.setInput(["tableAdd", "tableEdit", "tableDelete"], false, "Visible");
+            } else {
+			    // Read/Write
+				this.setInput(["tableAdd", "tableEdit", "tableDelete"], true, "Visible");
+            }		
+            // Common
+			this.setInput(["tableDetails"], false, "Visible");
+			this.setInput(["tableEdit", "tableDelete", "tableDetails"], false, "Enabled");
+			
+			if(this.id === "country"){
+				this.setInput(["tableAdd", "tableDelete"], false, "Visible");
+			}else if(this.id === "productRecipeHeader"){
+				this.byId("tableDetails").setVisible(true);
+				this.byId("tableEdit").setVisible(false);
+				this.byId('tableDetails').setText(this.getResourceBundle().getText("items"));
+			}else if(this.id === "productRecipeItem"){
+				this.byId("tableDetails").setVisible(true).setEnabled(true);
+				this.byId('tableDetails').setText(this.getResourceBundle().getText("headers"));
+			}else if(this.id === "currency"){
+				this.setInput(["tableAdd", "tableEdit", "tableDelete"], false, "Visible");
+			}else if(this.id === "productionUnit" || this.id === "salesProgram" || this.id === "bmqc" || this.id === "sbmqc" || this.id === "salesMarket" 
+				|| this.id === "salesRegion" || this.id === "riskType" || this.id === "qualityParametersUom" || this.id === "qualityParameters" || this.id === "limitsStandart"){
+				this.byId("tableDelete").setVisible(false);
+			}
+		}
+
+	});
 });

@@ -205,7 +205,7 @@ sap.ui.define([
 		 * listLoading is done and the first item in the list is known
 		 * @private
 		 */
-		_onMasterMatched: function() {
+		_onMasterMatched: function(oEvent) {
 			this.getRouter().navTo("object", {
 				objectId: "country"
 			}, true);

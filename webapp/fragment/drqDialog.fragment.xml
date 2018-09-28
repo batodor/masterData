@@ -29,14 +29,23 @@
 				custom:key="qpCode"
 				custom:filters="QPCode,QPName"
 				custom:set="qualityParameters"
+				custom:value="{QP}"
 				id="qualityParametersPopupdrqValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{QPCode}" width="330px" />
+				value="{QPCode}"
+				change="onChange"
+				width="330px" />
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>baseQP}" width="150px"/>
-			<Select selectedKey="{BaseQP}" custom:key="baseQP" forceSelection="false" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="330px">
-				<core:Item key="{Code}" text="{Code}"/>
+			<Select
+				selectedKey="{BaseQP}"
+				id="qualityParametersPopupdrqCombobox"
+				custom:key="baseQP"
+				forceSelection="false"
+				items="{ path: '/bmqcSet' }"
+				width="330px">
+				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
 			<Label required="true" text="{i18n>uom}" width="150px"/>

@@ -124,14 +124,51 @@
 			</Table>
 		</content>
 		<buttons>
-			<Button text="{i18n>cancel}" custom:block="LimitsForStandardRating_MasterDetailNBlock" custom:id="limitsStandart" type="Back" press="dialogCancel"/>
-			<Button text="{i18n>add}" custom:id="LimitsForStandardRating_MasterDetailN" custom:add="true" visible="false" type="Emphasized" press="tableAdd"/>
-			<Button text="{i18n>add}" custom:id="limitsStandart" custom:block="LimitsForStandardRating_MasterDetailNBlock" visible="false" type="Emphasized" press="dialogAdd"/>
-			<Button text="{i18n>edit}" custom:id="LimitsForStandardRating_MasterDetailN" id="limitsStandartEdit" enabled="false" type="Default" press="tableEdit"/>
-			<Button text="{i18n>edit}" custom:id="limitsStandart" custom:block="LimitsForStandardRating_MasterDetailNBlock" type="Default" press="dialogEdit"/>
-			<Button text="{i18n>delete}" custom:id="LimitsForStandardRating_MasterDetailN" id="limitsStandartDelete" enabled="false" type="Reject" press="tableDelete"/>
-			<Button text="{i18n>save}" custom:id="limitsStandart" custom:block="LimitsForStandardRating_MasterDetailNBlock" id="limitsStandartSave"  visible="false" type="Accept" 
-				press="dialogSave"/>
+			<Button text="{i18n>cancel}"
+		         id="limitsStandartCancel"
+				    custom:id="limitsStandart"
+			        custom:block="LimitsForStandardRating_MasterDetailNBlock"
+			        type="Back"
+			        press="dialogCancel"/>
+			<Button text="{i18n>add}"
+			     id="limitsStandartAdd"
+			        custom:id="LimitsForStandardRating_MasterDetailN"
+			        type="Emphasized"
+			        custom:add="true"
+			        visible="false"
+			        press="tableAdd"/>
+			<Button text="{i18n>add}"
+			     id="limitsStandartBlockAdd"
+			        custom:id="limitsStandart"
+			        custom:block="LimitsForStandardRating_MasterDetailNBlock"
+			        type="Emphasized"
+			        visible="false"
+			        press="dialogAdd"/>
+			<Button text="{i18n>edit}"
+			     id="limitsStandartEdit"
+			        custom:id="LimitsForStandardRating_MasterDetailN"
+			        enabled="false"
+			        type="Default"
+			        press="tableEdit"/>
+			<Button text="{i18n>edit}"
+			     id="limitsStandartBlockEdit"
+			        custom:id="limitsStandart" 
+			        custom:block="LimitsForStandardRating_MasterDetailNBlock"
+			        type="Default"
+			        press="dialogEdit"/>
+			<Button text="{i18n>delete}"
+			     id="limitsStandartDelete"
+			        custom:id="LimitsForStandardRating_MasterDetailN" 
+			        enabled="false"
+			        type="Reject"
+			        press="tableDelete"/>
+			<Button text="{i18n>save}"
+			     id="limitsStandartSave"
+			        custom:id="limitsStandart" 
+			        custom:block="LimitsForStandardRating_MasterDetailNBlock"
+			        visible="false"
+			        type="Accept"
+			        press="dialogSave"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>
