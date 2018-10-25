@@ -1,4 +1,4 @@
-.sapUiSizeCompact .sapMTB.sapMListHdrTBar{
+.sapUiSizeCompact .sapMTB.sapMListHdrTBar, .sapUiResponsiveMargin .sapMTB{
 	height: auto;
 }
 .sapUiBlockLayoutSizeL .sapUiBlockCellContent>.sapMText,
@@ -29,7 +29,9 @@ span[data-rating="C"] {
 }
 
 .sapMListTbl .sapMText,
-.sapMListTbl .sapMLabel {
+.sapMListTbl .sapMLabel,
+.sapMListTblSubCntRow>.sapMListTblSubCntVal .sapMText, 
+.sapMListTblSubCntRow>.sapMListTblSubCntVal .sapMLabel{
     color: #777;
 }
 

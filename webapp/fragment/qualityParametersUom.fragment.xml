@@ -1,5 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="qualityParametersUom" visible="false" custom:id="qualityParametersUom" items="{}" select="onTableSelect" width="auto" 
+	<Table mode="SingleSelectLeft" popinLayout="GridLarge" includeItemInSelection="true" id="qualityParametersUom" visible="false" custom:id="qualityParametersUom" 
+		items="{}" select="onTableSelect" width="auto" 
 		updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" 
 		busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
@@ -11,9 +12,9 @@
 		<columns>
 			<Column><Text class="black" text="{i18n>qpCode}"/></Column>
 			<Column><Text class="black" text="{i18n>uom}"/></Column>
-			<Column><Text class="black" text="{i18n>minValue}"/></Column>
-			<Column><Text class="black" text="{i18n>maxValue}"/></Column>
-			<Column><Text class="black" text="{i18n>normalPrecision}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>minValue}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>maxValue}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>normalPrecision}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>

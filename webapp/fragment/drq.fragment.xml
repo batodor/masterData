@@ -1,22 +1,23 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="drq" visible="false" custom:id="drq" items="{}" select="onTableSelect" width="auto" 
+	<Table mode="SingleSelectLeft" popinLayout="GridLarge" includeItemInSelection="true" id="drq" visible="false" custom:id="drq" items="{}" select="onTableSelect" width="auto" 
 		updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" 
 		busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-				<SearchField placeholder="{i18n>productionUnitCode}" custom:id="drq" custom:key="ProductionUnit" showSearchButton="true" search="triggerSearch" width="auto"/>
-				<SearchField placeholder="{i18n>materialCode}" custom:id="drq" custom:key="Material" showSearchButton="true" search="triggerSearch" width="auto"/>
-				<SearchField placeholder="{i18n>qpCode}" custom:id="drq" custom:key="QPCode" showSearchButton="true" search="triggerSearch" width="auto"/>
-				<ToolbarSpacer/>
+				<HBox justifyContent="SpaceBetween" wrap="true" width="100%">
+					<SearchField placeholder="{i18n>productionUnitCode}" custom:id="drq" custom:key="ProductionUnit" showSearchButton="true" search="triggerSearch" width="auto"/>
+					<SearchField placeholder="{i18n>materialCode}" custom:id="drq" custom:key="Material" showSearchButton="true" search="triggerSearch" width="auto"/>
+					<SearchField placeholder="{i18n>qpCode}" custom:id="drq" custom:key="QPCode" showSearchButton="true" search="triggerSearch" width="auto"/>
+				</HBox>
 			</Toolbar>
 		</headerToolbar>
 		<columns>
 			<Column><Text class="black" text="{i18n>productionUnit}"/></Column>
 			<Column><Text class="black" text="{i18n>material}"/></Column>
-			<Column><Text class="black" text="{i18n>qpCode}"/></Column>
-			<Column><Text class="black" text="{i18n>baseQP}"/></Column>
-			<Column><Text class="black" text="{i18n>uom}"/></Column>
-			<Column><Text class="black" text="{i18n>defaultValue}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>qpCode}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>baseQP}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>uom}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>defaultValue}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>

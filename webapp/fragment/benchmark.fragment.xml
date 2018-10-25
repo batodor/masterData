@@ -1,23 +1,22 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="benchmark" visible="false" custom:id="benchmark" items="{}" select="onTableSelect" width="auto" 
+	<Table mode="SingleSelectLeft" popinLayout="GridLarge" includeItemInSelection="true" id="benchmark" visible="false" custom:id="benchmark" items="{}" 
+		select="onTableSelect" width="auto" 
 		updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-				<!-- CodeSalesProgram -->
-				<!-- custom:operator="EQ"  -->
-				<SearchField placeholder="{i18n>salesProgram}" custom:id="benchmark" custom:key="SalesProgramName" showSearchButton="true" search="triggerSearch" width="auto"/>
-				<!-- SalesMarket -->
-				<SearchField placeholder="{i18n>salesMarket}" custom:id="benchmark" custom:key="SalesMarketName" showSearchButton="true" search="triggerSearch" width="auto"/>
-				<ToolbarSpacer/>
+				<HBox justifyContent="SpaceBetween" wrap="true" width="100%">
+					<SearchField placeholder="{i18n>salesProgram}" custom:id="benchmark" custom:key="SalesProgramName" showSearchButton="true" search="triggerSearch" width="auto"/>
+					<SearchField placeholder="{i18n>salesMarket}" custom:id="benchmark" custom:key="SalesMarketName" showSearchButton="true" search="triggerSearch" width="auto"/>
+				</HBox>
 			</Toolbar>
 		</headerToolbar>
 		<columns>
 			<Column hAlign="Center" width="150px"><Text class="black" text="{i18n>salesProgram}"/></Column>
 			<Column hAlign="Center" width="85px"><Text class="black" text="{i18n>dateFrom}"/></Column>
-			<Column hAlign="Center" width="85px"><Text class="black" text="{i18n>dateTo}"/></Column>
-			<Column hAlign="Center"><Text class="black" text="{i18n>productType}"/></Column>
-			<Column hAlign="Center"><Text class="black" text="{i18n>salesMarket}"/></Column>
-			<Column hAlign="Center"><Text class="black" text="{i18n>formulaBenchmark}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="85px"><Text class="black" text="{i18n>dateTo}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center"><Text class="black" text="{i18n>productType}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center"><Text class="black" text="{i18n>salesMarket}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center"><Text class="black" text="{i18n>formulaBenchmark}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>

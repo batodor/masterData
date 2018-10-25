@@ -1,5 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="productRecipeItem" visible="false" custom:id="productRecipeItem" custom:details="productRecipeHeader" 
+	<Table mode="SingleSelectLeft" popinLayout="GridLarge" includeItemInSelection="true" id="productRecipeItem" visible="false" 
+		custom:id="productRecipeItem" custom:details="productRecipeHeader" 
 		custom:filter="RecipeNumber" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" 
 		growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
@@ -9,8 +10,8 @@
 		<columns>
 			<Column><Text class="black" text="{i18n>itemNumber}"/></Column>
 			<Column><Text class="black" text="{i18n>material}"/></Column>
-			<Column><Text class="black" text="{i18n>productionUnit}"/></Column>
-			<Column><Text class="black" text="{i18n>content}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>productionUnit}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>content}"/></Column>
 			<!--<Column><Text class="black" text="{i18n>uom}"/></Column>-->
 		</columns>
 		<items>

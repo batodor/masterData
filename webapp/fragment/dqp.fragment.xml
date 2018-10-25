@@ -1,22 +1,24 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="dqp" visible="false" custom:id="dqp" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+	<Table mode="SingleSelectLeft" popinLayout="GridLarge" includeItemInSelection="true" id="dqp" visible="false" custom:id="dqp" items="{}" 
+		select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
 		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
-                <SearchField placeholder="{i18n>productType}" custom:id="dqp" custom:key="TypeProductName" showSearchButton="true" search="triggerSearch" width="auto"/>				
-				<SearchField placeholder="{i18n>salesProgramCode}" custom:id="dqp" custom:key="SalesProgram" showSearchButton="true" search="triggerSearch" width="auto"/>
-				<SearchField placeholder="{i18n>salesRegion}" custom:id="dqp" custom:key="SalesRegionName" showSearchButton="true" search="triggerSearch" width="auto"/>
-				<ToolbarSpacer/>
+				<HBox justifyContent="SpaceBetween" wrap="true" width="100%">
+                	<SearchField placeholder="{i18n>productType}" custom:id="dqp" custom:key="TypeProductName" showSearchButton="true" search="triggerSearch" width="auto"/>				
+					<SearchField placeholder="{i18n>salesProgramCode}" custom:id="dqp" custom:key="SalesProgram" showSearchButton="true" search="triggerSearch" width="auto"/>
+					<SearchField placeholder="{i18n>salesRegion}" custom:id="dqp" custom:key="SalesRegionName" showSearchButton="true" search="triggerSearch" width="auto"/>
+				</HBox>
 			</Toolbar>
 		</headerToolbar>
 		<columns>
 			<Column><Text class="black" text="{i18n>productType}"/></Column>
 			<Column><Text class="black" text="{i18n>salesProgram}"/></Column>
-			<Column><Text class="black" text="{i18n>salesRegion}"/></Column>
-			<Column><Text class="black" text="{i18n>qpCode}"/></Column>
-			<Column><Text class="black" text="{i18n>baseQP}"/></Column>
-			<Column><Text class="black" text="{i18n>uom}"/></Column>
-			<Column><Text class="black" text="{i18n>fineUOM}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>salesRegion}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>qpCode}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>baseQP}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>uom}"/></Column>
+			<Column minScreenWidth="Desktop" demandPopin="true"><Text class="black" text="{i18n>fineUOM}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>

@@ -1,5 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="salesProgram" visible="false" custom:id="salesProgram" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+	<Table mode="SingleSelectLeft" popinLayout="GridLarge" includeItemInSelection="true" id="salesProgram" visible="false" custom:id="salesProgram" 
+		items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
 		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
@@ -8,13 +9,13 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column width="100px"><Text class="black" text="{i18n>salesProgramCode}"/></Column>
+			<Column><Text class="black" text="{i18n>salesProgramCode}"/></Column>
 			<Column><Text class="black" text="{i18n>description}"/></Column>
-			<Column width="70px"><Text class="black" text="{i18n>incoterms}"/></Column>
-			<Column width="70px"><Text class="black" text="{i18n>cv}"/></Column>
-			<Column width="70px"><Text class="black" text="{i18n>uom}"/></Column>
-			<Column width="70px"><Text class="black" text="{i18n>narGarGad}"/></Column>
-			<Column width="40px"><Text class="black" text="{i18n>active}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" width="70px"><Text class="black" text="{i18n>incoterms}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" width="70px"><Text class="black" text="{i18n>cv}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" width="70px"><Text class="black" text="{i18n>uom}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" width="70px"><Text class="black" text="{i18n>narGarGad}"/></Column>
+			<Column minScreenWidth="Desktop" demandPopin="true" width="40px"><Text class="black" text="{i18n>active}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>

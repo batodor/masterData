@@ -1,5 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="fcaProduct" visible="false" custom:id="fcaProduct" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+	<Table mode="SingleSelectLeft" popinLayout="GridLarge" includeItemInSelection="true" id="fcaProduct" visible="false" custom:id="fcaProduct" items="{}" 
+		select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
 		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
@@ -10,9 +11,9 @@
 		<columns>
 			<Column><Text class="black" text="{i18n>salesProgram}"/></Column>
 			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
-			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
-			<Column><Text class="black" text="{i18n>minFcaPrice}"/></Column>
-			<Column><Text class="black" text="{i18n>currency}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>dateTo}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>minFcaPrice}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>currency}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>

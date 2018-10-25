@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="index" visible="false" custom:id="index"
+	<Table mode="SingleSelectLeft" popinLayout="GridLarge" includeItemInSelection="true" id="index" visible="false" custom:id="index"
 		items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" 
 		growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
@@ -10,14 +10,14 @@
 		<columns>
 			<Column><Text class="black" text="{i18n>index}"/></Column>
 			<Column><Text class="black" text="{i18n>productType}"/></Column>
-			<Column><Text class="black" text="{i18n>currency}"/></Column>
-			<Column><Text class="black" text="{i18n>incoterms}"/></Column>
-			<Column><Text class="black" text="{i18n>dateFrom}"/></Column>
-			<Column><Text class="black" text="{i18n>dateTo}"/></Column>
-			<Column width="80px"><Text class="black" text="{i18n>geolocation}"/></Column>
-			<Column><Text class="black" text="{i18n>baseCV}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>currency}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>incoterms}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>dateFrom}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>dateTo}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" width="80px"><Text class="black" text="{i18n>geolocation}"/></Column>
+			<Column minScreenWidth="Desktop" demandPopin="true"><Text class="black" text="{i18n>baseCV}"/></Column>
 			<!--<Column><Text class="black" text="{i18n>baseQP}"/></Column>-->
-			<Column><Text class="black" text="{i18n>narGarGad}"/></Column>
+			<Column minScreenWidth="Desktop" demandPopin="true"><Text class="black" text="{i18n>narGarGad}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>

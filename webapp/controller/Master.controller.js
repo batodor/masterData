@@ -206,9 +206,9 @@ sap.ui.define([
 		 * @private
 		 */
 		_onMasterMatched: function(oEvent) {
-			this.getRouter().navTo("object", {
-				objectId: "country"
-			}, true);
+			// this.getRouter().navTo("object", {
+			// 	objectId: "country"
+			// }, true);
 		},
 
 		// Append custom data of table id for getting title of table after model loaded for first time

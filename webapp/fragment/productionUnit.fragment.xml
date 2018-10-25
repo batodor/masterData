@@ -1,5 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Table mode="SingleSelectLeft" includeItemInSelection="true" id="productionUnit" visible="false" custom:id="productionUnit" items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
+	<Table mode="SingleSelectLeft" popinLayout="GridLarge" includeItemInSelection="true" id="productionUnit" visible="false" custom:id="productionUnit" 
+		items="{}" select="onTableSelect" width="auto" updateFinished="onListUpdateFinished"
 		noDataText="{i18n>detailLineItemTableNoDataText}" growing="true" growingScrollToLoad="true" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 		<headerToolbar>
 			<Toolbar class="white">
@@ -10,11 +11,11 @@
 		<columns>
 			<Column><Text class="black" text="{i18n>producerConsumer}"/></Column>
 			<Column><Text class="black" text="{i18n>name}"/></Column>
-			<Column><Text class="black" text="{i18n>internalExternal}"/></Column>
-			<Column><Text class="black" text="{i18n>partner}"/></Column>
-			<Column><Text class="black" text="{i18n>producer}"/></Column>
-			<Column><Text class="black" text="{i18n>consumer}"/></Column>
-			<Column><Text class="black" text="{i18n>active}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>internalExternal}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>partner}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>producer}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>consumer}"/></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true"><Text class="black" text="{i18n>active}"/></Column>
 		</columns>
 		<items>
 			<ColumnListItem>
