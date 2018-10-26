@@ -1,17 +1,18 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>country}" class="sapUiContentPadding" id="countryDialog">
+	<Dialog title="{i18n>country}" stretch="{device>/system/phone}" class="sapUiContentPadding" id="countryDialog">
 		<content>
-			<Label required="true" text="{i18n>countryCode}" width="150px"/>
-			<Input custom:key="countryCode" value="{Code}" width="250px"/>
+			<Label required="true" text="{i18n>countryCode}" />
+			<Input custom:key="countryCode" value="{Code}"/>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>countryName}" width="150px"/>
-			<Input custom:key="countryName" value="{Name}" width="250px" />
+			<Label class="marginTop" required="true" text="{i18n>countryName}"/>
+			<Input custom:key="countryName" value="{Name}"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>sanction}" width="150px"/>
-			<CheckBox selected="{Sanction}" width="250px" />
+			<Label class="marginTop" text="{i18n>sanction}"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>countryRating}" width="150px"/>
-			<Select selectedKey="{Rating}" forceSelection="false" items="{ path: '/dictionaryRatingSet', sorter: { path: 'Rating' } }" width="250px">
+			<CheckBox selected="{Sanction}"/>
+			<ToolbarSpacer/>
+			<Label class="marginTop" text="{i18n>countryRating}"/>
+			<Select selectedKey="{Rating}" forceSelection="false" items="{ path: '/dictionaryRatingSet', sorter: { path: 'Rating' } }" width="100%">
 				<core:Item key="{Rating}" text="{Rating}"/>
 			</Select>
 		</content>

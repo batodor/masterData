@@ -1,20 +1,20 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>productRecipeHeader}" class="sapUiContentPadding" id="productRecipeHeaderDialog">
+	<Dialog title="{i18n>productRecipeHeader}" stretch="{device>/system/phone}" class="sapUiContentPadding" id="productRecipeHeaderDialog">
 		<content>
-			<Label required="true" text="{i18n>salesProgram}" width="150px"/>
-			<Select selectedKey="{Code}" custom:key="salesProgram" forceSelection="false" 
-				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" width="250px">
+			<Label required="true" text="{i18n>salesProgram}"/>
+			<Select selectedKey="{Code}" custom:key="salesProgram" forceSelection="false" width="100%" 
+				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateFrom}" width="150px"/>
-			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="255px" />
+			<Label class="marginTop" required="true" text="{i18n>dateFrom}"/>
+			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" />
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateTo}" width="150px"/>
-			<DatePicker dateValue="{DateTo}" custom:key="dateTo" custom:editable="true" width="255px"/>
+			<Label class="marginTop" required="true" text="{i18n>dateTo}"/>
+			<DatePicker dateValue="{DateTo}" custom:key="dateTo" custom:editable="true"/>
 			
-			<Input value="{Name}" width="250px" visible="false"/>
-			<Input value="{RecipeNumber}" visible="false" width="250px"/>
+			<Input value="{Name}" visible="false"/>
+			<Input value="{RecipeNumber}" visible="false"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="productRecipeHeader" type="Back" press="dialogCancel"/>

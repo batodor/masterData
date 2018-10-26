@@ -1,17 +1,13 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>drq}" class="sapUiContentPadding" id="drqDialog">
+	<Dialog title="{i18n>drq}" class="sapUiContentPadding" id="drqDialog" stretch="{device>/system/phone}">
 		<content>
-			<Label required="true" text="{i18n>productionUnit}" width="150px"/>
-			<Select forceSelection="false" selectedKey="{ProductionUnit}" custom:key="productionUnit"
-			items="{ path: '/dictionaryProductRecipeSet', sorter: { path: 'Name' } }" width="330px">
+			<Label required="true" text="{i18n>productionUnit}"/>
+			<Select forceSelection="false" selectedKey="{ProductionUnit}" custom:key="productionUnit" width="100%"
+			items="{ path: '/dictionaryProductRecipeSet', sorter: { path: 'Name' } }" >
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
-<!--			<Select selectedKey="{ProductionUnit}" custom:key="productionUnit" forceSelection="false" 
-				items="{ path: '/dictionaryProductionUnitSet', sorter: { path: 'Name' } }" width="200px">
-				<core:Item key="{Code}" text="{Code} - {Name}"/>
-			</Select>
--->			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>material}" width="150px"/>
+			<ToolbarSpacer/>
+			<Label class="marginTop" required="true" text="{i18n>material}"/>
 			<Input 
 				type="Text"
 				custom:id="material"
@@ -21,9 +17,9 @@
 				placeholder="{i18n>plsChoose} {i18n>material}"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{Material}" width="330px" />
+				value="{Material}" />
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>qpCode}" width="150px"/>
+			<Label class="marginTop" required="true" text="{i18n>qpCode}"/>
 			<Input 
 				custom:id="qualityParametersPopup"
 				custom:key="qpCode"
@@ -34,21 +30,20 @@
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{QPCode}"
-				change="onChange"
-				width="330px" />
+				change="onChange"/>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>baseQP}" width="150px"/>
+			<Label class="marginTop" required="true" text="{i18n>baseQP}"/>
 			<Select
 				selectedKey="{BaseQP}"
 				id="qualityParametersPopupdrqCombobox"
 				custom:key="baseQP"
 				forceSelection="false"
-				items="{ path: '/bmqcSet' }"
-				width="330px">
+				width="100%"
+				items="{ path: '/bmqcSet' }">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>uom}" width="150px"/>
+			<Label class="marginTop" required="true" text="{i18n>uom}"/>
 			<Input 
 				type="Text"
 				custom:id="uom"
@@ -57,10 +52,10 @@
 				id="uomdrqValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{UOM}" width="330px" />
+				value="{UOM}"  />
 			<ToolbarSpacer/>
-			<Label text="{i18n>defaultValue}" width="150px"/>
-			<Input value="{DefaultValue}" maxLength="5" placeholder="0" width="330px"/>
+			<Label class="marginTop" text="{i18n>defaultValue}"/>
+			<Input value="{DefaultValue}" maxLength="5" placeholder="0" />
 			<ToolbarSpacer/>
 		</content>
 		<buttons>

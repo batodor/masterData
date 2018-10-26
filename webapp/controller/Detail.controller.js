@@ -112,6 +112,9 @@ sap.ui.define([
 		    this.checkUserAccess();
 			// Bind double click event
 			this.byId(this.id).ondblclick = this.tableEdit.bind(this, this.id);
+			
+			// Disable edit buttons in case if new table loaded
+			this.setInput(["tableDelete", "tableEdit", "tableDetails", "tableMobileOpen", this.id + "Select"], false, "Enabled");
 		},
 		
 		// Event on selection of table items
@@ -120,9 +123,9 @@ sap.ui.define([
 			var selectedCount = table.getSelectedItems().length;
 			var id = table.data("id");
 			if (selectedCount > 0) {
-				this.setInput(["tableDelete", "tableEdit", "tableDetails", id + "Select"], true, "Enabled");
+				this.setInput(["tableDelete", "tableEdit", "tableDetails", "tableMobileOpen", id + "Select"], true, "Enabled");
 			} else {
-				this.setInput(["tableDelete", "tableEdit", "tableDetails", id + "Select"], false, "Enabled");
+				this.setInput(["tableDelete", "tableEdit", "tableDetails", "tableMobileOpen", id + "Select"], false, "Enabled");
 			}
 			if(table.data("crud")){
 				id = table.data("crud");
@@ -244,7 +247,7 @@ sap.ui.define([
 				var url = table.getSelectedItem().getBindingContextPath();
 				
 				// if on doubleclick preview then disable inputs, else enable inputs
-				typeof argument === 'string' ? this.setEnabledDialog(dialog, false) : this.setEnabledDialog(dialog, true);
+				typeof argument === 'string' || argument.getSource().data("mobile") ? this.setEnabledDialog(dialog, false) : this.setEnabledDialog(dialog, true);
 				var buttons = dialog.getButtons();
 				
 				// Checks if edit dialog has inner table to bind it

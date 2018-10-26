@@ -1,28 +1,28 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>benchmark}" class="sapUiContentPadding" id="benchmarkDialog">
+	<Dialog title="{i18n>benchmark}" class="sapUiContentPadding" id="benchmarkDialog" stretch="{device>/system/phone}">
 		<content>
-			<Label required="true" text="{i18n>salesProgram}" width="220px"/>
+			<Label required="true" text="{i18n>salesProgram}"/>
 			<Select selectedKey="{CodeSalesProgram}" custom:key="salesProgram" forceSelection="false" 
-				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" width="250px">
+				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" width="100%">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateFrom}" width="220px"/>
-			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="255px"/>
+			<Label class="marginTop" required="true" text="{i18n>dateFrom}"/>
+			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" />
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>productType}" width="220px"/>
+			<Label class="marginTop" required="true" text="{i18n>productType}"/>
 			<Select selectedKey="{Product}" custom:key="productType" forceSelection="false" 
-				items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }" width="250px">
+				items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }" width="100%">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>salesMarket}" width="220px"/>
+			<Label class="marginTop" required="true" text="{i18n>salesMarket}"/>
 			<Select selectedKey="{SalesMarket}" custom:key="salesMarket" forceSelection="false" 
-				items="{ path: '/salesMarketSet', sorter: { path: 'Name' } }" width="250px">
+				items="{ path: '/salesMarketSet', sorter: { path: 'Name' } }" width="100%">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>deliveryPoint}" width="220px"/>
+			<Label class="marginTop" required="true" text="{i18n>deliveryPoint}"/>
 			<Input 
 				custom:id="geolocationPopup"
 				custom:key="deliveryPoint"
@@ -32,29 +32,29 @@
 				id="geolocationPopupbenchmarkValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{TransshipmentPoint} - {TransshipmentPointText}" width="250px" />
+				value="{TransshipmentPoint} - {TransshipmentPointText}" width="100%" />
 			<ToolbarSpacer/>
-			<Label text="{i18n>dateTo}" width="220px"/>
-			<DatePicker dateValue="{DateTo}" width="255px"/>
+			<Label class="marginTop" text="{i18n>dateTo}"/>
+			<DatePicker dateValue="{DateTo}"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>incoterms}" width="220px"/>
+			<Label class="marginTop" text="{i18n>incoterms}"/>
 			<Select selectedKey="{Incoterms}" forceSelection="false" 
-				items="{ path: '/incotermsSet', sorter: { path: 'Incoterms' } }" width="250px">
+				items="{ path: '/incotermsSet', sorter: { path: 'Incoterms' } }" width="100%">
 				<core:Item key="{Incoterms}" text="{Incoterms} - {Description}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label text="{i18n>cvNar}" width="220px"/>
-			<Input value="{CVNAR}" maxLength="15" placeholder="0" width="250px"/>
+			<Label class="marginTop" text="{i18n>cvNar}"/>
+			<Input value="{CVNAR}" maxLength="15" placeholder="0" width="100%"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>uom}" width="220px"/>
+			<Label class="marginTop" text="{i18n>uom}"/>
 			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '' ? '' : 'KCK' }" 
-		        width="250px">
+		        width="100%">
 				<core:Item key="" text=""/>
 				<core:Item key="KCK" text="KCK - Kcal/kg"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label text="{i18n>formulaBenchmark}" width="220px"/>
-			<Input value="{Formula}" width="250px"/>
+			<Label class="marginTop" text="{i18n>formulaBenchmark}"/>
+			<Input value="{Formula}" width="100%"/>
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="benchmark" type="Back" press="dialogCancel"/>

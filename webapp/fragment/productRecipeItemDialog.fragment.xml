@@ -1,13 +1,13 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>productRecipeItem}" class="sapUiContentPadding" id="productRecipeItemDialog">
+	<Dialog title="{i18n>productRecipeItem}" stretch="{device>/system/phone}" class="sapUiContentPadding" id="productRecipeItemDialog">
 		<content>
-			<Label required="true" text="{i18n>recipeNumber}" width="150px"/>
-			<Input custom:key="recipeNumber" id="productRecipeItemRecipeNumber" value="{RecipeNumber}" width="330px" />
+			<Label required="true" text="{i18n>recipeNumber}"/>
+			<Input custom:key="recipeNumber" id="productRecipeItemRecipeNumber" value="{RecipeNumber}"  />
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>itemNumber}" width="150px"/>
-			<Input custom:key="itemNumber" value="{ItemNumber}" width="330px"/>
+			<Label class="marginTop" required="true" text="{i18n>itemNumber}"/>
+			<Input custom:key="itemNumber" value="{ItemNumber}" />
 			<ToolbarSpacer/>
-			<Label text="{i18n>material}" width="150px"/>
+			<Label class="marginTop" text="{i18n>material}"/>
 			<Input 
 				type="Text"
 				custom:id="material"
@@ -17,21 +17,18 @@
 				id="materialproductRecipeItemValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{Material} - {MaterialText}" width="330px" />
+				value="{Material} - {MaterialText}"  />
 			<ToolbarSpacer/>
-			<Label text="{i18n>productionUnit}" width="150px"/>
-			<Select forceSelection="false" selectedKey="{ProductionUnit}" items="{ path: '/dictionaryProductRecipeSet', sorter: { path: 'Name' } }" width="330px">
+			<Label class="marginTop" text="{i18n>productionUnit}"/>
+			<Select forceSelection="false" selectedKey="{ProductionUnit}" items="{ path: '/dictionaryProductRecipeSet', sorter: { path: 'Name' } }"  width="100%">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
-<!--			<Select forceSelection="false" selectedKey="{ProductionUnit}" items="{ path: '/productionUnitSet', sorter: { path: 'Name' } }" width="250px">
-				<core:Item key="{ProducerConsumer}" text="{ProducerConsumer} - {Name}"/>
-			</Select> -->
 			<ToolbarSpacer/>
-			<Label text="{i18n>content}" width="150px"/>
-			<Input value="{Content}" type="Number" custom:type="Number" placeholder="0" width="330px" />
+			<Label class="marginTop" text="{i18n>content}"/>
+			<Input value="{Content}" type="Number" custom:type="Number" placeholder="0"  />
 			<ToolbarSpacer/>
-			<Label text="{i18n>uom}" width="150px"/>
-			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '%' ? '%' : '%' }" width="330px">
+			<Label class="marginTop" text="{i18n>uom}"/>
+			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '%' ? '%' : '%' }" width="100%">
 				<core:Item key="" text=""/>
 				<core:Item key="%" text="%"/>
 			</Select>

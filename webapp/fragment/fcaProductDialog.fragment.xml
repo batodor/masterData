@@ -1,22 +1,22 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>fcaProduct}" class="sapUiContentPadding" id="fcaProductDialog">
+	<Dialog title="{i18n>fcaProduct}" class="sapUiContentPadding" id="fcaProductDialog" stretch="{device>/system/phone}">
 		<content>
-			<Label required="true" text="{i18n>salesProgram}" width="200px"/>
+			<Label required="true" text="{i18n>salesProgram}"/>
 			<Select selectedKey="{SalesProgram}" custom:key="salesProgram" forceSelection="false" 
-				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" width="350px">
+				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" width="100%">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
-			<DatePicker dateValue="{FromDate}" custom:key="dateFrom" width="356px"/>
+			<Label class="marginTop" required="true" text="{i18n>dateFrom}"/>
+			<DatePicker dateValue="{FromDate}" custom:key="dateFrom"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>dateTo}" width="200px"/>
-			<DatePicker dateValue="{ToDate}" custom:key="dateTo" custom:editable="true" width="356px"/>
+			<Label class="marginTop" text="{i18n>dateTo}"/>
+			<DatePicker dateValue="{ToDate}" custom:key="dateTo" custom:editable="true"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>minFcaPrice}" width="200px"/>
-			<Input value="{MinFCAPrice}" maxLength="15" placeholder="0" width="350px"/>
+			<Label class="marginTop" text="{i18n>minFcaPrice}"/>
+			<Input value="{MinFCAPrice}" maxLength="15" placeholder="0"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>currency}" width="200px"/>
+			<Label class="marginTop" text="{i18n>currency}"/>
 			<Input 
 				custom:id="currencyPopup"
 				custom:set="currency"
@@ -24,8 +24,7 @@
 				id="currencyPopupfcaProductValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{Currency}"
-				width="350px" />
+				value="{Currency}" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="fcaProduct" type="Back" press="dialogCancel"/>

@@ -12,7 +12,9 @@
 .sapMSF{
 	display: inline-block;
 }
-
+.marginTop{
+	margin-top: 1rem;
+}
 .black.sapMLabel,
 .black.sapMText{
     color: #000 !important;

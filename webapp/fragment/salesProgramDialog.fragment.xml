@@ -1,37 +1,37 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>salesProgram}" class="sapUiContentPadding" id="salesProgramDialog">
+	<Dialog title="{i18n>salesProgram}" stretch="{device>/system/phone}" class="sapUiContentPadding" id="salesProgramDialog">
 		<content>
-			<Label required="true" text="{i18n>salesProgram}" width="150px"/>
-			<Input value="{SalesProgram}" maxLength="7" custom:key="salesProgram" width="300px"/>
+			<Label required="true" text="{i18n>salesProgram}"/>
+			<Input value="{SalesProgram}" maxLength="7" custom:key="salesProgram" />
 			<ToolbarSpacer/>
-			<Label text="{i18n>description}" width="150px"/>
-			<TextArea value="{Description}" maxLength="60" width="300px" />
+			<Label class="marginTop" text="{i18n>description}"/>
+			<TextArea value="{Description}" maxLength="60" rows="5" width="100%" />
 			<ToolbarSpacer/>
-			<Label text="{i18n>incoterms}" width="150px"/>
-			<Select forceSelection="false" selectedKey="{Incoterms}" items="{ path: '/incotermsSet', sorter: { path: 'Description' } }" width="300px">
+			<Label class="marginTop" text="{i18n>incoterms}"/>
+			<Select forceSelection="false" selectedKey="{Incoterms}" items="{ path: '/incotermsSet', sorter: { path: 'Description' } }" width="100%">
 				<core:Item key="{Incoterms}" text="{Incoterms} - {Description}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label text="{i18n>cvNar}" width="150px"/>
-			<Input value="{CV}" type="Number" custom:type="String" liveChange="checkValue" width="300px"/>
+			<Label class="marginTop" text="{i18n>cvNar}"/>
+			<Input value="{CV}" type="Number" custom:type="String" liveChange="checkValue" />
 			<ToolbarSpacer/>
-			<Label text="{i18n>uom}" width="150px"/>
-			<Select forceSelection="false" custom:name="UoM" selectedKey="{= ${CV} === '0' ? '' : 'KCK' }" 
-		        width="300px">
+			<Label class="marginTop" text="{i18n>uom}"/>
+			<Select forceSelection="false" custom:name="UoM" selectedKey="{= ${CV} === '0' ? '' : 'KCK' }" width="100%">
 				<core:Item key="" text=""/>
 				<core:Item key="KCK" text="KCK - Kcal/kg"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label text="{i18n>narGarGad}" width="150px"/>
-			<Select forceSelection="false" selectedKey="{NGG}" width="300px">
+			<Label class="marginTop" text="{i18n>narGarGad}"/>
+			<Select forceSelection="false" selectedKey="{NGG}"  width="100%">
 				<core:Item key="" text=""/>
 				<core:Item key="NAR" text="NAR"/>
 				<core:Item key="GAR" text="GAR"/>
 				<core:Item key="GAD" text="GAD"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label text="{i18n>active}" width="150px"/>
-			<CheckBox selected="{Active}" width="300px"/>
+			<Label class="marginTop" text="{i18n>active}"/>
+			<ToolbarSpacer/>
+			<CheckBox selected="{Active}" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="salesProgram" type="Back" press="dialogCancel"/>

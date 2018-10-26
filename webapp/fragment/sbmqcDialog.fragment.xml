@@ -1,17 +1,17 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>sbmqc}" class="sapUiContentPadding" id="sbmqcDialog">
+	<Dialog title="{i18n>sbmqc}" class="sapUiContentPadding" id="sbmqcDialog" stretch="{device>/system/phone}">
 		<content>
-			<Label required="true" text="{i18n>sbmqcCode}" width="300px"/>
-			<Input value="{Code}" maxLength="12" custom:key="sbmqcCode" width="300px"/>
+			<Label required="true" text="{i18n>sbmqcCode}"/>
+			<Input value="{Code}" maxLength="12" custom:key="sbmqcCode"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>sbmqcName}" width="300px"/>
-			<TextArea value="{Name}" maxLength="100" width="300px" />
+			<Label class="marginTop" text="{i18n>sbmqcName}"/>
+			<TextArea value="{Name}" maxLength="100" rows="5" width="100%"/>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>bmqcName}" width="300px"/>
-			<Select forceSelection="false" selectedKey="{CodeBase}" custom:key="bmqcName" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="300px">
+			<Label class="marginTop" required="true" text="{i18n>bmqcName}"/>
+			<Select forceSelection="false" selectedKey="{CodeBase}" custom:key="bmqcName" items="{ path: '/bmqcSet', sorter: { path: 'Name' } }" width="100%">
 				<core:Item key="{Code}" text="{Name}"/>
 			</Select>
-			<Input value="{NameBase}" visible="false" custom:key="" width="200px" />
+			<Input value="{NameBase}" visible="false" custom:key="" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="sbmqc" type="Back" press="dialogCancel"/>

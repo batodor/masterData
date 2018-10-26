@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>interestRate}" class="sapUiContentPadding" id="interestRateDialog">
+	<Dialog title="{i18n>interestRate}" class="sapUiContentPadding" id="interestRateDialog" stretch="{device>/system/phone}">
 		<content>
-			<Label required="true" text="{i18n>currency}" width="200px"/>
+			<Label required="true" text="{i18n>currency}" />
 			<Input 
 				custom:id="currencyPopup"
 				custom:set="currency"
@@ -10,13 +10,12 @@
 				id="currencyPopupinterestRateValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{Currency}" width="200px" />
+				value="{Currency}"  />
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
-			<DatePicker custom:key="dateFrom" dateValue="{DateFrom}" width="206px"/>
+			<Label class="marginTop" required="true" text="{i18n>dateFrom}" />
+			<DatePicker custom:key="dateFrom" dateValue="{DateFrom}" />
 			<ToolbarSpacer/>
-		    <!-- custom:key="country" -->
-			<Label text="{i18n>country}" required="false" width="200px"/>
+			<Label class="marginTop" text="{i18n>country}" required="false" />
 			<Input 
 				custom:id="countryPopup"
 				custom:set="country"
@@ -26,18 +25,16 @@
 				id="countryPopupinterestRateValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{Country}"
-				width="200px" />
+				value="{Country}" />
 			<ToolbarSpacer/>
-			<Label required="false" text="{i18n>dateTo}" width="200px"/>
-			<!-- custom:key="dateTo" -->
-			<DatePicker custom:editable="true" dateValue="{DateTo}" width="206px"/>
+			<Label class="marginTop" required="false" text="{i18n>dateTo}" />
+			<DatePicker custom:editable="true" dateValue="{DateTo}" />
 			<ToolbarSpacer/>
-			<Label text="{i18n>interestRate}" width="200px"/>
-			<Input value="{InterestRate}" type="Number" change="checkValue" custom:max="99999" custom:type="Number" placeholder="0" width="200px" />
+			<Label class="marginTop" text="{i18n>interestRate}" />
+			<Input value="{InterestRate}" type="Number" change="checkValue" custom:max="99999" custom:type="Number" placeholder="0"  />
 			<ToolbarSpacer/>
-			<Label text="{i18n>uom}" width="200px"/>
-			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '%' ? '%' : '%' }" width="200px">
+			<Label class="marginTop" text="{i18n>uom}" />
+			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '%' ? '%' : '%' }" width="100%">
 				<core:Item key="" text=""/>
 				<core:Item key="%" text="%"/>
 			</Select>

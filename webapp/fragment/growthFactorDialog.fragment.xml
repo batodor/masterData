@@ -1,22 +1,22 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>growthFactor}" class="sapUiContentPadding" id="growthFactorDialog">
+	<Dialog title="{i18n>growthFactor}" class="sapUiContentPadding" id="growthFactorDialog" stretch="{device>/system/phone}">
 		<content>
-			<Label required="true" text="{i18n>costType}" width="200px"/>
-			<Select selectedKey="{CostType}" custom:key="costType" forceSelection="false" items="{ path: '/dictionaryCostTypeSet', sorter: { path: 'Name' } }" width="150px">
+			<Label required="true" text="{i18n>costType}"/>
+			<Select selectedKey="{CostType}" custom:key="costType" forceSelection="false" items="{ path: '/dictionaryCostTypeSet', sorter: { path: 'Name' } }" width="100%">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>dateFrom}" width="200px"/>
-			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" width="155px" />
+			<Label class="marginTop" required="true" text="{i18n>dateFrom}"/>
+			<DatePicker dateValue="{DateFrom}" custom:key="dateFrom" />
 			<ToolbarSpacer/>
-			<Label text="{i18n>dateTo}" width="200px"/>
-			<DatePicker dateValue="{DateTo}" width="155px"/>
+			<Label class="marginTop" text="{i18n>dateTo}"/>
+			<DatePicker dateValue="{DateTo}"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>growthFactor}" width="200px"/>
-			<Input value="{GrowthFactor}" width="150px"/>
+			<Label class="marginTop" text="{i18n>growthFactor}"/>
+			<Input value="{GrowthFactor}" />
 			<ToolbarSpacer/>
-			<Label text="{i18n>uom}" width="200px"/>
-			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '%' ? '%' : '%' }" width="150px">
+			<Label class="marginTop" text="{i18n>uom}"/>
+			<Select forceSelection="false" custom:name="UOM" selectedKey="{= ${UOM} === '%' ? '%' : '%' }" width="100%">
 				<core:Item key="" text=""/>
 				<core:Item key="%" text="%"/>
 			</Select>

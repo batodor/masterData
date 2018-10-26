@@ -1,4 +1,5 @@
 <mvc:View controllerName="masterdata.MasterData.controller.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
 	xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:core="sap.ui.core">
 	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{Title}"
 		busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
@@ -42,35 +43,39 @@
 			<core:Fragment fragmentName="fragment.index" type="XML"></core:Fragment>
 			<core:Fragment fragmentName="fragment.interestRate" type="XML"></core:Fragment>
 		</semantic:content>
-		
-		<semantic:mainAction>
-			<semantic:MainAction
+		<semantic:customFooterContent>
+			<Button
+				id="tableMobileOpen"
+				visible="{device>/system/phone}"
+				type="Emphasized"
+				custom:mobile="true"
+				text="{i18n>open}"
+				enabled="false"
+				press="tableEdit"/>
+			<Button
 				id="tableAdd"
 				visible="false"
 				press="tableAdd"
+				type="Emphasized"
 				text="{i18n>add}" />
-		</semantic:mainAction>
-		<semantic:positiveAction>
-			<semantic:PositiveAction
+			<Button
 				id="tableEdit" 
 				visible="false"
+				type="Accept"
 				press="tableEdit"
 				text="{i18n>edit}" />
-		</semantic:positiveAction>
-		<semantic:negativeAction>
-			<semantic:NegativeAction
+			<Button
+				type="Reject"
 				id="tableDelete" 
 				visible="false"
 				press="tableDelete"
 				text="{i18n>delete}" />
-		</semantic:negativeAction>
-		<semantic:saveAsTileAction>
 			<Button 
 				id="tableDetails"
 				visible="false"
 				type="Emphasized"
 				text="{i18n>items}"
 				press="tableDetails"/>
-		</semantic:saveAsTileAction>
+		</semantic:customFooterContent>
 	</semantic:DetailPage>
 </mvc:View>

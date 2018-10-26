@@ -1,11 +1,11 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>salesMarket}" class="sapUiContentPadding" id="salesMarketDialog">
+	<Dialog title="{i18n>salesMarket}" stretch="{device>/system/phone}" class="sapUiContentPadding" id="salesMarketDialog">
 		<content>
-			<Label required="true" text="{i18n>salesMarketCode}" width="150px"/>
-			<Input value="{Code}" id="salesMarketInputCode" custom:key="salesMarketCode" width="250px"/>
+			<Label required="true" text="{i18n>salesMarketCode}" />
+			<Input value="{Code}" id="salesMarketInputCode" custom:key="salesMarketCode" />
 			<ToolbarSpacer/>
-			<Label text="{i18n>salesMarketName}" width="150px"/>
-			<Input value="{Name}" width="250px" />
+			<Label class="marginTop" text="{i18n>salesMarketName}" />
+			<Input value="{Name}" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="salesMarket" type="Back" press="dialogCancel"/>

@@ -1,28 +1,25 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>dqp}" class="sapUiContentPadding" id="dqpDialog">
+	<Dialog title="{i18n>dqp}" class="sapUiContentPadding" id="dqpDialog" stretch="{device>/system/phone}">
 		<content>
-			<Label required="true" text="{i18n>productType}" width="150px"/>
-			<Select selectedKey="{TypeProduct}" custom:key="typeOfProduct" forceSelection="false" items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }" width="330px">
+			<Label required="true" text="{i18n>productType}"/>
+			<Select selectedKey="{TypeProduct}" custom:key="typeOfProduct" forceSelection="false" items="{ path: '/dictionarySalesDivisionsSet', sorter: { path: 'Name' } }" 
+				width="100%">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="false" text="{i18n>salesProgram}" width="150px"/>
-			<Select selectedKey="{SalesProgram}" forceSelection="false" custom:key="salesProgram" custom:noCheck="true"
-				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" width="330px">
+			<Label class="marginTop" required="false" text="{i18n>salesProgram}"/>
+			<Select selectedKey="{SalesProgram}" forceSelection="false" custom:key="salesProgram" custom:noCheck="true" width="100%"
+				items="{ path: '/dictionarySalesProgramSet', sorter: { path: 'Code' } }" >
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="false" text="{i18n>salesRegion}" width="150px"/>
-			<Select selectedKey="{SalesRegion}" custom:key="salesRegion" forceSelection="false" custom:noCheck="true" 
-				items="{ path: '/salesRegionSet', sorter: { path: 'Name' } }" width="330px">
+			<Label class="marginTop" required="false" text="{i18n>salesRegion}"/>
+			<Select selectedKey="{SalesRegion}" custom:key="salesRegion" forceSelection="false" custom:noCheck="true" width="100%"
+				items="{ path: '/salesRegionSet', sorter: { path: 'Name' } }" >
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label required="false" text="{i18n>qpCode}" width="150px"/>
-			<!--<Select selectedKey="{QP}" custom:key="qp" forceSelection="false"  custom:noCheck="true" -->
-			<!--	items="{ path: '/qualityParametersSet', sorter: { path: 'QPCode' } }" width="200px">-->
-			<!--	<core:Item key="{QPKey}" text="{QPKey} - {QPCode}"/>-->
-			<!--</Select>-->
+			<Label class="marginTop" required="false" text="{i18n>qpCode}"/>
 			<Input 
 				custom:id="qualityParametersPopup"
 				custom:key="qpCode"
@@ -33,10 +30,9 @@
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
 				value="{QPName}"
-				change="onChange"
-				width="330px" />
+				change="onChange" />
 			<ToolbarSpacer/>
-			<Label required="false" text="{i18n>baseQP}" width="150px"/>
+			<Label class="marginTop" required="false" text="{i18n>baseQP}"/>
 			<Select
 				selectedKey="{BaseQP}"
 				id="qualityParametersPopupdqpCombobox"
@@ -44,11 +40,11 @@
 				forceSelection="false"
 				custom:noCheck="true" 
 				items="{ path: '/bmqcSet' }"
-				width="330px">
+				width="100%">
 				<core:Item key="{Code}" text="{Code} - {Name}"/>
 			</Select>
 			<ToolbarSpacer/>
-			<Label text="{i18n>uom}" width="150px"/>
+			<Label class="marginTop" text="{i18n>uom}"/>
 			<Input 
 				type="Text"
 				custom:id="uom"
@@ -56,10 +52,10 @@
 				id="uomdqpValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{UOM}" width="330px" />
+				value="{UOM}"  />
 			<ToolbarSpacer/>
-			<Label text="{i18n>fineUOM}" width="150px"/>
-			<Input value="{FineUOM}" width="330px" />
+			<Label class="marginTop" text="{i18n>fineUOM}"/>
+			<Input value="{FineUOM}"  />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="dqp" type="Back" press="dialogCancel"/>

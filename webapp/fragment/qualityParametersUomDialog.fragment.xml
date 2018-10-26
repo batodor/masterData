@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Dialog title="{i18n>qualityParametersUom}" class="sapUiContentPadding" id="qualityParametersUomDialog">
+	<Dialog title="{i18n>qualityParametersUom}" class="sapUiContentPadding" id="qualityParametersUomDialog" stretch="{device>/system/phone}">
 		<content>
-			<Label required="true" text="{i18n>qpCode}" width="150px"/>
+			<Label required="true" text="{i18n>qpCode}"/>
 			<Input 
 				custom:id="qualityParametersPopup"
 				custom:key="qpCode"
@@ -10,9 +10,9 @@
 				id="qualityParametersPopupqualityParametersUomValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{QPCode}" width="250px" />
+				value="{QPCode}" />
 			<ToolbarSpacer/>
-			<Label required="true" text="{i18n>uom}" width="150px"/>
+			<Label class="marginTop" required="true" text="{i18n>uom}"/>
 			<Input 
 				custom:id="uom"
 				custom:key="uom"
@@ -20,30 +20,28 @@
 				id="uomqualityParametersUomValueHelp"
 				showValueHelp="true"
 				valueHelpRequest="handleValueHelp"
-				value="{UOM}" width="250px" />
+				value="{UOM}" />
 			<ToolbarSpacer/>
-			<Label text="{i18n>minValue}" width="150px"/>
+			<Label class="marginTop" text="{i18n>minValue}"/>
 			<Input
 				value="{MinValue}"
 				type="Number"
 				maxLength="19"
 				change="checkDecimal"
 				custom:type="Number"
-				placeholder="0"
-				width="250px"/>
+				placeholder="0"/>
 			<ToolbarSpacer/>
-			<Label text="{i18n>maxValue}" width="150px"/>
+			<Label class="marginTop" text="{i18n>maxValue}"/>
 			<Input
 				value="{MaxValue}"
 				type="Number"
 				maxLength="19"
 				change="checkDecimal"
 				custom:type="Number"
-				placeholder="0"
-				width="250px" />
+				placeholder="0" />
 			<ToolbarSpacer/>
-			<Label text="{i18n>normalPrecision}" width="150px"/>
-			<Input value="{NormalPrecision}" maxLength="1" width="250px" />
+			<Label class="marginTop" text="{i18n>normalPrecision}"/>
+			<Input value="{NormalPrecision}" maxLength="1" />
 		</content>
 		<buttons>
 			<Button text="{i18n>cancel}" custom:id="qualityParametersUom" type="Back" press="dialogCancel"/>
